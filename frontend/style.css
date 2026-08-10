@@ -65,6 +65,7 @@ body, html {
     position: relative;
     z-index: 10;
     padding-top: 36px;
+    padding-bottom: 60px;
 }
 
 
@@ -576,6 +577,7 @@ body, html {
     border-radius:20px;
     height:450px;
     box-shadow:0 16px 40px rgba(17,29,74,.05);
+    margin-bottom: 30px;
 }
 
 .achievements-featured img{
@@ -4708,15 +4710,54 @@ position: absolute;
 
 .reveal {
     opacity: 0;
-    transform: translate3d(0, 30px, 0);
-    transition:
-        opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
-        transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: opacity, transform;
+    filter: blur(10px);
+    transform: translate3d(0, 40px, 0);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform, filter;
 }
 
 .reveal.active {
     opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0);
+}
+
+/* Base durations for specific elements */
+.reveal-heading {
+    transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1), filter 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-image {
+    transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1), transform 800ms cubic-bezier(0.16, 1, 0.3, 1), filter 800ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-card {
+    transition: opacity 650ms cubic-bezier(0.16, 1, 0.3, 1), transform 650ms cubic-bezier(0.16, 1, 0.3, 1), filter 650ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-timeline {
+    transition: opacity 750ms cubic-bezier(0.16, 1, 0.3, 1), transform 750ms cubic-bezier(0.16, 1, 0.3, 1), filter 750ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-ui {
+    transition: opacity 450ms cubic-bezier(0.16, 1, 0.3, 1), transform 450ms cubic-bezier(0.16, 1, 0.3, 1), filter 450ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-section {
+    transition: opacity 1200ms cubic-bezier(0.16, 1, 0.3, 1), transform 1400ms cubic-bezier(0.16, 1, 0.3, 1), filter 1200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reduced Motion Override */
+.reduce-motion .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    filter: none;
+}
+
+.reveal.active {
+    opacity: 1;
+    filter: blur(0);
     transform: translate3d(0, 0, 0);
 }
 
@@ -4726,19 +4767,19 @@ position: absolute;
    --------------------------------------------------------- */
 
 .reveal-up {
-    transform: translate3d(0, 30px, 0);
+    transform: translate3d(0, 60px, 0) scale(0.96);
 }
 
 .reveal-left {
-    transform: translate3d(-40px, 0, 0);
+    transform: translate3d(-60px, 0, 0) scale(0.96);
 }
 
 .reveal-right {
-    transform: translate3d(40px, 0, 0);
+    transform: translate3d(60px, 0, 0) scale(0.96);
 }
 
 .reveal-scale {
-    transform: scale(0.96);
+    transform: scale(0.90);
 }
 
 .reveal-up.active,
@@ -4746,6 +4787,7 @@ position: absolute;
 .reveal-right.active,
 .reveal-scale.active {
     opacity: 1;
+    filter: blur(0);
     transform: translate3d(0, 0, 0) scale(1);
 }
 
@@ -4754,8 +4796,146 @@ position: absolute;
    3. Animation Delays
    --------------------------------------------------------- */
 
-.delay-100 {
-    transition-delay: 100ms;
+/* ---------------------------------------------------------
+   4. Hero Load Animation
+   --------------------------------------------------------- */
+@keyframes heroFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes heroFadeDown {
+    0% { opacity: 0; transform: translateY(-15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFadeUp {
+    0% { opacity: 0; transform: translateY(25px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFadeScale {
+    0% { opacity: 0; transform: translateY(30px) scale(0.97); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Base state for animated hero items to avoid popping before animation starts */
+.vis-hero-section .logo,
+.vis-hero-section .menu-btn,
+.vis-hero-section .nav-links,
+.vis-hero-section .navbar > .apply-btn,
+.vis-hero-section .vis-subtitle,
+.vis-hero-section .vis-heading,
+.vis-hero-section .vis-description,
+.vis-hero-section .vis-hero-buttons,
+.vis-hero-section .stats-card {
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vis-hero-section .logo,
+.vis-hero-section .menu-btn,
+.vis-hero-section .nav-links,
+.vis-hero-section .navbar > .apply-btn {
+    animation-name: heroFade;
+    animation-duration: 800ms;
+    animation-delay: 0ms;
+}
+
+.vis-hero-section .vis-subtitle {
+    animation-name: heroFadeUp;
+    animation-duration: 900ms;
+    animation-delay: 150ms;
+}
+
+.vis-hero-section .vis-heading {
+    animation-name: heroFadeUp;
+    animation-duration: 1000ms;
+    animation-delay: 300ms;
+}
+
+.vis-hero-section .vis-description {
+    animation-name: heroFadeUp;
+    animation-duration: 1000ms;
+    animation-delay: 500ms;
+}
+
+.vis-hero-section .vis-hero-buttons {
+    animation-name: heroFadeUp;
+    animation-duration: 1000ms;
+    animation-delay: 650ms;
+}
+
+.vis-hero-section .stats-card {
+    animation-name: heroFadeScale;
+    animation-duration: 1200ms;
+    animation-delay: 800ms;
+}
+
+/* ---------------------------------------------------------
+   5. Micro-interactions (Hovers)
+   --------------------------------------------------------- */
+.cohort-card {
+    transition: transform 300ms ease, box-shadow 300ms ease;
+}
+.cohort-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(17, 29, 74, 0.1);
+}
+
+.leader-card {
+    overflow: hidden;
+}
+.leader-card .leader-img {
+    transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.leader-card:hover .leader-img {
+    transform: scale(1.04);
+}
+
+.infra-card {
+    transition: background-size 800ms cubic-bezier(0.16, 1, 0.3, 1);
+    background-size: 100%;
+}
+.infra-card:hover {
+    background-size: 108%;
+}
+.infra-card-content {
+    transition: transform 400ms ease;
+}
+.infra-card:hover .infra-card-content {
+    transform: translateY(-4px);
+}
+
+.cocurricular-card .cocurricular-icon {
+    transition: transform 300ms ease;
+}
+.cocurricular-card:hover .cocurricular-icon {
+    transform: translateY(-2px);
+}
+
+.gallery-img-large, .gallery-img-medium, .gallery-img-small {
+    transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.campus-gallery img:hover {
+    transform: scale(1.03);
+}
+
+/* FAQ Interactions */
+.faq-question .faq-icon {
+    display: inline-block;
+    transition: transform 300ms ease;
+}
+.faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+}
+
+.footer-socials a {
+    transition: transform 300ms ease;
+}
+.footer-socials a:hover {
+    transform: translateY(-2px);
 }
 
 .delay-200 {

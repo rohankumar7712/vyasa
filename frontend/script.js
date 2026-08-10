@@ -1,44 +1,73 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const prevBtn = document.querySelector('.nav-btn.prev');
-    const nextBtn = document.querySelector('.nav-btn.next');
-    
+document.addEventListener("DOMContentLoaded", () => {
+    /* =========================================================
+       VYASA SITE INTERACTIONS
+    ========================================================= */
+
+    // ---------------------------------------------------------
+    // 1. Update Navigation
+    // ---------------------------------------------------------
+
+    const prevBtn = document.querySelector(".nav-btn.prev");
+    const nextBtn = document.querySelector(".nav-btn.next");
+
     if (prevBtn && nextBtn) {
-        prevBtn.addEventListener('click', () => {
-            console.log('Previous update clicked');
+        prevBtn.addEventListener("click", () => {
+            console.log("Previous update clicked");
         });
-        
-        nextBtn.addEventListener('click', () => {
-            console.log('Next update clicked');
+
+        nextBtn.addEventListener("click", () => {
+            console.log("Next update clicked");
         });
     }
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    const menuBtn = document.querySelector('.menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    const menuOverlay = document.querySelector('.menu-overlay');
+    // ---------------------------------------------------------
+    // 2. Mobile Navigation
+    // ---------------------------------------------------------
+
+    const menuBtn = document.querySelector(".menu-btn");
+    const navLinks = document.querySelector(".nav-links");
+    const menuOverlay = document.querySelector(".menu-overlay");
 
     if (menuBtn && navLinks && menuOverlay) {
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuOverlay.classList.toggle('active');
+        const closeMenu = () => {
+            navLinks.classList.remove("active");
+            menuOverlay.classList.remove("active");
+            menuBtn.classList.remove("active");
+        };
+
+        menuBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            menuOverlay.classList.toggle("active");
+            menuBtn.classList.toggle("active");
         });
 
-        menuOverlay.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            menuOverlay.classList.remove('active');
+        menuOverlay.addEventListener("click", closeMenu);
+
+        // Close menu when clicking a navigation link
+        navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", closeMenu);
         });
     }
-});
 
+    // ---------------------------------------------------------
+    // 3. Respect Reduced Motion
+    // ---------------------------------------------------------
 
-/* =========================================================
-   VYASA SCROLL REVEAL SYSTEM
-   ========================================================= */
+    const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
 
-document.addEventListener("DOMContentLoaded", () => {
-    // 1. Auto-assign reveal to full sections
+    if (prefersReducedMotion) {
+        document.documentElement.classList.add("reduce-motion");
+        return;
+    }
+
+    // ---------------------------------------------------------
+    // 4. Section Reveal
+    // ---------------------------------------------------------
+
     const revealSections = document.querySelectorAll(`
+        section:not(.hero-section):not(.vis-hero-section):not(.pu-hero):not(.about-hero-section),
         .legacy-section,
         .features-section,
         .achievements-section,
@@ -50,56 +79,173 @@ document.addEventListener("DOMContentLoaded", () => {
         .admissions-process-section,
         .campus-experience-section,
         .educators-section,
-        .leadership-section
+        .leadership-section,
+        .academic-framework-section,
+        .cohorts-section,
+        .pedagogy-section,
+        .care-section,
+        .infra-section,
+        .cocurricular-section,
+        .campus-life-section,
+        .admissions-section,
+        .faq-section
     `);
-    
+
     revealSections.forEach((section) => {
-        section.classList.add("reveal", "reveal-up");
+        section.classList.add("reveal", "reveal-up", "reveal-section");
     });
-    
-    // 2. Auto-assign reveal to section headers
+
+    // ---------------------------------------------------------
+    // 5. Directional Reveals
+    // ---------------------------------------------------------
+
+    const revealLeftElements = document.querySelectorAll(`
+        .v-timeline-item.left,
+        .about-leadership-grid:not(.reverse) .leadership-image,
+        .about-leadership-grid.reverse .leadership-content,
+        .sr-image,
+        .af-left-col,
+        .pedagogy-quote-col,
+        .admissions-cta-card,
+        .gallery-img-large
+    `);
+
+    revealLeftElements.forEach((element) => {
+        element.classList.add("reveal", "reveal-left", "reveal-timeline");
+    });
+
+    const revealRightElements = document.querySelectorAll(`
+        .v-timeline-item.right,
+        .about-leadership-grid:not(.reverse) .leadership-content,
+        .about-leadership-grid.reverse .leadership-image,
+        .sr-content,
+        .af-right-col,
+        .pedagogy-cards-col,
+        .admissions-steps,
+        .gallery-img-medium
+    `);
+
+    revealRightElements.forEach((element) => {
+        element.classList.add("reveal", "reveal-right", "reveal-timeline");
+    });
+
+    // ---------------------------------------------------------
+    // 6. Section Headers
+    // ---------------------------------------------------------
+
     const sectionHeaders = document.querySelectorAll(`
         .legacy-content,
         .features-header,
         .achievements-header,
         .showcase-header,
         .resources-header,
-        .alumni-header
+        .alumni-header,
+        .af-header,
+        .cohorts-header,
+        .leadership-header,
+        .pedagogy-header-split,
+        .care-header-split,
+        .infra-header-split,
+        .cocurricular-header-split,
+        .campus-header-split,
+        .admissions-header-split,
+        .faq-header-split
     `);
-    
+
     sectionHeaders.forEach((header) => {
-        header.classList.add("reveal", "reveal-up");
+        header.classList.add("reveal", "reveal-up", "reveal-heading");
     });
-    
-    // 3. Stagger cards automatically
+
+    // ---------------------------------------------------------
+    // 7. Staggered Cards
+    // ---------------------------------------------------------
+
     const staggerGroups = document.querySelectorAll(`
+        .cards-container,
         .features-gallery,
         .achievements-grid,
         .showcase-grid,
         .alumni-grid,
         .insights-grid,
-        .leadership-grid
+        .leadership-grid,
+        .programs-grid,
+        .facilities-grid,
+        .values-grid,
+        .pillars-grid,
+        .team-grid,
+        .advisory-grid,
+        .awards-grid,
+        .advantage-grid,
+        .vm-grid,
+        .careers-list,
+        .contact-info,
+        .chronology-timeline,
+        .af-left-col,
+        .cohorts-grid,
+        .care-grid,
+        .infra-grid,
+        .cocurricular-grid,
+        .faq-list,
+        .admissions-steps
     `);
-    
+
     staggerGroups.forEach((group) => {
-        const cards = group.children;
-        Array.from(cards).forEach((card, index) => {
-            card.classList.add("reveal", "reveal-up");
-            const delay = Math.min(index * 100, 400);
-            card.style.transitionDelay = `${delay}ms`;
+        const cards = group.querySelectorAll(`
+            .pillar-card,
+            .team-card,
+            .advantage-card,
+            .c-item,
+            .job-card,
+            .vm-card,
+            .info-block,
+            .card,
+            .feature-card,
+            .achievement-card,
+            .af-card,
+            .cohort-card,
+            .leader-card,
+            .care-card,
+            .infra-card,
+            .cocurricular-card,
+            .gallery-img-small,
+            .step-card,
+            .faq-item
+        `);
+
+        // Explicitly map rather than relying strictly on group.children
+        const elementsToStagger = cards.length > 0 ? cards : group.children;
+
+        Array.from(elementsToStagger).forEach((card, index) => {
+            if (
+                !card.classList.contains("reveal-left") &&
+                !card.classList.contains("reveal-right")
+            ) {
+                card.classList.add("reveal", "reveal-up", "reveal-card");
+            }
+
+            const delay = Math.min(index * 250, 1000);
+            card.style.setProperty("--reveal-delay", `${delay}ms`);
         });
     });
 
-    // 4. Setup Intersection Observer
+    // ---------------------------------------------------------
+    // 8. Intersection Observer
+    // ---------------------------------------------------------
+
     const revealElements = document.querySelectorAll(".reveal");
-    if (!revealElements.length) return;
+
+    if (!revealElements.length) {
+        return;
+    }
 
     const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
+        (entries) => {
             entries.forEach((entry) => {
-                if (!entry.isIntersecting) return;
-                entry.target.classList.add("active");
-                observer.unobserve(entry.target);
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                } else {
+                    entry.target.classList.remove("active");
+                }
             });
         },
         {
