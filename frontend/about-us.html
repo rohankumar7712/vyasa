@@ -8,13 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Gupter:wght@400;500;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="about-hero-section">
+    <section class="about-hero-section section">
         <div class="hero-overlay"></div>
-        <div class="container">
+        <div class="container hero-container">
             <!-- Navigation Bar -->
             <nav class="navbar">
                 <div class="logo">
-                    <img src="Images/vyasa logo.png" alt="Vyasa Logo">
+                    <img src="Images/vyasa logo.webp" alt="Vyasa Logo">
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
@@ -24,9 +24,13 @@
                     <li><a href="#">Parents</a></li>
                     <li><a href="#">Campus Life</a></li>
                     <li><a href="#">Contact Us</a></li>
+                
+                    <li class="mobile-apply-li"><a href="#" class="apply-btn mobile-apply-btn">APPLY NOW</a></li>
                 </ul>
                 <a href="#" class="apply-btn">APPLY NOW</a>
+                <button class="menu-btn">☰</button>
             </nav>
+            <div class="menu-overlay"></div>
 
             <div class="about-hero-content">
                 <div class="breadcrumb">
@@ -41,7 +45,7 @@
     </section>
     
     <!-- Milestones Section (Dark Blue) -->
-    <section class="about-milestones-section">
+    <section class="about-milestones-section section">
         <div class="container">
             <span class="section-subtitle">OUR MILESTONES</span>
             <h2 class="section-title text-white">Two Decades of Transformative Education</h2>
@@ -124,7 +128,7 @@
     </section>
 
     <!-- Vision & Mission Section -->
-    <section class="about-vision-mission-section">
+    <section class="about-vision-mission-section section">
         <div class="container">
             <div class="vm-grid">
                 <!-- Vision Card -->
@@ -151,11 +155,11 @@
     </section>
 
     <!-- Leadership Section 1 (Chairman) -->
-    <section class="leadership-section bg-light">
+    <section class="leadership-section bg-light section">
         <div class="container">
-            <div class="leadership-grid">
+            <div class="about-leadership-grid">
                 <div class="leadership-image">
-                    <img src="Images/CHAIRPERSON.png" alt="Chairman Sri. Vishwanath Hegde">
+                    <img src="Images/CHAIRPERSON.webp" alt="Chairman Sri. Vishwanath Hegde">
                 </div>
                 <div class="leadership-content">
                     <span class="badge-red">LEADERSHIP</span>
@@ -176,9 +180,9 @@
     </section>
 
     <!-- Leadership Section 2 (Principal) -->
-    <section class="leadership-section bg-white">
+    <section class="leadership-section bg-white section">
         <div class="container">
-            <div class="leadership-grid reverse">
+            <div class="about-leadership-grid reverse">
                 <div class="leadership-content">
                     <span class="badge-red">PHILOSOPHY</span>
                     <h2 class="leadership-title">Principal's Welcome</h2>
@@ -194,14 +198,14 @@
                     </div>
                 </div>
                 <div class="leadership-image">
-                    <img src="Images/Ms. Revathi Raju.jpg" alt="Principal Ms. Revathi Raju">
+                    <img src="Images/Ms. Revathi Raju.webp" alt="Principal Ms. Revathi Raju">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Core Pillars Section -->
-    <section class="core-pillars-section bg-light">
+    <section class="core-pillars-section bg-light section">
         <div class="container">
             <div class="section-header text-center">
                 <span class="badge-red">OUR CORE PILLARS</span>
@@ -267,7 +271,7 @@
     </section>
 
     <!-- Leadership Team Section -->
-    <section class="team-section bg-light">
+    <section class="team-section bg-light section">
         <div class="container">
             <div class="section-header text-center">
                 <span class="badge-red">ACADEMIC BOARD</span>
@@ -277,7 +281,7 @@
             <div class="team-grid">
                 <!-- Team Member 1 -->
                 <div class="team-card">
-                    <img src="Images/ACADEMIC DIRECTOR.png" alt="Dr. Meera Sundaram" class="team-img">
+                    <img src="Images/ACADEMIC DIRECTOR.webp" alt="Dr. Meera Sundaram" class="team-img">
                     <div class="team-info">
                         <h3 class="team-name">Dr. Meera Sundaram</h3>
                         <p class="team-role">ACADEMIC DIRECTOR</p>
@@ -287,7 +291,7 @@
                 
                 <!-- Team Member 2 -->
                 <div class="team-card">
-                    <img src="Images/Rahul Menon.png" alt="Mr. Ayden Peterson" class="team-img">
+                    <img src="Images/Rahul Menon.webp" alt="Mr. Ayden Peterson" class="team-img">
                     <div class="team-info">
                         <h3 class="team-name">Mr. Ayden Peterson</h3>
                         <p class="team-role">DEAN OF ADMISSIONS</p>
@@ -297,7 +301,7 @@
                 
                 <!-- Team Member 3 -->
                 <div class="team-card">
-                    <img src="Images/VICE PRINCIPAL.png" alt="Mrs. Lakshmi Narayan" class="team-img">
+                    <img src="Images/VICE PRINCIPAL.webp" alt="Mrs. Lakshmi Narayan" class="team-img">
                     <div class="team-info">
                         <h3 class="team-name">Mrs. Lakshmi Narayan</h3>
                         <p class="team-role">VICE PRINCIPAL</p>
@@ -307,7 +311,7 @@
                 
                 <!-- Team Member 4 -->
                 <div class="team-card">
-                    <img src="Images/Ankit Kulkarni.png" alt="Mr. Cameron Bright" class="team-img">
+                    <img src="Images/Ankit Kulkarni.webp" alt="Mr. Cameron Bright" class="team-img">
                     <div class="team-info">
                         <h3 class="team-name">Mr. Cameron Bright</h3>
                         <p class="team-role">HEAD OF STEM PROGRAMS</p>
@@ -317,7 +321,7 @@
                 
                 <!-- Team Member 5 -->
                 <div class="team-card">
-                    <img src="Images/Priya Nair.png" alt="Mrs. Ayra Sen" class="team-img">
+                    <img src="Images/Priya Nair.webp" alt="Mrs. Ayra Sen" class="team-img">
                     <div class="team-info">
                         <h3 class="team-name">Mrs. Ayra Sen</h3>
                         <p class="team-role">CHIEF PASTORAL COUNSELLOR</p>
@@ -327,7 +331,7 @@
                 
                 <!-- Team Member 6 -->
                 <div class="team-card">
-                    <img src="Images/Dr. Vikram Aditya.png" alt="Mr. Jin Aoki" class="team-img">
+                    <img src="Images/Dr. Vikram Aditya.webp" alt="Mr. Jin Aoki" class="team-img">
                     <div class="team-info">
                         <h3 class="team-name">Mr. Jin Aoki</h3>
                         <p class="team-role">DIRECTOR OF ATHLETICS</p>
@@ -339,7 +343,7 @@
     </section>
 
     <!-- Advisory Board Section -->
-    <section class="advisory-section bg-light">
+    <section class="advisory-section bg-light section">
         <div class="container">
             <div class="section-header text-center">
                 <span class="badge-red">GOVERNANCE</span>
@@ -350,7 +354,7 @@
             <div class="advisory-grid">
                 <!-- Advisor 1 -->
                 <div class="team-card">
-                    <img src="Images/Ankit Kulkarni.png" alt="Dr. Arindam Ghosh" class="team-img">
+                    <img src="Images/Ankit Kulkarni.webp" alt="Dr. Arindam Ghosh" class="team-img">
                     <div class="team-info">
                         <h3 class="team-name">Dr. Arindam Ghosh</h3>
                         <p class="team-role text-gold">CHIEF ACADEMIC ADVISOR</p>
@@ -360,7 +364,7 @@
                 
                 <!-- Advisor 2 -->
                 <div class="team-card">
-                    <img src="Images/Sanjana Sridhar.png" alt="Prof. Sunita Krishnan" class="team-img">
+                    <img src="Images/Sanjana Sridhar.webp" alt="Prof. Sunita Krishnan" class="team-img">
                     <div class="team-info">
                         <h3 class="team-name">Prof. Sunita Krishnan</h3>
                         <p class="team-role text-gold">GLOBAL EDUCATION LEAD</p>
@@ -370,7 +374,7 @@
                 
                 <!-- Advisor 3 -->
                 <div class="team-card">
-                    <img src="Images/Rahul Menon.png" alt="Mr. Ritesh Deshmukh" class="team-img">
+                    <img src="Images/Rahul Menon.webp" alt="Mr. Ritesh Deshmukh" class="team-img">
                     <div class="team-info">
                         <h3 class="team-name">Mr. Ritesh Deshmukh</h3>
                         <p class="team-role text-gold">TECHNOLOGY STRATEGIST</p>
@@ -380,7 +384,7 @@
                 
                 <!-- Advisor 4 -->
                 <div class="team-card">
-                    <img src="Images/Dr. Vikram Aditya.png" alt="Wg Cdr (Retd.) S. Rao" class="team-img">
+                    <img src="Images/Dr. Vikram Aditya.webp" alt="Wg Cdr (Retd.) S. Rao" class="team-img">
                     <div class="team-info">
                         <h3 class="team-name">Wg Cdr (Retd.) S. Rao</h3>
                         <p class="team-role text-gold">ETHICS & VALUE ADVISOR</p>
@@ -392,7 +396,7 @@
     </section>
 
     <!-- Awards Section -->
-    <section class="awards-section bg-white">
+    <section class="awards-section bg-white section">
         <div class="container">
             <div class="section-header text-center">
                 <span class="badge-red">LAURELS</span>
@@ -459,7 +463,7 @@
     </section>
 
     <!-- Why Families Choose Vyasa Section -->
-    <section class="advantage-section bg-white">
+    <section class="advantage-section bg-white section">
         <div class="container">
             <div class="section-header text-center">
                 <span class="badge-red">THE VYASA ADVANTAGE</span>
@@ -543,7 +547,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section bg-light">
+    <section class="cta-section bg-light section">
         <div class="container">
             <div class="cta-box">
                 <div class="cta-content">
@@ -559,7 +563,7 @@
     </section>
 
     <!-- Chronology Section -->
-    <section class="chronology-section bg-light">
+    <section class="chronology-section bg-light section">
         <div class="container">
             <div class="section-header text-center">
                 <span class="badge-red">OUR CHRONOLOGY</span>
@@ -625,7 +629,7 @@
     </section>
 
     <!-- Social Responsibility Section -->
-    <section class="social-responsibility bg-light">
+    <section class="social-responsibility bg-light section">
         <div class="container">
             <div class="section-header text-center">
                 <span class="badge-red">CITIZENSHIP</span>
@@ -635,7 +639,7 @@
             
             <div class="sr-grid">
                 <div class="sr-image">
-                    <img src="Images/Community Service.jpg" alt="Students and teachers gardening">
+                    <img src="Images/Community Service.webp" alt="Students and teachers gardening">
                 </div>
                 <div class="sr-content">
                     <h3 class="sr-title">Green Campus, Clean Earth</h3>
@@ -660,7 +664,7 @@
     </section>
 
     <!-- Careers Section -->
-    <section class="careers-section bg-light">
+    <section class="careers-section bg-light section">
         <div class="container">
             <div class="careers-top">
                 <div class="careers-intro">
@@ -724,7 +728,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section bg-white">
+    <section class="contact-section bg-white section">
         <div class="container">
             <div class="section-header text-center">
                 <span class="badge-red">GET IN TOUCH</span>
@@ -774,7 +778,7 @@
                     <div class="info-block">
                         <h4 class="info-title">School Campus Location</h4>
                         <div class="map-wrapper">
-                            <img src="Images/FEATURED LANDMARK.jpg" alt="Map Location" class="map-img">
+                            <img src="Images/FEATURED LANDMARK.webp" alt="Map Location" class="map-img">
                         </div>
                         <p class="info-address">BEL North Gate, Vidyaranyapura, Bangalore &ndash; 560097</p>
                     </div>
@@ -790,7 +794,7 @@
                 <!-- Column 1 -->
                 <div class="footer-col-brand">
                     <div class="footer-logo-box">
-                        <img src="Images/vyasa logo.png" alt="VYASA Logo" class="footer-logo">
+                        <img src="Images/vyasa logo.webp" alt="VYASA Logo" class="footer-logo">
                     </div>
                     <p class="footer-desc">Join thousands of travelers experiencing stress-free trips with Ascape. Where will your next adventure take you?</p>
                     <div class="footer-socials">
@@ -853,3 +857,4 @@
 
 </body>
 </html>
+
