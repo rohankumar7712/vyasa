@@ -244,7 +244,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("active");
                 } else {
-                    entry.target.classList.remove("active");
+                    // Only remove the active class if the element exits from the bottom.
+                    // This prevents a loop where removing the class resets the transform (moving it down),
+                    // which causes it to re-enter the intersection area at the top of the viewport.
+                    if (entry.boundingClientRect.top > 0) {
+                        entry.target.classList.remove("active");
+                    }
                 }
             });
         },
