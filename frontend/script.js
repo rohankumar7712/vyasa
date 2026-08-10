@@ -107,7 +107,11 @@ document.addEventListener("DOMContentLoaded", () => {
         .af-left-col,
         .pedagogy-quote-col,
         .admissions-cta-card,
-        .gallery-img-large
+        .gallery-img-large,
+        .pu-stream-content > div:first-child,
+        .pu-coaching-blue-card,
+        .pu-stats-blue-card,
+        .pu-admissions-guidelines
     `);
 
     revealLeftElements.forEach((element) => {
@@ -122,7 +126,10 @@ document.addEventListener("DOMContentLoaded", () => {
         .af-right-col,
         .pedagogy-cards-col,
         .admissions-steps,
-        .gallery-img-medium
+        .gallery-img-medium,
+        .pu-stream-content > div:last-child,
+        .pu-coaching-light-card,
+        .pu-board-toppers-wrapper
     `);
 
     revealRightElements.forEach((element) => {
@@ -149,7 +156,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .cocurricular-header-split,
         .campus-header-split,
         .admissions-header-split,
-        .faq-header-split
+        .faq-header-split,
+        .pu-section-header,
+        .pu-cta-card
     `);
 
     sectionHeaders.forEach((header) => {
@@ -186,7 +195,14 @@ document.addEventListener("DOMContentLoaded", () => {
         .infra-grid,
         .cocurricular-grid,
         .faq-list,
-        .admissions-steps
+        .admissions-steps,
+        .pu-faculty-grid,
+        .pu-labs-grid,
+        .pu-placement-grid,
+        .pu-faq-list,
+        .pu-admissions-steps,
+        .pu-board-topper-grid,
+        .pu-topper-grid
     `);
 
     staggerGroups.forEach((group) => {
@@ -209,7 +225,14 @@ document.addEventListener("DOMContentLoaded", () => {
             .cocurricular-card,
             .gallery-img-small,
             .step-card,
-            .faq-item
+            .faq-item,
+            .pu-faculty-card,
+            .pu-lab-card,
+            .pu-placement-card,
+            .pu-faq-item,
+            .pu-step-card,
+            .pu-board-topper-card,
+            .pu-topper-card
         `);
 
         // Explicitly map rather than relying strictly on group.children
@@ -262,4 +285,17 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach((element) => {
         revealObserver.observe(element);
     });
+
+
+    // 9. PU College FAQ Accordion
+    const faqItems = document.querySelectorAll('.pu-faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.pu-faq-question-wrap');
+        if (question) {
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        }
+    });
+
 });

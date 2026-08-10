@@ -3231,9 +3231,6 @@ position: absolute;
     color: #1a2b4c;
     font-size: 32px;
     font-weight: 800;
-    margin-bottom: 40px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #eae5df;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -4647,7 +4644,7 @@ position: absolute;
 }
 
 @media (max-width: 991px) {
-    .navbar > .apply-btn {
+    .navbar .apply-btn:not(.mobile-apply-btn), .pu-navbar .pu-apply-btn:not(.mobile-apply-btn) {
         display: none !important;
     }
 }
@@ -4823,7 +4820,7 @@ position: absolute;
 .vis-hero-section .logo,
 .vis-hero-section .menu-btn,
 .vis-hero-section .nav-links,
-.vis-hero-section .navbar > .apply-btn,
+.vis-hero-section .navbar .apply-btn:not(.mobile-apply-btn), .pu-navbar .pu-apply-btn:not(.mobile-apply-btn),
 .vis-hero-section .vis-subtitle,
 .vis-hero-section .vis-heading,
 .vis-hero-section .vis-description,
@@ -4837,7 +4834,7 @@ position: absolute;
 .vis-hero-section .logo,
 .vis-hero-section .menu-btn,
 .vis-hero-section .nav-links,
-.vis-hero-section .navbar > .apply-btn {
+.vis-hero-section .navbar .apply-btn:not(.mobile-apply-btn), .pu-navbar .pu-apply-btn:not(.mobile-apply-btn) {
     animation-name: heroFade;
     animation-duration: 800ms;
     animation-delay: 0ms;
