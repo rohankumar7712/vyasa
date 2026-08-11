@@ -1837,3 +1837,15 @@
         font-size: 20px;
     }
 }
+
+/* --- Granular Mobile Breakpoints --- */
+
+@media (max-width: 576px) {
+    .academics-title { font-size: 32px !important; }
+    .digital-card-title { font-size: 24px; }
+}
+
+@media (max-width: 400px) {
+    .academics-title { font-size: 26px !important; }
+    .digital-glass-card { padding: 15px; }
+}

@@ -49,7 +49,8 @@
 }
 
 .breadcrumbs span {
-    color: #fca311; /* Golden yellow for active part */
+    color: #fca311;
+    /* Golden yellow for active part */
     font-weight: 600;
 }
 
@@ -114,13 +115,16 @@
     padding: 100px 20px;
     font-family: 'Poppins', sans-serif;
 }
+
 .admissions-container {
     max-width: 1200px;
     margin: 0 auto;
 }
+
 .philosophy-header {
     max-width: 800px;
 }
+
 .philosophy-tag {
     font-size: 11px;
     font-weight: 800;
@@ -130,6 +134,7 @@
     text-transform: uppercase;
     display: block;
 }
+
 .philosophy-title {
     font-size: 38px;
     font-weight: 800;
@@ -137,22 +142,26 @@
     margin-bottom: 20px;
     line-height: 1.2;
 }
+
 .philosophy-desc {
     font-size: 16px;
     color: #777;
     line-height: 1.6;
 }
+
 .philosophy-divider {
     border: none;
     height: 1px;
     background-color: #eae5df;
     margin: 50px 0;
 }
+
 .philosophy-stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
+
 .philosophy-stat-card {
     background-color: #fcfcf9;
     border: 1px solid #f0eee3;
@@ -160,10 +169,12 @@
     padding: 40px 30px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .philosophy-stat-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
 }
+
 .stat-number {
     font-size: 46px;
     font-weight: 800;
@@ -171,12 +182,14 @@
     margin-bottom: 20px;
     line-height: 1;
 }
+
 .stat-title {
     font-size: 16px;
     font-weight: 700;
     color: #112d4e;
     margin-bottom: 10px;
 }
+
 .stat-desc {
     font-size: 14px;
     color: #777;
@@ -189,13 +202,16 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 @media (max-width: 768px) {
     .admissions-philosophy-section {
         padding: 60px 20px;
     }
+
     .philosophy-title {
         font-size: 30px;
     }
+
     .philosophy-stats-grid {
         grid-template-columns: 1fr;
     }
@@ -209,6 +225,7 @@
     padding: 100px 20px;
     font-family: 'Poppins', sans-serif;
 }
+
 .roadmap-header {
     display: flex;
     justify-content: space-between;
@@ -216,13 +233,16 @@
     margin-bottom: 25px;
     gap: 40px;
 }
+
 .roadmap-header-left {
     flex: 1;
 }
+
 .roadmap-header-right {
     flex: 1;
     max-width: 500px;
 }
+
 .roadmap-tag {
     font-size: 11px;
     font-weight: 800;
@@ -232,6 +252,7 @@
     text-transform: uppercase;
     display: block;
 }
+
 .roadmap-title {
     font-size: 42px;
     font-weight: 800;
@@ -239,6 +260,7 @@
     line-height: 1.2;
     margin: 0;
 }
+
 .roadmap-desc {
     font-size: 15px;
     color: #666;
@@ -246,40 +268,47 @@
     margin: 0;
     padding-bottom: 10px;
 }
+
 .roadmap-divider {
     border: none;
     height: 1px;
-    background-color: rgba(0,0,0,0.06);
+    background-color: rgba(0, 0, 0, 0.06);
     margin: 0 0 50px 0;
 }
+
 .roadmap-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
+
 .roadmap-card {
     background-color: white;
     border-radius: 20px;
     padding: 35px 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .roadmap-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
+
 .roadmap-card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
 }
+
 .roadmap-stage {
     font-size: 12px;
     font-weight: 800;
     color: #c89f53;
     letter-spacing: 1px;
 }
+
 .roadmap-num {
     display: flex;
     align-items: center;
@@ -292,12 +321,14 @@
     font-size: 10px;
     font-weight: 800;
 }
+
 .roadmap-card-title {
     font-size: 20px;
     font-weight: 800;
     color: #112d4e;
     margin-bottom: 12px;
 }
+
 .roadmap-card-desc {
     font-size: 14px;
     color: #777;
@@ -310,23 +341,28 @@
     .roadmap-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .roadmap-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
     }
+
     .roadmap-header-right {
         max-width: 100%;
         padding-bottom: 0;
     }
 }
+
 @media (max-width: 768px) {
     .roadmap-grid {
         grid-template-columns: 1fr;
     }
+
     .roadmap-title {
         font-size: 32px;
     }
+
     .admissions-roadmap-section {
         padding: 60px 20px;
     }
@@ -340,49 +376,52 @@
     padding: 100px 20px;
     font-family: 'Poppins', sans-serif;
 }
+
 .eligibility-table-container {
     width: 100%;
     overflow-x: auto;
     border-radius: 15px;
     border: 1px solid #f0eee3;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
 }
+
 .eligibility-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 800px; /* Forces scroll on very small screens so layout doesn't break */
+    min-width: 800px;
+    /* Forces scroll on very small screens so layout doesn't break */
     background-color: white;
 }
+
 .eligibility-table thead {
     background-color: #034b72;
     color: white;
 }
+
 .eligibility-table th {
     text-align: left;
     padding: 20px 25px;
     font-size: 14px;
     font-weight: 700;
 }
+
 .eligibility-table td {
     padding: 25px;
     font-size: 14px;
     color: #777;
     border-bottom: 1px solid #f0eee3;
 }
+
 .eligibility-table tbody tr:last-child td {
     border-bottom: none;
 }
+
 .grade-col {
     font-weight: 700;
     color: #112d4e !important;
 }
 
-/* Responsive Adjustments for Eligibility */
-@media (max-width: 768px) {
-    .admissions-eligibility-section {
-        padding: 60px 20px;
-    }
-}
+
 
 /* ---------------------------------------------------------
    Financial Guide
@@ -392,52 +431,62 @@
     padding: 100px 20px;
     font-family: 'Poppins', sans-serif;
 }
+
 .financial-table {
     width: 100%;
     border-collapse: collapse;
     min-width: 800px;
     background-color: white;
 }
+
 .financial-table thead {
     background-color: #111a3b;
     color: white;
 }
+
 .financial-table th {
     text-align: left;
     padding: 20px 25px;
     font-size: 14px;
     font-weight: 700;
 }
+
 .financial-table th.text-right,
 .financial-table td.total-col {
     text-align: right;
 }
+
 .financial-table td {
     padding: 25px;
     font-size: 14px;
     color: #888;
     border-bottom: 1px solid #f0eee3;
 }
+
 .financial-table tbody tr:last-child td {
     border-bottom: none;
 }
+
 .total-col {
     font-weight: 800 !important;
     color: #034b72 !important;
 }
+
 .financial-note {
     background-color: white;
     border-radius: 12px;
     padding: 20px 30px;
     margin-top: 30px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
 }
+
 .financial-note p {
     margin: 0;
     font-size: 13px;
     color: #777;
     line-height: 1.6;
 }
+
 .financial-note strong {
     color: #034b72;
 }
@@ -446,6 +495,86 @@
 @media (max-width: 768px) {
     .admissions-financial-section {
         padding: 60px 20px;
+    }
+
+    .admissions-eligibility-section {
+        padding: 60px 20px;
+    }
+
+    .eligibility-table-container {
+        border: none;
+        box-shadow: none;
+        background: transparent;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .eligibility-table,
+    .financial-table {
+        min-width: 0;
+        width: 100%;
+        display: block;
+        background: transparent;
+    }
+
+    .eligibility-table thead,
+    .financial-table thead {
+        display: none;
+    }
+
+    .eligibility-table tbody,
+    .eligibility-table tr,
+    .financial-table tbody,
+    .financial-table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .eligibility-table tr,
+    .financial-table tr {
+        background-color: white;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        border: 1px solid #f0eee3;
+        overflow: hidden;
+    }
+
+    .eligibility-table td,
+    .financial-table td,
+    .financial-table td.total-col {
+        display: flex;
+        flex-direction: column;
+        padding: 15px 20px;
+        text-align: left;
+        border-bottom: 1px solid #f0eee3;
+    }
+
+    .eligibility-table td:last-child,
+    .financial-table td:last-child {
+        border-bottom: none;
+    }
+
+    .eligibility-table td::before,
+    .financial-table td::before {
+        content: attr(data-label);
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #034b72;
+        letter-spacing: 0.5px;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    .grade-col {
+        font-size: 16px;
+        background-color: #034b72;
+        color: white !important;
+    }
+
+    .grade-col::before {
+        color: rgba(255, 255, 255, 0.8) !important;
     }
 }
 
@@ -457,11 +586,13 @@
     padding: 100px 20px;
     font-family: 'Poppins', sans-serif;
 }
+
 .aid-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
+
 .aid-card {
     background-color: #fcfcf9;
     border: 1px solid #f0eee3;
@@ -471,16 +602,19 @@
     display: flex;
     flex-direction: column;
 }
+
 .aid-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
 }
+
 .aid-card-title {
     font-size: 22px;
     font-weight: 800;
     color: #112d4e;
     margin-bottom: 15px;
 }
+
 .aid-card-desc {
     font-size: 14px;
     color: #777;
@@ -488,6 +622,7 @@
     margin-bottom: 30px;
     flex-grow: 1;
 }
+
 .aid-badge {
     display: inline-block;
     align-self: flex-start;
@@ -507,10 +642,12 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 @media (max-width: 768px) {
     .admissions-aid-section {
         padding: 60px 20px;
     }
+
     .aid-grid {
         grid-template-columns: 1fr;
     }
@@ -524,22 +661,26 @@
     padding: 100px 20px;
     font-family: 'Poppins', sans-serif;
 }
+
 .documentation-content {
     display: flex;
     align-items: center;
     gap: 60px;
 }
+
 .documentation-list {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
+
 .doc-item {
     display: flex;
     align-items: center;
     gap: 15px;
 }
+
 .doc-bullet {
     width: 16px;
     height: 16px;
@@ -547,20 +688,23 @@
     border-radius: 50%;
     flex-shrink: 0;
 }
+
 .doc-text {
     font-size: 15px;
     font-weight: 700;
     color: #112d4e;
 }
+
 .documentation-image {
     flex: 1;
 }
+
 .documentation-image img {
     width: 100%;
     height: auto;
     border-radius: 20px;
     object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 /* Responsive adjustments */
@@ -569,10 +713,12 @@
         flex-direction: column;
         gap: 40px;
     }
+
     .documentation-image {
         width: 100%;
     }
 }
+
 @media (max-width: 768px) {
     .admissions-documentation-section {
         padding: 60px 20px;
@@ -587,11 +733,13 @@
     padding: 100px 20px;
     font-family: 'Poppins', sans-serif;
 }
+
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
 }
+
 .calendar-card {
     background-color: #fcfcf9;
     border: 1px solid #f0eee3;
@@ -599,10 +747,12 @@
     padding: 35px 25px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .calendar-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
 }
+
 .calendar-date {
     font-size: 16px;
     font-weight: 800;
@@ -610,12 +760,14 @@
     margin-bottom: 15px;
     margin-top: 0;
 }
+
 .calendar-card-title {
     font-size: 18px;
     font-weight: 800;
     color: #112d4e;
     margin-bottom: 12px;
 }
+
 .calendar-card-desc {
     font-size: 13px;
     color: #777;
@@ -629,10 +781,12 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 @media (max-width: 768px) {
     .admissions-calendar-section {
         padding: 60px 20px;
     }
+
     .calendar-grid {
         grid-template-columns: 1fr;
     }
@@ -646,26 +800,31 @@
     padding: 100px 20px;
     font-family: 'Poppins', sans-serif;
 }
+
 .campus-content {
     display: flex;
     align-items: center;
     gap: 60px;
 }
+
 .campus-text-side {
     flex: 1;
 }
+
 .campus-divider {
     border: none;
     height: 1px;
-    background-color: rgba(0,0,0,0.06);
+    background-color: rgba(0, 0, 0, 0.06);
     margin: 25px 0;
 }
+
 .campus-desc {
     font-size: 15px;
     color: #666;
     line-height: 1.6;
     margin-bottom: 35px;
 }
+
 .campus-btn {
     display: inline-block;
     background-color: #034b72;
@@ -677,19 +836,22 @@
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
 .campus-btn:hover {
     background-color: #023652;
     transform: translateY(-2px);
 }
+
 .campus-img-side {
     flex: 1;
 }
+
 .campus-img-side img {
     width: 100%;
     height: auto;
     border-radius: 20px;
     object-fit: cover;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 /* ---------------------------------------------------------
@@ -700,21 +862,25 @@
     padding: 50px 20px;
     font-family: 'Poppins', sans-serif;
 }
+
 .prospectus-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
 }
+
 .prospectus-text {
     flex: 1;
 }
+
 .prospectus-title {
     color: white;
     font-size: 24px;
     font-weight: 800;
     margin-bottom: 10px;
 }
+
 .prospectus-desc {
     color: #a0a6be;
     font-size: 14px;
@@ -722,6 +888,7 @@
     margin: 0;
     max-width: 600px;
 }
+
 .prospectus-btn {
     display: inline-block;
     background-color: transparent;
@@ -735,6 +902,7 @@
     transition: background-color 0.3s ease, color 0.3s ease;
     white-space: nowrap;
 }
+
 .prospectus-btn:hover {
     background-color: white;
     color: #111a3b;
@@ -749,12 +917,14 @@
     text-align: center;
     font-family: 'Poppins', sans-serif;
 }
+
 .final-cta-title {
     color: white;
     font-size: 32px;
     font-weight: 800;
     margin-bottom: 15px;
 }
+
 .final-cta-desc {
     color: rgba(255, 255, 255, 0.9);
     font-size: 15px;
@@ -762,6 +932,7 @@
     margin: 0 auto 35px auto;
     line-height: 1.6;
 }
+
 .final-cta-btn {
     display: inline-block;
     background-color: white;
@@ -773,9 +944,10 @@
     text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .final-cta-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive adjustments */
@@ -784,22 +956,27 @@
         flex-direction: column;
         gap: 40px;
     }
+
     .prospectus-container {
         flex-direction: column;
         text-align: center;
     }
+
     .prospectus-desc {
         margin: 0 auto;
     }
 }
+
 @media (max-width: 768px) {
     .admissions-campus-section {
         padding: 60px 20px;
     }
+
     .admissions-prospectus-section,
     .admissions-final-cta-section {
         padding: 50px 20px;
     }
+
     .final-cta-title {
         font-size: 26px;
     }
@@ -813,19 +990,23 @@
     padding: 100px 20px;
     font-family: 'Poppins', sans-serif;
 }
+
 .commute-content {
     display: flex;
     align-items: center;
     gap: 50px;
 }
+
 .commute-text-side {
     flex: 1.2;
 }
+
 .commute-routes {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
+
 .commute-route-card {
     display: flex;
     justify-content: space-between;
@@ -836,26 +1017,31 @@
     padding: 20px 25px;
     transition: transform 0.2s ease;
 }
+
 .commute-route-card:hover {
     transform: translateX(5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
 }
+
 .commute-route-title {
     font-size: 16px;
     font-weight: 800;
     color: #112d4e;
     margin-bottom: 5px;
 }
+
 .commute-route-stops {
     font-size: 12px;
     color: #888;
     margin: 0;
 }
+
 .commute-route-time {
     font-size: 14px;
     font-weight: 800;
     color: #c89f53;
 }
+
 .commute-img-side {
     flex: 1;
 }
@@ -866,6 +1052,7 @@
         flex-direction: column;
     }
 }
+
 @media (max-width: 768px) {
     .admissions-commute-section {
         padding: 60px 20px;
@@ -880,14 +1067,17 @@
     padding: 100px 20px;
     font-family: 'Poppins', sans-serif;
 }
+
 .boarding-content {
     display: flex;
     align-items: center;
     gap: 60px;
 }
+
 .boarding-img-side {
     flex: 1;
 }
+
 .boarding-text-side {
     flex: 1.2;
 }
@@ -909,26 +1099,33 @@
     padding: 100px 20px;
     font-family: 'Poppins', sans-serif;
 }
-.admissions-campus-section { /* Override to White so it alternates */
+
+.admissions-campus-section {
+    /* Override to White so it alternates */
     background-color: white !important;
 }
+
 .advisor-content {
     display: flex;
     align-items: center;
     gap: 60px;
 }
+
 .advisor-text-side {
     flex: 1;
 }
+
 .advisor-form-side {
     flex: 1;
 }
+
 .inquiry-card {
     background-color: white;
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
+
 .inquiry-input {
     width: 100%;
     padding: 15px 20px;
@@ -940,9 +1137,11 @@
     outline: none;
     box-sizing: border-box;
 }
+
 .inquiry-input:focus {
     border-color: #034b72;
 }
+
 .inquiry-submit-btn {
     width: 100%;
     background-color: #034b72;
@@ -955,6 +1154,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 .inquiry-submit-btn:hover {
     background-color: #023652;
 }
@@ -964,17 +1164,49 @@
     .boarding-content {
         flex-direction: column-reverse;
     }
+
     .advisor-content {
         flex-direction: column;
     }
 }
+
 @media (max-width: 768px) {
+
     .admissions-boarding-section,
     .admissions-faqs-section,
     .admissions-advisor-section {
         padding: 60px 20px;
     }
+
     .inquiry-card {
         padding: 30px 20px;
+    }
+}
+
+/* --- Granular Mobile Breakpoints --- */
+
+@media (max-width: 576px) {
+    .admissions-title {
+        font-size: 32px !important;
+    }
+
+    .boarding-title,
+    .advisor-title {
+        font-size: 28px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .admissions-title {
+        font-size: 26px !important;
+    }
+
+    .boarding-title,
+    .advisor-title {
+        font-size: 24px !important;
+    }
+
+    .inquiry-card {
+        padding: 20px 15px;
     }
 }

@@ -14,7 +14,7 @@ body {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background-image: url('Images/Campus.jpg');
+    background-image: url('Images/Campus.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1081,5 +1081,36 @@ body {
     }
     .pu-step-num {
         margin-bottom: 10px;
+    }
+}
+
+/* --- Granular Mobile Breakpoints --- */
+
+@media (max-width: 576px) {
+    .pu-title { font-size: 32px !important; }
+    .pu-section-title { font-size: 28px !important; }
+    .pu-stream-title { font-size: 22px !important; }
+    
+    .pu-faculty-card,
+    .pu-lab-card,
+    .pu-placement-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .pu-title { font-size: 26px !important; }
+    .pu-section-title { font-size: 24px !important; }
+    .pu-subtitle { font-size: 14px !important; }
+    
+    .pu-faculty-card,
+    .pu-lab-card,
+    .pu-placement-card {
+        padding: 15px;
+        border-radius: 12px;
+    }
+    
+    .pu-faculty-img {
+        border-radius: 12px 12px 0 0;
     }
 }

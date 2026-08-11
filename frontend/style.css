@@ -69,9 +69,6 @@ body, html {
 }
 
 
-
-
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -1660,13 +1657,19 @@ body, html {
     gap: 40px;
 }
 
+.leadership-card {
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 15px 35px rgba(11, 58, 98, 0.08);
+    overflow: hidden;
+}
+
 .leadership-img {
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(11, 58, 98, 0.08);
-    margin-bottom: 25px;
+    border-radius: 20px 20px 0 0;
+    margin-bottom: 20px;
     display: block;
 }
 
@@ -1676,6 +1679,7 @@ body, html {
     font-weight: 700;
     color: var(--brand-blue);
     margin: 0 0 8px 0;
+    padding: 0 25px;
 }
 
 .leadership-role {
@@ -1687,6 +1691,7 @@ body, html {
     letter-spacing: 0.5px;
     display: block;
     margin-bottom: 12px;
+    padding: 0 25px;
 }
 
 .leadership-desc {
@@ -1695,6 +1700,7 @@ body, html {
     color: rgba(11, 17, 38, 0.6);
     line-height: 1.7;
     margin: 0;
+    padding: 0 25px 25px 25px;
 }
 
 /* --- Alumni Section --- */
@@ -3138,7 +3144,7 @@ body, html {
     position: relative;
     width: 100%;
     min-height: 80vh;
-    background-image: url('Images/Campus.jpg');
+    background-image: url('Images/Campus.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -3151,7 +3157,7 @@ position: absolute;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(11, 36, 66, 0.8) 0%, rgba(11, 36, 66, 0.4) 100%);
+    background: rgba(17, 29, 74, 0.65);
     z-index: 1;
 }
 
@@ -3330,7 +3336,7 @@ position: absolute;
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background-image: url('Images/Campus.jpg');
+    background-image: url('Images/Campus.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -3343,7 +3349,7 @@ position: absolute;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(11, 36, 66, 0.9) 0%, rgba(11, 36, 66, 0.5) 100%);
+    background: rgba(17, 29, 74, 0.65);
     z-index: 1;
 }
 
@@ -4598,8 +4604,9 @@ position: absolute;
         height: 100vh;
         background-color: white;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        padding-top: 100px;
         gap: 30px;
         z-index: 105;
         transition: 0.3s ease;
@@ -5167,5 +5174,102 @@ position: absolute;
     .article-card:hover,
     .resource-card:hover {
         transform: none;
+    }
+}
+
+/* --- Granular Mobile Breakpoints for Navbar and Cards --- */
+
+@media (max-width: 1200px) {
+    /* Prevent navbar items from overlapping on smaller laptops */
+    .navbar {
+        padding: 10px 15px;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .nav-links a {
+        font-size: 12px;
+    }
+    .apply-btn {
+        padding: 10px 15px;
+        font-size: 11px;
+    }
+    .logo img {
+        height: 32px;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Navbar refinements */
+    .navbar {
+        padding: 10px 15px;
+    }
+    .logo img {
+        height: 35px;
+    }
+    .menu-btn {
+        font-size: 24px;
+        margin-left: 10px;
+    }
+    .nav-links {
+        width: 250px;
+        padding: 20px;
+    }
+    
+    /* Card refinements */
+    .leadership-name, 
+    .leadership-role {
+        padding: 0 15px;
+    }
+    .leadership-desc {
+        padding: 0 15px 20px 15px;
+    }
+    
+    .alumni-card-body {
+        padding: 20px;
+    }
+
+    .section-title, .hero-title, .academics-title, .pu-section-title {
+        font-size: 32px !important;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 400px) {
+    /* iPhone Mini & smaller */
+    .navbar {
+        padding: 8px 12px;
+    }
+    .logo img {
+        height: 28px;
+    }
+    .menu-btn {
+        font-size: 22px;
+        margin-left: auto;
+    }
+    
+    /* Ensure no card overflows */
+    .leadership-card,
+    .alumni-card,
+    .feature-card,
+    .achievement-card {
+        border-radius: 12px;
+    }
+    
+    .leadership-img {
+        border-radius: 12px 12px 0 0;
+    }
+    
+    .alumni-name { font-size: 16px; }
+    .alumni-role { font-size: 11px; }
+    
+    /* Adjust global section padding */
+    .section, 
+    section {
+        padding: 30px 0 !important;
+    }
+    
+    .section-title, .hero-title, .academics-title, .pu-section-title {
+        font-size: 26px !important;
     }
 }

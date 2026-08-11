@@ -1453,3 +1453,28 @@
         padding-bottom: 0;
     }
 }
+
+/* --- Granular Mobile Breakpoints --- */
+
+@media (max-width: 576px) {
+    .vis-hero-title { font-size: 32px !important; }
+    .vis-section-title { font-size: 28px !important; }
+    
+    .vis-philosophy-card,
+    .vis-program-card,
+    .vis-feature-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .vis-hero-title { font-size: 26px !important; }
+    .vis-section-title { font-size: 24px !important; }
+    
+    .vis-philosophy-card,
+    .vis-program-card,
+    .vis-feature-card {
+        padding: 15px;
+        border-radius: 12px;
+    }
+}
