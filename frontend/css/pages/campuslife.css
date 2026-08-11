@@ -1,0 +1,748 @@
+/* --- Base Layout --- */
+.section {
+    padding: 80px 0;
+}
+
+/* --- Campus Life Hero Section --- */
+.campus-hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../Images/Campus.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.campus-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8));
+    z-index: 1;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.campus-hero-content {
+    text-align: left;
+    padding-top: 100px;
+    max-width: 800px;
+    padding-bottom: 80px;
+}
+
+.campus-badge {
+    display: inline-block;
+    border: 1px solid #d4af37;
+    color:  #f4f4f4;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.campus-title {
+    color: #ffffff;
+    font-size: 72px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 25px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.campus-subtitle {
+    color: #e8e8e8;
+    font-family: 'Gupter', serif;
+    font-size: 24px;
+    line-height: 1.6;
+    max-width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .campus-title {
+        font-size: 48px;
+    }
+    .campus-subtitle {
+        font-size: 18px;
+    }
+    .campus-hero-content {
+        padding-top: 60px;
+    }
+}
+
+/* --- Campus Environment Section --- */
+.campus-env-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e8e0d5;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.campus-env-title-wrap {
+    flex: 1;
+    min-width: 300px;
+}
+
+.campus-env-label {
+    display: block;
+    color: #e53935; /* Red color */
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.campus-env-title {
+    color: #0b2240; /* Dark blue */
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.campus-env-desc-wrap {
+    flex: 0 0 45%;
+    min-width: 300px;
+}
+
+.campus-env-desc {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.campus-env-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    grid-auto-rows: 1fr;
+}
+
+.env-card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.env-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.env-card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.env-card-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.env-card-title {
+    color: #0b2240;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.env-card-desc {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .campus-env-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .campus-env-desc-wrap {
+        flex: 1;
+        width: 100%;
+    }
+    
+    .campus-env-title {
+        font-size: 32px;
+    }
+}
+
+/* --- Co-Curricular Section --- */
+.co-curricular-divider {
+    height: 1px;
+    background-color: #f0f0f0;
+    margin-bottom: 50px;
+}
+
+.co-curricular-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.co-curricular-card {
+    display: flex;
+    background-color: #fcfbf9;
+    border: 1px solid #f0e6d6;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.co-curricular-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.cc-card-img {
+    width: 250px;
+    min-height: 220px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.cc-card-content {
+    padding: 35px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.cc-badge {
+    align-self: flex-start;
+    display: inline-block;
+    border: 1px solid #d4af37;
+    color: #0b2240;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    background-color: #fff;
+}
+
+.cc-card-title {
+    color: #0b2240;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.cc-card-desc {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .co-curricular-card {
+        flex-direction: column;
+    }
+    
+    .cc-card-img {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .co-curricular-title {
+        font-size: 32px;
+    }
+}
+
+/* --- Leadership Section --- */
+.bg-dark-blue {
+    background-color: #053c65; /* Vyasa dark blue from screenshot */
+}
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.leadership-left-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.leadership-card-title {
+    color: #0b2240;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.club-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.club-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.club-item:first-child {
+    padding-top: 0;
+}
+
+.club-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.club-title {
+    color: #e53935;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.club-desc {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.leadership-right-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.leadership-program-card {
+    background-color: rgba(255, 255, 255, 0.08); /* Transparent light overlay */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.leadership-program-card:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    transform: translateX(-5px);
+}
+
+.program-icon {
+    background-color: #e53935;
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.program-title {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.program-desc {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .leadership-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Events Timeline Section --- */
+.event-card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 0; /* Explicitly remove any padding */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.event-card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    padding: 0; /* Explicitly remove any padding */
+    margin: 0;
+    display: block;
+}
+
+.event-card-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.event-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.event-badge {
+    display: inline-block;
+    border: 1px solid #d4af37;
+    color: #0b2240;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.event-date {
+    color: #e53935; /* Red color */
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.event-card-title {
+    color: #0b2240;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.event-card-desc {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Global Exposures Section --- */
+.global-exposure-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.global-exposure-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+.exposure-img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    aspect-ratio: 4/3;
+}
+
+.global-exposure-content {
+    flex: 1;
+}
+
+.exposure-label {
+    display: block;
+    color: #e53935;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.exposure-title {
+    color: #0b2240;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
+}
+
+.exposure-desc {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 30px 0;
+}
+
+.exposure-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exposure-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    color: #0b2240;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.exposure-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 6px;
+    height: 6px;
+    background-color: #d4af37; /* Gold bullet point */
+    border-radius: 50%;
+}
+
+@media (max-width: 992px) {
+    .global-exposure-wrapper {
+        flex-direction: column;
+    }
+    
+    .global-exposure-image {
+        max-width: 100%;
+    }
+    
+    .exposure-title {
+        font-size: 32px;
+    }
+}
+
+/* --- Student Wellbeing Section --- */
+.wellbeing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.wellbeing-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.wellbeing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.wellbeing-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fdf6ea; /* Very light yellow/orange */
+    color: #d4af37; /* Gold/yellow icon color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.wellbeing-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.wellbeing-card-title {
+    color: #0b2240;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.wellbeing-card-desc {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Vyasa Pride Section --- */
+.pride-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.pride-card {
+    background-color: #fdfcf9; /* Off-white */
+    border: 1px solid #f0e9dc; /* Light beige/gold border */
+    border-radius: 20px;
+    padding: 35px 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pride-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.pride-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.pride-category {
+    color: #e53935; /* Red */
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pride-badge {
+    display: inline-block;
+    border: 1px solid #d4af37; /* Gold */
+    color: #0b2240; /* Dark blue */
+    background-color: transparent;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.pride-name {
+    color: #0b2240;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+
+.pride-desc {
+    color: #666;
+    font-family: 'Gupter', serif; /* Serif font for description */
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Alumni Section --- */
+.alumni-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.alumni-card {
+    background-color: rgba(255, 255, 255, 0.05); /* Slight transparent white over dark background */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.alumni-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.alumni-name {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.alumni-role {
+    display: block;
+    color: #d4af37; /* Gold */
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 25px;
+}
+
+.alumni-quote {
+    color: #e5e7eb;
+    font-family: 'Gupter', serif; /* Serif font for quote */
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Gallery Section --- */
+.gallery-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+}
+
+.gallery-stack-img {
+    width: calc(50% - 10px); /* 2 column layout with 20px gap */
+    height: 350px; /* Slightly taller for 2 columns */
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-stack-img:hover {
+    transform: scale(1.01);
+}
+
+@media (max-width: 992px) {
+    .gallery-stack-img {
+        height: 300px;
+    }
+}
+@media (max-width: 768px) {
+    .gallery-stack-img {
+        width: 100%; /* Stack vertically on smaller screens */
+        height: 250px;
+    }
+}
