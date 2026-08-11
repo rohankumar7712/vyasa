@@ -1,0 +1,420 @@
+/* --- PU College Detail CSS --- */
+.section {
+    padding: 80px 0;
+}
+
+body.bg-light-beige {
+    background-color: #f6f5f0;
+}
+
+.nav-wrapper {
+    padding-top: 36px;
+    padding-bottom: 36px;
+}
+
+.pu-detail-hero {
+    padding-bottom: 80px;
+}
+
+.pu-hero-card {
+    position: relative;
+    width: 100%;
+    min-height: 550px;
+    border-radius: 30px;
+    background-image: url('../../Images/Campus.webp');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.pu-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(20, 35, 60, 0.9) 0%, rgba(30, 50, 80, 0.6) 100%);
+    z-index: 1;
+}
+
+.pu-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 60px 80px;
+    width: 100%;
+    color: #ffffff;
+}
+
+.pu-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    background: #ffffff;
+    color: #1a2b4c;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 30px;
+    gap: 8px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #00c853; /* Vibrant green */
+    border-radius: 50%;
+}
+
+.pu-hero-title {
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 800;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.1;
+    color: #ffffff;
+}
+
+.pu-hero-desc {
+    font-size: 18px;
+    max-width: 650px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    font-family: 'Geist', sans-serif;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.pu-hero-stats {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.stat-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    color: #ffb703; /* Gold/Yellow */
+    font-size: 28px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    font-family: 'Geist', sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pu-hero-content {
+        padding: 40px 30px;
+    }
+    
+    .pu-hero-stats {
+        gap: 30px;
+    }
+    
+    .nav-wrapper {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+/* --- Academic Programmes Section --- */
+.pu-streams-section {
+    padding: 60px 0 100px 0;
+}
+
+.pu-streams-header {
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+.pu-streams-label {
+    display: block;
+    color: var(--brand-red, #ea3636);
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.pu-streams-title {
+    color: var(--brand-blue, #1a2b4c);
+    font-size: clamp(32px, 4vw, 42px);
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.pu-streams-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.pu-stream-card {
+    border-radius: 20px;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-science {
+    background-color: #ffffff;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.03);
+}
+
+.card-commerce {
+    background-color: rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+.stream-title {
+    color: var(--brand-blue, #1a2b4c);
+    font-size: 26px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+}
+
+.stream-desc {
+    font-family: 'Geist', sans-serif;
+    color: rgba(0,0,0,0.6);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.stream-divider {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    margin: 0 0 30px 0;
+}
+
+.stream-core-label {
+    display: block;
+    color: var(--brand-red, #ea3636);
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.stream-subjects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.subject-pill {
+    background-color: #f0f0f0;
+    color: #444;
+    font-family: 'Geist', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.subject-pill.bg-white {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.stream-footer-text {
+    font-family: 'Geist', sans-serif;
+    color: rgba(0,0,0,0.5);
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    margin-top: auto;
+}
+
+.stream-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--brand-red, #ea3636);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.stream-link:hover {
+    transform: translateX(5px);
+}
+
+@media (max-width: 992px) {
+    .pu-streams-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .pu-stream-card {
+        padding: 30px;
+    }
+}
+
+/* --- Why Choose Section --- */
+.pu-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.pu-feature-card {
+    background-color: #f7f5f0;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pu-feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.feature-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.feature-content {
+    padding: 30px;
+}
+
+.feature-title {
+    color: var(--brand-blue, #1a2b4c);
+    font-size: 20px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 12px;
+}
+
+.feature-desc {
+    font-family: 'Geist', sans-serif;
+    color: rgba(0,0,0,0.6);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .pu-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .pu-features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- CTA Banner Section --- */
+.cta-banner-section {
+    padding: 40px 0 80px 0;
+}
+
+.cta-banner-card {
+    background-color: var(--brand-blue, #1a2b4c);
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 20px 40px rgba(26, 43, 76, 0.15);
+}
+
+.cta-banner-title {
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.cta-banner-desc {
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: rgba(255,255,255,0.8);
+}
+
+.cta-banner-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background-color: var(--brand-red, #ea3636);
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #d12e2e;
+}
+
+.btn-outline-white {
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255,0.8);
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-white:hover {
+    background-color: #ffffff;
+    color: var(--brand-blue, #1a2b4c);
+}
+
+@media (max-width: 768px) {
+    .cta-banner-card {
+        padding: 40px 20px;
+    }
+}
+

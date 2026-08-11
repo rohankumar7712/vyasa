@@ -1,0 +1,465 @@
+/* --- International School Detail CSS --- */
+
+body.bg-light-beige {
+    background-color: #f6f5f0;
+}
+
+.intl-detail-hero {
+    padding-bottom: 80px;
+}
+
+.intl-hero-card {
+    position: relative;
+    width: 100%;
+    min-height: 550px;
+    border-radius: 30px;
+    background-image: url('../../Images/Campus.webp');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.intl-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(20, 35, 60, 0.8) 0%, rgba(30, 50, 80, 0.5) 100%);
+    z-index: 1;
+}
+
+.intl-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 60px 80px 30px 80px;
+    width: 100%;
+    color: #ffffff;
+    flex-grow: 1;
+}
+
+.intl-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    background: #ffffff;
+    color: #1a2b4c;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 30px;
+    gap: 8px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #00c853;
+    border-radius: 50%;
+}
+
+.intl-hero-title {
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 800;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.1;
+    color: #ffffff;
+}
+
+.intl-hero-desc {
+    font-size: 16px;
+    max-width: 800px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    font-family: 'Geist', sans-serif;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Stats Pill at the bottom */
+.intl-hero-stats-pill {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    display: inline-flex;
+    margin: 0 0 40px 80px;
+    padding: 20px 40px;
+    gap: 40px;
+    align-self: flex-start;
+}
+
+.stat-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-divider {
+    border-left: 1px solid rgba(0,0,0,0.1);
+    padding-left: 40px;
+}
+
+.stat-number {
+    color: #1a2b4c;
+    font-size: 24px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 13px;
+    font-family: 'Geist', sans-serif;
+    font-weight: 600;
+    color: #ea3636;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .intl-hero-stats-pill {
+        flex-direction: column;
+        gap: 20px;
+        margin: 0 40px 40px 40px;
+        align-self: stretch;
+    }
+    .stat-divider {
+        border-left: none;
+        border-top: 1px solid rgba(0,0,0,0.1);
+        padding-left: 0;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .intl-hero-content {
+        padding: 40px 30px 20px 30px;
+    }
+    .intl-hero-stats-pill {
+        margin: 0 30px 30px 30px;
+        padding: 20px 30px;
+    }
+}
+
+/* --- Philosophy Section --- */
+.intl-philosophy-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.intl-philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.philosophy-label {
+    display: block;
+    color: var(--brand-red, #ea3636);
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+
+.philosophy-title {
+    color: var(--brand-blue, #1a2b4c);
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.philosophy-desc {
+    font-family: 'Geist', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(0,0,0,0.7);
+    margin-bottom: 40px;
+    max-width: 550px;
+}
+
+.philosophy-quote-box {
+    border-left: 3px solid var(--brand-red, #ea3636);
+    padding-left: 20px;
+}
+
+.philosophy-quote {
+    font-family: 'Geist', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--brand-blue, #1a2b4c);
+    margin-bottom: 15px;
+}
+
+.philosophy-quote-label {
+    display: block;
+    color: var(--brand-red, #ea3636);
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.philosophy-image-wrapper {
+    position: relative;
+    border-radius: 30px;
+    overflow: visible;
+}
+
+.philosophy-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.estd-badge {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background-color: var(--brand-red, #ea3636);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 10px 20px rgba(234, 54, 54, 0.3);
+    text-align: center;
+    border: 6px solid #ffffff;
+}
+
+@media (max-width: 992px) {
+    .intl-philosophy-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .estd-badge {
+        width: 80px;
+        height: 80px;
+        font-size: 12px;
+        top: -10px;
+        right: -10px;
+        border-width: 4px;
+    }
+}
+
+/* --- Curriculum Section --- */
+.intl-curriculum-section {
+    padding: 60px 0 100px 0;
+}
+
+.intl-section-header {
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+.intl-section-label {
+    display: block;
+    color: var(--brand-red, #ea3636);
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.intl-section-title {
+    color: var(--brand-blue, #1a2b4c);
+    font-size: clamp(32px, 4vw, 42px);
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.intl-curriculum-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.curriculum-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.curriculum-card.full-width {
+    grid-column: 1 / -1;
+}
+
+.curriculum-card.full-width .curriculum-img {
+    height: 400px;
+}
+
+.curriculum-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.curriculum-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.curriculum-title {
+    color: var(--brand-blue, #1a2b4c);
+    font-size: 24px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+}
+
+.curriculum-desc {
+    font-family: 'Geist', sans-serif;
+    color: rgba(0,0,0,0.6);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.curriculum-link {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--brand-red, #ea3636);
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.curriculum-link:hover {
+    transform: translateX(5px);
+}
+
+@media (max-width: 992px) {
+    .intl-curriculum-grid {
+        grid-template-columns: 1fr;
+    }
+    .curriculum-card.full-width {
+        grid-column: 1;
+    }
+    .curriculum-card.full-width .curriculum-img {
+        height: 250px;
+    }
+}
+@media (max-width: 768px) {
+    .curriculum-content {
+        padding: 30px;
+    }
+}
+
+/* --- CTA Banner Section --- */
+.cta-banner-section {
+    padding: 40px 0 80px 0;
+}
+
+.cta-banner-card {
+    background-color: var(--brand-blue, #1a2b4c);
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 20px 40px rgba(26, 43, 76, 0.15);
+}
+
+.cta-banner-title {
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+    color: #ffffff;
+    line-height: 1.2;
+}
+
+.cta-banner-desc {
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    color: rgba(255,255,255,0.8);
+}
+
+.cta-banner-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background-color: var(--brand-red, #ea3636);
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #d12e2e;
+}
+
+.btn-outline-white {
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255,0.8);
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-white:hover {
+    background-color: #ffffff;
+    color: var(--brand-blue, #1a2b4c);
+}
+
+@media (max-width: 768px) {
+    .cta-banner-card {
+        padding: 40px 20px;
+    }
+}
