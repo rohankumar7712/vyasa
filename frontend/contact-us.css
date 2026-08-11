@@ -1,0 +1,997 @@
+/* =========================================================
+   CONTACT US PAGE STYLES
+========================================================= */
+
+/* Contact Us Hero Section */
+.contact-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    background-image: url('Images/contact-us Hero.png');
+    /* Ensure this image exists, or update path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-hero-section .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 33, 79, 0.85);
+    /* Dark blue overlay based on screenshot */
+    z-index: 1;
+}
+
+.contact-hero-section .hero-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 80vh;
+}
+
+/* Removed .pill-navbar overrides to use default .navbar styles from style.css */
+
+/* Hero Content */
+.contact-hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 60px 20px;
+}
+
+.contact-badge {
+    background-color: var(--brand-red, #ea3636);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 6px 15px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.badge-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-main-heading {
+    font-size: clamp(40px, 6vw, 72px);
+    font-family: 'Geist', sans-serif;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.contact-description {
+    font-size: clamp(14px, 1.3vw, 18px);
+    max-width: 600px;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 576px) {
+    .contact-hero-section {
+        min-height: 70vh;
+    }
+
+    .contact-hero-section .hero-container {
+        min-height: 70vh;
+    }
+}
+
+/* =========================================================
+   DIRECT LINES SECTION
+========================================================= */
+
+.direct-lines-section {
+    padding: 80px 0;
+    background-color: #fafafa;
+}
+
+.contact-section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-subtitle {
+    color: var(--brand-red, #ea3636);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact-heading {
+    font-family: 'Geist', sans-serif;
+    color: var(--brand-blue, #0d214f);
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.contact-desc {
+    color: #666;
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 1.6;
+}
+
+/* Grid Layout */
+.contact-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Card Base */
+.contact-card {
+    position: relative;
+    border-radius: 20px;
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.card-icon-wrapper {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.contact-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: 'Geist', sans-serif;
+}
+
+.contact-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Card Variations */
+.dark-blue-card {
+    background-color: var(--brand-blue, #0d214f);
+    color: #fff;
+}
+
+.dark-blue-card .card-icon-wrapper {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-blue-card .btn-white {
+    background-color: #fff;
+    color: var(--brand-blue, #0d214f);
+}
+
+.dark-blue-card .btn-white:hover {
+    background-color: #f0f0f0;
+}
+
+.white-card {
+    background-color: #fff;
+    color: var(--brand-blue, #0d214f);
+    border: 1px solid #eee;
+}
+
+.white-card .card-icon-wrapper {
+    background-color: #f5f7fa;
+    color: var(--brand-blue, #0d214f);
+}
+
+.white-card p {
+    color: #666;
+}
+
+.btn-dark-blue {
+    background-color: var(--brand-blue, #0d214f);
+    color: #fff;
+}
+
+.btn-dark-blue:hover {
+    background-color: #081534;
+    color: #fff;
+}
+
+.green-card {
+    background-color: #e8f7e8;
+    color: var(--brand-blue, #0d214f);
+    border: 1px solid #d0ebd0;
+}
+
+.green-card .card-icon-wrapper {
+    background-color: rgba(39, 174, 96, 0.15);
+    color: #27ae60;
+}
+
+.green-card p {
+    color: #444;
+}
+
+.btn-green {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.btn-green:hover {
+    background-color: #219653;
+    color: #fff;
+}
+
+.online-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #27ae60;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+    .contact-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .direct-lines-section {
+        padding: 50px 0;
+    }
+
+    .contact-heading {
+        font-size: 28px;
+    }
+}
+
+/* =========================================================
+   LOCATE US SECTION
+========================================================= */
+
+.locate-us-section {
+    padding: 80px 0;
+    background-color: #f7f6f2;
+    /* Light cream background from screenshot */
+}
+
+.map-container-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    height: 500px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.map-embed {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #e5e3df;
+    /* Placeholder map color */
+}
+
+/* The floating info card over the map */
+.map-info-card {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 16px;
+    width: 380px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.info-card-subtitle {
+    color: var(--brand-red, #ea3636);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.map-info-card h3 {
+    color: var(--brand-blue, #0d214f);
+    font-family: 'Geist', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.map-info-card p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.btn-red {
+    background-color: var(--brand-red, #ea3636);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    width: max-content;
+}
+
+.btn-red:hover {
+    background-color: #c92c2c;
+    color: #fff;
+}
+
+/* Responsiveness for Locate Us */
+@media (max-width: 991px) {
+    .map-container-wrapper {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        border-radius: 16px;
+    }
+
+    .map-embed {
+        height: 400px;
+    }
+
+    .map-info-card {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        border-radius: 0 0 16px 16px;
+        box-shadow: none;
+        background-color: #fff;
+    }
+}
+
+@media (max-width: 576px) {
+    .locate-us-section {
+        padding: 50px 0;
+    }
+
+    .map-embed {
+        height: 300px;
+    }
+
+    .map-info-card {
+        padding: 30px 20px;
+    }
+}
+
+/* =========================================================
+   ADMISSIONS ENQUIRY SECTION
+========================================================= */
+
+.admissions-enquiry-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.enquiry-grid {
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.enquiry-left {
+    padding-right: 20px;
+}
+
+.enquiry-desc {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Forms */
+.admissions-form,
+.general-form {
+    margin-bottom: 40px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 0;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group.full-width {
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brand-blue, #0d214f);
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #333;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--brand-blue, #0d214f);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn-full {
+    width: 100%;
+    display: block;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+/* Left Image */
+.enquiry-image {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 300px;
+}
+
+.enquiry-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Right Column (Quick Assistance) */
+.quick-assistance-card {
+    background-color: #faf9f5;
+    border: 1px solid #f0eee5;
+    border-radius: 20px;
+    padding: 40px 30px;
+    position: sticky;
+    top: 100px;
+}
+
+.quick-heading {
+    font-family: 'Geist', sans-serif;
+    color: var(--brand-blue, #0d214f);
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.quick-desc {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .enquiry-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .enquiry-left {
+        padding-right: 0;
+    }
+
+    .quick-assistance-card {
+        position: relative;
+        top: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .admissions-enquiry-section {
+        padding: 50px 0;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-group {
+        /* Handled globally now, keeping media query block for structure */
+        margin-bottom: 20px;
+    }
+
+    .enquiry-image {
+        height: 200px;
+    }
+}
+
+/* =========================================================
+   DEPARTMENT DIRECTORY SECTION
+========================================================= */
+
+.department-directory-section {
+    padding: 80px 0;
+    background-color: #f7f6f2;
+    /* Matches Locate Us background */
+}
+
+.dept-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.dept-card {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 35px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dept-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.dept-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.dept-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #f5f7fa;
+    color: var(--brand-blue, #0d214f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dept-badge {
+    background-color: #f5f7fa;
+    color: var(--brand-blue, #0d214f);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.dept-card h3 {
+    font-family: 'Geist', sans-serif;
+    color: var(--brand-blue, #0d214f);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.dept-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dept-info-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.dept-info-list li:last-child {
+    margin-bottom: 0;
+}
+
+.dept-info-list li svg {
+    color: #999;
+    flex-shrink: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 991px) {
+    .dept-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .dept-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .department-directory-section {
+        padding: 50px 0;
+    }
+}
+
+/* =========================================================
+   CAMPUS VISIT BOOKING SECTION
+========================================================= */
+
+.campus-visit-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.visit-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.visit-step-card {
+    background-color: #fbfbfa;
+    /* Very light cream/gray from screenshot */
+    border-radius: 20px;
+    padding: 35px 30px;
+    transition: transform 0.3s ease;
+}
+
+.visit-step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.step-number {
+    width: 32px;
+    height: 32px;
+    background-color: #fce8c5;
+    /* Pale gold/yellow */
+    color: #b58941;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-badge {
+    color: #cda452;
+    /* Gold text */
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.visit-step-card h3 {
+    font-family: 'Geist', sans-serif;
+    color: var(--brand-blue, #0d214f);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.visit-step-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* CTA Banner */
+.visit-cta-banner {
+    background-color: var(--brand-blue, #0d214f);
+    border-radius: 20px;
+    padding: 40px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.visit-cta-content h3 {
+    font-family: 'Geist', sans-serif;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.visit-cta-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+}
+
+/* Responsiveness */
+@media (max-width: 991px) {
+    .visit-steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .visit-cta-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .visit-steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .campus-visit-section {
+        padding: 50px 0;
+    }
+}
+
+/* =========================================================
+   FAQ SECTION
+========================================================= */
+
+.faq-section {
+    padding: 80px 0;
+    background-color: #f7f6f2;
+    /* Cream background */
+}
+
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e0dfd9;
+    padding: 20px 0;
+}
+
+.faq-item:first-child {
+    border-top: 1px solid #e0dfd9;
+}
+
+.faq-question {
+    font-family: 'Geist', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--brand-blue, #0d214f);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    /* Remove default marker */
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+    /* Remove default marker in Safari */
+}
+
+.faq-icon {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--brand-blue, #0d214f);
+    transition: transform 0.3s ease;
+}
+
+details[open] .faq-icon {
+    transform: rotate(45deg);
+    /* Turns + into x */
+}
+
+.faq-answer {
+    padding-top: 15px;
+    padding-right: 40px;
+    /* Leave space on right */
+}
+
+.faq-answer p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 50px 0;
+    }
+
+    .faq-question {
+        font-size: 16px;
+    }
+
+    .faq-answer {
+        padding-right: 0;
+    }
+}
+
+/* =========================================================
+   EMERGENCY CONTACTS SECTION
+========================================================= */
+
+.emergency-contacts-section {
+    padding: 80px 0;
+    background-color: #fff;
+   
+}
+
+.emergency-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.emergency-card {
+    background-color: #F5F3F0;
+;
+    border-radius: 20px;
+    padding: 35px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease;
+}
+
+.emergency-card:hover {
+    transform: translateY(-5px);
+}
+
+.emergency-card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.emergency-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #fdeaea;
+    color: var(--brand-red, #ea3636);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emergency-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.emergency-card h3 {
+    font-family: 'Geist', sans-serif;
+    color: var(--brand-blue, #0d214f);
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.emergency-number {
+    font-family: 'Geist', sans-serif;
+    color: var(--brand-red, #ea3636);
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.emergency-desc {
+    color: #888;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 991px) {
+    .emergency-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .emergency-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .emergency-contacts-section {
+        padding: 50px 0;
+    }
+}

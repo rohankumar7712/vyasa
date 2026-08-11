@@ -19,7 +19,7 @@
     box-sizing: border-box;
 }
 
-body, html {
+body {
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
     background-color: var(--brand-bg);
@@ -3394,7 +3394,6 @@ position: absolute;
     font-weight: 800;
     margin-bottom: 24px;
     color: white;
-    white-space: nowrap;
 }
 
 .about-description {
@@ -4598,22 +4597,33 @@ position: absolute;
     .nav-links {
         position: fixed !important;
         top: 0;
-        right: -300px;
-        width: 300px;
-        max-width: 80%;
+        right: -100%;
+        width: 85%;
+        max-width: none;
         height: 100vh;
         background-color: white;
         flex-direction: column;
         justify-content: flex-start;
-        align-items: center;
-        padding-top: 100px;
+        align-items: flex-start;
+        padding-top: 100px;        padding-left: 40px;
+        padding-right: 40px;
         gap: 30px;
         z-index: 105;
         transition: 0.3s ease;
         box-shadow: -5px 0 20px rgba(0,0,0,0.1);
         display: flex !important;
+        overflow-y: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .nav-links::-webkit-scrollbar {
+        display: none;
     }
     
+    .nav-links li {
+        width: 100%;
+    }
+
     .nav-links.active {
         right: 0;
     }
@@ -5212,7 +5222,6 @@ position: absolute;
         margin-left: 10px;
     }
     .nav-links {
-        width: 250px;
         padding: 20px;
     }
     
@@ -5345,5 +5354,139 @@ position: absolute;
     
     .timeline-desc {
         white-space: normal;
+    }
+}
+
+/* --- Mega Menu --- */
+.has-mega-menu {
+    position: static !important;
+}
+
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    padding: 30px 5%;
+    z-index: 1000;
+    justify-content: space-between;
+    border-top: 2px solid var(--brand-red);
+}
+
+.has-mega-menu:hover .mega-menu {
+    display: flex;
+}
+
+.mega-menu-column {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.mega-menu-column h4 {
+    color: var(--brand-red);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.mega-menu-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-menu-column ul li {
+    margin-bottom: 10px;
+}
+
+.mega-menu-column ul li a {
+    color: #555 !important;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.mega-menu-column ul li a:hover {
+    color: var(--brand-red) !important;
+}
+
+.nav-links li.has-mega-menu {
+    position: static;
+}
+.navbar {
+    position: relative;
+}
+
+
+.navbar {
+    position: relative;
+    z-index: 1000 !important;
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Mobile Dropdown Toggle --- */
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-decoration: none;
+}
+
+.dropdown-icon {
+    font-size: 16px;
+    font-weight: 400;
+    transition: transform 0.25s ease;
+    margin-left: 8px;
+}
+
+.has-mega-menu.active .dropdown-icon {
+    transform: rotate(45deg);
+}
+
+@media (max-width: 1200px) {
+    .dropdown-toggle {
+        padding: 10px 0;
+    }
+    
+    .has-mega-menu .mega-menu, 
+    .has-mega-menu:hover .mega-menu {
+        position: static;
+        display: none;
+        box-shadow: none;
+        border-top: none;
+        padding: 10px 0 10px 15px;
+        flex-direction: column;
+        background: transparent;
+    }
+    
+    .has-mega-menu.active .mega-menu,
+    .has-mega-menu.active:hover .mega-menu {
+        display: flex;
+    }
+
+    .mega-menu-column {
+        padding: 5px 0;
+        width: 100%;
+        flex: none;
+    }
+    
+    .mega-menu-column h4 {
+        margin-bottom: 8px;
+    }
+}
+@media (min-width: 1201px) {
+    .dropdown-icon {
+        display: none;
     }
 }

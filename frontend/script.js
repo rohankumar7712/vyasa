@@ -43,8 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         menuOverlay.addEventListener("click", closeMenu);
 
-        // Close menu when clicking a navigation link
-        navLinks.querySelectorAll("a").forEach((link) => {
+        // Close menu when clicking a navigation link (except dropdown toggles)
+        navLinks.querySelectorAll("a:not(.dropdown-toggle)").forEach((link) => {
             link.addEventListener("click", closeMenu);
         });
     }
@@ -297,5 +297,21 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     });
+});
 
+document.addEventListener('DOMContentLoaded', () => {  
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');  
+    dropdownToggles.forEach(toggle => {  
+        toggle.addEventListener('click', (e) => {  
+            if (window.innerWidth <= 1200) {
+                if (e.target.classList.contains('dropdown-icon')) {
+                    e.preventDefault();  
+                    const parentLi = toggle.closest('.has-mega-menu');  
+                    if (parentLi) {
+                        parentLi.classList.toggle('active');
+                    }
+                }
+            }  
+        });  
+    });  
 });
