@@ -1,0 +1,653 @@
+/* --- Careers Hero Section --- */
+
+.careers-hero {
+    background-image: url('../../Images/Campus.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.careers-overlay {
+    background: linear-gradient(135deg, rgba(11, 58, 98, 0.85) 0%, rgba(11, 58, 98, 0.2) 100%);
+}
+
+.white-text {
+    color: #ffffff;
+}
+
+.gold-text {
+    color: #ffb800; /* Golden yellow for LEAD. */
+}
+
+.careers-description {
+    color: #f0f0f0;
+    max-width: 700px;
+}
+
+.careers-explore-btn {
+    background-color: var(--brand-red, #ea3636);
+    color: white;
+}
+
+.careers-explore-btn:hover {
+    background-color: #cc2222;
+}
+
+/* Specific styling for the careers active link in the mega menu */
+.mega-menu a.active {
+    color: var(--brand-red, #ea3636);
+    font-weight: 700;
+}
+
+/* --- Opportunities Section --- */
+.opportunities-section {
+    padding: 80px 0;
+    background-color: #f6f5f3;
+}
+
+.opportunities-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    gap: 40px;
+}
+
+.opportunities-label {
+    color: var(--brand-red, #ea3636);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.opportunities-title {
+    color: #0b2240; /* Very dark blue */
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.opportunities-desc-wrap {
+    max-width: 500px;
+    margin-bottom: 10px;
+}
+
+.opportunities-desc {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.opportunities-divider {
+    height: 1px;
+    background-color: rgba(234, 54, 54, 0.2);
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.opportunities-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.opp-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.opp-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.opp-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.bg-blue-light { background-color: #eef5f9; }
+.bg-yellow-light { background-color: #fbf5eb; }
+.bg-red-light { background-color: #fceded; }
+
+.opp-card-title {
+    color: #0b2240;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.opp-card-desc {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.opp-openings {
+    color: var(--brand-red, #ea3636);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.opp-openings:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Adjustments */
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .opportunities-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}
+
+/* --- Faculty Roles Section --- */
+.faculty-roles-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.faculty-roles-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    gap: 40px;
+}
+
+.faculty-roles-label {
+    color: var(--brand-red, #ea3636);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.faculty-roles-title {
+    color: #0b2240;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.faculty-roles-desc-wrap {
+    max-width: 550px;
+    margin-bottom: 10px;
+}
+
+.faculty-roles-desc {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.faculty-roles-divider {
+    height: 1px;
+    background-color: rgba(234, 54, 54, 0.2);
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.faculty-roles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 30px;
+}
+
+.job-card {
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: stretch !important;
+    text-align: left !important;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.job-meta-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.job-department {
+    color: var(--brand-red, #ea3636);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.job-type-tag {
+    background-color: #f6f5f3;
+    color: #333;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.job-title {
+    color: #0b2240;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.job-details-list {
+    list-style: none;
+    margin-bottom: 30px;
+    flex-grow: 1;
+    padding: 0;
+    margin-left: 0;
+}
+
+.job-details-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.job-apply-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #0b2240;
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.job-apply-btn:hover {
+    background-color: #164e87;
+}
+
+@media (max-width: 768px) {
+    .faculty-roles-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .faculty-roles-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Operational Operators Section --- */
+.bg-light-beige {
+    background-color: #f6f5f3;
+    padding: 80px 0;
+}
+
+.job-department-gold {
+    color: #b08d57;
+}
+
+/* --- Onboarding Journey Section --- */
+.onboarding-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid var(--brand-red, #ea3636);
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0b2240;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.step-title {
+    color: #0b2240;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.step-desc {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+@media (max-width: 992px) {
+    .onboarding-steps {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .onboarding-steps {
+        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+/* --- Perks Section --- */
+.perks-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.perks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.perk-card {
+    background-color: #fdfcfa;
+    border: 1px solid #f2eee8;
+    border-radius: 20px;
+    padding: 35px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.perk-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.perk-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    background-color: #fdf5e6;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.perk-card-title {
+    color: #0b2240;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.perk-card-desc {
+    color: #666;
+    font-size: 13.5px;
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    .perks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .perks-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.bg-warm-beige {
+    background-color: #f7f3e8;
+    padding: 80px 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 50px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-quote {
+    color: #4a5568;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    flex-grow: 1;
+}
+
+.testimonial-author-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-author-name {
+    color: #0b2240;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.testimonial-author-role {
+    color: var(--brand-red, #ea3636);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 992px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Inquiry Section --- */
+.inquiry-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.inquiry-wrapper {
+    background-color: #fdfaf5;
+    border-radius: 30px;
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    border: 1px solid #f2eee8;
+}
+
+.inquiry-content-left {
+    max-width: 500px;
+}
+
+.inquiry-label {
+    color: var(--brand-red, #ea3636);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.inquiry-title {
+    color: #0b2240;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.inquiry-desc {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.inquiry-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.inquiry-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #0b2240;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.inquiry-contact-item svg {
+    color: var(--brand-red, #ea3636);
+}
+
+.inquiry-form-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+.inquiry-form-title {
+    color: #0b2240;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.inquiry-form-group {
+    margin-bottom: 20px;
+}
+
+.inquiry-form-group label {
+    display: block;
+    color: #0b2240;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.inquiry-form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #333;
+    transition: border-color 0.3s;
+}
+
+.inquiry-form-control:focus {
+    outline: none;
+    border-color: #0b2240;
+}
+
+.inquiry-submit-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #0b2240;
+    color: white;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.inquiry-submit-btn:hover {
+    background-color: #164e87;
+}
+
+@media (max-width: 992px) {
+    .inquiry-wrapper {
+        grid-template-columns: 1fr;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .inquiry-wrapper {
+        padding: 30px 20px;
+    }
+}

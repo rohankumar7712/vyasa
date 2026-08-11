@@ -1,0 +1,28 @@
+:root {
+    --brand-blue: #0b3a62;
+    --brand-red: #ea3636;
+    --brand-bg: #f4f4f4;
+
+    --container-max-width: 1440px;
+    --container-padding-desktop: 5%;
+    --container-padding-tablet: 32px;
+    --container-padding-mobile: 20px;
+
+    --section-padding-desktop: 80px;
+    --section-padding-tablet: 64px;
+    --section-padding-mobile: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    background-color: var(--brand-bg);
+    overflow-x: hidden;
+    width: 100%;
+}

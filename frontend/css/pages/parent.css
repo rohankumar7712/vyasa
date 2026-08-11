@@ -6,7 +6,7 @@
     width: 100%;
     min-height: 100vh;
     /* Linking to a placeholder image from the frontend directory */
-    background-image: url('Images/Experienced Faculty.webp');
+    background-image: url('../../Images/Experienced Faculty.webp');
     background-size: cover;
     background-position: center;
     display: flex;

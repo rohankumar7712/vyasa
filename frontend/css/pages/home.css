@@ -19,19 +19,28 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
     background-color: var(--brand-bg);
-    overflow-x: hidden;
-    width: 100%;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
 }
 
 .hero-section {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background-image: url('Images/Hero imge.webp');
+    background-image: url('../../Images/Hero imge.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -3144,7 +3153,7 @@ body {
     position: relative;
     width: 100%;
     min-height: 80vh;
-    background-image: url('Images/Campus.webp');
+    background-image: url('../../Images/Campus.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -3336,7 +3345,7 @@ position: absolute;
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background-image: url('Images/Campus.webp');
+    background-image: url('../../Images/Campus.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -4313,7 +4322,8 @@ position: absolute;
     background-color: white;
     border-radius: 20px;
     padding: 40px;
-    width: 380px;
+    width: 100%;
+    max-width: 380px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 }
 
@@ -5376,6 +5386,15 @@ position: absolute;
     border-top: 2px solid var(--brand-red);
 }
 
+.mega-menu::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+}
+
 .has-mega-menu:hover .mega-menu {
     display: flex;
 }
@@ -5455,9 +5474,7 @@ position: absolute;
 }
 
 @media (max-width: 1200px) {
-    .dropdown-toggle {
-        padding: 10px 0;
-    }
+    /* padding for .dropdown-toggle removed to ensure equal gap spacing for all mobile links */
     
     .has-mega-menu .mega-menu, 
     .has-mega-menu:hover .mega-menu {

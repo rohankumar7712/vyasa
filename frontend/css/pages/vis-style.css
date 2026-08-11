@@ -4,7 +4,7 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background-image: url('Images/Hero imge.webp'); /* Adjust if a different image is used */
+    background-image: url('../../Images/Hero imge.webp'); /* Adjust if a different image is used */
     background-size: cover;
     background-position: center;
     display: flex;

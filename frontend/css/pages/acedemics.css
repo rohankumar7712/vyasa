@@ -3,7 +3,7 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background-image: url('Images/Campus.webp');
+    background-image: url('../../Images/Campus.webp');
     background-size: cover;
     background-position: center;
     display: flex;
