@@ -5273,3 +5273,77 @@ position: absolute;
         font-size: 26px !important;
     }
 }
+
+/* --- Milestone Journey Responsive Strategy --- */
+@media (max-width: 992px) {
+    /* Tablet: Compressed Horizontal */
+    .timeline-item {
+        width: 80px;
+    }
+    .timeline-marker {
+        width: 40px;
+        height: 40px;
+        border-width: 2px;
+    }
+    .timeline-year {
+        font-size: 14px;
+    }
+    .timeline-desc {
+        font-size: 11px;
+        white-space: normal; /* allow wrapping to save space */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile: Vertical Timeline */
+    .timeline-container {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+        overflow: hidden;
+    }
+    
+    .timeline-line {
+        top: 0;
+        bottom: 0;
+        left: 19px; /* Center of the 40px marker (20px) minus half the line width (1px) */
+        right: auto;
+        width: 2px;
+        height: 100%;
+    }
+    
+    .timeline-items {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+    
+    .timeline-item {
+        flex-direction: row;
+        width: 100%;
+        text-align: left;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .timeline-marker {
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .timeline-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: 8px; /* align text properly with the circle */
+    }
+    
+    .timeline-year {
+        margin-bottom: 2px;
+    }
+    
+    .timeline-desc {
+        white-space: normal;
+    }
+}
