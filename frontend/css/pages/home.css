@@ -19,7 +19,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
@@ -31,7 +32,8 @@ body {
     background-color: var(--brand-bg);
 }
 
-img, video {
+img,
+video {
     max-width: 100%;
     height: auto;
 }
@@ -273,9 +275,17 @@ img, video {
 }
 
 @keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .ticker-content {
@@ -319,7 +329,7 @@ img, video {
 
 /* --- Legacy Section --- */
 .legacy-section {
-    
+
     background-color: white;
     color: #333;
 }
@@ -413,7 +423,7 @@ img, video {
     height: auto;
     border-radius: 20px;
     display: block;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 .estd-badge {
@@ -437,7 +447,7 @@ img, video {
 
 /* --- Features Section --- */
 .features-section {
-    
+
     background-color: #F8F6F3;
 }
 
@@ -548,7 +558,7 @@ img, video {
 
 /* --- Achievements Section --- */
 .achievements-section {
-    
+
     background: linear-gradient(to bottom, #F8F6F3 0%, #FFFFFF 100%);
 }
 
@@ -577,42 +587,40 @@ img, video {
     margin: 0;
 }
 
-.achievements-featured{
-    position:relative;
-    overflow:hidden;
-    border-radius:20px;
-    height:450px;
-    box-shadow:0 16px 40px rgba(17,29,74,.05);
+.achievements-featured {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    height: 450px;
+    box-shadow: 0 16px 40px rgba(17, 29, 74, .05);
     margin-bottom: 30px;
 }
 
-.achievements-featured img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center 35%;
-    filter:brightness(.82);
+.achievements-featured img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    filter: brightness(.82);
 }
 
-.featured-overlay{
-    position:absolute;
-    inset:0;
+.featured-overlay {
+    position: absolute;
+    inset: 0;
 
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
-    padding:0 48px 52px;
+    padding: 0 48px 52px;
 
-    color:#fff;
+    color: #fff;
 
     background:
-    linear-gradient(
-        180deg,
-        rgba(11,17,38,.45) 0%,
-        rgba(11,17,38,.35) 40%,
-        rgba(11,17,38,.65) 100%
-    );
+        linear-gradient(180deg,
+            rgba(11, 17, 38, .45) 0%,
+            rgba(11, 17, 38, .35) 40%,
+            rgba(11, 17, 38, .65) 100%);
 }
 
 .featured-subtitle {
@@ -682,7 +690,7 @@ img, video {
 
 /* --- Milestones Section --- */
 .milestones-section {
-    
+
     background-color: #f8f6f3;
 }
 
@@ -765,7 +773,7 @@ img, video {
 
 /* --- Showcase Section --- */
 .showcase-section {
-    
+
     background-color: #f8f6f3;
 }
 
@@ -793,7 +801,8 @@ img, video {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    background-color: #e5ded4; /* Placeholder color */
+    background-color: #e5ded4;
+    /* Placeholder color */
 }
 
 .showcase-content {
@@ -827,7 +836,7 @@ img, video {
 
 /* --- Resources Section --- */
 .resources-section {
-    
+
     background-color: #f8f6f3;
 }
 
@@ -874,7 +883,8 @@ img, video {
     transition: all 0.3s ease;
 }
 
-.filter-btn.active, .filter-btn:hover {
+.filter-btn.active,
+.filter-btn:hover {
     background-color: var(--brand-blue);
     border-color: var(--brand-blue);
     color: white;
@@ -901,7 +911,7 @@ img, video {
     font-family: 'Geist', sans-serif;
     font-size: 14px;
     outline: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
 }
 
 .resources-grid {
@@ -1002,7 +1012,7 @@ img, video {
 
 /* --- Notice Board Section --- */
 .notice-section {
-    
+
     background-color: #ffffff;
 }
 
@@ -1166,7 +1176,7 @@ img, video {
     padding: 20px;
     gap: 20px;
     border: 1px solid transparent;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
 }
 
 .calendar-item.highlighted {
@@ -1228,7 +1238,7 @@ img, video {
 
 /* --- Events Section --- */
 .events-section {
-    
+
     background-color: #f8f6f3;
 }
 
@@ -1368,7 +1378,7 @@ img, video {
 
 /* --- Academics Section --- */
 .academics-section {
-    
+
     background-color: #ffffff;
 }
 
@@ -1376,7 +1386,8 @@ img, video {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(227, 40, 69, 0.2); /* Subtle red tinted line */
+    border-bottom: 1px solid rgba(227, 40, 69, 0.2);
+    /* Subtle red tinted line */
     padding-bottom: 40px;
     gap: 40px;
 }
@@ -1503,7 +1514,7 @@ img, video {
 
 /* --- Co-Curricular Section --- */
 .co-curricular-section {
-    
+
     background-color: #f8f6f3;
 }
 
@@ -1651,7 +1662,7 @@ img, video {
 
 /* --- Academic Leadership Section --- */
 .leadership-section {
-    
+
     background-color: #f8f6f3;
 }
 
@@ -1714,7 +1725,7 @@ img, video {
 
 /* --- Alumni Section --- */
 .alumni-section {
-    
+
     background-color: #f8f6f3;
 }
 
@@ -2341,7 +2352,7 @@ img, video {
 
 /* --- Quick Enquiry Section --- */
 .quick-enquiry-section {
-    
+
     background-color: #f8f6f3;
 }
 
@@ -2884,30 +2895,30 @@ img, video {
     .container {
         padding: 36px 40px;
     }
-    
+
     .legacy-container {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+
     .estd-badge {
         top: -10px;
         right: -10px;
     }
-    
+
     .nav-links {
-        display: none; 
+        display: none;
     }
 
     .achievements-header {
         flex-direction: column;
         gap: 20px;
     }
-    
+
     .achievements-desc-col {
         padding-top: 0;
     }
-    
+
     .achievements-grid,
     .clubs-grid,
     .leadership-grid,
@@ -2916,24 +2927,24 @@ img, video {
     .path-steps-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .admissions-header-split {
         flex-direction: column;
         gap: 20px;
     }
-    
+
     .path-connector {
         display: none;
     }
-    
+
     .admissions-info-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .info-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .footer-top {
         grid-template-columns: 1fr 1fr;
     }
@@ -2945,7 +2956,7 @@ img, video {
     }
 
     .cards-container {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
 
     .navbar {
@@ -2957,12 +2968,12 @@ img, video {
         align-items: flex-start;
         gap: 15px;
     }
-    
+
     .ticker-content {
         margin: 0;
-        white-space: normal; 
+        white-space: normal;
     }
-    
+
     .margin-left {
         margin-left: 0;
         display: block;
@@ -2970,12 +2981,12 @@ img, video {
     }
 
 
-    .row-2-cols, 
-    .row-2-cols-equal, 
+    .row-2-cols,
+    .row-2-cols-equal,
     .row-3-cols {
         grid-template-columns: 1fr;
     }
-    
+
     .feature-card.tall-card,
     .row-2-cols-equal .feature-card,
     .row-3-cols .feature-card,
@@ -2986,35 +2997,35 @@ img, video {
     .achievements-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .showcase-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .resources-controls {
         flex-direction: column;
         align-items: stretch;
         gap: 20px;
     }
-    
+
     .resources-search {
         width: 100%;
     }
-    
+
     .resources-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .notice-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .announcements-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
     }
-    
+
     .events-grid,
     .clubs-grid,
     .educator-grid,
@@ -3025,98 +3036,98 @@ img, video {
     .info-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .visit-features {
         grid-template-columns: 1fr;
     }
-    
+
     .journey-title {
         font-size: 36px;
     }
-    
+
     .journey-action-secondary {
         flex-direction: column;
     }
-    
+
     .form-row {
         flex-direction: column;
         gap: 20px;
         margin-bottom: 20px;
     }
-    
+
     .campus-bottom-content {
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
     }
-    
+
     .campus-bottom-right {
         text-align: left;
     }
-    
+
     .footer-top {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-bottom-inner {
         flex-direction: column;
         gap: 15px;
         text-align: center;
         border-radius: 20px;
     }
-    
+
     .footer-subscribe-form {
         flex-direction: column;
         border-radius: 15px;
     }
-    
+
     .footer-subscribe-form button {
         justify-content: center;
         border-radius: 10px;
     }
-    
+
     .campus-banner-bg {
         height: 400px;
     }
-    
+
     .educator-grid {
         gap: 40px;
     }
-    
+
     .events-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
     }
-    
+
     .academics-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 30px;
     }
-    
+
     .academics-title {
         font-size: 42px;
     }
-    
+
     .stage-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+
     .stage-reverse .stage-content-col,
     .stage-reverse .stage-img-col {
-        order: unset; 
+        order: unset;
     }
-    
+
     .stage-img-wrapper {
         height: 350px;
     }
-    
+
     .stage-features {
         grid-template-columns: 1fr;
     }
-    
+
     .cta-banner {
         flex-direction: column;
         text-align: left;
@@ -3124,12 +3135,12 @@ img, video {
         gap: 25px;
         padding: 30px;
     }
-    
+
     .cta-actions {
         margin-left: 0;
         flex-wrap: wrap;
     }
-    
+
     .achievements-featured {
         height: 350px;
     }
@@ -3138,11 +3149,12 @@ img, video {
         overflow-x: auto;
         padding-bottom: 20px;
     }
-    
+
     .timeline-items {
-        width: 800px; 
+        width: 800px;
     }
 }
+
 /* --- Global Mobile Refactoring --- */
 
 
@@ -3161,7 +3173,7 @@ img, video {
 }
 
 .about-hero-section .hero-overlay {
-position: absolute;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -3259,7 +3271,7 @@ position: absolute;
     border-radius: 20px;
     padding: 40px;
     flex: 1;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
     border: 1px solid #f0ede8;
     display: flex;
     flex-direction: column;
@@ -3393,7 +3405,8 @@ position: absolute;
 }
 
 .breadcrumb .current {
-    color: #ffb703; /* golden yellow */
+    color: #ffb703;
+    /* golden yellow */
     font-weight: 600;
 }
 
@@ -3415,7 +3428,8 @@ position: absolute;
 }
 
 .about-milestones-section {
-    background-color: #0b1a30; /* dark blue */
+    background-color: #0b1a30;
+    /* dark blue */
     padding: 80px 0;
     color: white;
 }
@@ -3461,7 +3475,7 @@ position: absolute;
     background-color: white;
     border-radius: 12px;
     padding: 30px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .v-timeline-node {
@@ -3524,14 +3538,14 @@ position: absolute;
         left: 20px;
         transform: none;
     }
-    
+
     .v-timeline-item {
         width: 100%;
         left: 0 !important;
         padding-left: 60px;
         padding-right: 20px;
     }
-    
+
     .v-timeline-item.left .v-timeline-node,
     .v-timeline-item.right .v-timeline-node {
         left: 10px;
@@ -3554,7 +3568,7 @@ position: absolute;
 .vm-card {
     border-radius: 20px;
     padding: 50px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
     display: flex;
     flex-direction: column;
 }
@@ -3659,7 +3673,7 @@ position: absolute;
     width: 100%;
     height: 420px;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     object-fit: cover;
 }
 
@@ -3720,14 +3734,17 @@ position: absolute;
 }
 
 @media (max-width: 768px) {
-    .about-leadership-grid, .about-leadership-grid.reverse {
+
+    .about-leadership-grid,
+    .about-leadership-grid.reverse {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+
     .about-leadership-grid.reverse .leadership-content {
         order: 2;
     }
+
     .about-leadership-grid.reverse .leadership-image {
         order: 1;
     }
@@ -3766,13 +3783,14 @@ position: absolute;
     background-color: white;
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
 .pillar-icon {
     width: 48px;
     height: 48px;
-    background-color: #fdf8eb; /* light beige/yellow */
+    background-color: #fdf8eb;
+    /* light beige/yellow */
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -3833,7 +3851,7 @@ position: absolute;
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
 
 .team-img {
@@ -3936,8 +3954,8 @@ position: absolute;
 }
 
 .cta-box .btn-outline {
-    background-color: transparent;  
-    color: white;    
+    background-color: transparent;
+    color: white;
     border: 2px solid white;
     padding: 10px 24px;
     border-radius: 30px;
@@ -3959,10 +3977,12 @@ position: absolute;
         text-align: center;
         padding: 40px 30px;
     }
+
     .cta-buttons {
         flex-direction: column;
         width: 100%;
     }
+
     .cta-buttons a {
         width: 100%;
         text-align: center;
@@ -4107,20 +4127,24 @@ position: absolute;
 .bg-red-light {
     background-color: rgba(234, 54, 54, 0.1);
 }
+
 .icon-red {
     color: var(--brand-red, #ea3636);
 }
 
 .bg-gold-light {
-    background-color: rgba(212, 175, 55, 0.1); /* Assuming gold is roughly this */
+    background-color: rgba(212, 175, 55, 0.1);
+    /* Assuming gold is roughly this */
 }
+
 .icon-gold {
-    color: #D4AF37; 
+    color: #D4AF37;
 }
 
 .bg-blue-light {
     background-color: rgba(39, 72, 114, 0.1);
 }
+
 .icon-blue {
     color: #274872;
 }
@@ -4148,11 +4172,12 @@ position: absolute;
 
 .c-line {
     position: absolute;
-    left: 180px; 
+    left: 180px;
     top: 10px;
     bottom: 10px;
     width: 1px;
-    background-color: rgba(0,0,0,0.05); /* very faint line */
+    background-color: rgba(0, 0, 0, 0.05);
+    /* very faint line */
 }
 
 .c-item {
@@ -4188,13 +4213,19 @@ position: absolute;
     z-index: 2;
 }
 
-.node-blue { background-color: #1a2b4c; }
-.node-gold { background-color: #D4AF37; }
+.node-blue {
+    background-color: #1a2b4c;
+}
+
+.node-gold {
+    background-color: #D4AF37;
+}
 
 .c-content {
     flex: 1;
     padding-left: 60px;
-    margin-top: -6px; /* align text properly with year */
+    margin-top: -6px;
+    /* align text properly with year */
 }
 
 .c-title {
@@ -4213,17 +4244,43 @@ position: absolute;
 }
 
 @media (max-width: 768px) {
-    .c-line { left: 100px; }
-    .c-node { left: 100px; }
-    .c-year { width: 80px; font-size: 22px; padding-right: 20px; }
-    .c-content { padding-left: 40px; }
+    .c-line {
+        left: 100px;
+    }
+
+    .c-node {
+        left: 100px;
+    }
+
+    .c-year {
+        width: 80px;
+        font-size: 22px;
+        padding-right: 20px;
+    }
+
+    .c-content {
+        padding-left: 40px;
+    }
 }
 
 @media (max-width: 576px) {
-    .c-line { left: 80px; }
-    .c-node { left: 80px; }
-    .c-year { width: 60px; font-size: 18px; padding-right: 15px; }
-    .c-content { padding-left: 20px; }
+    .c-line {
+        left: 80px;
+    }
+
+    .c-node {
+        left: 80px;
+    }
+
+    .c-year {
+        width: 60px;
+        font-size: 18px;
+        padding-right: 15px;
+    }
+
+    .c-content {
+        padding-left: 20px;
+    }
 }
 
 /* --- Social Responsibility Section (About Us) --- */
@@ -4240,7 +4297,7 @@ position: absolute;
 .sr-image img {
     width: 100%;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     object-fit: cover;
 }
 
@@ -4324,7 +4381,7 @@ position: absolute;
     padding: 40px;
     width: 100%;
     max-width: 380px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
 .inquiry-title {
@@ -4375,7 +4432,7 @@ position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02);
 }
 
 .job-info {
@@ -4404,7 +4461,7 @@ position: absolute;
     .careers-top {
         flex-direction: column;
     }
-    
+
     .careers-inquiry {
         width: 100%;
     }
@@ -4416,12 +4473,12 @@ position: absolute;
         align-items: flex-start;
         gap: 20px;
     }
-    
+
     .job-action {
         margin-left: 0;
         width: 100%;
     }
-    
+
     .job-action .btn-primary {
         display: block;
         text-align: center;
@@ -4442,7 +4499,7 @@ position: absolute;
     background-color: #F9F8F6;
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
 }
 
 .form-title {
@@ -4476,7 +4533,7 @@ position: absolute;
 .contact-form textarea {
     width: 100%;
     padding: 12px 20px;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     font-size: 14px;
     font-family: 'Geist', sans-serif;
     outline: none;
@@ -4603,7 +4660,7 @@ position: absolute;
     .menu-btn {
         display: block;
     }
-    
+
     .nav-links {
         position: fixed !important;
         top: 0;
@@ -4615,21 +4672,23 @@ position: absolute;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        padding-top: 100px;        padding-left: 40px;
+        padding-top: 100px;
+        padding-left: 40px;
         padding-right: 40px;
         gap: 30px;
         z-index: 105;
         transition: 0.3s ease;
-        box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
         display: flex !important;
         overflow-y: auto;
         scrollbar-width: none;
         -ms-overflow-style: none;
     }
+
     .nav-links::-webkit-scrollbar {
         display: none;
     }
-    
+
     .nav-links li {
         width: 100%;
     }
@@ -4650,7 +4709,7 @@ position: absolute;
         width: 80%;
         margin-top: 10px;
     }
-    
+
     .mobile-apply-btn {
         display: block;
         width: 100%;
@@ -4664,14 +4723,16 @@ position: absolute;
         box-shadow: 0 10px 25px rgba(234, 54, 54, 0.3);
         transition: transform 0.3s, box-shadow 0.3s;
     }
-    
+
     .mobile-apply-btn:active {
         transform: scale(0.95);
     }
 }
 
 @media (max-width: 991px) {
-    .navbar .apply-btn:not(.mobile-apply-btn), .pu-navbar .pu-apply-btn:not(.mobile-apply-btn) {
+
+    .navbar .apply-btn:not(.mobile-apply-btn),
+    .pu-navbar .pu-apply-btn:not(.mobile-apply-btn) {
         display: none !important;
     }
 }
@@ -4704,26 +4765,77 @@ position: absolute;
 }
 
 @media (max-width: 992px) {
-    .legacy-section, .features-section, .achievements-section, .milestones-section, .showcase-section, .resources-section, .notice-section, .events-section, .academics-section, .academic-stage, .co-curricular-section, .educators-section, .leadership-section, .alumni-section, .insights-section, .admissions-process-section, .quick-enquiry-section, .campus-experience-section, .awards-section, .chronology-section, .social-responsibility, .contact-section {
+
+    .legacy-section,
+    .features-section,
+    .achievements-section,
+    .milestones-section,
+    .showcase-section,
+    .resources-section,
+    .notice-section,
+    .events-section,
+    .academics-section,
+    .academic-stage,
+    .co-curricular-section,
+    .educators-section,
+    .leadership-section,
+    .alumni-section,
+    .insights-section,
+    .admissions-process-section,
+    .quick-enquiry-section,
+    .campus-experience-section,
+    .awards-section,
+    .chronology-section,
+    .social-responsibility,
+    .contact-section {
         padding-block: var(--section-padding-tablet);
     }
 }
 
 @media (max-width: 768px) {
-    .legacy-section, .features-section, .achievements-section, .milestones-section, .showcase-section, .resources-section, .notice-section, .events-section, .academics-section, .academic-stage, .co-curricular-section, .educators-section, .leadership-section, .alumni-section, .insights-section, .admissions-process-section, .quick-enquiry-section, .campus-experience-section, .awards-section, .chronology-section, .social-responsibility, .contact-section {
+
+    .legacy-section,
+    .features-section,
+    .achievements-section,
+    .milestones-section,
+    .showcase-section,
+    .resources-section,
+    .notice-section,
+    .events-section,
+    .academics-section,
+    .academic-stage,
+    .co-curricular-section,
+    .educators-section,
+    .leadership-section,
+    .alumni-section,
+    .insights-section,
+    .admissions-process-section,
+    .quick-enquiry-section,
+    .campus-experience-section,
+    .awards-section,
+    .chronology-section,
+    .social-responsibility,
+    .contact-section {
         padding-block: var(--section-padding-mobile);
     }
 }
+
 /* --- Global Responsive Spacing --- */
 @media (max-width: 992px) {
-    .container { padding-inline: var(--container-padding-tablet); }
-    
+    .container {
+        padding-inline: var(--container-padding-tablet);
+    }
+
 }
 
 @media (max-width: 768px) {
-    .container { padding-inline: var(--container-padding-mobile); }
-    
-}\n
+    .container {
+        padding-inline: var(--container-padding-mobile);
+    }
+
+}
+
+\n
 /* =========================================================
    VYASA ANIMATION SYSTEM
    ========================================================= */
@@ -4824,30 +4936,57 @@ position: absolute;
    4. Hero Load Animation
    --------------------------------------------------------- */
 @keyframes heroFade {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes heroFadeDown {
-    0% { opacity: 0; transform: translateY(-15px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes heroFadeUp {
-    0% { opacity: 0; transform: translateY(25px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes heroFadeScale {
-    0% { opacity: 0; transform: translateY(30px) scale(0.97); }
-    100% { opacity: 1; transform: translateY(0) scale(1); }
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 /* Base state for animated hero items to avoid popping before animation starts */
 .vis-hero-section .logo,
 .vis-hero-section .menu-btn,
 .vis-hero-section .nav-links,
-.vis-hero-section .navbar .apply-btn:not(.mobile-apply-btn), .pu-navbar .pu-apply-btn:not(.mobile-apply-btn),
+.vis-hero-section .navbar .apply-btn:not(.mobile-apply-btn),
+.pu-navbar .pu-apply-btn:not(.mobile-apply-btn),
 .vis-hero-section .vis-subtitle,
 .vis-hero-section .vis-heading,
 .vis-hero-section .vis-description,
@@ -4861,7 +5000,8 @@ position: absolute;
 .vis-hero-section .logo,
 .vis-hero-section .menu-btn,
 .vis-hero-section .nav-links,
-.vis-hero-section .navbar .apply-btn:not(.mobile-apply-btn), .pu-navbar .pu-apply-btn:not(.mobile-apply-btn) {
+.vis-hero-section .navbar .apply-btn:not(.mobile-apply-btn),
+.pu-navbar .pu-apply-btn:not(.mobile-apply-btn) {
     animation-name: heroFade;
     animation-duration: 800ms;
     animation-delay: 0ms;
@@ -4903,6 +5043,7 @@ position: absolute;
 .cohort-card {
     transition: transform 300ms ease, box-shadow 300ms ease;
 }
+
 .cohort-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 16px 40px rgba(17, 29, 74, 0.1);
@@ -4911,9 +5052,11 @@ position: absolute;
 .leader-card {
     overflow: hidden;
 }
+
 .leader-card .leader-img {
     transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .leader-card:hover .leader-img {
     transform: scale(1.04);
 }
@@ -4922,12 +5065,15 @@ position: absolute;
     transition: background-size 800ms cubic-bezier(0.16, 1, 0.3, 1);
     background-size: 100%;
 }
+
 .infra-card:hover {
     background-size: 108%;
 }
+
 .infra-card-content {
     transition: transform 400ms ease;
 }
+
 .infra-card:hover .infra-card-content {
     transform: translateY(-4px);
 }
@@ -4935,13 +5081,17 @@ position: absolute;
 .cocurricular-card .cocurricular-icon {
     transition: transform 300ms ease;
 }
+
 .cocurricular-card:hover .cocurricular-icon {
     transform: translateY(-2px);
 }
 
-.gallery-img-large, .gallery-img-medium, .gallery-img-small {
+.gallery-img-large,
+.gallery-img-medium,
+.gallery-img-small {
     transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .campus-gallery img:hover {
     transform: scale(1.03);
 }
@@ -4951,6 +5101,7 @@ position: absolute;
     display: inline-block;
     transition: transform 300ms ease;
 }
+
 .faq-item[open] .faq-icon {
     transform: rotate(45deg);
 }
@@ -4958,6 +5109,7 @@ position: absolute;
 .footer-socials a {
     transition: transform 300ms ease;
 }
+
 .footer-socials a:hover {
     transform: translateY(-2px);
 }
@@ -5154,6 +5306,7 @@ position: absolute;
    --------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -5200,73 +5353,89 @@ position: absolute;
 /* --- Granular Mobile Breakpoints for Navbar and Cards --- */
 
 @media (max-width: 1200px) {
+
     /* Prevent navbar items from overlapping on smaller laptops */
     .navbar {
         padding: 10px 15px;
     }
+
     .nav-links {
         gap: 15px;
     }
+
     .nav-links a {
         font-size: 12px;
     }
+
     .apply-btn {
         padding: 10px 15px;
         font-size: 11px;
     }
+
     .logo img {
         height: 32px;
     }
 }
 
 @media (max-width: 576px) {
+
     /* Navbar refinements */
     .navbar {
         padding: 10px 15px;
     }
+
     .logo img {
         height: 35px;
     }
+
     .menu-btn {
         font-size: 24px;
         margin-left: 10px;
     }
+
     .nav-links {
         padding: 20px;
     }
-    
+
     /* Card refinements */
-    .leadership-name, 
+    .leadership-name,
     .leadership-role {
         padding: 0 15px;
     }
+
     .leadership-desc {
         padding: 0 15px 20px 15px;
     }
-    
+
     .alumni-card-body {
         padding: 20px;
     }
 
-    .section-title, .hero-title, .academics-title, .pu-section-title {
+    .section-title,
+    .hero-title,
+    .academics-title,
+    .pu-section-title {
         font-size: 32px !important;
         line-height: 1.2;
     }
 }
 
 @media (max-width: 400px) {
+
     /* iPhone Mini & smaller */
     .navbar {
         padding: 8px 12px;
     }
+
     .logo img {
         height: 28px;
     }
+
     .menu-btn {
         font-size: 22px;
         margin-left: auto;
     }
-    
+
     /* Ensure no card overflows */
     .leadership-card,
     .alumni-card,
@@ -5274,46 +5443,60 @@ position: absolute;
     .achievement-card {
         border-radius: 12px;
     }
-    
+
     .leadership-img {
         border-radius: 12px 12px 0 0;
     }
-    
-    .alumni-name { font-size: 16px; }
-    .alumni-role { font-size: 11px; }
-    
+
+    .alumni-name {
+        font-size: 16px;
+    }
+
+    .alumni-role {
+        font-size: 11px;
+    }
+
     /* Adjust global section padding */
-    .section, 
+    .section,
     section {
         padding: 30px 0 !important;
     }
-    
-    .section-title, .hero-title, .academics-title, .pu-section-title {
+
+    .section-title,
+    .hero-title,
+    .academics-title,
+    .pu-section-title {
         font-size: 26px !important;
     }
 }
 
 /* --- Milestone Journey Responsive Strategy --- */
 @media (max-width: 992px) {
+
     /* Tablet: Compressed Horizontal */
     .timeline-item {
         width: 80px;
     }
+
     .timeline-marker {
         width: 40px;
         height: 40px;
         border-width: 2px;
     }
+
     .timeline-year {
         font-size: 14px;
     }
+
     .timeline-desc {
         font-size: 11px;
-        white-space: normal; /* allow wrapping to save space */
+        white-space: normal;
+        /* allow wrapping to save space */
     }
 }
 
 @media (max-width: 768px) {
+
     /* Mobile: Vertical Timeline */
     .timeline-container {
         width: 100%;
@@ -5323,22 +5506,23 @@ position: absolute;
         padding-right: 0;
         overflow: hidden;
     }
-    
+
     .timeline-line {
         top: 0;
         bottom: 0;
-        left: 19px; /* Center of the 40px marker (20px) minus half the line width (1px) */
+        left: 19px;
+        /* Center of the 40px marker (20px) minus half the line width (1px) */
         right: auto;
         width: 2px;
         height: 100%;
     }
-    
+
     .timeline-items {
         flex-direction: column;
         align-items: flex-start;
         gap: 40px;
     }
-    
+
     .timeline-item {
         flex-direction: row;
         width: 100%;
@@ -5346,7 +5530,7 @@ position: absolute;
         align-items: flex-start;
         gap: 20px;
     }
-    
+
     .timeline-marker {
         margin-bottom: 0;
         flex-shrink: 0;
@@ -5355,13 +5539,14 @@ position: absolute;
     .timeline-content-wrapper {
         display: flex;
         flex-direction: column;
-        margin-top: 8px; /* align text properly with the circle */
+        margin-top: 8px;
+        /* align text properly with the circle */
     }
-    
+
     .timeline-year {
         margin-bottom: 2px;
     }
-    
+
     .timeline-desc {
         white-space: normal;
     }
@@ -5439,6 +5624,7 @@ position: absolute;
 .nav-links li.has-mega-menu {
     position: static;
 }
+
 .navbar {
     position: relative;
 }
@@ -5448,6 +5634,7 @@ position: absolute;
     position: relative;
     z-index: 1000 !important;
 }
+
 .hero-content {
     position: relative;
     z-index: 1;
@@ -5475,8 +5662,8 @@ position: absolute;
 
 @media (max-width: 1200px) {
     /* padding for .dropdown-toggle removed to ensure equal gap spacing for all mobile links */
-    
-    .has-mega-menu .mega-menu, 
+
+    .has-mega-menu .mega-menu,
     .has-mega-menu:hover .mega-menu {
         position: static;
         display: none;
@@ -5486,7 +5673,7 @@ position: absolute;
         flex-direction: column;
         background: transparent;
     }
-    
+
     .has-mega-menu.active .mega-menu,
     .has-mega-menu.active:hover .mega-menu {
         display: flex;
@@ -5497,11 +5684,12 @@ position: absolute;
         width: 100%;
         flex: none;
     }
-    
+
     .mega-menu-column h4 {
         margin-bottom: 8px;
     }
 }
+
 @media (min-width: 1201px) {
     .dropdown-icon {
         display: none;

@@ -1,0 +1,702 @@
+/* =========================================================
+   Facilities Page Styles
+========================================================= */
+
+/* --- Hero Section --- */
+.facilities-hero {
+    background-image: url('../../Images/Campus.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.facilities-hero .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 72, 114, 0.85); /* Deep blue tint, matching screenshot */
+    z-index: 1;
+}
+
+.facilities-hero-content {
+    position: relative;
+    z-index: 10;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-bottom: 80px;
+    padding-top: 60px;
+}
+
+.facilities-badge {
+    display: inline-block;
+    background-color: var(--brand-red, #EA3636);
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.facilities-heading {
+    color: white;
+    font-size: clamp(40px, 6vw, 68px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -1px;
+}
+
+.facilities-description {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 700px;
+    font-family: 'Geist', sans-serif;
+}
+
+/* Ensure navbar fits correctly */
+.facilities-hero .navbar {
+    position: relative;
+    z-index: 1000 !important;
+}
+
+@media (max-width: 768px) {
+    .facilities-heading {
+        font-size: 40px;
+    }
+}
+
+/* =========================================================
+   Academic Foundations Section
+========================================================= */
+
+.facilities-section {
+    padding: 100px 0;
+}
+
+.fac-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+.fac-header-left {
+    flex: 1;
+    max-width: 50%;
+}
+
+.fac-header-right {
+    flex: 1;
+    max-width: 50%;
+}
+
+.fac-tag {
+    color: var(--brand-red, #ea3636);
+    font-size: 11px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+}
+
+.fac-title {
+    color: #1a2b4c;
+    font-size: 42px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.fac-subtitle {
+    color: rgba(11, 17, 38, 0.55);
+    font-size: 15px;
+    line-height: 1.6;
+    font-family: 'Geist', sans-serif;
+    margin: 0;
+}
+
+/* Stage Grid */
+.fac-stage-grid {
+    display: grid;
+    grid-template-columns: 45fr 55fr;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 80px;
+}
+
+.fac-stage-grid:last-child {
+    margin-bottom: 0;
+}
+
+.fac-stage-reverse .fac-stage-content {
+    order: 1;
+}
+
+.fac-stage-reverse .fac-stage-img-wrapper {
+    order: 2;
+}
+
+.fac-stage-img-wrapper {
+    width: 100%;
+    height: 500px;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(17, 29, 74, 0.08);
+    overflow: hidden;
+    background-color: #e5ded4;
+}
+
+.fac-stage-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fac-stage-content {
+    padding-right: 20px;
+}
+
+.fac-stage-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #1a2b4c;
+    margin-bottom: 20px;
+}
+
+.fac-stage-desc {
+    font-family: 'Geist', sans-serif;
+    font-size: 14px;
+    color: rgba(11, 17, 38, 0.55);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Quote Box */
+.fac-quote-box {
+    background-color: #F8F6F3;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.fac-quote-text {
+    color: #274872; /* subtle blue text */
+    font-size: 15px;
+    line-height: 1.6;
+    font-family: 'Gupter', serif;
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.fac-quote-author {
+    color: var(--brand-red, #ea3636);
+    font-size: 11px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* List with gold dots */
+.fac-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.fac-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    font-family: 'Geist', sans-serif;
+    font-size: 13px;
+    color: #1a2b4c;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.fac-list li::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #D4AF37; /* Gold dot */
+    border-radius: 50%;
+    margin-top: 7px; /* Align dot with text vertically */
+    flex-shrink: 0;
+}
+
+/* Helpers */
+.mt-100 {
+    margin-top: 100px;
+}
+
+.mb-20 {
+    margin-bottom: 20px !important;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .fac-stage-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .fac-stage-reverse .fac-stage-content,
+    .fac-stage-reverse .fac-stage-img-wrapper {
+        order: unset; /* Revert ordering on mobile */
+    }
+    
+    .fac-stage-img-wrapper {
+        height: 400px;
+    }
+    
+    .fac-stage-content {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .fac-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .fac-header-left, .fac-header-right {
+        max-width: 100%;
+    }
+
+    .fac-title {
+        font-size: 32px;
+    }
+    
+    .facilities-section {
+        padding: 60px 0;
+    }
+    
+    .fac-stage-img-wrapper {
+        height: 300px;
+    }
+    
+    .mt-100 {
+        margin-top: 60px;
+    }
+}
+
+/* =========================================================
+   Scientific Innovation Section (Labs Stack)
+========================================================= */
+.fac-labs-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.fac-lab-card {
+    background-color: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(17, 29, 74, 0.06);
+    display: flex;
+    flex-direction: column;
+}
+
+.fac-lab-img {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    background-color: #e5ded4;
+}
+
+.fac-lab-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fac-lab-card:hover .fac-lab-img img {
+    transform: scale(1.03);
+}
+
+.fac-lab-content {
+    padding: 35px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.fac-lab-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.fac-lab-title {
+    color: #1a2b4c;
+    font-size: 24px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.fac-lab-badge {
+    background-color: #fdf8eb; /* light beige/yellow background */
+    color: #D4AF37; /* gold text */
+    font-size: 11px;
+    font-weight: 700;
+    font-family: 'Geist', sans-serif;
+    padding: 6px 14px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.fac-lab-desc {
+    color: rgba(11, 17, 38, 0.6);
+    font-size: 14px;
+    line-height: 1.7;
+    font-family: 'Geist', sans-serif;
+    margin: 0;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+    .fac-lab-img {
+        height: 250px;
+    }
+    
+    .fac-lab-content {
+        padding: 25px 20px;
+    }
+    
+    .fac-lab-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .fac-lab-title {
+        font-size: 20px;
+    }
+}
+/* =========================================================
+   Championship Sports Facilities Section
+========================================================= */
+.section-dark-blue {
+    background-color: #0b1a30; /* dark navy */
+}
+
+/* Dark Header Overrides */
+.fac-header-dark .fac-title {
+    color: white;
+}
+
+.fac-header-dark .fac-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.fac-divider-dark {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.fac-sports-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Large Top Card */
+.fac-sports-card-large {
+    width: 100%;
+}
+
+.fac-sports-img-large {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.fac-sports-img-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fac-sports-img-large:hover img {
+    transform: scale(1.03);
+}
+
+.fac-sports-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 100px 50px 50px 50px;
+    background: linear-gradient(to top, rgba(11, 26, 48, 0.95) 0%, rgba(11, 26, 48, 0.8) 40%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    pointer-events: none; /* Let clicks pass through if needed */
+}
+
+.fac-sports-tag-overlay {
+    color: var(--brand-red, #ea3636);
+    font-size: 11px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.fac-sports-title-overlay {
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.fac-sports-desc-overlay {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.7;
+    font-family: 'Geist', sans-serif;
+    margin: 0;
+    max-width: 800px;
+}
+
+/* Bottom Row */
+.fac-sports-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.fac-sports-card-small {
+    background-color: white;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.fac-sports-img-small {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.fac-sports-img-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fac-sports-card-small:hover .fac-sports-img-small img {
+    transform: scale(1.03);
+}
+
+.fac-sports-content-small {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.fac-sports-tag-red {
+    color: var(--brand-red, #ea3636);
+    font-size: 11px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.fac-sports-title-dark {
+    color: #1a2b4c;
+    font-size: 26px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.fac-sports-desc-dark {
+    color: rgba(11, 17, 38, 0.65);
+    font-size: 14px;
+    line-height: 1.7;
+    font-family: 'Geist', sans-serif;
+    margin: 0;
+}
+
+/* Responsive Overrides */
+@media (max-width: 992px) {
+    .fac-sports-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .fac-sports-img-large {
+        height: 400px;
+    }
+    
+    .fac-sports-overlay {
+        padding: 60px 20px 30px 20px;
+    }
+    
+    .fac-sports-title-overlay {
+        font-size: 24px;
+    }
+    
+    .fac-sports-content-small {
+        padding: 30px 20px;
+    }
+    
+    .fac-sports-title-dark {
+        font-size: 22px;
+    }
+}
+
+/* =========================================================
+   Facilities CTA Block
+========================================================= */
+.fac-cta-block {
+    background-color: #0b1a30; /* deep navy */
+    border-radius: 30px;
+    padding: 60px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.fac-cta-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.fac-cta-title {
+    color: white;
+    font-size: 36px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.fac-cta-desc {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+    line-height: 1.7;
+    font-family: 'Geist', sans-serif;
+    margin: 0;
+    max-width: 650px;
+}
+
+.fac-cta-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.fac-cta-btn-primary {
+    background-color: var(--brand-red, #ea3636);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.fac-cta-btn-primary:hover {
+    background-color: #d12e2e;
+}
+
+.fac-cta-btn-outline {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 28px; /* Slightly less padding to account for border */
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.fac-cta-btn-outline:hover {
+    background-color: white;
+    color: #0b1a30;
+}
+
+/* CTA Responsive */
+@media (max-width: 1024px) {
+    .fac-cta-block {
+        padding: 50px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .fac-cta-desc {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .fac-cta-block {
+        padding: 40px 30px;
+    }
+    
+    .fac-cta-title {
+        font-size: 28px;
+    }
+    
+    .fac-cta-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    
+    .fac-cta-btn-primary,
+    .fac-cta-btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+}

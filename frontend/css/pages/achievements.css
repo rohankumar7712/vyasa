@@ -1,0 +1,476 @@
+/* =========================================================
+   Achievements Hero Section
+========================================================= */
+
+.achievements-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../../Images/Campus.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-overlay-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(11, 26, 48, 0.9) 0%, rgba(11, 26, 48, 0.6) 50%, rgba(11, 26, 48, 0.2) 100%);
+    z-index: 1;
+}
+
+.achievements-hero-section .hero-container {
+    position: relative;
+    z-index: 2;
+    padding-top: 40px; /* Space for pill navbar */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Pill Navbar */
+.navbar-pill {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50px;
+    padding: 10px 30px;
+    margin-bottom: 60px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+    top: 0;
+}
+
+.navbar-pill .nav-links li a {
+    color: #1a2b4c;
+}
+
+.navbar-pill .nav-links li a:hover,
+.navbar-pill .nav-links li a.active {
+    color: var(--brand-red, #ea3636);
+}
+
+.navbar-pill .logo img {
+    height: 40px; /* adjust based on logo size */
+}
+
+/* Hero Content */
+.achievements-hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 800px;
+    padding-bottom: 80px;
+}
+
+.achievements-hero-content .main-heading {
+    font-size: clamp(36px, 4.5vw, 60px);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.white-text {
+    color: white;
+}
+
+.red-text {
+    color: var(--brand-red, #ea3636);
+}
+
+.achievements-hero-content .sub-heading {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Geist', sans-serif;
+    margin-bottom: 20px;
+}
+
+.achievements-hero-content .description {
+    font-size: 15px;
+    line-height: 1.7;
+    font-family: 'Geist', sans-serif;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 40px;
+    max-width: 850px;
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: var(--brand-red, #ea3636);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #d12e2e;
+}
+
+/* =========================================================
+   Stats Bar Section
+========================================================= */
+.achievements-stats-bar {
+    background-color: #ffffff;
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.stat-item {
+    text-align: center;
+    position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -15px;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.stat-number {
+    color: #1a2b4c;
+    font-size: 42px;
+    font-weight: 900;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.stat-label {
+    color: rgba(11, 17, 38, 0.6);
+    font-size: 12px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    .stat-item:nth-child(2)::after {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-pill {
+        padding: 10px 20px;
+        margin-bottom: 30px;
+    }
+    
+    .achievements-hero-content .main-heading {
+        font-size: 40px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .stat-item:not(:last-child)::after {
+        display: none;
+    }
+}
+
+/* =========================================================
+   Scholastic Mastery Section
+========================================================= */
+.achievements-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+/* Two-column Header */
+.ach-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+.ach-header-left {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ach-header-right {
+    flex: 1;
+    max-width: 50%;
+}
+
+.ach-tag {
+    background-color: var(--brand-red, #ea3636);
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.ach-title {
+    color: #1a2b4c;
+    font-size: 42px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.ach-subtitle {
+    color: rgba(11, 17, 38, 0.55);
+    font-size: 14px;
+    line-height: 1.7;
+    font-family: 'Geist', sans-serif;
+    margin: 0;
+}
+
+/* Grid layout */
+.ach-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+/* Cards */
+.ach-card {
+    background-color: #ffffff;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(17, 29, 74, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ach-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(17, 29, 74, 0.08);
+}
+
+.ach-card-img {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.ach-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ach-card:hover .ach-card-img img {
+    transform: scale(1.05);
+}
+
+.ach-card-content {
+    padding: 35px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+}
+
+.ach-card-title {
+    color: #1a2b4c;
+    font-size: 24px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.ach-card-desc {
+    color: rgba(11, 17, 38, 0.65);
+    font-size: 14px;
+    line-height: 1.7;
+    font-family: 'Geist', sans-serif;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .ach-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .ach-header-left, .ach-header-right {
+        max-width: 100%;
+    }
+    
+    .ach-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ach-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .ach-card-img {
+        height: 220px;
+    }
+    
+    .ach-card-content {
+        padding: 25px 20px;
+    }
+}
+
+.ach-section-beige {
+    background-color: #f8f9fa;
+}
+
+/* =========================================================
+   Achievements CTA Block
+========================================================= */
+.ach-cta-block {
+    background-color: #0b1a30; /* deep navy */
+    border-radius: 30px;
+    padding: 60px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.ach-cta-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ach-cta-title {
+    color: white;
+    font-size: 36px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.ach-cta-desc {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+    line-height: 1.7;
+    font-family: 'Geist', sans-serif;
+    margin: 0;
+    max-width: 650px;
+}
+
+.ach-cta-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.ach-cta-btn-primary {
+    background-color: var(--brand-red, #ea3636);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.ach-cta-btn-primary:hover {
+    background-color: #d12e2e;
+}
+
+.ach-cta-btn-outline {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.ach-cta-btn-outline:hover {
+    background-color: white;
+    color: #0b1a30;
+}
+
+/* CTA Responsive */
+@media (max-width: 1024px) {
+    .ach-cta-block {
+        padding: 50px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .ach-cta-desc {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .ach-cta-block {
+        padding: 40px 30px;
+    }
+    
+    .ach-cta-title {
+        font-size: 28px;
+    }
+    
+    .ach-cta-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    
+    .ach-cta-btn-primary,
+    .ach-cta-btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+}

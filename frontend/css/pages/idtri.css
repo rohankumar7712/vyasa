@@ -1,0 +1,732 @@
+/* =========================================================
+   IDTRI Playschool - Hero Section Styles
+========================================================= */
+
+/* --- Page Background --- */
+.idtri-page {
+    background-color: #FFFDF9; /* Warm off-white */
+    color: #333333; /* Override home.css white text */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.idtri-hero-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Navbar Adjustments --- */
+.idtri-navbar {
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 15px 40px;
+    border-radius: 50px;
+    /* margin-top: 5px;
+    margin-bottom: 5px; */
+}
+
+.idtri-navbar .nav-links a {
+    color: #17426A; /* Dark blue */
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.idtri-apply-btn {
+    background-color: #9C14B8 !important; /* Purple */
+    color: white !important;
+    text-decoration: none !important;
+    white-space: nowrap;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.idtri-apply-btn:hover {
+    background-color: #820D9B !important;
+}
+
+/* --- Mobile Drawer Apply Button Override --- */
+.idtri-page .mobile-apply-btn {
+    background-color: #9C14B8 !important; /* IDITRI Purple */
+    box-shadow: 0 10px 25px rgba(156, 20, 184, 0.3) !important;
+    text-decoration: none !important;
+}
+
+/* --- Hero Content --- */
+.idtri-hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 60px;
+}
+
+.idtri-hero-text {
+    flex: 1;
+    max-width: 550px;
+}
+
+.idtri-badge {
+    display: inline-block;
+    background-color: #F8C35E;
+    color: #113451;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+}
+
+.idtri-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #113451; /* Dark Blue */
+    margin-bottom: 24px;
+}
+
+.idtri-orange-text {
+    color: #EE6A33; /* Orange */
+}
+
+.idtri-description {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 90%;
+}
+
+.idtri-hero-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.idtri-btn-filled {
+    background-color: #113451;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.idtri-btn-filled:hover {
+    background-color: #0b253b;
+}
+
+.idtri-btn-outline {
+    background-color: transparent;
+    color: #113451;
+    padding: 10px 26px; /* slightly less padding to account for border */
+    border: 2px solid #113451;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.idtri-btn-outline:hover {
+    background-color: #113451;
+    color: white;
+}
+
+/* --- Hero Image --- */
+.idtri-hero-image-wrapper {
+    flex: 1;
+    position: relative;
+    max-width: 550px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.idtri-hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    object-fit: cover;
+}
+
+.idtri-accredited-badge {
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    background-color: #EE6A33;
+    color: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+    box-shadow: 0 4px 15px rgba(238, 106, 51, 0.4);
+    z-index: 10;
+}
+
+/* --- Updates Banner --- */
+.idtri-updates {
+    background-color: #F4EBE3;
+    display: flex;
+    align-items: center;
+    padding: 0; /* padding handled inside items if needed */
+    margin-top: auto;
+}
+
+.idtri-update-label {
+    background-color: #EE6A33;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 4px; /* Slight rounding based on design */
+    margin: 12px;
+    white-space: nowrap;
+}
+
+.idtri-updates .update-content {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.idtri-updates .update-item {
+    color: #666;
+    font-size: 14px;
+    margin-right: 40px;
+}
+
+.idtri-updates .update-item strong {
+    color: #113451;
+}
+
+/* =========================================================
+   Scientific Play Section
+========================================================= */
+
+.idtri-scientific-play {
+    padding: 80px 0;
+    background-color: #FFFFFF;
+}
+
+.idtri-section-header {
+    margin-bottom: 60px;
+}
+
+.idtri-section-tag {
+    color: #EE6A33; /* Orange */
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.idtri-section-title {
+    font-family: 'Poppins', sans-serif;
+    color: #113451; /* Dark Blue */
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.idtri-section-desc {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin-bottom: 30px;
+}
+
+.idtri-section-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #EEEEEE;
+    margin-top: 40px;
+}
+
+.idtri-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.idtri-card {
+    background-color: #FFFDF9;
+    border: 1px solid #F5ECE0;
+    border-radius: 20px;
+    padding: 40px 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.idtri-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.idtri-card-badge {
+    display: inline-block;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+
+.bg-darkblue { background-color: #113451; }
+.bg-orange { background-color: #EE6A33; }
+.bg-green { background-color: #5C9472; }
+
+.idtri-card-title {
+    color: #113451;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.idtri-card-text {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   Creative Outlets Section
+========================================================= */
+
+.idtri-creative-outlets {
+    padding: 80px 0;
+    background-color: #FFFFFF;
+}
+
+.idtri-image-card {
+    background-color: #FFFDF9;
+    border: 1px solid #F5ECE0;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.idtri-image-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.idtri-image-card-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.idtri-image-card-content {
+    padding: 30px;
+    flex: 1;
+}
+
+/* =========================================================
+   Creative Spaces Section
+========================================================= */
+
+.idtri-creative-spaces {
+    padding: 80px 0;
+    background-color: #FFFFFF; /* Match the previous section if it seamlessly flows */
+}
+
+/* The design shows the same background for scientific play and creative spaces, 
+   actually let's make it the warm off-white if needed, but it seems to flow from the previous */
+.idtri-page {
+    background-color: #F9F6F0; /* Fallback full page background */
+}
+
+.idtri-bento-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+}
+
+.idtri-bento-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.idtri-bento-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    /* add shadow if desired */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.idtri-bento-large {
+    height: 100%;
+    min-height: 500px;
+}
+
+.idtri-bento-small {
+    flex: 1;
+    min-height: 235px; /* (500 - 30) / 2 */
+}
+
+.idtri-bento-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.idtri-bento-item:hover .idtri-bento-img {
+    transform: scale(1.05);
+}
+
+.idtri-bento-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 60px 40px 30px 40px; /* Extra top padding for smoother gradient transition */
+    background: linear-gradient(to top, rgba(15, 61, 89, 0.95) 0%, rgba(15, 61, 89, 0.5) 60%, transparent 100%);
+    pointer-events: none; /* Let hover events pass through */
+}
+
+.idtri-bento-title {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.idtri-bento-desc {
+    color: #EEEEEE;
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 95%;
+}
+
+/* =========================================================
+   Timeline Section
+========================================================= */
+
+.idtri-timeline-section {
+    padding: 80px 0;
+    background-color: #FFFFFF;
+}
+
+.idtri-timeline-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.idtri-timeline-card-header .idtri-card-badge {
+    margin-bottom: 0;
+}
+
+.idtri-timeline-date {
+    color: #EE6A33;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+
+.idtri-timeline-line {
+    width: 100%;
+    height: 1px;
+    background-color: #F5ECE0;
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.idtri-timeline-line::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #EE6A33;
+}
+
+/* =========================================================
+   Campus Life Section
+========================================================= */
+
+.idtri-campus-life {
+    padding: 80px 0;
+    background-color: #F9F6F0; /* Slightly warmer off-white for gallery background */
+}
+
+.idtri-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 250px;
+    gap: 20px;
+}
+
+.idtri-gallery-item {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.idtri-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.idtri-gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.idtri-gallery-item-1 { grid-area: 1 / 1 / 3 / 2; }
+.idtri-gallery-item-2 { grid-area: 1 / 2 / 2 / 4; }
+.idtri-gallery-item-3 { grid-area: 1 / 4 / 2 / 5; }
+.idtri-gallery-item-4 { grid-area: 2 / 2 / 3 / 3; }
+.idtri-gallery-item-5 { grid-area: 2 / 3 / 3 / 5; }
+
+
+/* =========================================================
+   Workshops & Partners Section
+========================================================= */
+
+.idtri-workshops-section {
+    padding: 80px 0;
+    background-color: #F4EBE3; /* Match the notice board background or slightly warmer */
+}
+
+/* --- Partners Block --- */
+.idtri-partners {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.idtri-partners-label {
+    color: #999;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+}
+
+
+.idtri-partners-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.idtri-partners-logos span {
+    color: #5C7A8C;
+    font-size: 24px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.5px;
+}
+
+/* --- Workshops Block --- */
+.idtri-event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.idtri-event-card {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.idtri-event-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.idtri-event-date {
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+}
+
+.idtri-event-month {
+    color: #EE6A33;
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.idtri-event-day {
+    color: #999;
+    font-size: 12px;
+}
+
+.idtri-event-details {
+    flex: 1;
+}
+
+.idtri-event-title {
+    color: #113451;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.idtri-event-desc {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.idtri-event-action {
+    min-width: 150px;
+    text-align: right;
+}
+
+.idtri-event-btn {
+    padding: 12px 30px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .idtri-hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .idtri-hero-text {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+    
+    .idtri-description {
+        margin: 0 auto 40px auto;
+    }
+    
+    .idtri-hero-buttons {
+        justify-content: center;
+    }
+    
+    .idtri-accredited-badge {
+        right: 10px;
+        top: -10px;
+    }
+    
+    .idtri-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .idtri-bento-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .idtri-bento-large {
+        min-height: 400px;
+    }
+    
+    .idtri-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+    }
+    
+    .idtri-gallery-item {
+        grid-area: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .idtri-heading {
+        font-size: 42px;
+    }
+    
+    .idtri-hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .idtri-updates {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .idtri-update-label {
+        margin: 12px auto;
+    }
+    
+    .idtri-section-title {
+        font-size: 32px;
+    }
+    
+    .idtri-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .idtri-bento-overlay {
+        padding: 40px 20px 20px 20px;
+    }
+    
+    .idtri-bento-title {
+        font-size: 20px;
+    }
+    
+    .idtri-partners-logos {
+        gap: 30px;
+    }
+    
+    .idtri-event-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 24px;
+    }
+    
+    .idtri-event-action {
+        text-align: left;
+    }
+    
+    .idtri-gallery-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 250px;
+    }
+}

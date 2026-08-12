@@ -1,0 +1,558 @@
+/* =========================================================
+   Gallery Hero Section Overrides
+========================================================= */
+
+/* Override the default hero background from home.css */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 75vh;
+    background-image: url('../../Images/Hero imge.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Override the default dark overlay with the blue tint */
+.hero-overlay {
+    background: linear-gradient(rgba(26, 43, 76, 0.8), rgba(26, 43, 76, 0.8));
+    z-index: 1;
+}
+
+/* Ensure container is above overlay */
+.hero-section .hero-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* The gallery content block */
+.gallery-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+    color: #ffffff;
+    z-index: 2;
+    position: relative;
+}
+
+.gallery-breadcrumbs {
+    font-family: 'Geist', sans-serif;
+    font-size: 13px;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.gallery-divider {
+    margin: 0 8px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.gallery-current {
+    color: #e5b30b; /* Yellowish gold for active breadcrumb */
+    font-weight: 600;
+}
+
+.gallery-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 52px;
+    font-weight: 800;
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+}
+
+.gallery-subtitle {
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    max-width: 700px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+}
+
+/* Navbar Overrides to match the pill style from the screenshot */
+.hero-section .navbar {
+    background: #e2e5eb !important;
+    border-radius: 40px !important;
+    padding: 10px 25px !important;
+    margin-top: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.hero-section .navbar .nav-links a {
+    color: #2b3d5b !important;
+}
+
+.hero-section .navbar .nav-links a:hover,
+.hero-section .navbar .nav-links a.active {
+    color: var(--brand-red, #ea3636) !important;
+}
+
+/* Ensure the logo is properly visible and colored */
+.hero-section .navbar .logo img {
+    filter: none !important;
+}
+
+/* Specific styling for the apply-btn in this pill navbar */
+.hero-section .navbar .apply-btn {
+    background: var(--brand-red, #ea3636) !important;
+    color: #ffffff !important;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .gallery-title {
+        font-size: 34px;
+    }
+    
+    .gallery-subtitle {
+        font-size: 14px;
+        padding: 0 15px;
+    }
+    
+    .hero-section .navbar {
+        border-radius: 0 !important;
+    }
+}
+
+/* =========================================================
+   Gallery Filters Section
+========================================================= */
+.gallery-filters-section {
+    padding: 60px 0 40px 0;
+    background-color: #ffffff;
+}
+
+.gallery-filters-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.gallery-filter-btn {
+    background: #ffffff;
+    border: 1px solid #f0e6d6;
+    color: #4a5a73;
+    font-family: 'Geist', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 22px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gallery-filter-btn:hover {
+    border-color: #0b3660;
+    color: #0b3660;
+}
+
+.gallery-filter-btn.active {
+    background-color: #0b3660;
+    color: #ffffff;
+    border-color: #0b3660;
+    box-shadow: 0 4px 15px rgba(11, 54, 96, 0.2);
+}
+
+/* Responsiveness for filters */
+@media (max-width: 768px) {
+    .gallery-filters-section {
+        padding: 40px 0 20px 0;
+    }
+    
+    .gallery-filter-btn {
+        padding: 8px 18px;
+        font-size: 13px;
+    }
+}
+
+/* =========================================================
+   Gallery Grid Section
+========================================================= */
+.gallery-grid-section {
+    padding: 0 0 100px 0;
+    background-color: #FAFAF8;
+
+}
+
+.gallery-grid-section.bg-grey {
+    background-color: #f9f9fa !important;
+}
+
+.gallery-grid-section.bg-white {
+    background-color: #ffffff !important;
+}
+
+.gallery-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    padding-top: 40px; 
+    border-top: 1px solid #f0e6d6;
+}
+
+.gallery-header-left {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.gallery-tag {
+    display: block;
+    color: var(--brand-red, #ea3636);
+    font-size: 11px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.gallery-h2 {
+    color: #0b3660;
+    font-size: 42px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.gallery-header-right {
+    flex: 1;
+    color: #666666;
+    font-size: 15px;
+    font-family: 'Geist', sans-serif;
+    line-height: 1.6;
+    max-width: 500px;
+    padding-top: 25px;
+}
+
+.gallery-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.gallery-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.gallery-row-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.gallery-row-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.gallery-card {
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(11, 26, 48, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(11, 26, 48, 0.1);
+}
+
+.gallery-img-wrap {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.gallery-row-3 .gallery-img-wrap {
+    height: 250px;
+}
+
+.gallery-row-4 .gallery-img-wrap {
+    height: 180px;
+}
+
+.gallery-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .gallery-img-wrap img {
+    transform: scale(1.05);
+}
+
+.gallery-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.gallery-row-4 .gallery-content {
+    padding: 20px;
+}
+
+.gallery-cat {
+    color: var(--brand-red, #ea3636);
+    font-size: 10px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.gallery-content h3 {
+    color: #1a2b4c;
+    font-size: 22px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+}
+
+.gallery-row-4 .gallery-content h3 {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+}
+
+.gallery-content p {
+    color: rgba(11, 17, 38, 0.65);
+    font-size: 14px;
+    font-family: 'Geist', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.gallery-row-4 .gallery-content p {
+    font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .gallery-section-header {
+        flex-direction: column;
+        padding-top: 30px;
+    }
+    
+    .gallery-header-right {
+        padding-top: 15px;
+    }
+    
+    .gallery-row-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 992px) {
+    .gallery-section-header {
+        flex-direction: column;
+        padding-top: 30px;
+    }
+    
+    .gallery-header-right {
+        padding-top: 15px;
+    }
+    
+    .gallery-row-3,
+    .gallery-row-4 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-row-2,
+    .gallery-row-3,
+    .gallery-row-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-h2 {
+        font-size: 32px;
+    }
+    
+    .gallery-img-wrap,
+    .gallery-row-3 .gallery-img-wrap,
+    .gallery-row-4 .gallery-img-wrap {
+        height: 250px;
+    }
+}
+
+/* =========================================================
+   Events & Campus Culture Subsections
+========================================================= */
+.events-layout {
+    gap: 50px;
+}
+
+.events-subsection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.events-subheader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.events-badge {
+    background-color: var(--brand-red, #ea3636);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.events-h3 {
+    color: #1a2b4c;
+    font-size: 20px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .events-h3 {
+        font-size: 18px;
+    }
+}
+
+/* =========================================================
+   Play Button Overlay (For Videos)
+========================================================= */
+.gallery-img-wrap {
+    position: relative;
+}
+
+.play-btn-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.play-btn-overlay::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 16px;
+    border-color: transparent transparent transparent #ffffff;
+    margin-left: 4px; /* Center the triangle visually */
+}
+
+.gallery-card:hover .play-btn-overlay {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* =========================================================
+   Virtual Tour CTA Section
+========================================================= */
+.virtual-tour-cta-section {
+    padding: 0 0 100px 0;
+    background-color: #fcfcfb;
+}
+
+.virtual-tour-banner {
+    background-image: linear-gradient(rgba(18, 77, 126, 0.85), rgba(18, 77, 126, 0.85)), url('../../Images/Campus.webp');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    padding: 70px 30px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(11, 26, 48, 0.1);
+}
+
+.virtual-tour-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.virtual-tour-content h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.virtual-tour-content p {
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-virtual-tour {
+    display: inline-block;
+    background-color: var(--brand-red, #ea3636);
+    color: #ffffff;
+    font-family: 'Geist', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn-virtual-tour:hover {
+    background-color: #d12c2c;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(234, 54, 54, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .virtual-tour-banner {
+        padding: 40px 20px;
+    }
+    
+    .virtual-tour-content h2 {
+        font-size: 28px;
+    }
+    
+    .virtual-tour-content p {
+        font-size: 14px;
+    }
+}
