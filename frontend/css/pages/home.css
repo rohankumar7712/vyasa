@@ -588,12 +588,19 @@ video {
 }
 
 .achievements-featured {
+    display: grid;
     position: relative;
     overflow: hidden;
     border-radius: 20px;
-    height: 450px;
+    min-height: 450px;
     box-shadow: 0 16px 40px rgba(17, 29, 74, .05);
     margin-bottom: 30px;
+}
+
+.achievements-featured img,
+.featured-overlay {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
 }
 
 .achievements-featured img {
@@ -605,14 +612,14 @@ video {
 }
 
 .featured-overlay {
-    position: absolute;
-    inset: 0;
+    position: relative;
+    z-index: 1;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 
-    padding: 0 48px 52px;
+    padding: 40px 48px 52px;
 
     color: #fff;
 
@@ -799,7 +806,8 @@ video {
 
 .showcase-img {
     width: 100%;
-    height: 250px;
+    aspect-ratio: 4/5;
+    height: auto;
     object-fit: cover;
     background-color: #e5ded4;
     /* Placeholder color */
@@ -843,7 +851,7 @@ video {
 .resources-header {
     text-align: left;
     max-width: 800px;
-    margin-bottom: 5px;
+    margin-bottom: 30px;
 }
 
 .resources-header .section-description {
@@ -854,7 +862,7 @@ video {
 .resources-divider {
     height: 1px;
     background-color: #e5ded4;
-    margin-bottom: 5px;
+    margin-bottom: 30px;
 }
 
 .resources-controls {
@@ -930,7 +938,8 @@ video {
 }
 
 .resource-img-wrapper {
-    height: 220px;
+    aspect-ratio: 3/4;
+    height: auto;
     background-color: #4a5c7a;
     position: relative;
     overflow: hidden;
@@ -2891,6 +2900,13 @@ video {
 
 /* --- Responsive Media Queries --- */
 
+@media (max-width: 1200px) {
+    .resources-grid,
+    .events-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media (max-width: 992px) {
     .container {
         padding: 36px 40px;
@@ -2924,8 +2940,15 @@ video {
     .leadership-grid,
     .alumni-grid,
     .insights-grid,
-    .path-steps-grid {
+    .path-steps-grid,
+    .resources-grid,
+    .events-grid,
+    .showcase-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .educator-grid {
+        grid-template-columns: 1fr;
     }
 
     .admissions-header-split {
@@ -3142,7 +3165,12 @@ video {
     }
 
     .achievements-featured {
-        height: 350px;
+        min-height: 350px;
+        height: auto;
+    }
+    
+    .featured-overlay {
+        padding: 30px 24px 30px;
     }
 
     .timeline-container {
@@ -4265,21 +4293,21 @@ video {
 
 @media (max-width: 576px) {
     .c-line {
-        left: 80px;
+        left: 85px;
     }
 
     .c-node {
-        left: 80px;
+        left: 85px;
     }
 
     .c-year {
-        width: 60px;
+        width: 70px;
         font-size: 18px;
-        padding-right: 15px;
+        padding-right: 10px;
     }
 
     .c-content {
-        padding-left: 20px;
+        padding-left: 35px;
     }
 }
 
@@ -5644,7 +5672,7 @@ video {
 .dropdown-toggle {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
     text-decoration: none;
 }
@@ -5653,7 +5681,7 @@ video {
     font-size: 16px;
     font-weight: 400;
     transition: transform 0.25s ease;
-    margin-left: 8px;
+    margin-left: 24px;
 }
 
 .has-mega-menu.active .dropdown-icon {

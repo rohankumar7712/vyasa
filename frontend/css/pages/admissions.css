@@ -117,8 +117,11 @@
 }
 
 .admissions-container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .philosophy-header {
@@ -711,6 +714,7 @@
 @media (max-width: 992px) {
     .documentation-content {
         flex-direction: column;
+        align-items: stretch;
         gap: 40px;
     }
 

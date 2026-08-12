@@ -522,6 +522,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
     list-style: none; /* removes default arrow in some browsers */
 }
 
@@ -542,7 +543,10 @@
 }
 
 .faq-answer {
-    padding: 0 30px 25px 30px;
+    padding: 0 30px 25px 30px !important;
+    margin: 0 !important;
+    opacity: 1;
+    max-height: none;
     font-size: 14px;
     color: #666;
     line-height: 1.6;
@@ -678,6 +682,7 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+    margin-bottom: 0;
 }
 
 .form-group label {

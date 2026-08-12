@@ -837,12 +837,7 @@
 }
 
 .faq-item {
-    border-bottom: 1px solid #e0dfd9;
-    padding: 20px 0;
-}
-
-.faq-item:first-child {
-    border-top: 1px solid #e0dfd9;
+    padding: 20px 25px;
 }
 
 .faq-question {
@@ -854,6 +849,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
     list-style: none;
     /* Remove default marker */
 }
@@ -876,9 +872,10 @@ details[open] .faq-icon {
 }
 
 .faq-answer {
-    padding-top: 15px;
-    padding-right: 40px;
-    /* Leave space on right */
+    padding: 15px 0 0 0 !important;
+    margin: 0 !important;
+    opacity: 1;
+    max-height: none;
 }
 
 .faq-answer p {
