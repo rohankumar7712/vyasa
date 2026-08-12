@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyasa - Page Preview</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="preview-body">
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                   <img src="/frontend/Images/vyasa logo.webp" alt="Vyasa Logo">
+                </div>
+            </div>
+            <div class="sidebar-portal-label">CMS PORTAL</div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                    <li class="active"><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
+                    <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                    <li><a href="#"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                    <li><a href="#"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                    <li><a href="#"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                    <li><a href="#"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status">
+                    <span class="status-dot"></span> System Online
+                </div>
+                <div class="version">Version 2.4.1 (Stable)</div>
+            </div>
+        </aside>
+
+        <main class="main-content" style="padding: 0;">
+    <!-- Preview Top Control Bar -->
+    <div class="preview-top-bar">
+        <div class="preview-header-left">
+            <div class="breadcrumbs">CMS Console / Pages / Academic Programs / <span class="highlight-blue">Preview</span></div>
+            <h1>Page Preview: Academic Programs</h1>
+        </div>
+        
+        <div class="preview-header-center">
+            <div class="viewport-toggles">
+                <button class="viewport-btn active" data-view="desktop-view"><i class="fa-solid fa-desktop"></i></button>
+                <button class="viewport-btn" data-view="tablet-view"><i class="fa-solid fa-tablet-screen-button"></i></button>
+                <button class="viewport-btn" data-view="mobile-view"><i class="fa-solid fa-mobile-screen-button"></i></button>
+            </div>
+        </div>
+
+        <div class="preview-header-right">
+            <a href="page-editor.html" class="btn btn-outline preview-btn">Back to Editor</a>
+            <a href="page-editor.html" class="btn btn-primary preview-btn-dark">Edit Page</a>
+            <button class="btn btn-primary preview-btn-green" id="btn-publish-preview">Publish Changes</button>
+        </div>
+    </div>
+
+    <!-- Draft Alert Banner -->
+    <div class="draft-alert-banner">
+        <div class="alert-content">
+            <i class="fa-solid fa-circle alert-dot"></i>
+            <span>You are previewing a draft version of this page. These changes are not yet public.</span>
+        </div>
+        <div class="alert-badge">DRAFT MODE</div>
+    </div>
+
+    <!-- The Mock Frontend Frame -->
+    <div class="preview-frame-container">
+        <div class="preview-frame desktop-view">
+            
+            <!-- Mock Frontend Navbar -->
+            <header class="frontend-nav">
+                <div class="f-logo">VYASA GROUP OF INSTITUTIONS</div>
+                <button class="f-menu-btn"><i class="fa-solid fa-bars"></i></button>
+                <nav class="f-links">
+                    <a href="#">About Us</a>
+                    <a href="#" class="active">Academics</a>
+                    <a href="#">Admissions</a>
+                    <a href="#">Campus Life</a>
+                    <a href="#" class="f-btn">Contact Us</a>
+                </nav>
+            </header>
+
+            <!-- Mobile Drawer -->
+            <div class="f-drawer-overlay"></div>
+            <div class="f-mobile-drawer">
+                <div class="f-drawer-header">
+                    <div class="f-logo">VYASA</div>
+                    <button class="f-drawer-close"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <nav class="f-drawer-links">
+                    <a href="#">About Us</a>
+                    <a href="#" class="active">Academics</a>
+                    <a href="#">Admissions</a>
+                    <a href="#">Campus Life</a>
+                    <a href="#" class="f-btn">Contact Us</a>
+                </nav>
+            </div>
+
+            <!-- Mock Frontend Hero -->
+            <section class="f-hero">
+                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Campus Hero" class="f-hero-bg">
+                <div class="f-hero-overlay"></div>
+                <div class="f-hero-content">
+                    <h2>Explore Our Academic Programs</h2>
+                    <p>VYASA offers a holistic and rigorous academic curriculum designed to empower minds, foster creativity, and cultivate institutional excellence across all levels of school and pre-university education.</p>
+                    <button class="f-hero-btn">Admission Enquiry</button>
+                </div>
+            </section>
+
+            <!-- Mock Frontend Programs Grid -->
+            <section class="f-programs">
+                <div class="f-section-header">
+                    <h3>Our Core Educational Programs</h3>
+                    <p>Every program is structured in alignment with NEP guidelines, integrating values, life skills, and modern STEM frameworks.</p>
+                </div>
+                <div class="f-programs-grid">
+                    <div class="f-program-card">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Pre-Primary">
+                    </div>
+                    <div class="f-program-card">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Primary School">
+                    </div>
+                    <div class="f-program-card">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="High School">
+                    </div>
+                    <div class="f-program-card">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="PU College">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mock Frontend Why Choose Us -->
+            <section class="f-why-choose">
+                <div class="f-why-text">
+                    <h3>Why Choose Our Academic Strategy?</h3>
+                    <p>We believe that education must extend far beyond textbooks. Our methodology focuses on nurturing intellectual curiosity while building robust foundations of character, creativity, and critical reasoning.</p>
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Students" class="f-why-img">
+                </div>
+                <div class="f-why-list">
+                    <div class="f-why-item">
+                        <div class="f-check-icon"><i class="fa-solid fa-check"></i></div>
+                        <div>
+                            <h4>Integrated STEM & Humanities Model</h4>
+                            <p>Equipping young minds with practical, hands-on scientific tools alongside rich literary and empathetic perspectives.</p>
+                        </div>
+                    </div>
+                    <div class="f-why-item">
+                        <div class="f-check-icon"><i class="fa-solid fa-check"></i></div>
+                        <div>
+                            <h4>Continuous Assessment Methodologies</h4>
+                            <p>Transitioning away from stressful exams into progressive formative evaluations designed in alignment with national NEP policies.</p>
+                        </div>
+                    </div>
+                    <div class="f-why-item">
+                        <div class="f-check-icon"><i class="fa-solid fa-check"></i></div>
+                        <div>
+                            <h4>Experiential & Inquiry-Based Learning</h4>
+                            <p>Encouraging students to learn by questioning, building, and exploring real-world applications in community spaces.</p>
+                        </div>
+                    </div>
+                    <div class="f-why-item">
+                        <div class="f-check-icon"><i class="fa-solid fa-check"></i></div>
+                        <div>
+                            <h4>Holistic Mentoring Programs</h4>
+                            <p>Every child is paired with a dedicated faculty mentor to navigate developmental, cognitive, and social-emotional growth.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mock Frontend CTA Banner -->
+            <section class="f-cta-banner">
+                <h3>Ready to experience true academic excellence?<br>Join VYASA today.</h3>
+                <div class="f-cta-buttons">
+                    <button class="f-btn-yellow">Apply Online</button>
+                    <button class="f-btn-outline">Download Brochure</button>
+                </div>
+            </section>
+
+            <!-- Publish Confirmation Modal -->
+            <div class="publish-modal-overlay"></div>
+            <div class="publish-modal-container">
+                <div class="publish-modal-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h2>Page Published Successfully</h2>
+                <p class="publish-modal-subtitle">Your changes to Academic Programs are now live and accessible.</p>
+                
+                <div class="publish-summary-card">
+                    <div class="summary-row">
+                        <span class="summary-label">Page Title</span>
+                        <span class="summary-value bold">Academic Programs</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Published URL</span>
+                        <a href="#" class="summary-value link">vyasa.edu/academic-programs</a>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Published By</span>
+                        <span class="summary-value bold">Admin Director</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Date & Time</span>
+                        <span class="summary-value bold">Today, 11:52 AM</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Version Number</span>
+                        <div class="summary-value">
+                            <span class="bold">v2.4</span> <span class="badge latest-badge">LATEST</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publish-toggle-row">
+                    <div class="toggle-left">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Share publication update with CMS team</span>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <div class="publish-modal-actions">
+                    <button class="btn btn-outline close-publish-modal">Back to Editor</button>
+                    <button class="btn btn-primary view-live-btn">View Live Page</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const viewportBtns = document.querySelectorAll('.viewport-btn');
+            const previewFrame = document.querySelector('.preview-frame');
+
+            viewportBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    viewportBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    // Get the selected view class
+                    const viewClass = btn.getAttribute('data-view');
+
+                    // Remove existing view classes
+                    previewFrame.classList.remove('desktop-view', 'tablet-view', 'mobile-view');
+                    // Add the new view class
+                    previewFrame.classList.add(viewClass);
+                });
+            });
+
+            // Mobile Drawer Logic
+            const menuBtn = document.querySelector('.f-menu-btn');
+            const drawerClose = document.querySelector('.f-drawer-close');
+            const mobileDrawer = document.querySelector('.f-mobile-drawer');
+            const drawerOverlay = document.querySelector('.f-drawer-overlay');
+
+            if (menuBtn && drawerClose && mobileDrawer && drawerOverlay) {
+                menuBtn.addEventListener('click', () => {
+                    mobileDrawer.classList.add('open');
+                    drawerOverlay.classList.add('open');
+                });
+
+                drawerClose.addEventListener('click', () => {
+                    mobileDrawer.classList.remove('open');
+                    drawerOverlay.classList.remove('open');
+                });
+
+                drawerOverlay.addEventListener('click', () => {
+                    mobileDrawer.classList.remove('open');
+                    drawerOverlay.classList.remove('open');
+                });
+            }
+
+            // Publish Modal Logic
+            const publishBtn = document.getElementById('btn-publish-preview');
+            const publishOverlay = document.querySelector('.publish-modal-overlay');
+            const publishModal = document.querySelector('.publish-modal-container');
+            const closePublishBtn = document.querySelector('.close-publish-modal');
+
+            if (publishBtn && publishOverlay && publishModal && closePublishBtn) {
+                publishBtn.addEventListener('click', () => {
+                    publishOverlay.classList.add('active');
+                    publishModal.classList.add('active');
+                });
+
+                closePublishBtn.addEventListener('click', () => {
+                    publishOverlay.classList.remove('active');
+                    publishModal.classList.remove('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

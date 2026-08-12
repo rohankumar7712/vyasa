@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyasa - Page Editor</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="/frontend/Images/vyasa logo.webp" alt="Vyasa Logo">
+                </div>
+            </div>
+            
+            <div class="sidebar-portal-label">CMS PORTAL</div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                    <li class="active"><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
+                    <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                    <li><a href="#"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                    <li><a href="#"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                    <li><a href="#"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                    <li><a href="#"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status">
+                    <span class="status-dot"></span> System Online
+                </div>
+                <div class="version">Version 2.4.1 (Stable)</div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content editor-main-content">
+            <!-- Header area specific to editor -->
+            <div class="editor-top-bar">
+                <div class="editor-title-area">
+                    <div class="breadcrumbs">CMS Console / Pages / <span class="highlight-blue">Academic Programs</span> / Editor</div>
+                    <div class="editor-title-row">
+                        <h1>Editing: Academic Programs</h1>
+                        <span class="badge status-draft-badge">DRAFT</span>
+                    </div>
+                </div>
+                <div class="editor-actions">
+                    <button class="btn btn-outline">Save Draft</button>
+                    <a href="page-preview.html" class="btn btn-outline" style="text-decoration: none;">Preview</a>
+                    <button class="btn btn-primary" id="btn-publish-editor">Publish Changes</button>
+                </div>
+            </div>
+
+            <!-- Two Column Layout -->
+            <div class="editor-layout">
+                <!-- Main Editor Column -->
+                <div class="editor-main-col">
+                    <!-- Toolbar -->
+                    <div class="editor-toolbar">
+                        <div class="toolbar-group">
+                            <button class="toolbar-btn dropdown-btn">Paragraph <i class="fa-solid fa-chevron-down"></i></button>
+                        </div>
+                        <div class="toolbar-group">
+                            <button class="toolbar-btn active"><i class="fa-solid fa-bold"></i></button>
+                            <button class="toolbar-btn"><i class="fa-solid fa-italic"></i></button>
+                            <button class="toolbar-btn"><i class="fa-solid fa-underline"></i></button>
+                            <button class="toolbar-btn"><i class="fa-solid fa-strikethrough"></i></button>
+                        </div>
+                        <div class="toolbar-group">
+                            <button class="toolbar-btn"><i class="fa-solid fa-align-left"></i></button>
+                            <button class="toolbar-btn"><i class="fa-solid fa-align-center"></i></button>
+                            <button class="toolbar-btn"><i class="fa-solid fa-align-right"></i></button>
+                            <button class="toolbar-btn"><i class="fa-solid fa-align-justify"></i></button>
+                        </div>
+                        <div class="toolbar-group">
+                            <button class="toolbar-btn"><i class="fa-solid fa-list-ul"></i></button>
+                            <button class="toolbar-btn"><i class="fa-solid fa-list-ol"></i></button>
+                        </div>
+                        <div class="toolbar-group">
+                            <button class="toolbar-btn"><i class="fa-solid fa-link"></i></button>
+                            <button class="toolbar-btn"><i class="fa-regular fa-image"></i></button>
+                            <button class="toolbar-btn"><i class="fa-solid fa-circle-xmark"></i></button>
+                        </div>
+                        <div class="toolbar-group right-align">
+                            <button class="toolbar-btn"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button class="toolbar-btn"><i class="fa-solid fa-rotate-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Block Builder Area -->
+                    <div class="block-builder">
+                        
+                        <!-- Hero Section Block (Expanded) -->
+                        <div class="content-block expanded">
+                            <div class="block-header">
+                                <div class="block-header-left">
+                                    <i class="fa-solid fa-grip-vertical drag-handle"></i>
+                                    <span class="block-title">Hero Section</span>
+                                    <span class="block-badge">HERO BLOCK</span>
+                                </div>
+                                <div class="block-header-right">
+                                    <button class="block-toggle-btn"><i class="fa-solid fa-chevron-up"></i></button>
+                                </div>
+                            </div>
+                            <div class="block-body">
+                                <div class="block-desc">Top banner content with call to action</div>
+                                
+                                <div class="form-group mb-16">
+                                    <label>Hero Title</label>
+                                    <input type="text" value="Explore Our Academic Programs">
+                                </div>
+                                
+                                <div class="form-group mb-16">
+                                    <label>Subtitle</label>
+                                    <textarea rows="3">VYASA offers a holistic and rigorous academic curriculum designed to empower minds, foster creativity, and cultivate institutional excellence across all levels of school and pre-university education.</textarea>
+                                </div>
+
+                                <div class="form-grid mb-16">
+                                    <div class="form-group">
+                                        <label>Background Image</label>
+                                        <div class="image-upload-small">
+                                            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Hero Background">
+                                            <span class="img-name">academy_hero_bg.jpg</span>
+                                            <button class="btn btn-outline small-btn">Change</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>CTA Button Text</label>
+                                        <input type="text" value="Admission Enquiry">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Programs Grid Block (Collapsed) -->
+                        <div class="content-block collapsed">
+                            <div class="block-header">
+                                <div class="block-header-left">
+                                    <i class="fa-solid fa-grip-vertical drag-handle"></i>
+                                    <span class="block-title">Programs Grid</span>
+                                    <span class="block-desc-inline">Programs Grid — 4 items (Pre-Primary, Primary, High School, PU College)</span>
+                                </div>
+                                <div class="block-header-right">
+                                    <button class="block-toggle-btn"><i class="fa-solid fa-chevron-down"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Why Choose Us Block (Collapsed) -->
+                        <div class="content-block collapsed">
+                            <div class="block-header">
+                                <div class="block-header-left">
+                                    <i class="fa-solid fa-grip-vertical drag-handle"></i>
+                                    <span class="block-title">Why Choose Us</span>
+                                    <span class="block-desc-inline">Why Choose Us — 4 features with icon list & sidebar graphic</span>
+                                </div>
+                                <div class="block-header-right">
+                                    <button class="block-toggle-btn"><i class="fa-solid fa-chevron-down"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Banner Block (Collapsed) -->
+                        <div class="content-block collapsed">
+                            <div class="block-header">
+                                <div class="block-header-left">
+                                    <i class="fa-solid fa-grip-vertical drag-handle"></i>
+                                    <span class="block-title">CTA Banner</span>
+                                    <span class="block-desc-inline">CTA Banner — Apply Online / Download Brochure action callout</span>
+                                </div>
+                                <div class="block-header-right">
+                                    <button class="block-toggle-btn"><i class="fa-solid fa-chevron-down"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add Block Button -->
+                        <button class="add-block-btn">
+                            <i class="fa-solid fa-plus"></i> Add New Content Block
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- Settings Sidebar Column -->
+                <div class="editor-sidebar-col">
+                    <div class="settings-card card">
+                        <div class="settings-header">
+                            <h3>Page Settings</h3>
+                            <p>Configure publishing parameters</p>
+                        </div>
+                        
+                        <div class="settings-body">
+                            <div class="form-group mb-20">
+                                <label>URL Slug</label>
+                                <input type="text" value="/academics/core-programs" class="bg-gray-input">
+                            </div>
+
+                            <div class="form-group mb-20">
+                                <label>Meta Title</label>
+                                <input type="text" value="Academic Programs | VYASA Gro..." class="bg-gray-input">
+                            </div>
+
+                            <div class="form-group mb-20">
+                                <label>Meta Description</label>
+                                <textarea rows="4" class="bg-gray-input">Explore VYASA's highly structured primary, secondary, and pre-university programs focused on h...</textarea>
+                            </div>
+
+                            <div class="form-group mb-20">
+                                <label>Featured Image</label>
+                                <div class="featured-image-box">
+                                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Featured Thumbnail">
+                                    <div class="f-img-details">
+                                        <span class="f-img-name">banner_academic...</span>
+                                        <span class="f-img-size">1.2 MB • JPG</span>
+                                    </div>
+                                    <button class="delete-img-btn"><i class="fa-regular fa-trash-can"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-20">
+                                <label>Publish Status</label>
+                                <div class="status-dropdown-wrapper">
+                                    <span class="status-indicator yellow"></span>
+                                    <select class="bg-gray-input status-select">
+                                        <option value="draft">Draft</option>
+                                        <option value="published">Published</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publish Confirmation Modal -->
+            <div class="publish-modal-overlay"></div>
+            <div class="publish-modal-container">
+                <div class="publish-modal-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h2>Page Published Successfully</h2>
+                <p class="publish-modal-subtitle">Your changes to Academic Programs are now live and accessible.</p>
+                
+                <div class="publish-summary-card">
+                    <div class="summary-row">
+                        <span class="summary-label">Page Title</span>
+                        <span class="summary-value bold">Academic Programs</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Published URL</span>
+                        <a href="#" class="summary-value link">vyasa.edu/academic-programs</a>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Published By</span>
+                        <span class="summary-value bold">Admin Director</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Date & Time</span>
+                        <span class="summary-value bold">Today, 11:52 AM</span>
+                    </div>
+                    <div class="summary-row">
+                        <span class="summary-label">Version Number</span>
+                        <div class="summary-value">
+                            <span class="bold">v2.4</span> <span class="badge latest-badge">LATEST</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="publish-toggle-row">
+                    <div class="toggle-left">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Share publication update with CMS team</span>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <div class="publish-modal-actions">
+                    <button class="btn btn-outline close-publish-modal">Back to Editor</button>
+                    <button class="btn btn-primary view-live-btn">View Live Page</button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Publish Modal Logic
+            const publishBtn = document.getElementById('btn-publish-editor');
+            const publishOverlay = document.querySelector('.publish-modal-overlay');
+            const publishModal = document.querySelector('.publish-modal-container');
+            const closePublishBtn = document.querySelector('.close-publish-modal');
+
+            if (publishBtn && publishOverlay && publishModal && closePublishBtn) {
+                publishBtn.addEventListener('click', () => {
+                    publishOverlay.classList.add('active');
+                    publishModal.classList.add('active');
+                });
+
+                closePublishBtn.addEventListener('click', () => {
+                    publishOverlay.classList.remove('active');
+                    publishModal.classList.remove('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

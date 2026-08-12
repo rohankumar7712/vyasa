@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyasa - Admin Pages</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="/frontend/Images/vyasa logo.webp" alt="Vyasa Logo">
+                </div>
+            </div>
+            <div class="sidebar-portal-label">CMS PORTAL</div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                    <li class="active"><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
+                    <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                    <li><a href="#"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                    <li><a href="#"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                    <li><a href="#"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                    <li><a href="#"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status">
+                    <span class="status-dot"></span> System Online
+                </div>
+                <div class="version">Version 2.4.1 (Stable)</div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <div class="breadcrumbs">CMS Console / <span>Pages</span></div>
+                    <h1>Website Pages</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" placeholder="Search pages...">
+                    </div>
+                    <button class="notification-btn">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-badge"></span>
+                    </button>
+                    <div class="user-profile">
+                        <img src="https://i.pravatar.cc/150?img=47" alt="Admin Director" class="avatar">
+                        <div class="user-info">
+                            <span class="user-name">Admin Director</span>
+                            <span class="user-role">Super Admin</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Filters & Actions Area -->
+            <section class="filters-actions-bar">
+                <div class="filters-left">
+                    <div class="filter-dropdown">
+                        <select>
+                            <option>All Sections</option>
+                        </select>
+                    </div>
+                    <div class="filter-dropdown">
+                        <select>
+                            <option>Filter: All Pages</option>
+                        </select>
+                    </div>
+                    <div class="filter-dropdown">
+                        <select>
+                            <option>Sort: Last Edited</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="actions-right">
+                    <a href="page-editor.html" class="btn btn-primary" style="text-decoration: none;">Create New Page</a>
+                </div>
+            </section>
+
+            <!-- Pages Table Card -->
+            <section class="pages-table-container card">
+                <div class="table-responsive">
+                    <table class="activity-table pages-table">
+                        <thead>
+                            <tr>
+                                <th>PAGE NAME & ROUTE</th>
+                                <th>PORTAL SECTION</th>
+                                <th>STATUS</th>
+                                <th>LAST EDITED</th>
+                                <th>EDITED BY</th>
+                                <th class="text-right">ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Row 1 -->
+                            <tr>
+                                <td>
+                                    <div class="page-title-cell">
+                                        <span class="page-name">Home</span>
+                                        <span class="page-route">/</span>
+                                    </div>
+                                </td>
+                                <td>Main Portal</td>
+                                <td><span class="badge status-published">Published</span></td>
+                                <td>2 hours ago</td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/150?img=47" alt="Admin Director" class="table-avatar">
+                                        <span class="table-user-name">Admin Director</span>
+                                    </div>
+                                </td>
+                                <td class="actions-cell">
+                                    <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
+                                    <a href="page-preview.html" class="action-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <button class="action-btn delete"><i class="fa-regular fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            <!-- Row 2 -->
+                            <tr>
+                                <td>
+                                    <div class="page-title-cell">
+                                        <span class="page-name">About Us</span>
+                                        <span class="page-route">/about</span>
+                                    </div>
+                                </td>
+                                <td>Institutional</td>
+                                <td><span class="badge status-published">Published</span></td>
+                                <td>1 day ago</td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/150?img=32" alt="Dr. Meera Sundaram" class="table-avatar">
+                                        <span class="table-user-name">Dr. Meera Sundaram</span>
+                                    </div>
+                                </td>
+                                <td class="actions-cell">
+                                    <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
+                                    <a href="page-preview.html" class="action-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <button class="action-btn delete"><i class="fa-regular fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            <!-- Row 3 -->
+                            <tr>
+                                <td>
+                                    <div class="page-title-cell">
+                                        <span class="page-name">Academic Programs</span>
+                                        <span class="page-route">/academics</span>
+                                    </div>
+                                </td>
+                                <td>Curriculum</td>
+                                <td><span class="badge status-under-review">Under Review</span></td>
+                                <td>10 mins ago</td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/150?img=5" alt="Ms. Revathi Raju" class="table-avatar">
+                                        <span class="table-user-name">Ms. Revathi Raju</span>
+                                    </div>
+                                </td>
+                                <td class="actions-cell">
+                                    <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
+                                    <a href="page-preview.html" class="action-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <button class="action-btn delete"><i class="fa-regular fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            <!-- Row 4 -->
+                            <tr>
+                                <td>
+                                    <div class="page-title-cell">
+                                        <span class="page-name">Admissions</span>
+                                        <span class="page-route">/admissions</span>
+                                    </div>
+                                </td>
+                                <td>Registrar</td>
+                                <td><span class="badge status-draft">Draft</span></td>
+                                <td>45 mins ago</td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/150?img=11" alt="Sri. Vishwanath Hegde" class="table-avatar">
+                                        <span class="table-user-name">Sri. Vishwanath Hegde</span>
+                                    </div>
+                                </td>
+                                <td class="actions-cell">
+                                    <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
+                                    <a href="page-preview.html" class="action-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <button class="action-btn delete"><i class="fa-regular fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            <!-- Row 5 -->
+                            <tr>
+                                <td>
+                                    <div class="page-title-cell">
+                                        <span class="page-name">Campus Life</span>
+                                        <span class="page-route">/campus-life</span>
+                                    </div>
+                                </td>
+                                <td>Student Life</td>
+                                <td><span class="badge status-published">Published</span></td>
+                                <td>3 days ago</td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/150?img=47" alt="Admin Director" class="table-avatar">
+                                        <span class="table-user-name">Admin Director</span>
+                                    </div>
+                                </td>
+                                <td class="actions-cell">
+                                    <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
+                                    <a href="page-preview.html" class="action-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <button class="action-btn delete"><i class="fa-regular fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            <!-- Row 6 -->
+                            <tr>
+                                <td>
+                                    <div class="page-title-cell">
+                                        <span class="page-name">Achievements</span>
+                                        <span class="page-route">/achievements</span>
+                                    </div>
+                                </td>
+                                <td>Main Portal</td>
+                                <td><span class="badge status-published">Published</span></td>
+                                <td>Yesterday</td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/150?img=32" alt="Dr. Meera Sundaram" class="table-avatar">
+                                        <span class="table-user-name">Dr. Meera Sundaram</span>
+                                    </div>
+                                </td>
+                                <td class="actions-cell">
+                                    <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
+                                    <a href="page-preview.html" class="action-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <button class="action-btn delete"><i class="fa-regular fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                             <!-- Row 7 -->
+                             <tr>
+                                <td>
+                                    <div class="page-title-cell">
+                                        <span class="page-name">Meet Our Educators</span>
+                                        <span class="page-route">/educators</span>
+                                    </div>
+                                </td>
+                                <td>Institutional</td>
+                                <td><span class="badge status-published">Published</span></td>
+                                <td>2 days ago</td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/150?img=47" alt="Super Admin Console" class="table-avatar">
+                                        <span class="table-user-name">Super Admin Console</span>
+                                    </div>
+                                </td>
+                                <td class="actions-cell">
+                                    <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
+                                    <a href="page-preview.html" class="action-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <button class="action-btn delete"><i class="fa-regular fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                             <!-- Row 8 -->
+                             <tr>
+                                <td>
+                                    <div class="page-title-cell">
+                                        <span class="page-name">Blog/Articles</span>
+                                        <span class="page-route">/blog</span>
+                                    </div>
+                                </td>
+                                <td>News & Media</td>
+                                <td><span class="badge status-published">Published</span></td>
+                                <td>4 hours ago</td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/150?img=32" alt="Dr. Meera Sundaram" class="table-avatar">
+                                        <span class="table-user-name">Dr. Meera Sundaram</span>
+                                    </div>
+                                </td>
+                                <td class="actions-cell">
+                                    <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
+                                    <a href="page-preview.html" class="action-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <button class="action-btn delete"><i class="fa-regular fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                             <!-- Row 9 -->
+                             <tr>
+                                <td>
+                                    <div class="page-title-cell">
+                                        <span class="page-name">Contact Us</span>
+                                        <span class="page-route">/contact</span>
+                                    </div>
+                                </td>
+                                <td>Utility</td>
+                                <td><span class="badge status-draft">Draft</span></td>
+                                <td>1 week ago</td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/150?img=5" alt="Ms. Revathi Raju" class="table-avatar">
+                                        <span class="table-user-name">Ms. Revathi Raju</span>
+                                    </div>
+                                </td>
+                                <td class="actions-cell">
+                                    <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="action-btn"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="action-btn delete"><i class="fa-regular fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                             <!-- Row 10 -->
+                             <tr>
+                                <td>
+                                    <div class="page-title-cell">
+                                        <span class="page-name">Testimonials</span>
+                                        <span class="page-route">/testimonials</span>
+                                    </div>
+                                </td>
+                                <td>Feedback</td>
+                                <td><span class="badge status-published">Published</span></td>
+                                <td>4 days ago</td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/150?img=47" alt="Super Admin Console" class="table-avatar">
+                                        <span class="table-user-name">Super Admin Console</span>
+                                    </div>
+                                </td>
+                                <td class="actions-cell">
+                                    <button class="action-btn"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="action-btn"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="action-btn delete"><i class="fa-regular fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination-footer">
+                    <div class="pagination-info">Showing 1-10 of 10 pages</div>
+                    <div class="pagination-controls">
+                        <button class="page-btn disabled">Previous</button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn disabled">Next</button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>

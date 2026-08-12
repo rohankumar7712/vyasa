@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyasa - Admin Dashboard</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <!-- Using a placeholder logo similar to the image -->
+                <div class="logo">
+                   <img src="/frontend/Images/vyasa logo.webp" alt="Vyasa Logo">
+                </div>
+            </div>
+            <div class="sidebar-portal-label">CMS PORTAL</div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                    <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
+                    <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                    <li><a href="#"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                    <li><a href="#"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                    <li><a href="#"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                    <li><a href="#"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status">
+                    <span class="status-dot"></span> System Online
+                </div>
+                <div class="version">Version 2.4.1 (Stable)</div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <div class="breadcrumbs">CMS Console / <span>Dashboard</span></div>
+                    <h1>Dashboard Overview</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" placeholder="Search content...">
+                    </div>
+                    <button class="notification-btn">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-badge"></span>
+                    </button>
+                    <div class="user-profile">
+                        <img src="https://i.pravatar.cc/150?img=47" alt="Admin Director" class="avatar">
+                        <div class="user-info">
+                            <span class="user-name">Admin Director</span>
+                            <span class="user-role">Super Admin</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats Grid -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="stat-title">Total Students</span>
+                        <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    </div>
+                    <div class="stat-value">3,562</div>
+                    <div class="stat-trend positive">
+                        <i class="fa-solid fa-arrow-trend-up"></i> +12% <span>vs last month</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="stat-title">Applications Pending</span>
+                        <div class="stat-icon"><i class="fa-regular fa-file-lines"></i></div>
+                    </div>
+                    <div class="stat-value">142</div>
+                    <div class="stat-trend positive">
+                        <i class="fa-solid fa-arrow-trend-up"></i> +18% <span>vs last month</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="stat-title">Published Articles</span>
+                        <div class="stat-icon"><i class="fa-regular fa-newspaper"></i></div>
+                    </div>
+                    <div class="stat-value">89</div>
+                    <div class="stat-trend positive">
+                        <i class="fa-solid fa-arrow-trend-up"></i> +4% <span>vs last month</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="stat-title">Active Programs</span>
+                        <div class="stat-icon"><i class="fa-solid fa-book-open"></i></div>
+                    </div>
+                    <div class="stat-value">12</div>
+                    <div class="stat-trend neutral">
+                        <i class="fa-solid fa-arrow-right"></i> 0% <span>vs last month</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Middle Section (Chart + Quick Actions) -->
+            <section class="middle-section">
+                <!-- Chart Area -->
+                <div class="chart-container card">
+                    <div class="chart-header">
+                        <div class="chart-title-area">
+                            <h2>Enrollment Trends</h2>
+                            <p>Consolidated data for VYASA School & PU College</p>
+                        </div>
+                        <div class="chart-legend">
+                            <span class="legend-dot"></span> Students Enrolled
+                        </div>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="enrollmentChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Quick Actions Area -->
+                <div class="quick-actions-container card">
+                    <h2>Quick Actions</h2>
+                    <p>Add or modify primary CMS modules</p>
+                    <div class="action-list">
+                        <button class="action-item">
+                            <div class="action-icon blue-bg"><i class="fa-regular fa-newspaper"></i></div>
+                            <span class="action-text">Add New Article / Announcement</span>
+                            <i class="fa-solid fa-chevron-right chevron"></i>
+                        </button>
+                        <button class="action-item">
+                            <div class="action-icon yellow-bg"><i class="fa-solid fa-user-plus"></i></div>
+                            <span class="action-text">Register New Educator Profile</span>
+                            <i class="fa-solid fa-chevron-right chevron"></i>
+                        </button>
+                        <button class="action-item">
+                            <div class="action-icon red-bg"><i class="fa-regular fa-file-lines"></i></div>
+                            <span class="action-text">Update Admissions Guidelines</span>
+                            <i class="fa-solid fa-chevron-right chevron"></i>
+                        </button>
+                        <button class="action-item">
+                            <div class="action-icon gray-bg"><i class="fa-regular fa-image"></i></div>
+                            <span class="action-text">Upload Campus Media Asset</span>
+                            <i class="fa-solid fa-chevron-right chevron"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity Table -->
+            <section class="recent-activity-container card">
+                <div class="activity-header">
+                    <div class="activity-title-area">
+                        <h2>Recent CMS activity</h2>
+                        <p>Track real-time updates and pending actions across the VYASA portal</p>
+                    </div>
+                    <a href="#" class="view-logs-link">View Audit Logs <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="activity-table">
+                        <thead>
+                            <tr>
+                                <th>OPERATOR / USER</th>
+                                <th>ACTION & RECIPIENT TARGET</th>
+                                <th>SECTION</th>
+                                <th>STATUS</th>
+                                <th>TIMESTAMP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/150?img=32" alt="Dr. Meera Sundaram" class="table-avatar">
+                                        <span class="table-user-name">Dr. Meera Sundaram</span>
+                                    </div>
+                                </td>
+                                <td>Published new article: <strong>How Project-Based Learning Prepares Students</strong></td>
+                                <td><span class="badge section-badge">Articles / Blog</span></td>
+                                <td><span class="badge status-approved">Approved</span></td>
+                                <td class="timestamp">10 mins ago</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/150?img=11" alt="Sri. Vishwanath Hegde" class="table-avatar">
+                                        <span class="table-user-name">Sri. Vishwanath Hegde</span>
+                                    </div>
+                                </td>
+                                <td>Registered new student application: <strong>Ananya Sharma (Grade 11 Science)</strong></td>
+                                <td><span class="badge section-badge">Admissions</span></td>
+                                <td><span class="badge status-pending">Pending</span></td>
+                                <td class="timestamp">45 mins ago</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/150?img=5" alt="Ms. Revathi Raju" class="table-avatar">
+                                        <span class="table-user-name">Ms. Revathi Raju</span>
+                                    </div>
+                                </td>
+                                <td>Edited curriculum timeline under: <strong>Science & Commerce streams</strong></td>
+                                <td><span class="badge section-badge">Academics</span></td>
+                                <td><span class="badge status-approved">Approved</span></td>
+                                <td class="timestamp">2 hours ago</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/150?img=47" alt="Super Admin Console" class="table-avatar">
+                                        <span class="table-user-name">Super Admin Console</span>
+                                    </div>
+                                </td>
+                                <td>Added new faculty bio card for: <strong>Ms. Lakshmi Narayan (Vice Principal)</strong></td>
+                                <td><span class="badge section-badge">Educators</span></td>
+                                <td><span class="badge status-approved">Approved</span></td>
+                                <td class="timestamp">Yesterday</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
