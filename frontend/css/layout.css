@@ -79,14 +79,33 @@
    3. HERO SECTIONS
 ========================================================= */
 
-.hero-section, .about-hero-section, .admissions-hero-section, .pu-hero-section, .vis-hero-section, .parents-hero-section, .contact-hero-section, .journey-hero-section {
+.hero-section, 
+.about-hero-section, 
+.admissions-hero-section, 
+.pu-hero-section, 
+.vis-hero-section, 
+.parents-hero-section, 
+.contact-hero-section, 
+.journey-hero-section,
+.curriculum-hero-override,
+.assessment-hero,
+.faq-hero,
+.campus-hero-section,
+.achievements-hero-section,
+.facilities-hero,
+.news-hero-section,
+.resources-hero-section,
+.pu-hero,
+.idtri-hero-wrapper {
     position: relative;
     width: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: center 60% !important;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
+    min-height: clamp(600px, 80vh, 900px);
+    height: auto;
 }
 
 .hero-section .hero-overlay, .about-hero-section .hero-overlay, .admissions-hero-section .hero-overlay, .pu-hero-section .hero-overlay, .vis-hero-section .hero-overlay, .parents-hero-section .hero-overlay, .contact-hero-section .hero-overlay {
@@ -276,4 +295,32 @@
 
 .footer-legal a:hover {
     opacity: 0.7;
+}
+
+/* =========================================================
+   6. RESPONSIVE HERO OVERRIDES
+   ========================================================= */
+@media (max-width: 767px) {
+    .hero-section, 
+    .about-hero-section, 
+    .admissions-hero-section, 
+    .pu-hero-section, 
+    .vis-hero-section, 
+    .parents-hero-section, 
+    .contact-hero-section, 
+    .journey-hero-section,
+    .curriculum-hero-override,
+    .assessment-hero,
+    .faq-hero,
+    .campus-hero-section,
+    .achievements-hero-section,
+    .facilities-hero,
+    .news-hero-section,
+    .resources-hero-section,
+    .pu-hero,
+    .idtri-hero-wrapper {
+        min-height: clamp(520px, 75vh, 650px) !important;
+        height: auto !important;
+        max-height: none !important;
+    }
 }
