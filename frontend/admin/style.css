@@ -57,7 +57,8 @@ ul {
 /* Sidebar */
 .sidebar {
     width: var(--sidebar-width);
-    background-color: var(--primary-dark);
+    background-color:#FFFFFF;
+
     color: var(--text-light);
     display: flex;
     flex-direction: column;

@@ -62,17 +62,39 @@ function initAccordions() {
 }
 
 function initNavigationTicker() {
-    const prevBtn = document.querySelector(".nav-btn.prev");
-    const nextBtn = document.querySelector(".nav-btn.next");
+    const tickerContent = document.querySelector(".ticker-content");
 
-    if (prevBtn && nextBtn) {
-        prevBtn.addEventListener("click", () => {
-            console.log("Previous update clicked");
-        });
+    if (tickerContent) {
+        tickerContent.style.textOverflow = 'clip';
+        
+        // Clone content for seamless looping
+        const contentHtml = tickerContent.innerHTML;
+        tickerContent.innerHTML = `
+            <div class="ticker-scroll-wrapper" style="display: flex; width: max-content;">
+                <div class="ticker-scroll-item" style="padding-right: 50px; white-space: nowrap;">${contentHtml}</div>
+                <div class="ticker-scroll-item" style="padding-right: 50px; white-space: nowrap;">${contentHtml}</div>
+            </div>`;
+        
+        const wrapper = tickerContent.querySelector('.ticker-scroll-wrapper');
+        let scrollPos = 0;
+        let isHovered = false;
 
-        nextBtn.addEventListener("click", () => {
-            console.log("Next update clicked");
-        });
+        function animate() {
+            if (!isHovered) {
+                scrollPos += 0.4; // Slower speed of scroll
+                const itemWidth = wrapper.children[0].offsetWidth;
+                if (scrollPos >= itemWidth) {
+                    scrollPos -= itemWidth;
+                }
+                wrapper.style.transform = `translateX(-${scrollPos}px)`;
+            }
+            requestAnimationFrame(animate);
+        }
+        
+        requestAnimationFrame(animate);
+        
+        tickerContent.addEventListener('mouseenter', () => isHovered = true);
+        tickerContent.addEventListener('mouseleave', () => isHovered = false);
     }
 }
 
