@@ -135,7 +135,7 @@ video {
 }
 
 .main-heading {
-    font-size: clamp(25px, 4vw, 72px);
+    font-size: clamp(50px, 5vw, 72px);
     line-height: 1.05;
     font-weight: 900;
     letter-spacing: -1px;
