@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vyasa - Admin Educators</title>
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter & Hanken Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
@@ -19,30 +19,35 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
+                <!-- Using a placeholder logo similar to the image -->
                 <div class="logo">
-                    <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
+                   <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
                 </div>
             </div>
             <div class="sidebar-portal-label">CMS PORTAL</div>
 
             <nav class="sidebar-nav">
-                <ul>
+               <ul>
                     <li><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
                     <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
                     <li class="active"><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
-                    <li><a href="#"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
-                    <li><a href="#"><i class="fa-solid fa-award"></i> Achievements</a></li>
-                    <li><a href="#"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
-                    <li><a href="#"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
-                    <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                    <li><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                    <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                    <li><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                    <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
+                    <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
                 </ul>
             </nav>
 
             <div class="sidebar-footer">
-                <div class="system-status">
-                    <span class="status-dot"></span> System Online
+                <div class="system-status-block">
+                    <div class="system-status-title"><span class="status-dot green"></span> System Online</div>
+                    <div class="system-status-desc">All systems operational</div>
                 </div>
                 <div class="version">Version 2.4.1 (Stable)</div>
+                <button class="collapse-menu-btn"><i class="fa-regular fa-circle-left"></i> Collapse Menu</button>
             </div>
         </aside>
 
@@ -50,169 +55,292 @@
         <main class="main-content">
             <!-- Header -->
             <header class="top-header">
-                <div class="header-left">
+                <div class="header-top-row">
                     <div class="breadcrumbs">CMS Console / <span>Educators</span></div>
-                    <h1>Educators</h1>
-                </div>
-                <div class="header-right">
+                    
                     <div class="search-bar">
                         <i class="fa-solid fa-magnifying-glass search-icon"></i>
                         <input type="text" placeholder="Search consoles...">
+                        <span class="search-shortcut">⌘K</span>
                     </div>
-                    <button class="notification-btn">
-                        <i class="fa-regular fa-bell"></i>
-                        <span class="notification-badge"></span>
-                    </button>
-                    <div class="user-profile">
-                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
-                        <div class="user-info">
-                            <span class="user-name">Admin Director</span>
-                            <span class="user-role">Super Admin</span>
+
+                    <div class="header-right">
+                        <button class="notification-btn">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        <div class="user-profile">
+                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
+                            <div class="user-info">
+                                <span class="user-name">Admin Director</span>
+                                <span class="user-role">Super Admin</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down chevron-small"></i>
                         </div>
+                    </div>
+                </div>
+                
+                <div class="header-bottom-row" style="align-items: center; justify-content: space-between;">
+                    <div class="header-left">
+                        <div class="title-with-icon">
+                            <h1>Educators</h1>
+                        </div>
+                        <div class="page-stats-subtitle">
+                            <span>Manage all campus educators and faculty members.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="actions-group" style="display: flex; gap: 12px;">
+                        <button class="btn-bulk" style="cursor: pointer; opacity: 1; border: 1px solid var(--border-color); color: var(--brand-blue); background: white;"><i class="fa-solid fa-download"></i> Export</button>
+                        <button class="btn btn-primary" id="openAddEducatorModal"><i class="fa-solid fa-plus"></i> Add Educator</button>
                     </div>
                 </div>
             </header>
 
-            <!-- Page Title & Actions -->
-            <section class="page-title-actions">
-                <div>
-                    <h2>All Educators</h2>
-                    <p>View and manage all campus educators and faculty members.</p>
+            <!-- Stats Grid -->
+            <section class="educator-stat-cards-grid">
+                <!-- Card 1: Total Faculty -->
+                <div class="educator-stat-card">
+                    <div class="stat-icon-wrapper bg-blue-light">
+                        <i class="fa-solid fa-user-group text-blue"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Total Faculty</span>
+                        <span class="stat-value">45</span>
+                        <span class="stat-desc">All educators</span>
+                    </div>
                 </div>
-                <div class="actions-group">
-                    <button class="btn btn-outline"><i class="fa-solid fa-download"></i> Export</button>
-                    <button class="btn btn-primary" id="openAddEducatorModal"><i class="fa-solid fa-plus"></i> Add Educator</button>
+                
+                <!-- Card 2: Active -->
+                <div class="educator-stat-card">
+                    <div class="stat-icon-wrapper bg-green-light">
+                        <i class="fa-solid fa-user-check text-green"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Active</span>
+                        <span class="stat-value">42</span>
+                        <span class="stat-desc text-green">93.3% of total</span>
+                    </div>
+                </div>
+                
+                <!-- Card 3: On Leave -->
+                <div class="educator-stat-card">
+                    <div class="stat-icon-wrapper bg-yellow-light">
+                        <i class="fa-solid fa-user-clock text-yellow"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">On Leave</span>
+                        <span class="stat-value">0</span>
+                        <span class="stat-desc text-yellow">0% of total</span>
+                    </div>
+                </div>
+                
+                <!-- Card 4: Inactive -->
+                <div class="educator-stat-card">
+                    <div class="stat-icon-wrapper bg-red-light">
+                        <i class="fa-solid fa-user-xmark text-red"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Inactive</span>
+                        <span class="stat-value">3</span>
+                        <span class="stat-desc text-red">6.7% of total</span>
+                    </div>
                 </div>
             </section>
 
-            <!-- Stats Bar -->
-            <section class="educators-stats-bar card">
-                <div class="stats-text">
-                    <span class="stat-item"><strong>Total Faculty:</strong> <span class="highlight-blue">45 Educators</span></span>
-                    <span class="stat-item">Active: <span class="highlight-green">42</span></span>
-                    <span class="stat-item">On Leave / Inactive: <span class="highlight-orange">3</span></span>
-                </div>
-                <div class="progress-bar-container">
-                    <div class="progress-bar-fill" style="width: 93%;"></div>
-                </div>
-            </section>
-
-            <!-- Filters Bar -->
-            <section class="educators-filters-bar">
-                <div class="filters-left">
-                    <div class="search-input-group">
+            <!-- Main Educators Container -->
+            <section class="pages-main-container card" style="padding: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); margin-top: 24px;">
+                
+                <!-- Filters Toolbar -->
+                <div class="table-toolbar">
+                    <div class="toolbar-search">
                         <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                        <input type="text" placeholder="Search educators...">
+                        <input type="text" placeholder="Search educators by name, email...">
                     </div>
-                    <div class="filter-dropdown">
-                        <select>
-                            <option>Department: All</option>
-                        </select>
+                    
+                    <div class="toolbar-dropdowns">
+                        <div class="toolbar-select">
+                            <select>
+                                <option>Department: All</option>
+                            </select>
+                        </div>
+                        <div class="toolbar-select">
+                            <select>
+                                <option>Status: All</option>
+                            </select>
+                        </div>
+                        <div class="toolbar-select">
+                            <select>
+                                <option>Sort: Most Recent</option>
+                            </select>
+                        </div>
+                        <button class="btn-more-filters"><i class="fa-solid fa-filter"></i> More Filters</button>
                     </div>
-                    <div class="filter-dropdown">
-                        <select>
-                            <option>Status: Active</option>
-                        </select>
-                    </div>
-                    <div class="filter-dropdown">
-                        <select>
-                            <option>Sort by: Most Recent</option>
-                        </select>
+                    
+                    <div class="view-toggles" style="display: flex; gap: 8px; margin-left: auto;">
+                        <button class="icon-btn" style="border-radius: 6px;"><i class="fa-solid fa-border-all"></i></button>
+                        <button class="icon-btn" style="border-radius: 6px; background: var(--primary-dark); color: white; border-color: var(--primary-dark);"><i class="fa-solid fa-list"></i></button>
                     </div>
                 </div>
-                <div class="view-toggles">
-                    <button class="view-btn"><i class="fa-solid fa-border-all"></i></button>
-                    <button class="view-btn active"><i class="fa-solid fa-list"></i></button>
-                </div>
-            </section>
 
-            <!-- Educators Table -->
-            <section class="educators-table-container card">
+                <!-- Data Table -->
                 <div class="table-responsive">
-                    <table class="activity-table educators-table">
+                    <table class="data-table">
                         <thead>
                             <tr>
-                                <th>Photo</th>
-                                <th>Name</th>
-                                <th>Department</th>
-                                <th>Designation/Title</th>
-                                <th>Email</th>
-                                <th>Status</th>
-                                <th class="text-center">Actions</th>
+                                <th class="checkbox-col"><input type="checkbox"></th>
+                                <th>EDUCATOR</th>
+                                <th>DEPARTMENT</th>
+                                <th>DESIGNATION</th>
+                                <th>CONTACT</th>
+                                <th>STATUS</th>
+                                <th>ACTIONS</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- Row 1 -->
                             <tr>
-                                <td><img src="../Images/Dr. Arindam Ghosh.webp" alt="Dr. Rajesh Iyer" class="table-avatar-lg"></td>
-                                <td><strong>Dr. Rajesh Iyer</strong></td>
-                                <td>Computer Science</td>
-                                <td>Professor & Head</td>
-                                <td class="text-muted-cell">rajesh.iyer@vyasa.edu.in</td>
-                                <td><span class="badge status-active-light">Active</span></td>
-                                <td class="actions-cell text-center">
-                                    <a href="educator-profile.html" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+                                <td class="checkbox-col"><input type="checkbox"></td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Dr. Rajesh Iyer" class="table-avatar">
+                                        <div class="page-title-cell">
+                                            <span class="page-name">Dr. Rajesh Iyer</span>
+                                            <span class="page-route">Professor & Head</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="date-cell">Computer Science</td>
+                                <td class="date-cell">Professor & Head</td>
+                                <td><span class="text-muted-cell" style="display:flex; align-items:center; gap:8px;"><i class="fa-regular fa-envelope"></i> rajesh.iyer@vyasa.edu.in</span></td>
+                                <td><span class="badge status-published"><span class="status-dot"></span> Active</span></td>
+                                <td class="actions-cell">
+                                    <a href="educator-profile.html" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                 </td>
                             </tr>
+                            
+                            <!-- Row 2 -->
                             <tr>
-                                <td><img src="../Images/Dr. Arindam Ghosh.webp" alt="Prof. Sunita Sharma" class="table-avatar-lg"></td>
-                                <td><strong>Prof. Sunita Sharma</strong></td>
-                                <td>Mathematics</td>
-                                <td>Associate Professor</td>
-                                <td class="text-muted-cell">sunita.sharma@vyasa.edu.in</td>
-                                <td><span class="badge status-active-light">Active</span></td>
-                                <td class="actions-cell text-center">
-                                    <a href="educator-profile.html" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+                                <td class="checkbox-col"><input type="checkbox"></td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Prof. Sunita Sharma" class="table-avatar">
+                                        <div class="page-title-cell">
+                                            <span class="page-name">Prof. Sunita Sharma</span>
+                                            <span class="page-route">Associate Professor</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="date-cell">Mathematics</td>
+                                <td class="date-cell">Associate Professor</td>
+                                <td><span class="text-muted-cell" style="display:flex; align-items:center; gap:8px;"><i class="fa-regular fa-envelope"></i> sunita.sharma@vyasa.edu.in</span></td>
+                                <td><span class="badge status-published"><span class="status-dot"></span> Active</span></td>
+                                <td class="actions-cell">
+                                    <a href="educator-profile.html" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                 </td>
                             </tr>
+                            
+                            <!-- Row 3 -->
                             <tr>
-                                <td><img src="../Images/Dr. Arindam Ghosh.webp" alt="Dr. Amit Patel" class="table-avatar-lg"></td>
-                                <td><strong>Dr. Amit Patel</strong></td>
-                                <td>Physics</td>
-                                <td>Assistant Professor</td>
-                                <td class="text-muted-cell">amit.patel@vyasa.edu.in</td>
-                                <td><span class="badge status-active-light">Active</span></td>
-                                <td class="actions-cell text-center">
-                                    <a href="educator-profile.html" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+                                <td class="checkbox-col"><input type="checkbox"></td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Dr. Amit Patel" class="table-avatar">
+                                        <div class="page-title-cell">
+                                            <span class="page-name">Dr. Amit Patel</span>
+                                            <span class="page-route">Assistant Professor</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="date-cell">Physics</td>
+                                <td class="date-cell">Assistant Professor</td>
+                                <td><span class="text-muted-cell" style="display:flex; align-items:center; gap:8px;"><i class="fa-regular fa-envelope"></i> amit.patel@vyasa.edu.in</span></td>
+                                <td><span class="badge status-published"><span class="status-dot"></span> Active</span></td>
+                                <td class="actions-cell">
+                                    <a href="educator-profile.html" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                 </td>
                             </tr>
+
+                            <!-- Row 4 -->
                             <tr>
-                                <td><img src="../Images/Dr. Arindam Ghosh.webp" alt="Ms. Revathi Raju" class="table-avatar-lg"></td>
-                                <td><strong>Ms. Revathi Raju</strong></td>
-                                <td>English</td>
-                                <td>Senior Lecturer</td>
-                                <td class="text-muted-cell">revathi.raju@vyasa.edu.in</td>
-                                <td><span class="badge status-active-light">Active</span></td>
-                                <td class="actions-cell text-center">
-                                    <a href="educator-profile.html" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+                                <td class="checkbox-col"><input type="checkbox"></td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Ms. Revathi Raju" class="table-avatar">
+                                        <div class="page-title-cell">
+                                            <span class="page-name">Ms. Revathi Raju</span>
+                                            <span class="page-route">Senior Lecturer</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="date-cell">English</td>
+                                <td class="date-cell">Senior Lecturer</td>
+                                <td><span class="text-muted-cell" style="display:flex; align-items:center; gap:8px;"><i class="fa-regular fa-envelope"></i> revathi.raju@vyasa.edu.in</span></td>
+                                <td><span class="badge status-published"><span class="status-dot"></span> Active</span></td>
+                                <td class="actions-cell">
+                                    <a href="educator-profile.html" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                 </td>
                             </tr>
+                            
+                            <!-- Row 5 -->
                             <tr>
-                                <td><img src="../Images/Dr. Arindam Ghosh.webp" alt="Prof. Vikram Seth" class="table-avatar-lg"></td>
-                                <td><strong>Prof. Vikram Seth</strong></td>
-                                <td>Business Administration</td>
-                                <td>Professor</td>
-                                <td class="text-muted-cell">vikram.seth@vyasa.edu.in</td>
-                                <td><span class="badge status-active-light">Active</span></td>
-                                <td class="actions-cell text-center">
-                                    <a href="educator-profile.html" class="action-btn"><i class="fa-regular fa-eye"></i></a>
+                                <td class="checkbox-col"><input type="checkbox"></td>
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Prof. Vikram Seth" class="table-avatar">
+                                        <div class="page-title-cell">
+                                            <span class="page-name">Prof. Vikram Seth</span>
+                                            <span class="page-route">Professor</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="date-cell">Business Administration</td>
+                                <td class="date-cell">Professor</td>
+                                <td><span class="text-muted-cell" style="display:flex; align-items:center; gap:8px;"><i class="fa-regular fa-envelope"></i> vikram.seth@vyasa.edu.in</span></td>
+                                <td><span class="badge status-published"><span class="status-dot"></span> Active</span></td>
+                                <td class="actions-cell">
+                                    <a href="educator-profile.html" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </section>
 
-            <!-- Pagination Bottom (outside card in this design) -->
-            <div class="pagination-footer-outside">
-                <div class="pagination-info">Showing 1-5 of 15 educators</div>
-                <div class="pagination-controls">
-                    <button class="page-btn-lg disabled">Previous</button>
-                    <button class="page-btn-lg active">1</button>
-                    <button class="page-btn-lg">2</button>
-                    <button class="page-btn-lg">3</button>
-                    <button class="page-btn-lg">Next</button>
+                <!-- Footer / Pagination -->
+                <div class="table-footer">
+                    <div class="footer-bulk-actions">
+                        <label class="bulk-select">
+                            <span class="bulk-icon"><i class="fa-solid fa-list-check"></i></span>
+                            <span>0 selected</span>
+                        </label>
+                        <div class="bulk-divider"></div>
+                        <button class="btn-bulk btn-publish"><i class="fa-regular fa-square-check"></i> Change Status</button>
+                        <button class="btn-bulk btn-archive"><i class="fa-solid fa-download"></i> Export</button>
+                        <button class="btn-bulk btn-delete"><i class="fa-regular fa-trash-can"></i> Delete</button>
+                    </div>
+                    
+                    <div class="footer-pagination">
+                        <span class="pagination-info">Showing 1 to 5 of 15 educators</span>
+                        <div class="pagination-controls">
+                            <button class="page-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <button class="page-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
 
         </main>
     </div>

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vyasa - Admin Dashboard</title>
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter & Hanken Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
@@ -31,19 +31,23 @@
                     <li class="active"><a href="#"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
                     <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
                     <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
-                    <li><a href="#"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
-                    <li><a href="#"><i class="fa-solid fa-award"></i> Achievements</a></li>
-                    <li><a href="#"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
-                    <li><a href="#"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
-                    <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                    <li><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                    <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                    <li><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                    <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
+                    <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
                 </ul>
             </nav>
 
             <div class="sidebar-footer">
-                <div class="system-status">
-                    <span class="status-dot"></span> System Online
+                <div class="system-status-block">
+                    <div class="system-status-title"><span class="status-dot green"></span> System Online</div>
+                    <div class="system-status-desc">All systems operational</div>
                 </div>
                 <div class="version">Version 2.4.1 (Stable)</div>
+                <button class="collapse-menu-btn"><i class="fa-regular fa-circle-left"></i> Collapse Menu</button>
             </div>
         </aside>
 
@@ -51,72 +55,86 @@
         <main class="main-content">
             <!-- Header -->
             <header class="top-header">
-                <div class="header-left">
+                <div class="header-top-row">
                     <div class="breadcrumbs">CMS Console / <span>Dashboard</span></div>
-                    <h1>Dashboard Overview</h1>
-                </div>
-                <div class="header-right">
+                    
                     <div class="search-bar">
                         <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                        <input type="text" placeholder="Search content...">
+                        <input type="text" placeholder="Search content, users, articles...">
+                        <span class="search-shortcut">⌘K</span>
                     </div>
-                    <button class="notification-btn">
-                        <i class="fa-regular fa-bell"></i>
-                        <span class="notification-badge"></span>
-                    </button>
-                    <div class="user-profile">
-                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
-                        <div class="user-info">
-                            <span class="user-name">Admin Director</span>
-                            <span class="user-role">Super Admin</span>
+
+                    <div class="header-right">
+                        <button class="notification-btn">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        <div class="user-profile">
+                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
+                            <div class="user-info">
+                                <span class="user-name">Admin Director</span>
+                                <span class="user-role">Super Admin</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down chevron-small"></i>
                         </div>
                     </div>
+                </div>
+                
+                <div class="header-bottom-row">
+                    <div class="header-left">
+                        <h1>Dashboard Overview</h1>
+                        <p class="header-subtitle">Welcome back, Admin Director! Here's what's happening with your institution today.</p>
+                    </div>
+                    
+                    <button class="year-filter-btn">
+                        <i class="fa-regular fa-calendar"></i> This Year <i class="fa-solid fa-chevron-down chevron-small"></i>
+                    </button>
                 </div>
             </header>
 
             <!-- Stats Grid -->
             <section class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <span class="stat-title">Total Students</span>
-                        <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="educator-stat-card">
+                    <div class="stat-icon-wrapper bg-blue-light text-blue">
+                        <i class="fa-solid fa-user-group"></i>
                     </div>
-                    <div class="stat-value">3,562</div>
-                    <div class="stat-trend positive">
-                        <i class="fa-solid fa-arrow-trend-up"></i> +12% <span>vs last month</span>
-                    </div>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <span class="stat-title">Applications Pending</span>
-                        <div class="stat-icon"><i class="fa-regular fa-file-lines"></i></div>
-                    </div>
-                    <div class="stat-value">142</div>
-                    <div class="stat-trend positive">
-                        <i class="fa-solid fa-arrow-trend-up"></i> +18% <span>vs last month</span>
+                    <div class="stat-info">
+                        <span class="stat-label">Total Students</span>
+                        <span class="stat-value">3,562</span>
+                        <span class="stat-desc"><i class="fa-solid fa-arrow-trend-up text-green" style="margin-right: 4px;"></i> 12% vs last month</span>
                     </div>
                 </div>
 
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <span class="stat-title">Published Articles</span>
-                        <div class="stat-icon"><i class="fa-regular fa-newspaper"></i></div>
+                <div class="educator-stat-card">
+                    <div class="stat-icon-wrapper bg-yellow-light text-yellow">
+                        <i class="fa-solid fa-clipboard-list"></i>
                     </div>
-                    <div class="stat-value">89</div>
-                    <div class="stat-trend positive">
-                        <i class="fa-solid fa-arrow-trend-up"></i> +4% <span>vs last month</span>
+                    <div class="stat-info">
+                        <span class="stat-label">Applications Pending</span>
+                        <span class="stat-value">142</span>
+                        <span class="stat-desc"><i class="fa-solid fa-arrow-trend-up text-green" style="margin-right: 4px;"></i> 18% vs last month</span>
                     </div>
                 </div>
 
-                <div class="stat-card">
-                    <div class="stat-header">
-                        <span class="stat-title">Active Programs</span>
-                        <div class="stat-icon"><i class="fa-solid fa-book-open"></i></div>
+                <div class="educator-stat-card">
+                    <div class="stat-icon-wrapper bg-green-light text-green">
+                        <i class="fa-solid fa-file-invoice"></i>
                     </div>
-                    <div class="stat-value">12</div>
-                    <div class="stat-trend neutral">
-                        <i class="fa-solid fa-arrow-right"></i> 0% <span>vs last month</span>
+                    <div class="stat-info">
+                        <span class="stat-label">Published Articles</span>
+                        <span class="stat-value">89</span>
+                        <span class="stat-desc"><i class="fa-solid fa-arrow-trend-up text-green" style="margin-right: 4px;"></i> 44% vs last month</span>
+                    </div>
+                </div>
+
+                <div class="educator-stat-card">
+                    <div class="stat-icon-wrapper bg-red-light text-red">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Active Programs</span>
+                        <span class="stat-value">12</span>
+                        <span class="stat-desc"><i class="fa-solid fa-arrow-right" style="margin-right: 4px; color: #94a3b8;"></i> 0% vs last month</span>
                     </div>
                 </div>
             </section>
@@ -130,8 +148,13 @@
                             <h2>Enrollment Trends</h2>
                             <p>Consolidated data for VYASA School & PU College</p>
                         </div>
-                        <div class="chart-legend">
-                            <span class="legend-dot"></span> Students Enrolled
+                        <div class="chart-filters">
+                            <button class="year-filter-btn">This Year <i class="fa-solid fa-chevron-down chevron-small"></i></button>
+                            <div class="toggle-group">
+                                <button class="toggle-btn">School</button>
+                                <button class="toggle-btn">PU College</button>
+                                <button class="toggle-btn active">All</button>
+                            </div>
                         </div>
                     </div>
                     <div class="chart-body">
@@ -145,7 +168,7 @@
                     <p>Add or modify primary CMS modules</p>
                     <div class="action-list">
                         <button class="action-item">
-                            <div class="action-icon blue-bg"><i class="fa-regular fa-newspaper"></i></div>
+                            <div class="action-icon blue-dark-bg"><i class="fa-solid fa-plus"></i></div>
                             <span class="action-text">Add New Article / Announcement</span>
                             <i class="fa-solid fa-chevron-right chevron"></i>
                         </button>
@@ -160,87 +183,137 @@
                             <i class="fa-solid fa-chevron-right chevron"></i>
                         </button>
                         <button class="action-item">
-                            <div class="action-icon gray-bg"><i class="fa-regular fa-image"></i></div>
+                            <div class="action-icon green-bg"><i class="fa-regular fa-image"></i></div>
                             <span class="action-text">Upload Campus Media Asset</span>
                             <i class="fa-solid fa-chevron-right chevron"></i>
                         </button>
                     </div>
+                    <div class="view-all-link-container text-right">
+                        <a href="#" class="view-logs-link">View All Modules <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </section>
 
-            <!-- Recent Activity Table -->
-            <section class="recent-activity-container card">
-                <div class="activity-header">
-                    <div class="activity-title-area">
-                        <h2>Recent CMS activity</h2>
-                        <p>Track real-time updates and pending actions across the VYASA portal</p>
+            <!-- Bottom Section -->
+            <section class="bottom-section">
+                <!-- Recent Activity Table -->
+                <div class="recent-activity-container card">
+                    <div class="activity-header">
+                        <div class="activity-title-area">
+                            <h2>Recent CMS activity</h2>
+                            <p>Track real-time updates and pending actions across the VYASA portal</p>
+                        </div>
+                        <a href="#" class="view-logs-link">View Audit Logs <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                    <a href="#" class="view-logs-link">View Audit Logs <i class="fa-solid fa-arrow-right"></i></a>
+                    
+                    <div class="table-responsive">
+                        <table class="activity-table">
+                            <thead>
+                                <tr>
+                                    <th>OPERATOR / USER</th>
+                                    <th>ACTION & RECIPIENT TARGET</th>
+                                    <th>SECTION</th>
+                                    <th>STATUS</th>
+                                    <th>TIME</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Dr. Meera Sundaram" class="table-avatar">
+                                            <span class="table-user-name">Dr. Meera Sundaram</span>
+                                        </div>
+                                    </td>
+                                    <td>Published new article: <strong>How Project-Based Learning Prepares Students</strong></td>
+                                    <td><span class="badge section-badge" style="background-color: #e0f2fe; color: #0284c7;">Articles / Blog</span></td>
+                                    <td><span class="badge status-approved">Approved</span></td>
+                                    <td class="timestamp">10 mins ago</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Sri. Vishwanath Hegde" class="table-avatar">
+                                            <span class="table-user-name">Sri. Vishwanath Hegde</span>
+                                        </div>
+                                    </td>
+                                    <td>Registered new student application: <strong>Ananya Sharma (Grade 11 Science)</strong></td>
+                                    <td><span class="badge section-badge" style="background-color: #fef9c3; color: #ca8a04;">Admissions</span></td>
+                                    <td><span class="badge status-pending">Pending</span></td>
+                                    <td class="timestamp">45 mins ago</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Ms. Revathi Raju" class="table-avatar">
+                                            <span class="table-user-name">Ms. Revathi Raju</span>
+                                        </div>
+                                    </td>
+                                    <td>Edited curriculum timeline under: <strong>Science & Commerce streams</strong></td>
+                                    <td><span class="badge section-badge" style="background-color: #f3e8ff; color: #9333ea;">Academics</span></td>
+                                    <td><span class="badge status-approved">Approved</span></td>
+                                    <td class="timestamp">2 hours ago</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Super Admin Console" class="table-avatar">
+                                            <span class="table-user-name">Super Admin Console</span>
+                                        </div>
+                                    </td>
+                                    <td>Added new faculty bio card for: <strong>Ms. Lakshmi Narayan (Vice Principal)</strong></td>
+                                    <td><span class="badge section-badge" style="background-color: #dcfce7; color: #16a34a;">Educators</span></td>
+                                    <td><span class="badge status-approved">Approved</span></td>
+                                    <td class="timestamp">Yesterday</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="view-all-link-container text-center">
+                        <a href="#" class="view-logs-link" style="justify-content: center;">View All Activity <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
-                
-                <div class="table-responsive">
-                    <table class="activity-table">
-                        <thead>
-                            <tr>
-                                <th>OPERATOR / USER</th>
-                                <th>ACTION & RECIPIENT TARGET</th>
-                                <th>SECTION</th>
-                                <th>STATUS</th>
-                                <th>TIMESTAMP</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Dr. Meera Sundaram" class="table-avatar">
-                                        <span class="table-user-name">Dr. Meera Sundaram</span>
-                                    </div>
-                                </td>
-                                <td>Published new article: <strong>How Project-Based Learning Prepares Students</strong></td>
-                                <td><span class="badge section-badge">Articles / Blog</span></td>
-                                <td><span class="badge status-approved">Approved</span></td>
-                                <td class="timestamp">10 mins ago</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Sri. Vishwanath Hegde" class="table-avatar">
-                                        <span class="table-user-name">Sri. Vishwanath Hegde</span>
-                                    </div>
-                                </td>
-                                <td>Registered new student application: <strong>Ananya Sharma (Grade 11 Science)</strong></td>
-                                <td><span class="badge section-badge">Admissions</span></td>
-                                <td><span class="badge status-pending">Pending</span></td>
-                                <td class="timestamp">45 mins ago</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Ms. Revathi Raju" class="table-avatar">
-                                        <span class="table-user-name">Ms. Revathi Raju</span>
-                                    </div>
-                                </td>
-                                <td>Edited curriculum timeline under: <strong>Science & Commerce streams</strong></td>
-                                <td><span class="badge section-badge">Academics</span></td>
-                                <td><span class="badge status-approved">Approved</span></td>
-                                <td class="timestamp">2 hours ago</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Super Admin Console" class="table-avatar">
-                                        <span class="table-user-name">Super Admin Console</span>
-                                    </div>
-                                </td>
-                                <td>Added new faculty bio card for: <strong>Ms. Lakshmi Narayan (Vice Principal)</strong></td>
-                                <td><span class="badge section-badge">Educators</span></td>
-                                <td><span class="badge status-approved">Approved</span></td>
-                                <td class="timestamp">Yesterday</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+
+                <!-- System Overview
+                <div class="system-overview-container card">
+                    <div class="activity-header">
+                        <div class="activity-title-area">
+                            <h2>System Overview</h2>
+                            <p>Platform performance and status</p>
+                        </div>
+                    </div>
+                    
+                    <div class="system-metrics-list">
+                        <div class="system-metric-row">
+                            <div class="metric-label"><i class="fa-solid fa-server"></i> Server Status</div>
+                            <div class="metric-value"><span class="badge status-approved" style="background-color: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0;">Operational</span></div>
+                        </div>
+                        <div class="system-metric-row">
+                            <div class="metric-label"><i class="fa-solid fa-database"></i> Database</div>
+                            <div class="metric-value"><span class="badge status-approved" style="background-color: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0;">Healthy</span></div>
+                        </div>
+                        <div class="system-metric-row">
+                            <div class="metric-label"><i class="fa-solid fa-hard-drive"></i> Storage Usage</div>
+                            <div class="metric-value" style="flex-grow: 1; margin: 0 15px;">
+                                <div style="height: 6px; width: 100%; background-color: #e2e8f0; border-radius: 3px; overflow: hidden;">
+                                    <div style="height: 100%; width: 68%; background-color: #2563eb;"></div>
+                                </div>
+                            </div>
+                            <div class="metric-value" style="font-weight: 700; font-size: 0.9rem;">68%</div>
+                        </div>
+                        <div class="system-metric-row">
+                            <div class="metric-label"><i class="fa-solid fa-chart-line"></i> Active Sessions</div>
+                            <div class="metric-value" style="font-weight: 700; font-size: 1.1rem;">24</div>
+                        </div>
+                        <div class="system-metric-row">
+                            <div class="metric-label"><i class="fa-regular fa-clock"></i> System Uptime</div>
+                            <div class="metric-value" style="font-weight: 700; font-size: 0.9rem;">99.9%</div>
+                        </div>
+                    </div>
+                    <div class="view-all-link-container text-center" style="border-top: 2px solid #22c55e;">
+                        <a href="#" class="view-logs-link" style="justify-content: center; margin-top: 10px;">View System Health <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div> -->
             </section>
 
         </main>

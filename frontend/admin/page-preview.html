@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vyasa - Page Preview</title>
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter & Hanken Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
@@ -19,6 +19,7 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
+                <!-- Using a placeholder logo similar to the image -->
                 <div class="logo">
                    <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
                 </div>
@@ -27,22 +28,26 @@
 
             <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                    <li ><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
                     <li class="active"><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
                     <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
-                    <li><a href="#"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
-                    <li><a href="#"><i class="fa-solid fa-award"></i> Achievements</a></li>
-                    <li><a href="#"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
-                    <li><a href="#"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
-                    <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                    <li><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                    <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                    <li><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                    <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
+                    <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
                 </ul>
             </nav>
 
             <div class="sidebar-footer">
-                <div class="system-status">
-                    <span class="status-dot"></span> System Online
+                <div class="system-status-block">
+                    <div class="system-status-title"><span class="status-dot green"></span> System Online</div>
+                    <div class="system-status-desc">All systems operational</div>
                 </div>
                 <div class="version">Version 2.4.1 (Stable)</div>
+                <button class="collapse-menu-btn"><i class="fa-regular fa-circle-left"></i> Collapse Menu</button>
             </div>
         </aside>
 

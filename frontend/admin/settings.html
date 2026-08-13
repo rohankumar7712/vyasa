@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyasa - Admin Settings</title>
+    <!-- Google Fonts: Inter & Hanken Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                   <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
+                </div>
+            </div>
+            <div class="sidebar-portal-label">CMS PORTAL</div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                    <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
+                    <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                    <li><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                    <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                    <li><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                    <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
+                    <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                    <li class="active"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status-block">
+                    <div class="system-status-title"><span class="status-dot green"></span> System Online</div>
+                    <div class="system-status-desc">All systems operational</div>
+                </div>
+                <div class="version">Version 2.4.1 (Stable)</div>
+                <button class="collapse-menu-btn"><i class="fa-regular fa-circle-left"></i> Collapse Menu</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header" style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
+                <div class="header-top-row">
+                    <div class="breadcrumbs">CMS Console / <span>Settings</span></div>
+                    
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" placeholder="Search settings (e.g. 'SEO' or 'Passwords')...">
+                        <span class="search-shortcut">⌘K</span>
+                    </div>
+
+                    <div class="header-right">
+                        <button class="notification-btn">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        <div class="user-profile">
+                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
+                            <div class="user-info">
+                                <span class="user-name">Admin Director</span>
+                                <span class="user-role">Super Admin</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down chevron-small"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="header-bottom-row" style="align-items: center; justify-content: space-between;">
+                    <div class="header-left">
+                        <div class="title-with-icon">
+                            <h1>Configuration Settings</h1>
+                            <i class="fa-solid fa-sliders title-icon"></i>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">Manage system configuration, website branding, and user permissions.</p>
+                    </div>
+                    
+                    <div style="display: flex; gap: 12px;">
+                        <button class="btn btn-outline">Cancel Changes</button>
+                        <button class="btn btn-primary"><i class="fa-solid fa-check"></i> Save Settings</button>
+                    </div>
+                </div>
+            </header>
+
+
+            <!-- Settings Layout -->
+            <section class="settings-layout">
+                
+                <!-- Inner Settings Navigation Sidebar -->
+                <aside class="settings-sidebar">
+                    <ul>
+                    <li><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                    <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
+                    <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                    <li><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                    <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                    <li><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                    <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
+                    <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                    <li class="active"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+                </aside>
+
+                <!-- Settings Form Content Area -->
+                <div class="settings-content">
+                    
+                    <!-- General Settings Card -->
+                    <div class="settings-card">
+                        <div class="settings-card-header">
+                            <h3>Website Identity</h3>
+                            <p>Basic information used throughout your public website.</p>
+                        </div>
+                        <div class="settings-card-body">
+                            <div class="settings-form-row">
+                                <div class="settings-form-group">
+                                    <label>Institution / Site Name</label>
+                                    <input type="text" value="VYASA International School">
+                                    <span class="settings-form-help">Displayed in the browser tab and footer.</span>
+                                </div>
+                                <div class="settings-form-group">
+                                    <label>Short Name / Abbreviation</label>
+                                    <input type="text" value="VYASA">
+                                </div>
+                            </div>
+                            
+                            <div class="settings-form-group">
+                                <label>Site Tagline / Motto</label>
+                                <input type="text" value="Excellence in Education and Skill Development">
+                            </div>
+
+                            <div class="settings-form-group">
+                                <label>Public Website URL</label>
+                                <input type="url" value="https://www.vyasa.edu.in">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Localization Card -->
+                    <div class="settings-card">
+                        <div class="settings-card-header">
+                            <h3>Localization & Time</h3>
+                            <p>Configure defaults for dates, times, and regional settings.</p>
+                        </div>
+                        <div class="settings-card-body">
+                            <div class="settings-form-row">
+                                <div class="settings-form-group">
+                                    <label>Default Timezone</label>
+                                    <select>
+                                        <option>Asia/Kolkata (IST)</option>
+                                        <option>America/New_York (EST)</option>
+                                        <option>Europe/London (GMT)</option>
+                                    </select>
+                                </div>
+                                <div class="settings-form-group">
+                                    <label>Date Format</label>
+                                    <select>
+                                        <option>DD/MM/YYYY (e.g. 15/08/2026)</option>
+                                        <option>MM/DD/YYYY</option>
+                                        <option>YYYY-MM-DD</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Maintenance Mode Card -->
+                    <div class="settings-card">
+                        <div class="settings-card-header">
+                            <h3>Site Status</h3>
+                            <p>Control the public visibility of the website.</p>
+                        </div>
+                        <div class="settings-card-body">
+                            
+                            <div class="toggle-switch-wrapper">
+                                <div class="toggle-switch-info">
+                                    <h4>Maintenance Mode</h4>
+                                    <p>When enabled, public visitors will see a "Down for Maintenance" page.</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="toggle-switch-wrapper">
+                                <div class="toggle-switch-info">
+                                    <h4>Disable Search Engine Indexing</h4>
+                                    <p>Discourage search engines from indexing this site (useful during development).</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div> <!-- End Settings Content -->
+
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
