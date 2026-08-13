@@ -23,9 +23,11 @@
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 20px;
+    padding-inline: var(--container-padding-desktop);
+    padding-top: 36px;
+    padding-bottom: 60px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -118,9 +120,9 @@
 
 .admissions-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 0 20px;
+    padding-inline: var(--container-padding-desktop);
     box-sizing: border-box;
 }
 

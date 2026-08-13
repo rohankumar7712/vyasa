@@ -1,0 +1,318 @@
+/* =========================================================
+   VYASA FAQ CSS
+========================================================= */
+
+/* Body/Section Background */
+.faq-page-wrapper {
+    background-color: #fafaf9; /* light beige background for the whole page */
+    padding-bottom: 80px;
+}
+
+/* Hero Section */
+.faq-hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url('../../Images/Campus.webp') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-hero .hero-overlay {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(36, 59, 97, 0.85);
+    z-index: 1;
+}
+
+.faq-hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+.faq-hero-content {
+    margin-top: 15vh;
+    max-width: 900px;
+    z-index: 2;
+    position: relative;
+    padding-bottom: 80px;
+}
+
+.faq-badge {
+    display: inline-block;
+    background-color: #ef4444; /* red */
+    color: white;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.faq-hero-title {
+    color: white;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    font-family: 'Poppins', sans-serif;
+}
+
+.faq-hero-desc {
+    color: #e5e7eb;
+    font-size: clamp(14px, 2vw, 16px);
+    line-height: 1.7;
+    max-width: 700px;
+    font-weight: 400;
+}
+
+/* Filter Pills */
+.faq-filters-section {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #fafaf9;
+}
+
+.faq-filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.faq-filter-btn {
+    background-color: #ffffff;
+    color: #0f3a61;
+    border: 1px solid #e5e7eb;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+.faq-filter-btn.active {
+    background-color: #0f3a61;
+    color: #ffffff;
+    border-color: #0f3a61;
+}
+
+.faq-filter-btn:hover:not(.active) {
+    background-color: #f3f4f6;
+}
+
+/* FAQ Accordion Sections */
+.faq-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.faq-header {
+    margin-bottom: 30px;
+}
+
+.faq-subtitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ef4444; /* red */
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.faq-subtitle .red-dash {
+    display: inline-block;
+    width: 12px;
+    height: 2px;
+    background-color: #ef4444;
+}
+
+.faq-title {
+    color: #0f3a61;
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 800;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.faq-desc {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Native Accordion using Details/Summary */
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border: 1px solid #fdfbf7;
+    overflow: hidden;
+}
+
+.faq-item summary {
+    padding: 24px 30px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+    color: #0f3a61;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none; /* removes native arrow */
+    font-family: 'Poppins', sans-serif;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none; /* removes native arrow in Safari */
+}
+
+/* Custom Icon */
+.faq-item summary::after {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #f3f4f6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 14px;
+    flex-shrink: 0;
+    margin-left: 20px;
+    transition: transform 0.3s;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 30px 24px 30px;
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* CTA Banner */
+.faq-cta-section {
+    padding-top: 60px;
+}
+
+.faq-cta-banner {
+    background-color: #0f3a61;
+    border-radius: 24px;
+    padding: 50px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.faq-cta-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.faq-cta-title {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.faq-cta-desc {
+    color: #cbd5e1;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.faq-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.faq-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.faq-cta-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.cta-btn-primary {
+    background-color: #ef4444;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.cta-btn-primary:hover {
+    background-color: #dc2626;
+}
+
+.cta-btn-outline {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.cta-btn-outline:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .faq-cta-banner {
+        flex-direction: column;
+        text-align: left;
+        padding: 40px 30px;
+    }
+    
+    .faq-cta-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .cta-btn-primary, .cta-btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+}

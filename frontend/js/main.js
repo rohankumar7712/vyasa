@@ -12,7 +12,7 @@ function initRevealAnimations() {
 
     // Prepare Sections (Reveal Up)
     const revealSections = document.querySelectorAll(`
-        section:not(.hero-section):not(.vis-hero-section):not(.pu-hero):not(.about-hero-section),
+        section:not([class*="hero"]),
         .legacy-section, .features-section, .achievements-section, .milestones-section,
         .showcase-section, .resources-section, .alumni-section, .insights-section,
         .admissions-process-section, .campus-experience-section, .educators-section,
@@ -146,4 +146,113 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialize core animations
     initRevealAnimations();
+
+    // Sticky Navbar Logic
+    window.addEventListener('scroll', () => {
+        const navbars = document.querySelectorAll('.navbar');
+        navbars.forEach(navbar => {
+            if (window.scrollY > 150) {
+                navbar.classList.add('sticky');
+            } else {
+                navbar.classList.remove('sticky');
+            }
+        });
+    });
+
+    // Initialize Enquiry Popup
+    initEnquiryPopup();
 });
+
+function initEnquiryPopup() {
+    // 1. Create popup HTML dynamically
+    const popupHTML = `
+    <div class="enquiry-modal-overlay" id="enquiryModal">
+        <div class="enquiry-modal">
+            <button class="enquiry-close-btn" id="enquiryCloseBtn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            
+            <div class="enquiry-status">
+                <span class="enquiry-status-dot"></span>
+                <span class="enquiry-status-text">ONLINE DESK</span>
+            </div>
+            
+            <h2 class="enquiry-title">Make an Enquiry</h2>
+            <p class="enquiry-desc">Submit details below. Our admissions concierge will reach out to guide your family.</p>
+            
+            <form class="enquiry-form">
+                <div class="enquiry-form-group">
+                    <label class="enquiry-label">FULL NAME</label>
+                    <input type="text" class="enquiry-input" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="enquiry-form-row">
+                    <div class="enquiry-form-group">
+                        <label class="enquiry-label">EMAIL ADDRESS</label>
+                        <input type="email" class="enquiry-input" placeholder="name@example.com" required>
+                    </div>
+                    <div class="enquiry-form-group">
+                        <label class="enquiry-label">PHONE NUMBER</label>
+                        <input type="tel" class="enquiry-input" placeholder="+1 (555) 000-0000" required>
+                    </div>
+                </div>
+                
+                <div class="enquiry-form-group">
+                    <label class="enquiry-label">SUBJECT OF ENQUIRY</label>
+                    <select class="enquiry-select" required>
+                        <option value="Admissions (Academic Year 2025-26)">Admissions (Academic Year 2025-26)</option>
+                        <option value="General Enquiry">General Enquiry</option>
+                        <option value="Campus Tour">Campus Tour</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="enquiry-form-group">
+                    <label class="enquiry-label">YOUR MESSAGE</label>
+                    <textarea class="enquiry-textarea" placeholder="Tell us about your child's academic goals or any specific concerns..." required></textarea>
+                </div>
+                
+                <button type="submit" class="enquiry-submit-btn">
+                    Submit Enquiry 
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+            </form>
+            
+            <p class="enquiry-legal">By submitting, you agree to receive official correspondence regarding the admissions timeline.</p>
+        </div>
+    </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', popupHTML);
+
+    const modal = document.getElementById('enquiryModal');
+    const closeBtn = document.getElementById('enquiryCloseBtn');
+    
+    // Find all apply buttons (using various classes used across the site)
+    const applyButtons = document.querySelectorAll('.apply-btn, .btn-cta, .btn-cta-large, .btn-apply-online, .pu-apply-btn');
+
+    applyButtons.forEach(btn => {
+        // Only target buttons that contain 'Apply' in their text to avoid grabbing random unrelated buttons
+        if (btn.textContent.toLowerCase().includes('apply')) {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+        }
+    });
+
+    // Close logic
+    const closeModal = () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+}

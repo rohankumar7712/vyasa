@@ -4591,6 +4591,7 @@ video {
 
 .info-block {
     margin-bottom: 40px;
+    padding: 30px;
 }
 
 .info-block:last-child {
@@ -5587,16 +5588,23 @@ video {
 
 .mega-menu {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 15px);
     left: 0;
     width: 100%;
     background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     display: none;
     padding: 30px 5%;
     z-index: 1000;
     justify-content: space-between;
-    border-top: 2px solid var(--brand-red);
+    border-radius: 20px;
+}
+
+.navbar.sticky .mega-menu {
+    width: calc(100% - var(--container-padding-desktop) * 2);
+    max-width: var(--container-max-width);
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .mega-menu::before {
@@ -5694,17 +5702,21 @@ video {
     .has-mega-menu .mega-menu,
     .has-mega-menu:hover .mega-menu {
         position: static;
-        display: none;
+        display: flex;
         box-shadow: none;
         border-top: none;
-        padding: 10px 0 10px 15px;
+        padding: 0 0 0 15px;
         flex-direction: column;
         background: transparent;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
     }
 
     .has-mega-menu.active .mega-menu,
     .has-mega-menu.active:hover .mega-menu {
-        display: flex;
+        max-height: 1000px; /* arbitrary large value to accommodate content */
+        padding: 10px 0 10px 15px;
     }
 
     .mega-menu-column {
