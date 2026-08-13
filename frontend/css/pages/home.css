@@ -5600,11 +5600,13 @@ video {
     border-radius: 20px;
 }
 
-.navbar.sticky .mega-menu {
-    width: calc(100% - var(--container-padding-desktop) * 2);
-    max-width: var(--container-max-width);
-    left: 50%;
-    transform: translateX(-50%);
+@media (min-width: 1201px) {
+    .navbar.sticky .mega-menu {
+        width: calc(100% - var(--container-padding-desktop) * 2);
+        max-width: var(--container-max-width);
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 .mega-menu::before {
