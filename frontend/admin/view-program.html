@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyasa - View Program</title>
+    <!-- Google Fonts: Inter & Hanken Grotesk & Lora for reading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                   <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
+                </div>
+            </div>
+            <div class="sidebar-portal-label">CMS PORTAL</div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                    <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
+                    <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                    <li class="active"><a href="programs.html"><i class="fa-regular fa-newspaper"></i> Programs</a></li>
+                    <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                    <li><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                    <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
+                    <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status-block">
+                    <div class="system-status-title"><span class="status-dot green"></span> System Online</div>
+                    <div class="system-status-desc">All systems operational</div>
+                </div>
+                <div class="version">Version 2.4.1 (Stable)</div>
+                <button class="collapse-menu-btn"><i class="fa-regular fa-circle-left"></i> Collapse Menu</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" style="background-color: #f1f5f9;">
+            <!-- Header (Admin Bar overlay style) -->
+            <header class="top-header" style="margin-bottom: 24px; padding: 20px 32px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); margin-top: -8px;">
+                <div class="header-top-row" style="margin-bottom: 0; padding-bottom: 0; border: none;">
+                    <div class="breadcrumbs">CMS Console / <a href="programs.html" style="color: var(--text-muted); text-decoration: none;">Articles</a> / <span>Preview</span></div>
+                    
+                    <div class="header-right">
+                        <div style="display: flex; gap: 12px; margin-right: 24px;">
+                            <a href="programs.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to List</a>
+                            <a href="create-article.html" class="btn btn-primary"><i class="fa-solid fa-pen"></i> Edit Program</a>
+                        </div>
+                        <div class="user-profile">
+                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
+                            <div class="user-info">
+                                <span class="user-name">Admin Director</span>
+                                <span class="user-role">Super Admin</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down chevron-small"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Frontend Article Preview Container -->
+            <div class="article-preview-wrapper">
+                <article class="article-preview">
+                    
+                    <!-- Article Header -->
+                    <header class="article-preview-header">
+                        <div class="article-preview-meta">
+                            <span class="article-preview-category">Campus News</span>
+                            <span class="article-preview-date">August 13, 2026</span>
+                            <span class="article-preview-status"><span class="status-dot green"></span> Published</span>
+                        </div>
+                        <h1 class="article-preview-title">Campus Life in 2026: A Vision for the Future of Education</h1>
+                        <p class="article-preview-excerpt">As we move further into the 21st century, Vyasa International School continues to adapt and evolve. Here is an exclusive look at our master plan for campus life over the next five years, focusing on sustainability, technology, and student wellbeing.</p>
+                        <div class="article-preview-author">
+                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Dr. Arindam Ghosh">
+                            <div class="author-info">
+                                <strong>Dr. Arindam Ghosh</strong>
+                                <span>Admin Director</span>
+                            </div>
+                        </div>
+                    </header>
+
+                    <!-- Article Image -->
+                    <div class="article-preview-image">
+                        <!-- Placeholder image for the article preview -->
+                        <div style="width: 100%; height: 400px; background: #e2e8f0; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 1.5rem;">
+                            <i class="fa-regular fa-image" style="margin-right: 12px;"></i> Featured Image Placeholder (1200x630)
+                        </div>
+                    </div>
+
+                    <!-- Article Body -->
+                    <div class="article-preview-body">
+                        <p>Education is no longer confined to the four walls of a classroom. In 2026, the concept of a campus extends into the digital realm, into nature, and into the local community. At Vyasa International School, we are pioneering a hybrid approach to student life that prioritizes holistic development alongside academic rigor.</p>
+                        
+                        <h2>The Green Campus Initiative</h2>
+                        <p>Our commitment to sustainability is taking center stage. By the end of this academic year, all campus lighting will be converted to smart LED systems, and our solar array will supply 40% of the school's energy needs. Students are actively involved in these projects through our Environmental Science programs.</p>
+                        
+                        <blockquote>
+                            "The environment is the third teacher. We must design our spaces to instruct and inspire our students automatically, just by existing within them."
+                            <cite>— Dr. Arindam Ghosh, Admin Director</cite>
+                        </blockquote>
+
+                        <p>Beyond energy efficiency, we are expanding our botanical gardens and outdoor learning zones. These areas are designed for quiet reflection, reading, and collaborative project work in the fresh air.</p>
+
+                        <h2>Technological Integration</h2>
+                        <p>We are rolling out the next phase of our digital literacy program. This includes:</p>
+                        <ul>
+                            <li>Advanced AR/VR learning labs for immersive history and biology lessons.</li>
+                            <li>A student-led robotics incubator with 3D printing capabilities.</li>
+                            <li>Upgraded campus-wide Wi-Fi 7 to ensure seamless connectivity for all devices.</li>
+                        </ul>
+
+                        <p>As we look to the future, Vyasa remains dedicated to providing an environment where every student can discover their passion, hone their skills, and prepare for a rapidly changing world.</p>
+                    </div>
+
+                </article>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>

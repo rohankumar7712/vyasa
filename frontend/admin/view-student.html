@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyasa - View Student</title>
+    <!-- Google Fonts: Inter & Hanken Grotesk & Lora for reading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                   <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
+                </div>
+            </div>
+            <div class="sidebar-portal-label">CMS PORTAL</div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                    <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
+                    <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                    
+                    <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                    <li><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                    <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
+                    <li class="active"><a href="students.html"><i class="fa-regular fa-newspaper"></i> Students</a></li>
+                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status-block">
+                    <div class="system-status-title"><span class="status-dot green"></span> System Online</div>
+                    <div class="system-status-desc">All systems operational</div>
+                </div>
+                <div class="version">Version 2.4.1 (Stable)</div>
+                <button class="collapse-menu-btn"><i class="fa-regular fa-circle-left"></i> Collapse Menu</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" style="background-color: #f1f5f9;">
+            <!-- Header (Admin Bar overlay style) -->
+            <header class="top-header" style="margin-bottom: 24px; padding: 20px 32px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); margin-top: -8px;">
+                <div class="header-top-row" style="margin-bottom: 0; padding-bottom: 0; border: none;">
+                    <div class="breadcrumbs">CMS Console / <a href="students.html" style="color: var(--text-muted); text-decoration: none;">Articles</a> / <span>Preview</span></div>
+                    
+                    <div class="header-right">
+                        <div style="display: flex; gap: 12px; margin-right: 24px;">
+                            <a href="students.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to List</a>
+                            <a href="create-article.html" class="btn btn-primary"><i class="fa-solid fa-pen"></i> Edit Student</a>
+                        </div>
+                        <div class="user-profile">
+                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
+                            <div class="user-info">
+                                <span class="user-name">Admin Director</span>
+                                <span class="user-role">Super Admin</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down chevron-small"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Frontend Article Preview Container -->
+            <div class="article-preview-wrapper">
+                <article class="article-preview">
+                    
+                    <!-- Student Profile Header -->
+                    <div style="background: var(--brand-blue); height: 120px; border-radius: 12px 12px 0 0;"></div>
+                    <div style="padding: 0 40px 30px 40px; display: flex; gap: 24px; border-bottom: 1px solid var(--border-color);">
+                        <div style="width: 120px; height: 120px; border-radius: 50%; border: 4px solid white; background: white; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-top: -60px; flex-shrink: 0;">
+                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Rahul Kumar" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="flex: 1; padding-top: 16px;">
+                            <h1 style="margin: 0 0 8px 0; font-size: 2rem; font-weight: 800; color: var(--text-main);">Rahul Kumar</h1>
+                            <div style="display: flex; gap: 16px; color: var(--text-muted); font-size: 0.95rem; align-items: center;">
+                                <span><i class="fa-regular fa-id-card"></i> VYS-2026-041</span>
+                                <span><i class="fa-solid fa-graduation-cap"></i> PU Science Stream (PCMB)</span>
+                                <span class="badge status-published" style="background: #dcfce7; color: #166534; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600;"><span class="status-dot"></span> Active</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Student Profile Body -->
+                    <div style="padding: 40px;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                            
+                            <!-- Personal Info -->
+                            <div>
+                                <h3 style="margin: 0 0 20px 0; font-size: 1.1rem; color: var(--text-main); border-bottom: 2px solid var(--brand-blue); padding-bottom: 10px; display: inline-block;">Personal Information</h3>
+                                <div style="display: flex; flex-direction: column; gap: 16px;">
+                                    <div><strong style="color: var(--text-main); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Date of Birth</strong><span style="color: var(--text-muted);">October 15, 2010</span></div>
+                                    <div><strong style="color: var(--text-main); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Gender</strong><span style="color: var(--text-muted);">Male</span></div>
+                                    <div><strong style="color: var(--text-main); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Blood Group</strong><span style="color: var(--text-muted);">O+</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Contact Info -->
+                            <div>
+                                <h3 style="margin: 0 0 20px 0; font-size: 1.1rem; color: var(--text-main); border-bottom: 2px solid var(--brand-blue); padding-bottom: 10px; display: inline-block;">Contact Details</h3>
+                                <div style="display: flex; flex-direction: column; gap: 16px;">
+                                    <div><strong style="color: var(--text-main); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Email Address</strong><span style="color: var(--text-muted);">rahul.k@example.com</span></div>
+                                    <div><strong style="color: var(--text-main); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Phone Number</strong><span style="color: var(--text-muted);">+91 98765 43210</span></div>
+                                    <div><strong style="color: var(--text-main); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Residential Address</strong><span style="color: var(--text-muted);">123, 4th Main Road, Jayanagar,<br>Bengaluru, Karnataka 560041</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Parent Info -->
+                            <div style="grid-column: span 2;">
+                                <h3 style="margin: 0 0 20px 0; font-size: 1.1rem; color: var(--text-main); border-bottom: 2px solid var(--brand-blue); padding-bottom: 10px; display: inline-block;">Parent / Guardian Information</h3>
+                                <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 8px; padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                    <div><strong style="color: var(--text-main); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Name</strong><span style="color: var(--text-muted);">Suresh Kumar (Father)</span></div>
+                                    <div><strong style="color: var(--text-main); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Contact Number</strong><span style="color: var(--text-muted);">+91 99887 76655</span></div>
+                                    <div><strong style="color: var(--text-main); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Email Address</strong><span style="color: var(--text-muted);">suresh.kumar@example.com</span></div>
+                                    <div><strong style="color: var(--text-main); display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Occupation</strong><span style="color: var(--text-muted);">Software Engineer</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>

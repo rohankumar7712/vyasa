@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyasa - Create Achievement</title>
+    <!-- Google Fonts: Inter & Hanken Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                   <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
+                </div>
+            </div>
+            <div class="sidebar-portal-label">CMS PORTAL</div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li ><a href="#"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                    <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
+                    <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                    <li><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                    <li class="active"><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                    <li ><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                    <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
+                    <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status-block">
+                    <div class="system-status-title"><span class="status-dot green"></span> System Online</div>
+                    <div class="system-status-desc">All systems operational</div>
+                </div>
+                <div class="version">Version 2.4.1 (Stable)</div>
+                <button class="collapse-menu-btn"><i class="fa-regular fa-circle-left"></i> Collapse Menu</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header" style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
+                <div class="header-top-row">
+                    <div class="breadcrumbs">CMS Console / <a href="achievements.html" style="color: var(--text-muted); text-decoration: none;">Articles</a> / <span>Create New</span></div>
+                    
+                    <div class="header-right">
+                        <button class="notification-btn">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        <div class="user-profile">
+                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
+                            <div class="user-info">
+                                <span class="user-name">Admin Director</span>
+                                <span class="user-role">Super Admin</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down chevron-small"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="header-bottom-row" style="align-items: center; justify-content: space-between; margin-top: 24px; display: flex;">
+                    <div class="header-left">
+                        <div class="title-with-icon">
+                            <h1>Add Achievement</h1>
+                            <i class="fa-solid fa-pen-nib title-icon"></i>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">Draft and publish new content for the Vyasa website.</p>
+                    </div>
+                    
+                    <div style="display: flex; gap: 12px;">
+                        <a href="achievements.html" class="btn btn-outline">Cancel</a>
+                        <button class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Publish Achievement</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Editor Layout -->
+            <form class="editor-layout" action="view-article.html">
+                
+                <!-- Main Editor Area -->
+                <div class="editor-main">
+                    <div class="editor-field">
+                        <input type="text" class="editor-title-input" placeholder="Add title..." autofocus>
+                    </div>
+                    <div class="editor-field slug-field">
+                        <span class="slug-prefix">https://www.vyasa.edu.in/articles/</span>
+                        <input type="text" class="slug-input" placeholder="achievement-slug">
+                    </div>
+
+                    <!-- Rich Text Editor Mockup -->
+                    <div class="rich-text-editor">
+                        <div class="editor-toolbar">
+                            <button type="button"><i class="fa-solid fa-bold"></i></button>
+                            <button type="button"><i class="fa-solid fa-italic"></i></button>
+                            <button type="button"><i class="fa-solid fa-underline"></i></button>
+                            <button type="button"><i class="fa-solid fa-strikethrough"></i></button>
+                            <div class="toolbar-divider"></div>
+                            <button type="button"><i class="fa-solid fa-heading"></i></button>
+                            <button type="button"><i class="fa-solid fa-paragraph"></i></button>
+                            <div class="toolbar-divider"></div>
+                            <button type="button"><i class="fa-solid fa-list-ul"></i></button>
+                            <button type="button"><i class="fa-solid fa-list-ol"></i></button>
+                            <button type="button"><i class="fa-solid fa-quote-left"></i></button>
+                            <div class="toolbar-divider"></div>
+                            <button type="button"><i class="fa-solid fa-link"></i></button>
+                            <button type="button"><i class="fa-regular fa-image"></i></button>
+                            <button type="button"><i class="fa-solid fa-code"></i></button>
+                        </div>
+                        <textarea class="editor-textarea" placeholder="Write your achievement details here..."></textarea>
+                    </div>
+
+                    <!-- Excerpt -->
+                    <div class="editor-card" style="margin-top: 24px;">
+                        <div class="editor-card-header">
+                            <h3>Excerpt</h3>
+                        </div>
+                        <div class="editor-card-body">
+                            <textarea class="excerpt-textarea" placeholder="Write a short summary (optional)..."></textarea>
+                            <p class="form-help">Excerpts are optional hand-crafted summaries of your content that can be used in your theme.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Editor Sidebar -->
+                <aside class="editor-sidebar">
+                    
+                    <!-- Publishing Card -->
+                    <div class="editor-card">
+                        <div class="editor-card-header">
+                            <h3>Publishing</h3>
+                        </div>
+                        <div class="editor-card-body">
+                            <div class="form-group-vertical">
+                                <label>Status</label>
+                                <select>
+                                    <option>Draft</option>
+                                    <option>Pending Review</option>
+                                    <option selected>Published</option>
+                                </select>
+                            </div>
+                            <div class="form-group-vertical">
+                                <label>Publish Date</label>
+                                <input type="datetime-local" value="2026-08-13T14:30">
+                            </div>
+                            <div class="form-group-vertical">
+                                <label>Author</label>
+                                <select>
+                                    <option selected>Admin Director</option>
+                                    <option>Dr. Amit Patel</option>
+                                    <option>Meera Sundaram</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categories Card -->
+                    <div class="editor-card">
+                        <div class="editor-card-header">
+                            <h3>Categories</h3>
+                        </div>
+                        <div class="editor-card-body">
+                            <div class="checkbox-list">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" checked>
+                                    <span class="checkmark"></span>
+                                    Campus News
+                                </label>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Events
+                                </label>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Announcements
+                                </label>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                    Student Life
+                                </label>
+                            </div>
+                                                </div>
+                    </div>
+
+                    <!-- Featured Image Card -->
+                    <div class="editor-card">
+                        <div class="editor-card-header">
+                            <h3>Featured Image</h3>
+                        </div>
+                        <div class="editor-card-body">
+                            <div class="image-upload-zone">
+                                <i class="fa-regular fa-image upload-icon"></i>
+                                <p>Click or drag image here</p>
+                                <span>Recommended size: 1200x630px</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SEO Card -->
+                    <div class="editor-card">
+                        <div class="editor-card-header">
+                            <h3>SEO Settings</h3>
+                        </div>
+                        <div class="editor-card-body">
+                            <div class="form-group-vertical">
+                                <label>Meta Title</label>
+                                <input type="text" placeholder="SEO Title...">
+                            </div>
+                            <div class="form-group-vertical">
+                                <label>Meta Description</label>
+                                <textarea placeholder="A short description for search engines..." rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </aside>
+            </form>
+
+        </main>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyasa - Upload Media</title>
+    <!-- Google Fonts: Inter & Hanken Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                   <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
+                </div>
+            </div>
+            <div class="sidebar-portal-label">CMS PORTAL</div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                    <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
+                    <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                    <li><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                    <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                    <li><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                    <li class="active"><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
+                    <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status-block">
+                    <div class="system-status-title"><span class="status-dot green"></span> System Online</div>
+                    <div class="system-status-desc">All systems operational</div>
+                </div>
+                <div class="version">Version 2.4.1 (Stable)</div>
+                <button class="collapse-menu-btn"><i class="fa-regular fa-circle-left"></i> Collapse Menu</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header" style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
+                <div class="header-top-row">
+                    <div class="breadcrumbs">CMS Console / <a href="media-library.html" style="color: var(--text-muted); text-decoration: none;">Media Library</a> / <span>Upload</span></div>
+                    
+                    <div class="header-right">
+                        <button class="notification-btn">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        <div class="user-profile">
+                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
+                            <div class="user-info">
+                                <span class="user-name">Admin Director</span>
+                                <span class="user-role">Super Admin</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down chevron-small"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="header-bottom-row" style="align-items: center; justify-content: space-between; margin-top: 24px; display: flex;">
+                    <div class="header-left">
+                        <div class="title-with-icon">
+                            <h1>Upload Media</h1>
+                            <i class="fa-solid fa-cloud-arrow-up title-icon"></i>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">Upload images, documents, and videos to your media library.</p>
+                    </div>
+                    
+                    <div style="display: flex; gap: 12px;">
+                        <a href="media-library.html" class="btn btn-outline">Cancel</a>
+                        <button class="btn btn-primary"><i class="fa-solid fa-check"></i> Done</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Upload Layout -->
+            <div style="max-width: 900px; margin: 0 auto; padding-top: 20px;">
+                <div class="image-upload-zone" style="padding: 60px 20px; background: white;">
+                    <i class="fa-solid fa-cloud-arrow-up upload-icon" style="color: var(--brand-blue); font-size: 3rem;"></i>
+                    <h3 style="margin: 12px 0 8px; font-size: 1.25rem;">Drag and drop files here</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">or click to select files from your computer</p>
+                    <button class="btn btn-primary">Select Files</button>
+                    <p style="margin-top: 24px; font-size: 0.85rem; color: var(--text-muted);">Maximum upload file size: 50 MB.</p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>

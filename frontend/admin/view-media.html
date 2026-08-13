@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyasa - View Media</title>
+    <!-- Google Fonts: Inter & Hanken Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                   <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
+                </div>
+            </div>
+            <div class="sidebar-portal-label">CMS PORTAL</div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                    <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
+                    <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                    <li><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                    <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                    <li><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                    <li class="active"><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
+                    <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status-block">
+                    <div class="system-status-title"><span class="status-dot green"></span> System Online</div>
+                    <div class="system-status-desc">All systems operational</div>
+                </div>
+                <div class="version">Version 2.4.1 (Stable)</div>
+                <button class="collapse-menu-btn"><i class="fa-regular fa-circle-left"></i> Collapse Menu</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header" style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
+                <div class="header-top-row">
+                    <div class="breadcrumbs">CMS Console / <a href="media-library.html" style="color: var(--text-muted); text-decoration: none;">Media Library</a> / <span>View Media</span></div>
+                    
+                    <div class="header-right">
+                        <button class="notification-btn">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        <div class="user-profile">
+                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
+                            <div class="user-info">
+                                <span class="user-name">Admin Director</span>
+                                <span class="user-role">Super Admin</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down chevron-small"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="header-bottom-row" style="align-items: center; justify-content: space-between; margin-top: 24px; display: flex;">
+                    <div class="header-left">
+                        <div class="title-with-icon">
+                            <h1>Attachment Details</h1>
+                            <i class="fa-solid fa-image title-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 12px;">
+                        <a href="media-library.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to Library</a>
+                        <button class="btn btn-primary"><i class="fa-solid fa-check"></i> Save Changes</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Editor Layout -->
+            <div class="editor-layout">
+                
+                <!-- Main Editor Area -->
+                <div class="editor-main" style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; display: flex; align-items: center; justify-content: center; min-height: 400px;">
+                    <img src="../Images/vyasa logo.webp" alt="Vyasa Logo" style="max-width: 100%; max-height: 500px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                </div>
+
+                <!-- Editor Sidebar -->
+                <aside class="editor-sidebar">
+                    
+                    <!-- File Info Card -->
+                    <div class="editor-card">
+                        <div class="editor-card-header">
+                            <h3>File Information</h3>
+                        </div>
+                        <div class="editor-card-body" style="font-size: 0.9rem;">
+                            <div style="margin-bottom: 8px;"><strong>File name:</strong> vyasa-logo-final.webp</div>
+                            <div style="margin-bottom: 8px;"><strong>File type:</strong> image/webp</div>
+                            <div style="margin-bottom: 8px;"><strong>Uploaded on:</strong> August 12, 2026</div>
+                            <div style="margin-bottom: 8px;"><strong>File size:</strong> 240 KB</div>
+                            <div style="margin-bottom: 8px;"><strong>Dimensions:</strong> 1200 by 630 pixels</div>
+                            <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
+                                <a href="#" style="color: var(--brand-blue); text-decoration: none;"><i class="fa-solid fa-download"></i> Download file</a>
+                                <a href="#" style="color: #ef4444; text-decoration: none;"><i class="fa-solid fa-trash"></i> Delete permanently</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Metadata Card -->
+                    <div class="editor-card">
+                        <div class="editor-card-header">
+                            <h3>Metadata</h3>
+                        </div>
+                        <div class="editor-card-body">
+                            <div class="form-group-vertical">
+                                <label>Alternative Text</label>
+                                <input type="text" value="Vyasa Logo">
+                                <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Describe the purpose of the image. Leave empty if the image is purely decorative.</span>
+                            </div>
+                            <div class="form-group-vertical">
+                                <label>Title</label>
+                                <input type="text" value="vyasa-logo-final">
+                            </div>
+                            <div class="form-group-vertical">
+                                <label>Caption</label>
+                                <textarea rows="2" placeholder="Optional caption"></textarea>
+                            </div>
+                            <div class="form-group-vertical">
+                                <label>Description</label>
+                                <textarea rows="3" placeholder="Optional description"></textarea>
+                            </div>
+                            <div class="form-group-vertical">
+                                <label>File URL</label>
+                                <input type="text" value="https://www.vyasa.edu.in/media/vyasa-logo-final.webp" readonly style="background: #f1f5f9; color: var(--text-muted);">
+                                <button type="button" class="btn btn-outline" style="margin-top: 8px;">Copy URL to clipboard</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
