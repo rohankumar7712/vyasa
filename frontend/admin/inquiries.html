@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vyasa - Admin Achievements</title>
+    <title>Vyasa - Admin Inquiries & Careers</title>
     <!-- Google Fonts: Inter & Hanken Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,21 +27,18 @@
             <div class="sidebar-portal-label">CMS PORTAL</div>
 
             <nav class="sidebar-nav">
-                <ul>
-                    <ul>
-                    <li ><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                    <li><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
                     <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
                     <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
                     <li><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
-                    <li class="active"><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                    <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
                     <li><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
                     <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
                     <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
                     <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
-                    <li><a href="inquiries.html"><i class="fa-solid fa-envelope-open-text"></i> Inquiries</a></li>
+                    <li class="active"><a href="inquiries.html"><i class="fa-solid fa-envelope-open-text"></i> Inquiries</a></li>
                     <li><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
                     <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
-                </ul>
                 </ul>
             </nav>
 
@@ -60,18 +57,18 @@
             <!-- Header -->
             <header class="top-header">
                 <div class="header-top-row">
-                    <div class="breadcrumbs">CMS Console / <span>Achievements</span></div>
+                    <div class="breadcrumbs">CMS Console / <span>Inquiries</span></div>
                     
                     <div class="search-bar">
                         <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                        <input type="text" placeholder="Search achievements...">
+                        <input type="text" placeholder="Search inquiries...">
 
                     </div>
 
                     <div class="header-right">
                         <button class="notification-btn">
                             <i class="fa-regular fa-bell"></i>
-                            <span class="notification-badge">3</span>
+                            <span class="notification-badge">5</span>
                         </button>
                         <div class="user-profile">
                             <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
@@ -87,21 +84,20 @@
                 <div class="header-bottom-row" style="align-items: center; justify-content: space-between;">
                     <div class="header-left">
                         <div class="title-with-icon">
-                            <h1>Achievements</h1>
-                            <i class="fa-solid fa-award title-icon"></i>
+                            <h1>Inquiries</h1>
+                            <i class="fa-solid fa-envelope-open-text title-icon"></i>
                         </div>
                         <div class="page-stats-subtitle">
-                            <span>15 Achievements</span>
-                            <span class="dot-separator">&bull;</span>
-                            <span class="stat-green">10 Published</span>
-                            <span class="dot-separator">&bull;</span>
-                            <span class="stat-yellow">3 Drafts</span>
-                            <span class="dot-separator">&bull;</span>
-                            <span class="stat-blue">2 Scheduled</span>
+                            <span>156 Total</span>
+                            <span class="dot-separator">•</span>
+                            <span class="stat-yellow">12 New Leads</span>
+                            <span class="dot-separator">•</span>
+                            <span class="stat-green">139 Resolved</span>
                         </div>
                     </div>
                     
-                    <a href="create-achievement.html" class="btn btn-primary btn-create-page"><i class="fa-solid fa-plus"></i> Add Achievement</a>
+                    <!-- We don't usually 'Add' inquiries from Admin side, so removed the button or changed to Export -->
+                    <button class="btn btn-primary btn-create-page"><i class="fa-solid fa-download"></i> Export Data</button>
                 </div>
             </header>
 
@@ -113,23 +109,28 @@
                 <div class="table-toolbar">
                     <div class="toolbar-search">
                         <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                        <input type="text" placeholder="Search achievements by title or category...">
+                        <input type="text" placeholder="Search by name, email...">
                     </div>
                     
                     <div class="toolbar-dropdowns">
                         <div class="toolbar-select">
                             <select>
-                                <option>All Categories</option>
+                                <option>All Types (Admissions/Contact)</option>
+                                <option>Admissions</option>
+                                <option>General Contact</option>
                             </select>
                         </div>
                         <div class="toolbar-select">
                             <select>
                                 <option>All Status</option>
+                                <option>New</option>
+                                <option>Contacted</option>
+                                <option>Resolved</option>
                             </select>
                         </div>
                         <div class="toolbar-select">
                             <select>
-                                <option>Last Modified</option>
+                                <option>Newest First</option>
                             </select>
                         </div>
                         <button class="btn-more-filters"><i class="fa-solid fa-filter"></i> More Filters</button>
@@ -144,106 +145,58 @@
                         <thead>
                             <tr>
                                 <th class="checkbox-col"><input type="checkbox"></th>
-                                <th>ACHIEVEMENT TITLE</th>
-                                <th>CATEGORY</th>
+                                <th>NAME / SUBJECT</th>
+                                <th>INQUIRY TYPE</th>
                                 <th>STATUS</th>
                                 <th>DATE</th>
-                                <th>AWARDEE</th>
+                                <th>CONTACT INFO</th>
                                 <th class="text-center">ACTIONS</th>
                             </tr>
+                        </thead>
                         <tbody>
                             <!-- Row 1 -->
                             <tr>
                                 <td class="checkbox-col"><input type="checkbox"></td>
                                 <td>
                                     <div class="page-title-cell">
-                                        <span class="page-name">Best Campus Award 2026</span>
+                                        <span class="page-name">Rahul Sharma</span>
+                                        <span class="stat-desc" style="display:block; font-size:12px; color:#64748b;">Admission for Grade 11 Science</span>
                                     </div>
                                 </td>
-                                <td>Institutional</td>
-                                <td><span class="badge status-published"><span class="status-dot"></span> Published</span></td>
-                                <td class="date-cell">Today, 2:15 PM</td>
+                                <td><span class="badge" style="background-color: #fef9c3; color: #ca8a04;">Admissions</span></td>
+                                <td><span class="badge status-under-review"><span class="status-dot"></span> New</span></td>
+                                <td class="date-cell">Today, 10:15 AM</td>
                                 <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="table-avatar">
-                                        <span class="table-user-name">Vyasa College</span>
-                                    </div>
+                                    <span class="table-user-name" style="display:block;">rahul@example.com</span>
+                                    <span style="font-size:12px; color:#64748b;">+91 9876543210</span>
                                 </td>
                                 <td class="actions-cell">
-                                    <a href="view-achievement.html" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
-                                    <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <a href="#" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <button class="icon-btn" title="Mark Contacted"><i class="fa-solid fa-check"></i></button>
                                     <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                 </td>
                             </tr>
                             
-                            <!-- Row 2 -->
-                            <tr>
-                                <td class="checkbox-col"><input type="checkbox"></td>
-                                <td>
-                                    <div class="page-title-cell">
-                                        <span class="page-name">National Science Olympiad Winner</span>
-                                    </div>
-                                </td>
-                                <td>Academic</td>
-                                <td><span class="badge status-draft"><span class="status-dot"></span> Draft</span></td>
-                                <td class="date-cell">Yesterday, 11:30 AM</td>
-                                <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Dr. Meera Sundaram" class="table-avatar">
-                                        <span class="table-user-name">Dr. Amit Patel</span>
-                                    </div>
-                                </td>
-                                <td class="actions-cell">
-                                    <a href="#" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
-                                    <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                                </td>
-                            </tr>
 
                             <!-- Row 3 -->
                             <tr>
                                 <td class="checkbox-col"><input type="checkbox"></td>
                                 <td>
                                     <div class="page-title-cell">
-                                        <span class="page-name">Top Alumni Contribution</span>
+                                        <span class="page-name">Anand Kumar</span>
+                                        <span class="stat-desc" style="display:block; font-size:12px; color:#64748b;">Question regarding transport routes</span>
                                     </div>
                                 </td>
-                                <td>Alumni</td>
-                                <td><span class="badge status-under-review"><span class="status-dot"></span> Scheduled</span></td>
-                                <td class="date-cell">Tomorrow, 9:45 AM</td>
+                                <td><span class="badge" style="background-color: #f1f5f9; color: #475569;">General Contact</span></td>
+                                <td><span class="badge status-published"><span class="status-dot"></span> Resolved</span></td>
+                                <td class="date-cell">Aug 12, 2026, 11:20 AM</td>
                                 <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Ms. Revathi Raju" class="table-avatar">
-                                        <span class="table-user-name">Ms. Revathi Raju</span>
-                                    </div>
+                                    <span class="table-user-name" style="display:block;">anand.k@example.com</span>
+                                    <span style="font-size:12px; color:#64748b;">+91 9123456789</span>
                                 </td>
                                 <td class="actions-cell">
                                     <a href="#" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
-                                    <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                                </td>
-                            </tr>
-
-                            <!-- Row 4 -->
-                            <tr>
-                                <td class="checkbox-col"><input type="checkbox"></td>
-                                <td>
-                                    <div class="page-title-cell">
-                                        <span class="page-name">Excellence in Technology Integration</span>
-                                    </div>
-                                </td>
-                                <td>Technology</td>
-                                <td><span class="badge status-published"><span class="status-dot"></span> Published</span></td>
-                                <td class="date-cell">Aug 10, 2026, 4:30 PM</td>
-                                <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Dr. Rajesh Iyer" class="table-avatar">
-                                        <span class="table-user-name">Dr. Rajesh Iyer</span>
-                                    </div>
-                                </td>
-                                <td class="actions-cell">
-                                    <a href="#" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
-                                    <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="icon-btn" title="Reply"><i class="fa-solid fa-reply"></i></button>
                                     <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                 </td>
                             </tr>
@@ -259,13 +212,13 @@
                             <span>0 selected</span>
                         </label>
                         <div class="bulk-divider"></div>
-                        <button class="btn-bulk btn-publish"><i class="fa-solid fa-paper-plane"></i> Publish</button>
+                        <button class="btn-bulk btn-publish"><i class="fa-solid fa-envelope"></i> Send Email</button>
                         <button class="btn-bulk btn-archive"><i class="fa-solid fa-box-archive"></i> Archive</button>
                         <button class="btn-bulk btn-delete"><i class="fa-regular fa-trash-can"></i> Delete</button>
                     </div>
                     
                     <div class="footer-pagination">
-                        <span class="pagination-info">Showing 1 to 4 of 42 articles</span>
+                        <span class="pagination-info">Showing 1 to 3 of 156 inquiries</span>
                         <div class="pagination-controls">
                             <button class="page-btn"><i class="fa-solid fa-chevron-left"></i></button>
                             <button class="page-btn active">1</button>

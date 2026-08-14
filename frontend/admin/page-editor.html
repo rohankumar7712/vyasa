@@ -37,6 +37,8 @@
                     <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
                     <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
                     <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                    <li><a href="inquiries.html"><i class="fa-solid fa-envelope-open-text"></i> Inquiries</a></li>
+                    <li><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
                     <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
                 </ul>
             </nav>
@@ -54,20 +56,51 @@
         <!-- Main Content -->
         <main class="main-content editor-main-content">
             <!-- Header area specific to editor -->
-            <div class="editor-top-bar">
-                <div class="editor-title-area">
-                    <div class="breadcrumbs">CMS Console / Pages / <span class="highlight-blue">Academic Programs</span> / Editor</div>
-                    <div class="editor-title-row">
-                        <h1>Editing: Academic Programs</h1>
-                        <span class="badge status-draft-badge">DRAFT</span>
+            <header class="top-header" style="padding-bottom: 24px; margin-bottom: 48px;">
+                <div class="header-top-row" style="border-bottom:1px solid #cbd5e1;">
+                    <div class="breadcrumbs">CMS Console / <span>Pages</span></div>
+                    
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" placeholder="Search pages...">
+
+                    </div>
+
+                    <div class="header-right">
+                        <button class="notification-btn">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        <div class="user-profile">
+                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
+                            <div class="user-info">
+                                <span class="user-name">Admin Director</span>
+                                <span class="user-role">Super Admin</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down chevron-small"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="editor-actions">
-                    <button class="btn btn-outline">Save Draft</button>
-                    <a href="page-preview.html" class="btn btn-outline" style="text-decoration: none;">Preview</a>
-                    <button class="btn btn-primary" id="btn-publish-editor">Publish Changes</button>
+                
+                <div class="header-bottom-row" style="align-items: center; justify-content: space-between;">
+                    <div class="header-left">
+                        <div class="title-with-icon" style="display: flex; align-items: center; gap: 12px;">
+                            <div class="editable-title-wrapper" style="display: flex; align-items: center; gap: 8px;">
+                                <span style="font-size: 1.5rem; color: var(--text-muted); font-weight: 500;">Editing:</span>
+                                <input type="text" value="Academic Programs" class="editable-page-title" style="font-size: 1.5rem; font-weight: 700; color: var(--primary-dark); border: none; background: transparent; outline: none; border-bottom: 2px dashed transparent; width: 300px; padding: 2px 0; transition: border-color 0.2s;" onfocus="this.style.borderBottomColor='var(--accent-blue)'" onblur="this.style.borderBottomColor='transparent'">
+                            </div>
+                            <span class="badge status-draft-badge" style="font-size: 0.75rem;">DRAFT</span>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; margin-bottom: 0;">Edit blocks and content for this page.</p>
+                    </div>
+                    
+                    <div class="editor-actions" style="display: flex; gap: 12px; align-items: center;">
+                        <button class="btn btn-outline" style="border: 1px solid var(--border-color); background: white;">Save Draft</button>
+                        <a href="page-preview.html" class="btn btn-outline" style="border: 1px solid var(--border-color); background: white; text-decoration: none;">Preview</a>
+                        <button class="btn btn-primary" id="btn-publish-editor" style="display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-paper-plane"></i> Publish Changes</button>
+                    </div>
                 </div>
-            </div>
+            </header>
 
             <!-- Two Column Layout -->
             <div class="editor-layout">
@@ -150,13 +183,13 @@
                             </div>
                         </div>
 
-                        <!-- Programs Grid Block (Collapsed) -->
+                        <!-- Rich Text Block (Collapsed) -->
                         <div class="content-block collapsed">
                             <div class="block-header">
                                 <div class="block-header-left">
                                     <i class="fa-solid fa-grip-vertical drag-handle"></i>
-                                    <span class="block-title">Programs Grid</span>
-                                    <span class="block-desc-inline">Programs Grid — 4 items (Pre-Primary, Primary, High School, PU College)</span>
+                                    <span class="block-title">Rich Text Content</span>
+                                    <span class="block-badge" style="background-color: var(--accent-blue-light); color: var(--accent-blue);">TEXT BLOCK</span>
                                 </div>
                                 <div class="block-header-right">
                                     <button class="block-toggle-btn"><i class="fa-solid fa-chevron-down"></i></button>
@@ -164,27 +197,13 @@
                             </div>
                         </div>
 
-                        <!-- Why Choose Us Block (Collapsed) -->
+                        <!-- Image Gallery Block (Collapsed) -->
                         <div class="content-block collapsed">
                             <div class="block-header">
                                 <div class="block-header-left">
                                     <i class="fa-solid fa-grip-vertical drag-handle"></i>
-                                    <span class="block-title">Why Choose Us</span>
-                                    <span class="block-desc-inline">Why Choose Us — 4 features with icon list & sidebar graphic</span>
-                                </div>
-                                <div class="block-header-right">
-                                    <button class="block-toggle-btn"><i class="fa-solid fa-chevron-down"></i></button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- CTA Banner Block (Collapsed) -->
-                        <div class="content-block collapsed">
-                            <div class="block-header">
-                                <div class="block-header-left">
-                                    <i class="fa-solid fa-grip-vertical drag-handle"></i>
-                                    <span class="block-title">CTA Banner</span>
-                                    <span class="block-desc-inline">CTA Banner — Apply Online / Download Brochure action callout</span>
+                                    <span class="block-title">Campus Facilities Gallery</span>
+                                    <span class="block-badge" style="background-color: var(--accent-green-light); color: var(--accent-green);">GALLERY BLOCK</span>
                                 </div>
                                 <div class="block-header-right">
                                     <button class="block-toggle-btn"><i class="fa-solid fa-chevron-down"></i></button>
@@ -215,6 +234,28 @@
                             </div>
 
                             <div class="form-group mb-20">
+                                <label>Page Template</label>
+                                <select class="bg-gray-input">
+                                    <option value="default">Default Template</option>
+                                    <option value="landing">Landing Page</option>
+                                    <option value="full-width">Full Width</option>
+                                    <option value="sidebar-left">Sidebar Left</option>
+                                    <option value="sidebar-right">Sidebar Right</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-20">
+                                <label>Parent Page</label>
+                                <select class="bg-gray-input">
+                                    <option value="none">(No Parent)</option>
+                                    <option value="academics" selected>Academics</option>
+                                    <option value="admissions">Admissions</option>
+                                    <option value="campus-life">Campus Life</option>
+                                    <option value="about">About Us</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group mb-20">
                                 <label>Meta Title</label>
                                 <input type="text" value="Academic Programs | VYASA Gro..." class="bg-gray-input">
                             </div>
@@ -230,7 +271,7 @@
                                     <img src="../Images/Campus.webp" alt="Featured Thumbnail">
                                     <div class="f-img-details">
                                         <span class="f-img-name">banner_academic...</span>
-                                        <span class="f-img-size">1.2 MB • JPG</span>
+                                        <span class="f-img-size">1.2 MB &bull; JPG</span>
                                     </div>
                                     <button class="delete-img-btn"><i class="fa-regular fa-trash-can"></i></button>
                                 </div>
@@ -302,6 +343,49 @@
                 </div>
             </div>
 
+            <!-- Block Selection Modal -->
+            <div class="block-modal-overlay"></div>
+            <div class="block-modal-container">
+                <div class="block-modal-header">
+                    <h2>Select Content Block</h2>
+                    <button class="close-block-modal"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="block-modal-body">
+                    <div class="block-options-grid">
+                        <div class="block-option-card">
+                            <i class="fa-regular fa-image" style="color: var(--accent-purple);"></i>
+                            <h4>Hero Banner</h4>
+                            <p>Top banner with background and call to action.</p>
+                        </div>
+                        <div class="block-option-card">
+                            <i class="fa-solid fa-font" style="color: var(--accent-blue);"></i>
+                            <h4>Rich Text</h4>
+                            <p>Standard text paragraphs, headings, and inline media.</p>
+                        </div>
+                        <div class="block-option-card">
+                            <i class="fa-regular fa-images" style="color: var(--accent-green);"></i>
+                            <h4>Image Gallery</h4>
+                            <p>Grid or slider layout for multiple images.</p>
+                        </div>
+                        <div class="block-option-card">
+                            <i class="fa-solid fa-list-ul" style="color: var(--accent-orange);"></i>
+                            <h4>Accordion / FAQ</h4>
+                            <p>Collapsible panels for questions and answers.</p>
+                        </div>
+                        <div class="block-option-card">
+                            <i class="fa-solid fa-border-all" style="color: #0ea5e9;"></i>
+                            <h4>Feature Grid</h4>
+                            <p>Icon and text cards for services or features.</p>
+                        </div>
+                        <div class="block-option-card">
+                            <i class="fa-regular fa-envelope" style="color: #ec4899;"></i>
+                            <h4>Contact Form</h4>
+                            <p>Inquiry submission form block.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </main>
     </div>
 
@@ -324,6 +408,33 @@
                 closePublishBtn.addEventListener('click', () => {
                     publishOverlay.classList.remove('active');
                     publishModal.classList.remove('active');
+                });
+            }
+
+            // Block Selection Modal Logic
+            const addBlockBtn = document.querySelector('.add-block-btn');
+            const blockOverlay = document.querySelector('.block-modal-overlay');
+            const blockModal = document.querySelector('.block-modal-container');
+            const closeBlockBtn = document.querySelector('.close-block-modal');
+            const blockOptions = document.querySelectorAll('.block-option-card');
+
+            if (addBlockBtn && blockOverlay && blockModal && closeBlockBtn) {
+                addBlockBtn.addEventListener('click', () => {
+                    blockOverlay.classList.add('active');
+                    blockModal.classList.add('active');
+                });
+
+                closeBlockBtn.addEventListener('click', () => {
+                    blockOverlay.classList.remove('active');
+                    blockModal.classList.remove('active');
+                });
+
+                blockOptions.forEach(card => {
+                    card.addEventListener('click', () => {
+                        // In a real app, this would append the selected block to the editor layout
+                        blockOverlay.classList.remove('active');
+                        blockModal.classList.remove('active');
+                    });
                 });
             }
         });

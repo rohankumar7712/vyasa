@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyasa - View Job Posting</title>
+    <!-- Google Fonts: Inter & Hanken Grotesk & Lora for reading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                   <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
+                </div>
+            </div>
+            <div class="sidebar-portal-label">CMS PORTAL</div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                    <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
+                    <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                    <li><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                    <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                    <li><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                    <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
+                    <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                    <li><a href="inquiries.html"><i class="fa-solid fa-envelope-open-text"></i> Inquiries</a></li>
+                    <li class="active"><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
+                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status-block">
+                    <div class="system-status-title"><span class="status-dot green"></span> System Online</div>
+                    <div class="system-status-desc">All systems operational</div>
+                </div>
+                <div class="version">Version 2.4.1 (Stable)</div>
+                <button class="collapse-menu-btn"><i class="fa-regular fa-circle-left"></i> Collapse Menu</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" style="background-color: #f1f5f9;">
+            <!-- Header (Admin Bar overlay style) -->
+            <header class="top-header" style="margin-bottom: 24px; padding: 20px 32px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); margin-top: -8px;">
+                <div class="header-top-row" style="margin-bottom: 0; padding-bottom: 0; border: none;">
+                    <div class="breadcrumbs">CMS Console / <a href="careers.html" style="color: var(--text-muted); text-decoration: none;">Careers</a> / <a href="jobs.html" style="color: var(--text-muted); text-decoration: none;">Job Postings</a> / <span>View Job</span></div>
+                    
+                    <div class="header-right">
+                        <div style="display: flex; gap: 12px; margin-right: 24px;">
+                            <a href="jobs.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to Jobs</a>
+                            <a href="create-job.html" class="btn btn-primary"><i class="fa-solid fa-pen"></i> Edit Job</a>
+                        </div>
+                        <div class="user-profile">
+                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
+                            <div class="user-info">
+                                <span class="user-name">Admin Director</span>
+                                <span class="user-role">Super Admin</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down chevron-small"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Frontend Article Preview Container -->
+            <div class="article-preview-wrapper" style="display: flex; gap: 24px; max-width: 1200px; margin: 0 auto;">
+                
+                <!-- Main Job Details -->
+                <article class="article-preview" style="flex: 2;">
+                    
+                    <!-- Article Header -->
+                    <header class="article-preview-header">
+                        <div class="article-preview-meta">
+                            <span class="article-preview-category" style="background: #e0e7ff; color: #4338ca; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 12px;">Teaching</span>
+                            <span class="article-preview-date">Posted on August 10, 2026</span>
+                            <span class="article-preview-status"><span class="status-dot green"></span> Active</span>
+                        </div>
+                        <h1 class="article-preview-title">Senior Mathematics Teacher</h1>
+                        <div style="display: flex; gap: 16px; margin-top: 12px; color: #64748b; font-size: 14px;">
+                            <span><i class="fa-solid fa-briefcase"></i> Full-Time</span>
+                            <span><i class="fa-solid fa-location-dot"></i> On-site</span>
+                            <span><i class="fa-solid fa-indian-rupee-sign"></i> ₹50,000 - ₹70,000 / month</span>
+                        </div>
+                        <div class="article-preview-author" style="margin-top: 24px;">
+                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director">
+                            <div class="author-info">
+                                <strong>Posted by Admin Director</strong>
+                                <span>Closes: Sept 30, 2026</span>
+                            </div>
+                        </div>
+                    </header>
+
+                    <!-- Article Body -->
+                    <div class="article-preview-body">
+                        <h2>About the Role</h2>
+                        <p>Vyasa International School is seeking an enthusiastic and experienced Senior Mathematics Teacher to join our dedicated faculty. The ideal candidate will have a passion for mathematics and a proven ability to engage and inspire students in grades 9 through 12.</p>
+                        
+                        <h2>Key Responsibilities</h2>
+                        <ul>
+                            <li>Develop and deliver comprehensive lesson plans aligned with the curriculum (CBSE/ICSE/IGCSE).</li>
+                            <li>Utilize innovative teaching methods, including educational technology, to enhance learning.</li>
+                            <li>Assess student progress, provide constructive feedback, and prepare students for board examinations.</li>
+                            <li>Participate in departmental meetings, parent-teacher conferences, and extracurricular activities.</li>
+                            <li>Mentor junior teachers and contribute to curriculum development.</li>
+                        </ul>
+                        
+                        <h2>Requirements</h2>
+                        <ul>
+                            <li>Master's degree in Mathematics or a related field.</li>
+                            <li>B.Ed. or equivalent teaching certification.</li>
+                            <li>Minimum of 5 years of teaching experience at the senior secondary level.</li>
+                            <li>Excellent communication, interpersonal, and classroom management skills.</li>
+                        </ul>
+
+                        <h2>Benefits</h2>
+                        <p>We offer a competitive salary, professional development opportunities, health insurance, and a supportive, collaborative work environment.</p>
+                    </div>
+
+                </article>
+
+                <!-- Sidebar Summary -->
+                <aside style="flex: 1;">
+                    <div class="card" style="padding: 24px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); background: white;">
+                        <h3 style="margin-bottom: 16px; font-size: 1.1rem; color: #1e293b; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px;">Job Performance</h3>
+                        
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 16px; padding: 12px; background: #f8fafc; border-radius: 8px;">
+                            <div style="color: #64748b; font-size: 0.9rem;">Total Applicants</div>
+                            <div style="font-weight: bold; font-size: 1.1rem; color: #1e293b;">12</div>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 16px; padding: 12px; background: #f8fafc; border-radius: 8px;">
+                            <div style="color: #64748b; font-size: 0.9rem;">Under Review</div>
+                            <div style="font-weight: bold; font-size: 1.1rem; color: #eab308;">4</div>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 24px; padding: 12px; background: #f8fafc; border-radius: 8px;">
+                            <div style="color: #64748b; font-size: 0.9rem;">Interviews</div>
+                            <div style="font-weight: bold; font-size: 1.1rem; color: #3b82f6;">2</div>
+                        </div>
+
+                        <a href="careers.html" class="btn btn-primary" style="width: 100%; text-align: center; text-decoration: none; display: block;"><i class="fa-solid fa-users"></i> Review Applicants</a>
+                    </div>
+                </aside>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>

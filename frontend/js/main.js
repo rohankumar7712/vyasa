@@ -147,16 +147,30 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize core animations
     initRevealAnimations();
 
-    // Sticky Navbar Logic
+    // Sticky Navbar Logic (Smart Sticky - show only on scroll up)
+    let lastScrollY = window.scrollY || 0;
+    
     window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
         const navbars = document.querySelectorAll('.navbar');
+        
         navbars.forEach(navbar => {
-            if (window.scrollY > 150) {
-                navbar.classList.add('sticky');
+            if (currentScrollY > 150) {
+                // Scrolling Down -> Hide Navbar
+                if (currentScrollY > lastScrollY) {
+                    navbar.classList.remove('sticky');
+                } 
+                // Scrolling Up -> Show Navbar
+                else {
+                    navbar.classList.add('sticky');
+                }
             } else {
+                // At the top -> Remove sticky to revert to normal inline navbar
                 navbar.classList.remove('sticky');
             }
         });
+        
+        lastScrollY = currentScrollY;
     });
 
     // Initialize Enquiry Popup

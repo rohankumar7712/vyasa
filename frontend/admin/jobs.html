@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vyasa - Admin Achievements</title>
+    <title>Vyasa - Admin Job Postings</title>
     <!-- Google Fonts: Inter & Hanken Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,6 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                <!-- Using a placeholder logo similar to the image -->
                 <div class="logo">
                    <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
                 </div>
@@ -28,20 +27,18 @@
 
             <nav class="sidebar-nav">
                 <ul>
-                    <ul>
-                    <li ><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+                    <li><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
                     <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
                     <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
                     <li><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
-                    <li class="active"><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                    <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
                     <li><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
                     <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
                     <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
                     <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
                     <li><a href="inquiries.html"><i class="fa-solid fa-envelope-open-text"></i> Inquiries</a></li>
-                    <li><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
+                    <li class="active"><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
                     <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
-                </ul>
                 </ul>
             </nav>
 
@@ -60,18 +57,18 @@
             <!-- Header -->
             <header class="top-header">
                 <div class="header-top-row">
-                    <div class="breadcrumbs">CMS Console / <span>Achievements</span></div>
+                    <div class="breadcrumbs">CMS Console / <a href="careers.html">Careers</a> / <span>Job Postings</span></div>
                     
                     <div class="search-bar">
                         <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                        <input type="text" placeholder="Search achievements...">
+                        <input type="text" placeholder="Search job postings...">
 
                     </div>
 
                     <div class="header-right">
                         <button class="notification-btn">
                             <i class="fa-regular fa-bell"></i>
-                            <span class="notification-badge">3</span>
+                            <span class="notification-badge">5</span>
                         </button>
                         <div class="user-profile">
                             <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
@@ -87,24 +84,26 @@
                 <div class="header-bottom-row" style="align-items: center; justify-content: space-between;">
                     <div class="header-left">
                         <div class="title-with-icon">
-                            <h1>Achievements</h1>
-                            <i class="fa-solid fa-award title-icon"></i>
+                            <h1>Job Postings</h1>
+                            <i class="fa-solid fa-list title-icon"></i>
                         </div>
                         <div class="page-stats-subtitle">
-                            <span>15 Achievements</span>
-                            <span class="dot-separator">&bull;</span>
-                            <span class="stat-green">10 Published</span>
-                            <span class="dot-separator">&bull;</span>
+                            <span>12 Total Postings</span>
+                            <span class="dot-separator">•</span>
+                            <span class="stat-green">4 Active</span>
+                            <span class="dot-separator">•</span>
                             <span class="stat-yellow">3 Drafts</span>
-                            <span class="dot-separator">&bull;</span>
-                            <span class="stat-blue">2 Scheduled</span>
+                            <span class="dot-separator">•</span>
+                            <span class="stat-blue">5 Closed</span>
                         </div>
                     </div>
                     
-                    <a href="create-achievement.html" class="btn btn-primary btn-create-page"><i class="fa-solid fa-plus"></i> Add Achievement</a>
+                    <div class="header-actions" style="display: flex; gap: 10px;">
+                        <a href="careers.html" class="btn btn-outline" style="background: white; border: 1px solid #e2e8f0; padding: 10px 20px; border-radius: 8px; color: #475569; font-weight: 500; text-decoration: none;"><i class="fa-solid fa-users"></i> View Applicants</a>
+                        <a href="create-job.html" class="btn btn-primary btn-create-page" style="text-decoration: none;"><i class="fa-solid fa-plus"></i> Post a Job</a>
+                    </div>
                 </div>
             </header>
-
 
             <!-- Main Pages Container -->
             <section class="pages-main-container card" style="padding: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
@@ -113,23 +112,24 @@
                 <div class="table-toolbar">
                     <div class="toolbar-search">
                         <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                        <input type="text" placeholder="Search achievements by title or category...">
+                        <input type="text" placeholder="Search by title, department...">
                     </div>
                     
                     <div class="toolbar-dropdowns">
                         <div class="toolbar-select">
                             <select>
-                                <option>All Categories</option>
+                                <option>All Departments</option>
+                                <option>Teaching Staff</option>
+                                <option>Administrative</option>
+                                <option>Support Staff</option>
                             </select>
                         </div>
                         <div class="toolbar-select">
                             <select>
                                 <option>All Status</option>
-                            </select>
-                        </div>
-                        <div class="toolbar-select">
-                            <select>
-                                <option>Last Modified</option>
+                                <option>Active</option>
+                                <option>Draft</option>
+                                <option>Closed</option>
                             </select>
                         </div>
                         <button class="btn-more-filters"><i class="fa-solid fa-filter"></i> More Filters</button>
@@ -144,35 +144,34 @@
                         <thead>
                             <tr>
                                 <th class="checkbox-col"><input type="checkbox"></th>
-                                <th>ACHIEVEMENT TITLE</th>
-                                <th>CATEGORY</th>
+                                <th>JOB TITLE</th>
+                                <th>DEPARTMENT</th>
+                                <th>TYPE & LOCATION</th>
                                 <th>STATUS</th>
-                                <th>DATE</th>
-                                <th>AWARDEE</th>
+                                <th>DATE POSTED</th>
                                 <th class="text-center">ACTIONS</th>
                             </tr>
+                        </thead>
                         <tbody>
                             <!-- Row 1 -->
                             <tr>
                                 <td class="checkbox-col"><input type="checkbox"></td>
                                 <td>
                                     <div class="page-title-cell">
-                                        <span class="page-name">Best Campus Award 2026</span>
+                                        <span class="page-name">Senior Mathematics Teacher</span>
+                                        <span class="stat-desc" style="display:block; font-size:12px; color:#64748b;">12 Applicants</span>
                                     </div>
                                 </td>
-                                <td>Institutional</td>
-                                <td><span class="badge status-published"><span class="status-dot"></span> Published</span></td>
-                                <td class="date-cell">Today, 2:15 PM</td>
+                                <td><span class="badge" style="background-color: #e0e7ff; color: #4338ca;">Teaching</span></td>
                                 <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="table-avatar">
-                                        <span class="table-user-name">Vyasa College</span>
-                                    </div>
+                                    <span class="table-user-name" style="display:block;">Full-Time</span>
+                                    <span style="font-size:12px; color:#64748b;">On-site</span>
                                 </td>
+                                <td><span class="badge status-published"><span class="status-dot"></span> Active</span></td>
+                                <td class="date-cell">Aug 10, 2026</td>
                                 <td class="actions-cell">
-                                    <a href="view-achievement.html" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
-                                    <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    <a href="view-job.html" class="icon-btn" title="View/Edit"><i class="fa-solid fa-pen"></i></a>
+                                    <button class="icon-btn" title="Close Job"><i class="fa-solid fa-ban"></i></button>
                                 </td>
                             </tr>
                             
@@ -181,70 +180,42 @@
                                 <td class="checkbox-col"><input type="checkbox"></td>
                                 <td>
                                     <div class="page-title-cell">
-                                        <span class="page-name">National Science Olympiad Winner</span>
+                                        <span class="page-name">System Administrator</span>
+                                        <span class="stat-desc" style="display:block; font-size:12px; color:#64748b;">5 Applicants</span>
                                     </div>
                                 </td>
-                                <td>Academic</td>
-                                <td><span class="badge status-draft"><span class="status-dot"></span> Draft</span></td>
-                                <td class="date-cell">Yesterday, 11:30 AM</td>
+                                <td><span class="badge" style="background-color: #f3e8ff; color: #7e22ce;">IT & Admin</span></td>
                                 <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Dr. Meera Sundaram" class="table-avatar">
-                                        <span class="table-user-name">Dr. Amit Patel</span>
-                                    </div>
+                                    <span class="table-user-name" style="display:block;">Contract</span>
+                                    <span style="font-size:12px; color:#64748b;">Hybrid</span>
                                 </td>
+                                <td><span class="badge status-published"><span class="status-dot"></span> Active</span></td>
+                                <td class="date-cell">Aug 11, 2026</td>
                                 <td class="actions-cell">
-                                    <a href="#" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
-                                    <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    <a href="view-job.html" class="icon-btn" title="View/Edit"><i class="fa-solid fa-pen"></i></a>
+                                    <button class="icon-btn" title="Close Job"><i class="fa-solid fa-ban"></i></button>
                                 </td>
                             </tr>
-
+                            
                             <!-- Row 3 -->
                             <tr>
                                 <td class="checkbox-col"><input type="checkbox"></td>
                                 <td>
                                     <div class="page-title-cell">
-                                        <span class="page-name">Top Alumni Contribution</span>
+                                        <span class="page-name">Primary English Teacher</span>
+                                        <span class="stat-desc" style="display:block; font-size:12px; color:#64748b;">0 Applicants</span>
                                     </div>
                                 </td>
-                                <td>Alumni</td>
-                                <td><span class="badge status-under-review"><span class="status-dot"></span> Scheduled</span></td>
-                                <td class="date-cell">Tomorrow, 9:45 AM</td>
+                                <td><span class="badge" style="background-color: #e0e7ff; color: #4338ca;">Teaching</span></td>
                                 <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Ms. Revathi Raju" class="table-avatar">
-                                        <span class="table-user-name">Ms. Revathi Raju</span>
-                                    </div>
+                                    <span class="table-user-name" style="display:block;">Full-Time</span>
+                                    <span style="font-size:12px; color:#64748b;">On-site</span>
                                 </td>
+                                <td><span class="badge status-draft"><span class="status-dot"></span> Draft</span></td>
+                                <td class="date-cell">-</td>
                                 <td class="actions-cell">
-                                    <a href="#" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
-                                    <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                                </td>
-                            </tr>
-
-                            <!-- Row 4 -->
-                            <tr>
-                                <td class="checkbox-col"><input type="checkbox"></td>
-                                <td>
-                                    <div class="page-title-cell">
-                                        <span class="page-name">Excellence in Technology Integration</span>
-                                    </div>
-                                </td>
-                                <td>Technology</td>
-                                <td><span class="badge status-published"><span class="status-dot"></span> Published</span></td>
-                                <td class="date-cell">Aug 10, 2026, 4:30 PM</td>
-                                <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Dr. Rajesh Iyer" class="table-avatar">
-                                        <span class="table-user-name">Dr. Rajesh Iyer</span>
-                                    </div>
-                                </td>
-                                <td class="actions-cell">
-                                    <a href="#" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
-                                    <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    <a href="view-job.html" class="icon-btn" title="View/Edit"><i class="fa-solid fa-pen"></i></a>
+                                    <button class="icon-btn" title="Publish"><i class="fa-solid fa-paper-plane"></i></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -259,24 +230,22 @@
                             <span>0 selected</span>
                         </label>
                         <div class="bulk-divider"></div>
-                        <button class="btn-bulk btn-publish"><i class="fa-solid fa-paper-plane"></i> Publish</button>
-                        <button class="btn-bulk btn-archive"><i class="fa-solid fa-box-archive"></i> Archive</button>
+                        <button class="btn-bulk btn-publish"><i class="fa-solid fa-eye"></i> Mark Active</button>
+                        <button class="btn-bulk btn-archive"><i class="fa-solid fa-box-archive"></i> Close Selected</button>
                         <button class="btn-bulk btn-delete"><i class="fa-regular fa-trash-can"></i> Delete</button>
                     </div>
                     
                     <div class="footer-pagination">
-                        <span class="pagination-info">Showing 1 to 4 of 42 articles</span>
+                        <span class="pagination-info">Showing 1 to 3 of 12 postings</span>
                         <div class="pagination-controls">
                             <button class="page-btn"><i class="fa-solid fa-chevron-left"></i></button>
                             <button class="page-btn active">1</button>
                             <button class="page-btn">2</button>
-                            <button class="page-btn">3</button>
                             <button class="page-btn"><i class="fa-solid fa-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
             </section>
-
 
         </main>
     </div>

@@ -1567,6 +1567,12 @@ body.sidebar-collapsed .collapse-menu-btn i {
     background-color: #f3f4f6;
 }
 
+.toolbar-btn.dropdown-btn {
+    width: auto;
+    padding: 0 12px;
+    gap: 8px;
+}
+
 .toolbar-btn.active {
     background-color: #e0e7ff;
     color: var(--accent-blue);
@@ -3706,4 +3712,113 @@ input:checked + .toggle-slider {
 
 input:checked + .toggle-slider:before {
     transform: translateX(24px);
+}
+/* Block Selection Modal */
+.block-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.block-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.block-modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -48%) scale(0.96);
+    background: white;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.block-modal-container.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+.block-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.block-modal-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--primary-dark);
+}
+
+.close-block-modal {
+    background: transparent;
+    border: none;
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-block-modal:hover {
+    color: var(--text-main);
+}
+
+.block-modal-body {
+    padding: 32px;
+}
+
+.block-options-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.block-option-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.block-option-card:hover {
+    border-color: var(--accent-blue);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.1);
+    transform: translateY(-2px);
+}
+
+.block-option-card i {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.block-option-card h4 {
+    margin: 0 0 8px 0;
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+.block-option-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
 }

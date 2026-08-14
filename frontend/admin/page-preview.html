@@ -37,6 +37,8 @@
                     <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
                     <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
                     <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                    <li><a href="inquiries.html"><i class="fa-solid fa-envelope-open-text"></i> Inquiries</a></li>
+                    <li><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
                     <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
                 </ul>
             </nav>
@@ -51,31 +53,57 @@
             </div>
         </aside>
 
-        <main class="main-content" style="padding: 0;">
-    <!-- Preview Top Control Bar -->
-    <div class="preview-top-bar">
-        <div class="preview-header-left">
-            <div class="breadcrumbs">CMS Console / Pages / Academic Programs / <span class="highlight-blue">Preview</span></div>
-            <h1>Page Preview: Academic Programs</h1>
-        </div>
-        
-        <div class="preview-header-center">
-            <div class="viewport-toggles">
-                <button class="viewport-btn active" data-view="desktop-view"><i class="fa-solid fa-desktop"></i></button>
-                <button class="viewport-btn" data-view="tablet-view"><i class="fa-solid fa-tablet-screen-button"></i></button>
-                <button class="viewport-btn" data-view="mobile-view"><i class="fa-solid fa-mobile-screen-button"></i></button>
+        <main class="main-content">
+    <!-- Standard Top Header -->
+    <header class="top-header" style="padding-bottom: 24px; margin-bottom: 24px;">
+        <div class="header-top-row" style="border-bottom:1px solid #cbd5e1;">
+            <div class="breadcrumbs">CMS Console / Pages / <span class="highlight-blue">Preview</span></div>
+            
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Search pages...">
+            </div>
+
+            <div class="header-right">
+                <button class="notification-btn">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-profile">
+                    <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
+                    <div class="user-info">
+                        <span class="user-name">Admin Director</span>
+                        <span class="user-role">Super Admin</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-down chevron-small"></i>
+                </div>
             </div>
         </div>
-
-        <div class="preview-header-right">
-            <a href="page-editor.html" class="btn btn-outline preview-btn">Back to Editor</a>
-            <a href="page-editor.html" class="btn btn-primary preview-btn-dark">Edit Page</a>
-            <button class="btn btn-primary preview-btn-green" id="btn-publish-preview">Publish Changes</button>
+        
+        <div class="header-bottom-row" style="align-items: center; justify-content: space-between;">
+            <div class="header-left">
+                <div class="title-with-icon" style="display: flex; align-items: center; gap: 12px;">
+                    <h1 style="margin: 0; font-size: 1.5rem; color: var(--primary-dark);">Page Preview</h1>
+                    <span class="badge status-draft-badge" style="font-size: 0.75rem;">DRAFT</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; margin-bottom: 0;">Preview how the page will look to visitors.</p>
+            </div>
+            
+            <div class="editor-actions" style="display: flex; gap: 16px; align-items: center;">
+                <div class="viewport-toggles" style="display: flex; background: var(--border-color); border-radius: 6px; overflow: hidden; margin-right: 8px;">
+                    <button class="viewport-btn active" data-view="desktop-view" style="padding: 8px 12px; border: none; background: white; cursor: pointer;"><i class="fa-solid fa-desktop"></i></button>
+                    <button class="viewport-btn" data-view="tablet-view" style="padding: 8px 12px; border: none; background: transparent; cursor: pointer;"><i class="fa-solid fa-tablet-screen-button"></i></button>
+                    <button class="viewport-btn" data-view="mobile-view" style="padding: 8px 12px; border: none; background: transparent; cursor: pointer;"><i class="fa-solid fa-mobile-screen-button"></i></button>
+                </div>
+                <a href="page-editor.html" class="btn btn-outline" style="border: 1px solid var(--border-color); background: white; text-decoration: none;">Back to Editor</a>
+                <a href="page-editor.html" class="btn btn-primary" style="background: var(--primary-dark); border-color: var(--primary-dark); text-decoration: none;">Edit Page</a>
+                <button class="btn btn-primary" id="btn-publish-preview" style="background: var(--brand-green); border-color: var(--brand-green);"><i class="fa-solid fa-paper-plane"></i> Publish</button>
+            </div>
         </div>
-    </div>
+    </header>
 
     <!-- Draft Alert Banner -->
-    <div class="draft-alert-banner">
+    <div class="draft-alert-banner" style="margin-bottom: 24px;">
         <div class="alert-content">
             <i class="fa-solid fa-circle alert-dot"></i>
             <span>You are previewing a draft version of this page. These changes are not yet public.</span>
@@ -127,73 +155,22 @@
                 </div>
             </section>
 
-            <!-- Mock Frontend Programs Grid -->
-            <section class="f-programs">
-                <div class="f-section-header">
-                    <h3>Our Core Educational Programs</h3>
-                    <p>Every program is structured in alignment with NEP guidelines, integrating values, life skills, and modern STEM frameworks.</p>
-                </div>
-                <div class="f-programs-grid">
-                    <div class="f-program-card">
-                        <img src="../Images/Kindergarden.webp" alt="Pre-Primary">
-                    </div>
-                    <div class="f-program-card">
-                        <img src="../Images/Primary School.webp" alt="Primary School">
-                    </div>
-                    <div class="f-program-card">
-                        <img src="../Images/High School.webp" alt="High School">
-                    </div>
-                    <div class="f-program-card">
-                        <img src="../Images/Commerce Stream.webp" alt="PU College">
-                    </div>
-                </div>
+            <!-- Mock Frontend Rich Text -->
+            <section class="f-rich-text" style="padding: 60px 5%; max-width: 900px; margin: 0 auto; line-height: 1.8; color: #475569;">
+                <p style="margin-bottom: 24px; font-size: 1.1rem;">Welcome to the new block-based page builder. You can now compose complex pages by stacking various generic content blocks.</p>
+                <p style="margin-bottom: 24px; font-size: 1.1rem;">This is an example of a Rich Text block, which allows administrators to write standard paragraphs, insert inline links, and format text using a WYSIWYG editor without needing to touch any code.</p>
             </section>
 
-            <!-- Mock Frontend Why Choose Us -->
-            <section class="f-why-choose">
-                <div class="f-why-text">
-                    <h3>Why Choose Our Academic Strategy?</h3>
-                    <p>We believe that education must extend far beyond textbooks. Our methodology focuses on nurturing intellectual curiosity while building robust foundations of character, creativity, and critical reasoning.</p>
-                    <img src="../Images/Creative Minds.webp" alt="Students" class="f-why-img">
+            <!-- Mock Frontend Image Gallery -->
+            <section class="f-gallery" style="padding: 60px 5%; background-color: #f8fafc;">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <h3 style="font-size: 2rem; color: #1e293b; margin-bottom: 16px;">Campus Facilities Gallery</h3>
+                    <p style="color: #64748b; max-width: 600px; margin: 0 auto;">An example of the Image Gallery block automatically formatting uploaded images into a responsive grid.</p>
                 </div>
-                <div class="f-why-list">
-                    <div class="f-why-item">
-                        <div class="f-check-icon"><i class="fa-solid fa-check"></i></div>
-                        <div>
-                            <h4>Integrated STEM & Humanities Model</h4>
-                            <p>Equipping young minds with practical, hands-on scientific tools alongside rich literary and empathetic perspectives.</p>
-                        </div>
-                    </div>
-                    <div class="f-why-item">
-                        <div class="f-check-icon"><i class="fa-solid fa-check"></i></div>
-                        <div>
-                            <h4>Continuous Assessment Methodologies</h4>
-                            <p>Transitioning away from stressful exams into progressive formative evaluations designed in alignment with national NEP policies.</p>
-                        </div>
-                    </div>
-                    <div class="f-why-item">
-                        <div class="f-check-icon"><i class="fa-solid fa-check"></i></div>
-                        <div>
-                            <h4>Experiential & Inquiry-Based Learning</h4>
-                            <p>Encouraging students to learn by questioning, building, and exploring real-world applications in community spaces.</p>
-                        </div>
-                    </div>
-                    <div class="f-why-item">
-                        <div class="f-check-icon"><i class="fa-solid fa-check"></i></div>
-                        <div>
-                            <h4>Holistic Mentoring Programs</h4>
-                            <p>Every child is paired with a dedicated faculty mentor to navigate developmental, cognitive, and social-emotional growth.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Mock Frontend CTA Banner -->
-            <section class="f-cta-banner">
-                <h3>Ready to experience true academic excellence?<br>Join VYASA today.</h3>
-                <div class="f-cta-buttons">
-                    <button class="f-btn-yellow">Apply Online</button>
-                    <button class="f-btn-outline">Download Brochure</button>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                    <img src="../Images/Campus.webp" alt="Campus" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <img src="../Images/Primary School.webp" alt="Primary" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <img src="../Images/Creative Minds.webp" alt="Students" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
                 </div>
             </section>
 
