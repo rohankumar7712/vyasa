@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Summer Camp 2026",
+    "description": "Join us for an exciting summer filled with learning, creativity, sports and fun.",
+    "banner": "",
+    "buttonText": "Explore Summer Camp",
+    "buttonUrl": "index.html",
+    "startDate": "2026-08-01",
+    "endDate": "2026-12-31",
+    "displayType": "floating",
+    "position": "bottom-right",
+    "status": "published",
+    "priority": 1
+  },
+  {
+    "id": 2,
+    "title": "Admissions Open",
+    "description": "Admissions for the upcoming academic year are now open.",
+    "banner": "",
+    "buttonText": "Apply Now",
+    "buttonUrl": "admissions.html",
+    "startDate": "2025-10-01",
+    "endDate": "2026-02-28",
+    "displayType": "floating",
+    "position": "bottom-left",
+    "status": "draft",
+    "priority": 2
+  }
+]

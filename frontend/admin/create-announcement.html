@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vyasa - Create Student</title>
+    <title>Vyasa - Create Announcement</title>
     <!-- Google Fonts: Inter & Hanken Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,9 +29,9 @@
                 <ul>
                     <li><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
                     <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
-                    <li><a href="announcements.html"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
+                    <li class="active"><a href="announcements.html"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
                     <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
-                    <li class="active"><a href="students.html"><i class="fa-regular fa-newspaper"></i> Students</a></li>
+                    <li><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
                     <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
                     <li><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
                     <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
@@ -58,7 +58,7 @@
             <!-- Header -->
             <header class="top-header" style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
                 <div class="header-top-row">
-                    <div class="breadcrumbs">CMS Console / <a href="students.html" style="color: var(--text-muted); text-decoration: none;">Articles</a> / <span>Create New</span></div>
+                    <div class="breadcrumbs">CMS Console / <a href="announcements.html" style="color: var(--text-muted); text-decoration: none;">Announcements</a> / <span>Create New</span></div>
                     
                     <div class="header-right">
                         <div class="notification-dropdown-container" style="position: relative; display: flex; align-items: center;">
@@ -113,15 +113,15 @@
                 <div class="header-bottom-row" style="align-items: center; justify-content: space-between; margin-top: 24px; display: flex;">
                     <div class="header-left">
                         <div class="title-with-icon">
-                            <h1>Add Student</h1>
+                            <h1>Create Announcement</h1>
                             <i class="fa-solid fa-pen-nib title-icon"></i>
                         </div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">Draft and publish new content for the Vyasa website.</p>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">Manage floating announcements across the website.</p>
                     </div>
                     
                     <div style="display: flex; gap: 12px;">
-                        <a href="students.html" class="btn btn-outline">Cancel</a>
-                        <button class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Save Student</button>
+                        <a href="articles.html" class="btn btn-outline">Cancel</a>
+                        <button class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Publish Article</button>
                     </div>
                 </div>
             </header>
@@ -129,86 +129,33 @@
             <!-- Editor Layout -->
             <form class="editor-layout" action="view-article.html">
                 
-                <!-- Main Form Area -->
+                                <!-- Main Editor Area -->
                 <div class="editor-main">
-                    <div class="editor-card">
-                        <div class="editor-card-header">
-                            <h3>Personal Information</h3>
-                        </div>
-                        <div class="editor-card-body">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                                <div class="form-group-vertical">
-                                    <label>First Name <span style="color: #ef4444;">*</span></label>
-                                    <input type="text" placeholder="e.g. Rahul" required>
-                                </div>
-                                <div class="form-group-vertical">
-                                    <label>Last Name <span style="color: #ef4444;">*</span></label>
-                                    <input type="text" placeholder="e.g. Kumar" required>
-                                </div>
-                                <div class="form-group-vertical">
-                                    <label>Date of Birth</label>
-                                    <input type="date">
-                                </div>
-                                <div class="form-group-vertical">
-                                    <label>Gender</label>
-                                    <select>
-                                        <option>Male</option>
-                                        <option>Female</option>
-                                        <option>Other</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="editor-field">
+                        <input type="text" class="editor-title-input" placeholder="Announcement Title..." autofocus>
                     </div>
-                    
-                    <div class="editor-card">
+
+                    <div class="editor-card" style="margin-top: 24px;">
                         <div class="editor-card-header">
-                            <h3>Contact Details</h3>
+                            <h3>Short Description</h3>
                         </div>
                         <div class="editor-card-body">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                                <div class="form-group-vertical">
-                                    <label>Email Address</label>
-                                    <input type="email" placeholder="student@example.com">
-                                </div>
-                                <div class="form-group-vertical">
-                                    <label>Phone Number</label>
-                                    <input type="tel" placeholder="+91 ...">
-                                </div>
-                                <div class="form-group-vertical" style="grid-column: span 2;">
-                                    <label>Residential Address</label>
-                                    <textarea rows="3" placeholder="Full residential address..."></textarea>
-                                </div>
-                            </div>
+                            <textarea class="excerpt-textarea" placeholder="Write the announcement description..." style="height:100px;"></textarea>
                         </div>
                     </div>
 
-                    <div class="editor-card">
+                    <div class="editor-card" style="margin-top: 24px;">
                         <div class="editor-card-header">
-                            <h3>Parent / Guardian Information</h3>
+                            <h3>Call to Action Button</h3>
                         </div>
-                        <div class="editor-card-body">
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                                <div class="form-group-vertical">
-                                    <label>Parent/Guardian Name</label>
-                                    <input type="text" placeholder="Full name">
-                                </div>
-                                <div class="form-group-vertical">
-                                    <label>Relationship</label>
-                                    <select>
-                                        <option>Father</option>
-                                        <option>Mother</option>
-                                        <option>Guardian</option>
-                                    </select>
-                                </div>
-                                <div class="form-group-vertical">
-                                    <label>Emergency Contact Number <span style="color: #ef4444;">*</span></label>
-                                    <input type="tel" placeholder="+91 ...">
-                                </div>
-                                <div class="form-group-vertical">
-                                    <label>Parent Email</label>
-                                    <input type="email" placeholder="parent@example.com">
-                                </div>
+                        <div class="editor-card-body" style="display:flex; gap: 20px;">
+                            <div class="form-group-vertical" style="flex:1;">
+                                <label>Button Text</label>
+                                <input type="text" placeholder="e.g. Explore Summer Camp">
+                            </div>
+                            <div class="form-group-vertical" style="flex:1;">
+                                <label>Button URL</label>
+                                <input type="text" placeholder="e.g. summer-camp.html">
                             </div>
                         </div>
                     </div>
@@ -217,63 +164,71 @@
                 <!-- Editor Sidebar -->
                 <aside class="editor-sidebar">
                     
-                    <!-- Profile Image Card -->
+                    <!-- Publishing Card -->
                     <div class="editor-card">
                         <div class="editor-card-header">
-                            <h3>Profile Photo</h3>
+                            <h3>Publishing & Schedule</h3>
                         </div>
                         <div class="editor-card-body">
-                            <div class="image-upload-zone" style="padding: 30px 20px;">
-                                <i class="fa-regular fa-user upload-icon" style="font-size: 2.5rem; color: var(--brand-blue);"></i>
-                                <p style="margin-top: 12px;">Upload Photo</p>
-                                <span>Max size: 2MB</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Enrollment Details Card -->
-                    <div class="editor-card">
-                        <div class="editor-card-header">
-                            <h3>Enrollment Details</h3>
-                        </div>
-                        <div class="editor-card-body">
-                            <div class="form-group-vertical">
-                                <label>Student ID (Auto-generated)</label>
-                                <input type="text" value="VYS-2026-042" readonly style="background: #f8fafc; border-color: #cbd5e1;">
-                            </div>
-                            <div class="form-group-vertical">
-                                <label>Program / Class <span style="color: #ef4444;">*</span></label>
-                                <select>
-                                    <option>Select Program...</option>
-                                    <option>PU Science Stream (PCMB)</option>
-                                    <option>PU Commerce Stream (CEBA)</option>
-                                    <option>CBSE High School - Grade 10</option>
-                                    <option>CBSE High School - Grade 9</option>
-                                </select>
-                            </div>
-                            <div class="form-group-vertical">
-                                <label>Academic Year</label>
-                                <select>
-                                    <option>2026-2027</option>
-                                    <option>2025-2026</option>
-                                </select>
-                            </div>
-                            <div class="form-group-vertical">
-                                <label>Admission Date</label>
-                                <input type="date">
-                            </div>
                             <div class="form-group-vertical">
                                 <label>Status</label>
                                 <select>
-                                    <option>Active</option>
-                                    <option>Inactive</option>
-                                    <option>Graduated</option>
+                                    <option>Draft</option>
+                                    <option selected>Published</option>
                                 </select>
+                            </div>
+                            <div class="form-group-vertical">
+                                <label>Start Date</label>
+                                <input type="date">
+                            </div>
+                            <div class="form-group-vertical">
+                                <label>End Date</label>
+                                <input type="date">
                             </div>
                         </div>
                     </div>
 
-                </aside>
+                    <!-- Display Settings Card -->
+                    <div class="editor-card">
+                        <div class="editor-card-header">
+                            <h3>Display Settings</h3>
+                        </div>
+                        <div class="editor-card-body">
+                            <div class="form-group-vertical">
+                                <label>Display Type</label>
+                                <select>
+                                    <option selected>Floating Card</option>
+                                    <option>Top Banner</option>
+                                </select>
+                            </div>
+                            <div class="form-group-vertical">
+                                <label>Position</label>
+                                <select>
+                                    <option selected>Bottom Right</option>
+                                    <option>Bottom Left</option>
+                                </select>
+                            </div>
+                            <div class="form-group-vertical">
+                                <label>Priority (1 is highest)</label>
+                                <input type="number" value="1" min="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Image Card -->
+                    <div class="editor-card">
+                        <div class="editor-card-header">
+                            <h3>Banner / Image</h3>
+                        </div>
+                        <div class="editor-card-body">
+                            <div class="image-upload-zone">
+                                <i class="fa-regular fa-image upload-icon"></i>
+                                <p>Click or drag image here</p>
+                                <span>Recommended for floating card: small icon or banner</span>
+                            </div>
+                        </div>
+                    </div>
+</aside>
             </form>
 
         </main>
@@ -283,4 +238,6 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
 

@@ -562,3 +562,176 @@
         height: 28px;
     }
 }
+
+/* ==========================================
+   WHATSAPP FLOATING BUTTON
+========================================== */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.15);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+    color: white;
+}
+
+.whatsapp-float svg {
+    width: 35px;
+    height: 35px;
+    fill: currentColor;
+}
+
+@media screen and (max-width: 767px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+    .whatsapp-float svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* ==========================================
+   FLOATING ANNOUNCEMENT CARD
+========================================== */
+.floating-announcement-card {
+    position: fixed;
+    width: 300px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    z-index: 9998; /* Just below WhatsApp if needed, or above */
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    transform: translateY(150%);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.floating-announcement-card.show {
+    transform: translateY(0);
+}
+
+.floating-announcement-card.pos-bottom-right {
+    bottom: 120px; /* Above whatsapp button */
+    right: 30px;
+}
+
+.floating-announcement-card.pos-bottom-left {
+    bottom: 30px;
+    left: 30px;
+}
+
+.floating-announcement-card.pos-bottom-center {
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 150%);
+}
+.floating-announcement-card.pos-bottom-center.show {
+    transform: translate(-50%, 0);
+}
+
+.announcement-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+    padding: 0;
+    transition: background 0.3s;
+}
+
+.announcement-close:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.announcement-banner {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+}
+
+.announcement-content {
+    padding: 20px;
+    border-top: 4px solid var(--brand-red, #ea3636);
+}
+
+.announcement-title {
+    font-size: 1.1rem;
+    color: var(--primary-dark, #111d4a);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.announcement-desc {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.announcement-btn {
+    display: block;
+    text-align: center;
+    background: var(--brand-red, #ea3636);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.announcement-btn:hover {
+    background: var(--primary-dark, #111d4a);
+    color: white;
+}
+
+@media screen and (max-width: 767px) {
+    .floating-announcement-card {
+        width: calc(100% - 40px);
+        max-width: 350px;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, 150%);
+    }
+    
+    .floating-announcement-card.show {
+        transform: translate(-50%, 0);
+    }
+    
+    .floating-announcement-card.pos-bottom-right {
+        bottom: 90px;
+    }
+}
