@@ -151,4 +151,40 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // --- Settings Page Tab Logic ---
+    const settingsSidebarLinks = document.querySelectorAll('.settings-sidebar-nav li[data-target]');
+    const settingsSections = document.querySelectorAll('.settings-section');
+
+    if (settingsSidebarLinks.length > 0) {
+        settingsSidebarLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                settingsSidebarLinks.forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Hide all sections
+                settingsSections.forEach(section => {
+                    section.style.display = 'none';
+                    section.classList.remove('active');
+                });
+                
+                // Show target section
+                const targetId = this.getAttribute('data-target');
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                    // We can use a tiny timeout to allow display:block to apply before adding class for animation
+                    setTimeout(() => {
+                        targetSection.classList.add('active');
+                    }, 10);
+                }
+            });
+        });
+    }
+
 });

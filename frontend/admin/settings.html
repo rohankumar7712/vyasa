@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -104,26 +104,28 @@
                 <!-- Inner Settings Navigation Sidebar -->
                 <aside class="settings-sidebar">
                     <ul class="settings-sidebar-nav">
-                        <li class="active"><a href="#"><i class="fa-solid fa-globe"></i> General Info</a></li>
-                        <li><a href="#"><i class="fa-solid fa-palette"></i> Branding</a></li>
-                        <li><a href="#"><i class="fa-solid fa-compass"></i> Navigation</a></li>
-                        <li><a href="#"><i class="fa-solid fa-address-book"></i> Contact Info</a></li>
-                        <li><a href="#"><i class="fa-solid fa-hashtag"></i> Social Media</a></li>
-                        <li><a href="#"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO Settings</a></li>
-                        <li><a href="#"><i class="fa-solid fa-users-gear"></i> Roles & Permissions</a></li>
-                        <li><a href="#"><i class="fa-regular fa-bell"></i> Notifications</a></li>
-                        <li><a href="#"><i class="fa-solid fa-shield-halved"></i> Security</a></li>
-                        <li><a href="#"><i class="fa-solid fa-photo-film"></i> Media Config</a></li>
-                        <li><a href="#"><i class="fa-solid fa-server"></i> System Prefs</a></li>
-                        <li><a href="#"><i class="fa-solid fa-clipboard-list"></i> Audit Logs</a></li>
+                        <li class="active" data-target="settings-general"><a href="#"><i class="fa-solid fa-globe"></i> General Info</a></li>
+                        <li data-target="settings-branding"><a href="#"><i class="fa-solid fa-palette"></i> Branding</a></li>
+                        <li data-target="settings-navigation"><a href="#"><i class="fa-solid fa-compass"></i> Navigation</a></li>
+                        <li data-target="settings-contact"><a href="#"><i class="fa-solid fa-address-book"></i> Contact Info</a></li>
+                        <li data-target="settings-social"><a href="#"><i class="fa-solid fa-hashtag"></i> Social Media</a></li>
+                        <li data-target="settings-seo"><a href="#"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO Settings</a></li>
+                        <li data-target="settings-roles"><a href="#"><i class="fa-solid fa-users-gear"></i> Roles & Permissions</a></li>
+                        <li data-target="settings-notifications"><a href="#"><i class="fa-regular fa-bell"></i> Notifications</a></li>
+                        <li data-target="settings-security"><a href="#"><i class="fa-solid fa-shield-halved"></i> Security</a></li>
+                        <li data-target="settings-media"><a href="#"><i class="fa-solid fa-photo-film"></i> Media Config</a></li>
+                        <li data-target="settings-system"><a href="#"><i class="fa-solid fa-server"></i> System Prefs</a></li>
+                        <li data-target="settings-audit"><a href="#"><i class="fa-solid fa-clipboard-list"></i> Audit Logs</a></li>
                     </ul>
                 </aside>
 
                 <!-- Settings Form Content Area -->
                 <div class="settings-content">
                     
-                    <!-- General Settings Card -->
-                    <div class="settings-card">
+                    <!-- General Settings Section -->
+                    <div id="settings-general" class="settings-section active">
+                        <!-- General Settings Card -->
+                        <div class="settings-card">
                         <div class="settings-card-header">
                             <h3>Website Identity</h3>
                             <p>Basic information used throughout your public website.</p>
@@ -213,6 +215,500 @@
 
                         </div>
                     </div>
+                    </div> <!-- End General Info Section -->
+
+                    <!-- Branding Section -->
+                    <div id="settings-branding" class="settings-section" style="display: none;">
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Brand Assets</h3>
+                                <p>Upload logos and icons used across the public site.</p>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="settings-form-row">
+                                    <div class="settings-form-group">
+                                        <label>Primary Logo</label>
+                                        <div style="border: 2px dashed var(--border-color); padding: 20px; text-align: center; border-radius: 8px; background: #fafafa;">
+                                            <img src="../Images/vyasa logo.webp" style="max-height: 50px; margin-bottom: 10px;">
+                                            <div style="font-size: 0.85rem; color: var(--text-muted);">Recommended: 400x100px PNG</div>
+                                            <button type="button" class="btn btn-outline" style="margin-top: 10px;">Change Image</button>
+                                        </div>
+                                    </div>
+                                    <div class="settings-form-group">
+                                        <label>White/Footer Logo</label>
+                                        <div style="border: 2px dashed var(--border-color); padding: 20px; text-align: center; border-radius: 8px; background: #334155;">
+                                            <img src="../Images/vyasa logo.webp" style="max-height: 50px; margin-bottom: 10px; filter: brightness(0) invert(1);">
+                                            <div style="font-size: 0.85rem; color: #cbd5e1;">Recommended: 400x100px PNG (Transparent)</div>
+                                            <button type="button" class="btn btn-outline" style="margin-top: 10px; border-color: #94a3b8; color: white;">Change Image</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="settings-form-group" style="margin-top: 20px;">
+                                    <label>Favicon</label>
+                                    <div style="display: flex; gap: 16px; align-items: center;">
+                                        <img src="../Images/vyasa logo.webp" style="width: 32px; height: 32px; object-fit: cover; border-radius: 4px;">
+                                        <button type="button" class="btn btn-outline">Upload Favicon (512x512)</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Theme Colors</h3>
+                                <p>Set the primary and secondary colors for the public interface.</p>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="settings-form-row">
+                                    <div class="settings-form-group">
+                                        <label>Primary Brand Color</label>
+                                        <div style="display: flex; gap: 8px; align-items: center;">
+                                            <input type="color" value="#0f172a" style="width: 50px; height: 40px; padding: 2px;">
+                                            <input type="text" value="#0f172a">
+                                        </div>
+                                    </div>
+                                    <div class="settings-form-group">
+                                        <label>Secondary Brand Color</label>
+                                        <div style="display: flex; gap: 8px; align-items: center;">
+                                            <input type="color" value="#fbbf24" style="width: 50px; height: 40px; padding: 2px;">
+                                            <input type="text" value="#fbbf24">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End Branding Section -->
+
+                    <!-- Navigation Section -->
+                    <div id="settings-navigation" class="settings-section" style="display: none;">
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Header Navigation</h3>
+                                <p>Manage the primary links shown at the top of the website.</p>
+                            </div>
+                            <div class="settings-card-body">
+                                <div style="border: 1px solid var(--border-color); border-radius: 8px; background: #fafafa; padding: 16px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: white; border: 1px solid #e2e8f0; margin-bottom: 8px; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                                        <div style="display: flex; gap: 12px; align-items: center;">
+                                            <i class="fa-solid fa-grip-vertical" style="color: #cbd5e1; cursor: grab;"></i>
+                                            <span style="font-weight: 500;">Home</span>
+                                        </div>
+                                        <div><i class="fa-solid fa-pen" style="color: var(--text-muted); cursor: pointer; margin-right: 12px;"></i> <i class="fa-solid fa-trash" style="color: #ef4444; cursor: pointer;"></i></div>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: white; border: 1px solid #e2e8f0; margin-bottom: 8px; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                                        <div style="display: flex; gap: 12px; align-items: center;">
+                                            <i class="fa-solid fa-grip-vertical" style="color: #cbd5e1; cursor: grab;"></i>
+                                            <span style="font-weight: 500;">About Us</span>
+                                        </div>
+                                        <div><i class="fa-solid fa-pen" style="color: var(--text-muted); cursor: pointer; margin-right: 12px;"></i> <i class="fa-solid fa-trash" style="color: #ef4444; cursor: pointer;"></i></div>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: white; border: 1px solid #e2e8f0; margin-bottom: 8px; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                                        <div style="display: flex; gap: 12px; align-items: center;">
+                                            <i class="fa-solid fa-grip-vertical" style="color: #cbd5e1; cursor: grab;"></i>
+                                            <span style="font-weight: 500;">Admissions</span>
+                                        </div>
+                                        <div><i class="fa-solid fa-pen" style="color: var(--text-muted); cursor: pointer; margin-right: 12px;"></i> <i class="fa-solid fa-trash" style="color: #ef4444; cursor: pointer;"></i></div>
+                                    </div>
+                                    <button class="btn btn-outline" style="width: 100%; border-style: dashed; margin-top: 8px;"><i class="fa-solid fa-plus"></i> Add Menu Item</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End Navigation Section -->
+
+                    <!-- Contact Info Section -->
+                    <div id="settings-contact" class="settings-section" style="display: none;">
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Official Contact Information</h3>
+                                <p>This information will appear in the footer and contact pages.</p>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="settings-form-row">
+                                    <div class="settings-form-group">
+                                        <label>General Inquiry Email</label>
+                                        <input type="email" value="info@vyasa.edu.in">
+                                    </div>
+                                    <div class="settings-form-group">
+                                        <label>Admissions Email</label>
+                                        <input type="email" value="admissions@vyasa.edu.in">
+                                    </div>
+                                </div>
+                                <div class="settings-form-row">
+                                    <div class="settings-form-group">
+                                        <label>Primary Phone Number</label>
+                                        <input type="tel" value="+91 80 1234 5678">
+                                    </div>
+                                    <div class="settings-form-group">
+                                        <label>Secondary Phone Number</label>
+                                        <input type="tel" placeholder="Optional">
+                                    </div>
+                                </div>
+                                <div class="settings-form-group">
+                                    <label>Campus Physical Address</label>
+                                    <textarea rows="3">VYASA International School
+123 Education Boulevard, Knowledge City
+Bengaluru, Karnataka 560001
+India</textarea>
+                                </div>
+                                <div class="settings-form-group">
+                                    <label>Google Maps Embed URL</label>
+                                    <input type="url" placeholder="https://www.google.com/maps/embed?...">
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End Contact Info Section -->
+
+                    <!-- Social Media Section -->
+                    <div id="settings-social" class="settings-section" style="display: none;">
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Social Media Links</h3>
+                                <p>Provide URLs for your institution's official social media profiles.</p>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="settings-form-row">
+                                    <div class="settings-form-group">
+                                        <label><i class="fa-brands fa-facebook" style="color: #1877F2;"></i> Facebook URL</label>
+                                        <input type="url" value="https://facebook.com/vyasa">
+                                    </div>
+                                    <div class="settings-form-group">
+                                        <label><i class="fa-brands fa-instagram" style="color: #E4405F;"></i> Instagram URL</label>
+                                        <input type="url" value="https://instagram.com/vyasa">
+                                    </div>
+                                </div>
+                                <div class="settings-form-row">
+                                    <div class="settings-form-group">
+                                        <label><i class="fa-brands fa-linkedin" style="color: #0A66C2;"></i> LinkedIn URL</label>
+                                        <input type="url" value="https://linkedin.com/school/vyasa">
+                                    </div>
+                                    <div class="settings-form-group">
+                                        <label><i class="fa-brands fa-x-twitter" style="color: #000000;"></i> X / Twitter URL</label>
+                                        <input type="url" placeholder="https://x.com/...">
+                                    </div>
+                                </div>
+                                <div class="settings-form-group">
+                                    <label><i class="fa-brands fa-youtube" style="color: #FF0000;"></i> YouTube Channel URL</label>
+                                    <input type="url" placeholder="https://youtube.com/c/...">
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End Social Media Section -->
+
+                    <!-- SEO Settings Section -->
+                    <div id="settings-seo" class="settings-section" style="display: none;">
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Global SEO Defaults</h3>
+                                <p>Settings applied to pages without specific SEO overrides.</p>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="settings-form-group">
+                                    <label>Default Meta Title Format</label>
+                                    <input type="text" value="{Page Title} | VYASA International School">
+                                </div>
+                                <div class="settings-form-group">
+                                    <label>Default Meta Description</label>
+                                    <textarea rows="2">VYASA International School provides excellence in education and holistic skill development.</textarea>
+                                </div>
+                                <div class="settings-form-group">
+                                    <label>Default Social Share Image (OpenGraph)</label>
+                                    <div style="display: flex; gap: 16px; align-items: center; margin-top: 8px;">
+                                        <img src="../Images/vyasa logo.webp" style="height: 60px; object-fit: contain; border: 1px solid var(--border-color); border-radius: 4px; padding: 4px;">
+                                        <button class="btn btn-outline">Change Default Image</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Tracking Codes</h3>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="settings-form-group">
+                                    <label>Google Analytics Measurement ID</label>
+                                    <input type="text" placeholder="G-XXXXXXXXXX" value="G-VYS1234567">
+                                </div>
+                                <div class="settings-form-group">
+                                    <label>Google Search Console Verification Code</label>
+                                    <input type="text" placeholder="<meta name='google-site-verification' ...">
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End SEO Settings Section -->
+
+                    <!-- Roles & Permissions Section -->
+                    <div id="settings-roles" class="settings-section" style="display: none;">
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>User Roles</h3>
+                                <p>Manage what different user groups can access in the CMS.</p>
+                            </div>
+                            <div class="settings-card-body">
+                                <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px;">
+                                    <thead>
+                                        <tr style="border-bottom: 2px solid var(--border-color); text-align: left;">
+                                            <th style="padding: 12px 8px; color: var(--text-muted);">Role Name</th>
+                                            <th style="padding: 12px 8px; color: var(--text-muted);">Users</th>
+                                            <th style="padding: 12px 8px; color: var(--text-muted);">Access Level</th>
+                                            <th style="padding: 12px 8px;"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid var(--border-color);">
+                                            <td style="padding: 16px 8px; font-weight: 500;">Super Admin</td>
+                                            <td style="padding: 16px 8px; color: var(--text-muted);">2</td>
+                                            <td style="padding: 16px 8px;"><span style="background: #e0e7ff; color: #4338ca; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Full Access</span></td>
+                                            <td style="padding: 16px 8px; text-align: right;"><button class="btn btn-outline" disabled>System Role</button></td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border-color);">
+                                            <td style="padding: 16px 8px; font-weight: 500;">Content Editor</td>
+                                            <td style="padding: 16px 8px; color: var(--text-muted);">5</td>
+                                            <td style="padding: 16px 8px;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Publishing</span></td>
+                                            <td style="padding: 16px 8px; text-align: right;"><button class="btn btn-outline">Edit Perms</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 16px 8px; font-weight: 500;">Contributor</td>
+                                            <td style="padding: 16px 8px; color: var(--text-muted);">12</td>
+                                            <td style="padding: 16px 8px;"><span style="background: #f3f4f6; color: #4b5563; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Draft Only</span></td>
+                                            <td style="padding: 16px 8px; text-align: right;"><button class="btn btn-outline">Edit Perms</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Create New Role</button>
+                            </div>
+                        </div>
+                    </div> <!-- End Roles Section -->
+
+                    <!-- Notifications Section -->
+                    <div id="settings-notifications" class="settings-section" style="display: none;">
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>SMTP Configuration</h3>
+                                <p>Setup the server used for sending system emails.</p>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="settings-form-row">
+                                    <div class="settings-form-group">
+                                        <label>SMTP Host</label>
+                                        <input type="text" value="smtp.office365.com">
+                                    </div>
+                                    <div class="settings-form-group">
+                                        <label>SMTP Port</label>
+                                        <input type="text" value="587">
+                                    </div>
+                                </div>
+                                <div class="settings-form-row">
+                                    <div class="settings-form-group">
+                                        <label>Username</label>
+                                        <input type="text" value="noreply@vyasa.edu.in">
+                                    </div>
+                                    <div class="settings-form-group">
+                                        <label>Password</label>
+                                        <input type="password" value="********">
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline">Test Connection</button>
+                            </div>
+                        </div>
+
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Admin Alerts</h3>
+                                <p>Who should receive notifications for specific events?</p>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="settings-form-group">
+                                    <label>New Contact Inquiries</label>
+                                    <input type="text" value="info@vyasa.edu.in, admissions@vyasa.edu.in">
+                                </div>
+                                <div class="settings-form-group">
+                                    <label>New Job Applications</label>
+                                    <input type="text" value="hr@vyasa.edu.in">
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End Notifications Section -->
+
+                    <!-- Security Section -->
+                    <div id="settings-security" class="settings-section" style="display: none;">
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Authentication Policy</h3>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="toggle-switch-wrapper">
+                                    <div class="toggle-switch-info">
+                                        <h4>Require Two-Factor Authentication (2FA)</h4>
+                                        <p>Force all admin users to setup 2FA via Authenticator App.</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="settings-form-group" style="margin-top: 24px;">
+                                    <label>Session Timeout (Minutes of inactivity)</label>
+                                    <input type="number" value="30" style="max-width: 200px;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Password Policy</h3>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="settings-form-group">
+                                    <label>Minimum Password Length</label>
+                                    <select style="max-width: 200px;">
+                                        <option>8 Characters</option>
+                                        <option selected>12 Characters</option>
+                                        <option>16 Characters</option>
+                                    </select>
+                                </div>
+                                <div class="toggle-switch-wrapper" style="margin-top: 16px;">
+                                    <div class="toggle-switch-info">
+                                        <h4>Require Special Characters & Numbers</h4>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End Security Section -->
+
+                    <!-- Media Config Section -->
+                    <div id="settings-media" class="settings-section" style="display: none;">
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Upload Restrictions</h3>
+                                <p>Control limits and formats for the Media Library.</p>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="settings-form-row">
+                                    <div class="settings-form-group">
+                                        <label>Maximum Upload Size (MB)</label>
+                                        <input type="number" value="10">
+                                    </div>
+                                    <div class="settings-form-group">
+                                        <label>Allowed Image Formats</label>
+                                        <input type="text" value=".jpg, .png, .webp, .svg">
+                                    </div>
+                                </div>
+                                <div class="settings-form-group">
+                                    <label>Allowed Document Formats</label>
+                                    <input type="text" value=".pdf, .doc, .docx, .xls, .xlsx">
+                                </div>
+                                <div class="toggle-switch-wrapper" style="margin-top: 24px;">
+                                    <div class="toggle-switch-info">
+                                        <h4>Auto-Compress Images</h4>
+                                        <p>Automatically convert uploaded JPEGs and PNGs to WebP for faster loading.</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End Media Config Section -->
+
+                    <!-- System Prefs Section -->
+                    <div id="settings-system" class="settings-section" style="display: none;">
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Cache & Performance</h3>
+                            </div>
+                            <div class="settings-card-body">
+                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px; background: #fafafa; border: 1px solid var(--border-color); border-radius: 8px;">
+                                    <div>
+                                        <h4 style="margin: 0 0 4px 0; font-size: 1rem;">System Cache</h4>
+                                        <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">Current cache size: 24.5 MB</p>
+                                    </div>
+                                    <button class="btn btn-outline" style="border-color: #ef4444; color: #ef4444;"><i class="fa-solid fa-broom"></i> Clear Cache</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-card">
+                            <div class="settings-card-header">
+                                <h3>Automated Backups</h3>
+                            </div>
+                            <div class="settings-card-body">
+                                <div class="settings-form-group">
+                                    <label>Backup Schedule</label>
+                                    <select style="max-width: 200px;">
+                                        <option>Never</option>
+                                        <option selected>Daily</option>
+                                        <option>Weekly</option>
+                                        <option>Monthly</option>
+                                    </select>
+                                </div>
+                                <div class="settings-form-group" style="margin-top: 16px;">
+                                    <label>Keep Backups For</label>
+                                    <select style="max-width: 200px;">
+                                        <option>7 Days</option>
+                                        <option selected>30 Days</option>
+                                        <option>90 Days</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-primary" style="margin-top: 16px;"><i class="fa-solid fa-download"></i> Download Latest Backup</button>
+                            </div>
+                        </div>
+                    </div> <!-- End System Prefs Section -->
+
+                    <!-- Audit Logs Section -->
+                    <div id="settings-audit" class="settings-section" style="display: none;">
+                        <div class="settings-card">
+                            <div class="settings-card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h3 style="margin: 0;">System Audit Logs</h3>
+                                    <p style="margin: 4px 0 0 0;">Recent administrative actions recorded by the system.</p>
+                                </div>
+                                <button class="btn btn-outline"><i class="fa-solid fa-file-export"></i> Export CSV</button>
+                            </div>
+                            <div class="settings-card-body" style="padding: 0;">
+                                <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                                    <thead>
+                                        <tr style="background: #f8fafc; border-bottom: 2px solid var(--border-color); text-align: left;">
+                                            <th style="padding: 12px 16px; color: var(--text-muted);">Timestamp</th>
+                                            <th style="padding: 12px 16px; color: var(--text-muted);">User</th>
+                                            <th style="padding: 12px 16px; color: var(--text-muted);">Action</th>
+                                            <th style="padding: 12px 16px; color: var(--text-muted);">IP Address</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid var(--border-color);">
+                                            <td style="padding: 16px; color: var(--text-muted);">2026-08-14 10:45 AM</td>
+                                            <td style="padding: 16px; font-weight: 500;">Admin Director</td>
+                                            <td style="padding: 16px;">Updated 'Settings > General Info'</td>
+                                            <td style="padding: 16px; color: var(--text-muted); font-family: monospace;">192.168.1.14</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border-color);">
+                                            <td style="padding: 16px; color: var(--text-muted);">2026-08-13 04:20 PM</td>
+                                            <td style="padding: 16px; font-weight: 500;">Content Editor</td>
+                                            <td style="padding: 16px;">Published 'Careers > Assistant Professor'</td>
+                                            <td style="padding: 16px; color: var(--text-muted); font-family: monospace;">10.0.0.52</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid var(--border-color);">
+                                            <td style="padding: 16px; color: var(--text-muted);">2026-08-13 02:15 PM</td>
+                                            <td style="padding: 16px; font-weight: 500;">System Auto</td>
+                                            <td style="padding: 16px;">Automated Database Backup Completed</td>
+                                            <td style="padding: 16px; color: var(--text-muted); font-family: monospace;">127.0.0.1</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 16px; color: var(--text-muted);">2026-08-12 09:30 AM</td>
+                                            <td style="padding: 16px; font-weight: 500;">Admin Director</td>
+                                            <td style="padding: 16px;">Logged In</td>
+                                            <td style="padding: 16px; color: var(--text-muted); font-family: monospace;">192.168.1.14</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div> <!-- End Audit Logs Section -->
 
                 </div> <!-- End Settings Content -->
 
