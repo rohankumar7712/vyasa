@@ -55,9 +55,12 @@ video {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%);
+   background: linear-gradient(245.63deg, rgba(102, 102, 102, 0) -9.97%, rgba(51, 51, 51, 0.36) 12.07%, rgba(0, 0, 0, 0.72) 52.22%);
+
     z-index: 1;
 }
+
+
 
 .container {
     width: 100%;
@@ -144,6 +147,11 @@ video {
 
 .blue-text {
     color: var(--brand-blue);
+    
+}
+
+.yellow-text{
+    color:#FBBB2A;
 }
 
 .red-text {
@@ -593,22 +601,26 @@ video {
     overflow: hidden;
     border-radius: 20px;
     min-height: 450px;
+    height: auto;
     box-shadow: 0 16px 40px rgba(17, 29, 74, .05);
     margin-bottom: 30px;
 }
 
-.achievements-featured img,
 .featured-overlay {
     grid-column: 1 / -1;
     grid-row: 1 / -1;
 }
 
 .achievements-featured img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center 35%;
     filter: brightness(.82);
+    z-index: 0;
 }
 
 .featured-overlay {
@@ -619,7 +631,7 @@ video {
     flex-direction: column;
     justify-content: flex-end;
 
-    padding: 40px 48px 52px;
+    padding: 20px 30px;
 
     color: #fff;
 
@@ -806,11 +818,10 @@ video {
 
 .showcase-img {
     width: 100%;
-    aspect-ratio: 4/5;
-    height: auto;
+    height: 250px;
     object-fit: cover;
-    background-color: #e5ded4;
-    /* Placeholder color */
+    object-position: top;
+    background-color: transparent;
 }
 
 .showcase-content {
@@ -938,17 +949,19 @@ video {
 }
 
 .resource-img-wrapper {
-    aspect-ratio: 3/4;
+ 
     height: auto;
-    background-color: #4a5c7a;
+    background-color: #ffffff;
     position: relative;
     overflow: hidden;
 }
 
 .resource-img {
     width: 100%;
-    height: 100%;
+    height: 250px;
     object-fit: cover;
+    object-position: top;
+    background-color: transparent;
 }
 
 .resource-content {
@@ -3012,13 +3025,9 @@ video {
         height: 260px;
     }
 
-    .achievements-grid {
-        grid-template-columns: 1fr;
-    }
+    /* achievements-grid 1fr override moved to 576px breakpoint */
 
-    .showcase-grid {
-        grid-template-columns: 1fr;
-    }
+    /* showcase-grid 1fr override moved to 576px breakpoint */
 
     .resources-controls {
         flex-direction: column;
@@ -3030,9 +3039,7 @@ video {
         width: 100%;
     }
 
-    .resources-grid {
-        grid-template-columns: 1fr;
-    }
+    /* resources-grid 1fr override moved to 576px breakpoint */
 
     .notice-grid {
         grid-template-columns: 1fr;
@@ -3044,16 +3051,7 @@ video {
         gap: 15px;
     }
 
-    .events-grid,
-    .clubs-grid,
-    .educator-grid,
-    .leadership-grid,
-    .alumni-grid,
-    .insights-grid,
-    .path-steps-grid,
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
+    /* grid 1fr overrides moved to 576px breakpoint */
 
     .visit-features {
         grid-template-columns: 1fr;
@@ -3175,6 +3173,22 @@ video {
 
     .timeline-items {
         width: 800px;
+    }
+}
+
+@media (max-width: 576px) {
+    .showcase-grid,
+    .resources-grid,
+    .achievements-grid,
+    .events-grid,
+    .clubs-grid,
+    .educator-grid,
+    .leadership-grid,
+    .alumni-grid,
+    .insights-grid,
+    .path-steps-grid,
+    .info-grid {
+        grid-template-columns: 1fr;
     }
 }
 
