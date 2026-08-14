@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -60,17 +60,51 @@
                     <div class="breadcrumbs">CMS Console / <a href="students.html" style="color: var(--text-muted); text-decoration: none;">Articles</a> / <span>Create New</span></div>
                     
                     <div class="header-right">
-                        <button class="notification-btn">
+                        <div class="notification-dropdown-container" style="position: relative; display: flex; align-items: center;">
+                            <button class="notification-btn">
                             <i class="fa-regular fa-bell"></i>
                             <span class="notification-badge">3</span>
-                        </button>
-                        <div class="user-profile">
+                            </button>
+                            
+                            <div class="notification-dropdown-menu">
+                                <div class="dropdown-header">
+                                    <h4>Notifications</h4>
+                                    <span class="badge">New</span>
+                                </div>
+                                <div class="dropdown-body">
+                                    <a href="#" class="notification-item unread">
+                                        <div class="notification-icon bg-blue-light text-blue"><i class="fa-solid fa-file-invoice"></i></div>
+                                        <div class="notification-content">
+                                            <p class="notification-text">New article submitted for review</p>
+                                            <p class="notification-time">10 minutes ago</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="dropdown-footer">
+                                    <a href="#">View All Notifications</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-profile profile-dropdown-container" style="position: relative; cursor: pointer;">
                             <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
                             <div class="user-info">
                                 <span class="user-name">Admin Director</span>
                                 <span class="user-role">Super Admin</span>
                             </div>
                             <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            
+                            <div class="profile-dropdown-menu">
+                                <a href="settings.html" class="dropdown-item">
+                                    <i class="fa-solid fa-user"></i> My Profile
+                                </a>
+                                <a href="settings.html" class="dropdown-item">
+                                    <i class="fa-solid fa-gear"></i> Settings
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item text-red">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
