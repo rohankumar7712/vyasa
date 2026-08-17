@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyasa - Create Admin Account</title>
+    <!-- Google Fonts: Inter & Hanken Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <!-- Using a placeholder logo similar to the image -->
+                <div class="logo">
+                   <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li data-page="dashboard.html"><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+
+                
+                    <li class="menu-item-has-children" data-group="content">
+                        <a href="#"><i class="fa-solid fa-layer-group"></i> Content Management</a>
+                        <ul class="sub-menu">
+                            <li data-page="pages.html"><a href="pages.html"><i class="fa-regular fa-file-lines"></i> Pages</a></li>
+                            <li data-page="articles.html"><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                            <li data-page="announcements.html"><a href="announcements.html"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
+                            <li data-page="achievements.html"><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                            <li data-page="testimonials.html"><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                        </ul>
+                    </li>
+
+                  
+                    <li class="menu-item-has-children" data-group="academics">
+                        <a href="#"><i class="fa-solid fa-graduation-cap"></i> Academics</a>
+                        <ul class="sub-menu">
+                            <li data-page="programs.html"><a href="programs.html"><i class="fa-solid fa-book"></i> Programs</a></li>
+                            <li data-page="educators.html"><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                            <li data-page="students.html"><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item-has-children" data-group="comms">
+                        <a href="#"><i class="fa-solid fa-envelope-open-text"></i> Communications & HR</a>
+                        <ul class="sub-menu">
+                            <li data-page="inquiries.html"><a href="inquiries.html"><i class="fa-solid fa-circle-question"></i> Inquiries</a></li>
+                            <li data-page="careers.html"><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
+                        </ul>
+                    </li>
+
+                    <li data-page="media-library.html"><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li class="active" data-page="roles.html"><a href="roles.html"><i class="fa-solid fa-user-shield"></i> Role & Access Management</a></li>
+                    <li data-page="settings.html"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status-block">
+                    <div class="system-status-title"><span class="status-dot green"></span> System Online</div>
+                    <div class="system-status-desc">All systems operational</div>
+                </div>
+                <div class="version">Version 2.4.1 (Stable)</div>
+                <button class="collapse-menu-btn"><i class="fa-regular fa-circle-left"></i> Collapse Menu</button>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header" style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
+                <div class="header-top-row">
+                    <div class="breadcrumbs">CMS Console / <span>My Profile</span></div>
+                    
+                    <div class="header-right">
+                        <!-- Notifications -->
+                        <div class="notification-dropdown-container" style="position: relative; display: flex; align-items: center;">
+                            <button class="notification-btn">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                            </button>
+                        </div>
+                        
+                        <!-- Profile -->
+                        <div class="user-profile profile-dropdown-container" style="position: relative; cursor: pointer;">
+                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
+                            <div class="user-info">
+                                <span class="user-name">Admin Director</span>
+                                <span class="user-role">Super Admin</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="header-bottom-row" style="align-items: center; justify-content: space-between; margin-top: 24px; display: flex;">
+                    <div>
+                        <h1 style="font-size: 1.5rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 4px;">My Profile</h1>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">Manage your personal information and preferences.</p>
+                    </div>
+                </div>
+            </header>
+
+
+            <!-- Create Admin Form -->
+            <div class="editor-layout" id="create-admin-flow">
+                
+                <!-- Main Form Layout with Sidebar -->
+                <div class="editor-main" id="admin-form" style="display: grid; grid-template-columns: 1fr 350px; gap: 24px;">
+                    
+                    <div class="form-container" style="display: flex; flex-direction: column; gap: 24px; background: white; padding: 32px; border-radius: 8px; border: 1px solid var(--border-color);">
+                        <h2 style="font-size: 1.25rem; font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">Admin Information</h2>
+                        
+                        <div class="form-group">
+                            <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Full Name <span style="color: var(--accent-red);">*</span></label>
+                            <input type="text" id="admin-name" class="bg-gray-input" placeholder="e.g. John Doe" style="padding: 12px; font-size: 1rem; width: 100%; border: 1px solid var(--border-color); border-radius: 6px; outline: none;">
+                        </div>
+                        
+                        <!-- Email field removed since it is auto-generated -->
+                        <div class="form-group">
+                            <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Assigned Role <span style="color: var(--accent-red);">*</span></label>
+                            <select id="admin-role" style="padding: 12px; font-size: 0.95rem; width: 100%; border: 1px solid var(--border-color); border-radius: 6px; outline: none; background: white;" onchange="updatePermissionsSummary()">
+                                <option value="" disabled selected>Select a role</option>
+                                <option value="super_admin">Super Admin</option>
+                                <option value="content_manager">Content Manager</option>
+                                <option value="academic_coordinator">Academic Coordinator</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Status</label>
+                            <select style="padding: 12px; font-size: 0.95rem; width: 100%; border: 1px solid var(--border-color); border-radius: 6px; outline: none; background: white;">
+                                <option value="active" selected>Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Automated Credentials Notice -->
+                        <div style="background: rgba(14, 165, 233, 0.1); border: 1px solid rgba(14, 165, 233, 0.3); border-radius: 8px; padding: 16px; display: flex; gap: 12px; align-items: flex-start; margin-top: 8px;">
+                            <i class="fa-solid fa-shield-halved" style="color: #0ea5e9; font-size: 1.25rem; margin-top: 2px;"></i>
+                            <div>
+                                <h4 style="color: #0ea5e9; font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; margin-top: 0;">Secure Automated Credentials</h4>
+                                <p style="color: #334155; font-size: 0.85rem; margin: 0; line-height: 1.5;">Email ID and Password will be generated automatically after the account is created. These credentials can be securely shared with the user.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 16px; padding-top: 24px; border-top: 1px solid var(--border-color);">
+                            <a href="roles.html" class="btn btn-outline">Cancel</a>
+                            <button type="button" class="btn btn-primary" onclick="showSuccess()"><i class="fa-solid fa-user-plus"></i> Create Admin</button>
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar: Permissions Summary -->
+                    <aside class="editor-sidebar">
+                        <div class="editor-card" id="permissions-summary-card" style="display: none;">
+                            <div class="editor-card-header" style="background: #f8fafc; padding: 16px; border-bottom: 1px solid var(--border-color);">
+                                <h3 style="font-size: 1rem; color: var(--primary-dark); margin: 0;">Permissions Included</h3>
+                            </div>
+                            <div class="editor-card-body" style="padding: 16px;">
+                                <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">This user will have the following access rights based on the selected role:</p>
+                                
+                                <div id="permissions-list" style="display: flex; flex-direction: column; gap: 12px;">
+                                    <!-- Populated by JS -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="editor-card" id="permissions-empty-card">
+                            <div class="editor-card-body" style="padding: 32px 16px; text-align: center; color: var(--text-muted);">
+                                <i class="fa-solid fa-shield" style="font-size: 2rem; color: #cbd5e1; margin-bottom: 12px;"></i>
+                                <p style="font-size: 0.9rem;">Select a role to view the included permissions summary.</p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- SUCCESS STATE -->
+                <div class="editor-main" id="success-state" style="display: none; flex-direction: column; align-items: center; text-align: center; gap: 24px; background: white; padding: 48px; border-radius: 8px; border: 1px solid var(--border-color); max-width: 600px; margin: 0 auto;">
+                    <div style="width: 64px; height: 64px; background: #dcfce7; color: #16a34a; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2rem;">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div>
+                        <h2 style="font-size: 1.5rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 8px;">Admin Created Successfully</h2>
+                    </div>
+                    
+                    <div style="background: #f8fafc; border: 1px solid var(--border-color); border-radius: 8px; padding: 24px; width: 100%; text-align: left; display: flex; flex-direction: column; gap: 16px;">
+                        <div>
+                            <div style="font-size: 1.1rem; font-weight: 600; color: var(--primary-dark);" id="success-name">John Doe</div>
+                            <div style="font-size: 0.9rem; color: var(--trend-blue); font-weight: 500;" id="success-role">Content Manager</div>
+                        </div>
+                        
+                        <div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; margin-bottom: 4px;">Login Email</div>
+                            <div style="font-size: 0.95rem; color: var(--primary-dark); font-family: monospace; background: white; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 4px;" id="success-email">john@example.com</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; margin-bottom: 4px;">Temporary Password</div>
+                            <div style="font-size: 0.95rem; color: var(--primary-dark); font-family: monospace; background: white; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 4px; letter-spacing: 2px;" id="success-password">••••••••</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 8px; width: 100%; text-align: left; background: rgba(22, 163, 74, 0.05); padding: 16px; border-radius: 8px;">
+                        <div style="display: flex; align-items: center; gap: 8px; color: #16a34a; font-size: 0.9rem; font-weight: 500;">
+                            <i class="fa-solid fa-circle-check"></i> Account created successfully
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px; color: #16a34a; font-size: 0.9rem; font-weight: 500;">
+                            <i class="fa-solid fa-circle-check"></i> Login instructions sent to the admin's email
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 12px; margin-top: 16px; width: 100%; justify-content: center;">
+                        <button type="button" class="btn btn-outline" onclick="copyCredentials()"><i class="fa-regular fa-copy"></i> Copy Credentials</button>
+                        <a href="roles.html" class="btn btn-primary">Done</a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+    <script>
+        const rolePermissions = {
+            'super_admin': [
+                { module: 'Full System Access', perms: 'Unrestricted access to all modules' }
+            ],
+            'content_manager': [
+                { module: 'Articles', perms: 'View, Create, Edit, Delete, Publish' },
+                { module: 'Media Library', perms: 'View, Upload, Edit, Delete' },
+                { module: 'Pages', perms: 'View, Create, Edit' }
+            ],
+            'academic_coordinator': [
+                { module: 'Programs', perms: 'View, Create, Edit, Approve' },
+                { module: 'Students', perms: 'View, Edit, Export' }
+            ]
+        };
+
+        function updatePermissionsSummary() {
+            const roleSelect = document.getElementById('admin-role');
+            const summaryCard = document.getElementById('permissions-summary-card');
+            const emptyCard = document.getElementById('permissions-empty-card');
+            const list = document.getElementById('permissions-list');
+            
+            const selectedRole = roleSelect.value;
+            
+            if (selectedRole && rolePermissions[selectedRole]) {
+                emptyCard.style.display = 'none';
+                summaryCard.style.display = 'block';
+                
+                list.innerHTML = '';
+                rolePermissions[selectedRole].forEach(item => {
+                    list.innerHTML += `
+                        <div style="border-left: 2px solid var(--brand-red); padding-left: 12px;">
+                            <div style="font-weight: 600; font-size: 0.9rem; color: var(--primary-dark);">${item.module}</div>
+                            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">${item.perms}</div>
+                        </div>
+                    `;
+                });
+            } else {
+                emptyCard.style.display = 'block';
+                summaryCard.style.display = 'none';
+            }
+        }
+
+        function showSuccess() {
+            // Generate credentials
+            const name = document.getElementById('admin-name').value || 'John Doe';
+            const cleanName = name.toLowerCase().replace(/[^a-z0-9]/g, '.').replace(/\.+/g, '.').replace(/^\.+|\.+$/g, '');
+            const generatedEmail = (cleanName || 'admin') + '@vyasa.edu.in';
+            
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+            let generatedPassword = '';
+            for(let i=0; i<12; i++) generatedPassword += chars.charAt(Math.floor(Math.random() * chars.length));
+
+            const roleSelect = document.getElementById('admin-role');
+            const role = roleSelect.options[roleSelect.selectedIndex].value ? roleSelect.options[roleSelect.selectedIndex].text : 'Content Manager';
+            
+            document.getElementById('success-name').textContent = name;
+            document.getElementById('success-email').textContent = generatedEmail;
+            document.getElementById('success-password').textContent = generatedPassword;
+            document.getElementById('success-role').textContent = role;
+
+            // Switch views
+            document.getElementById('admin-form').style.display = 'none';
+            document.getElementById('success-state').style.display = 'flex';
+            window.scrollTo(0,0);
+        }
+
+        function copyCredentials() {
+            const email = document.getElementById('success-email').textContent;
+            const pass = document.getElementById('success-password').textContent;
+            const text = `Login Email: ${email}\nTemporary Password: ${pass}`;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Credentials copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>

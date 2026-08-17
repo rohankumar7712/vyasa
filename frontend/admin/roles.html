@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyasa - Role & Access Management</title>
+    <!-- Google Fonts: Inter & Hanken Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                   <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li data-page="dashboard.html"><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+
+                    <li class="menu-item-has-children" data-group="content">
+                        <a href="#"><i class="fa-solid fa-layer-group"></i> Content Management</a>
+                        <ul class="sub-menu">
+                            <li data-page="pages.html"><a href="pages.html"><i class="fa-regular fa-file-lines"></i> Pages</a></li>
+                            <li data-page="articles.html"><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                            <li data-page="announcements.html"><a href="announcements.html"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
+                            <li data-page="achievements.html"><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                            <li data-page="testimonials.html"><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item-has-children" data-group="academics">
+                        <a href="#"><i class="fa-solid fa-graduation-cap"></i> Academics</a>
+                        <ul class="sub-menu">
+                            <li data-page="programs.html"><a href="programs.html"><i class="fa-solid fa-book"></i> Programs</a></li>
+                            <li data-page="educators.html"><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                            <li data-page="students.html"><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item-has-children" data-group="comms">
+                        <a href="#"><i class="fa-solid fa-envelope-open-text"></i> Communications & HR</a>
+                        <ul class="sub-menu">
+                            <li data-page="inquiries.html"><a href="inquiries.html"><i class="fa-solid fa-circle-question"></i> Inquiries</a></li>
+                            <li data-page="careers.html"><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
+                        </ul>
+                    </li>
+
+                    <li data-page="media-library.html"><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li class="active" data-page="roles.html"><a href="roles.html"><i class="fa-solid fa-user-shield"></i> Role & Access Management</a></li>
+                    <li data-page="settings.html"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status-block">
+                    <div class="system-status-title"><span class="status-dot green"></span> System Online</div>
+                    <div class="system-status-desc">All systems operational</div>
+                </div>
+                <div class="version">Version 2.4.1 (Stable)</div>
+                <button class="collapse-menu-btn"><i class="fa-regular fa-circle-left"></i> Collapse Menu</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header" style="margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
+                <div class="header-top-row">
+                    <div class="breadcrumbs">CMS Console / <span>Role & Access Management</span></div>
+                    
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" placeholder="Search roles, users, permissions...">
+                    </div>
+
+                    <div class="header-right">
+                        <div class="notification-dropdown-container" style="position: relative; display: flex; align-items: center;">
+                            <button class="notification-btn">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                            </button>
+                        </div>
+                        <div class="user-profile profile-dropdown-container" style="position: relative; cursor: pointer;">
+                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
+                            <div class="user-info">
+                                <span class="user-name">Admin Director</span>
+                                <span class="user-role">Super Admin</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down chevron-small"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="header-bottom-row" style="align-items: center; justify-content: space-between;">
+                    <div class="header-left">
+                        <div class="title-with-icon">
+                            <h1>Role & Access Management</h1>
+                            <i class="fa-solid fa-user-shield title-icon"></i>
+                        </div>
+                        <p class="header-subtitle" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">Control what each admin role can access and what actions they can perform.</p>
+                    </div>
+                    
+                    <div class="header-actions" style="display: flex; gap: 12px;">
+                        <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Create Custom Role</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Tabs Navigation -->
+            <div class="tabs-nav" style="margin-bottom: 24px; border-bottom: 1px solid var(--border-color); display: flex; gap: 24px;">
+                <button class="tab-btn active" data-target="tab-roles-matrix" style="background: none; border: none; border-bottom: 2px solid var(--primary-color); padding: 12px 0; font-weight: 600; color: var(--primary-color); cursor: pointer; font-size: 1rem;">Roles & Permissions Matrix</button>
+                <button class="tab-btn" data-target="tab-admin-assignments" style="background: none; border: none; border-bottom: 2px solid transparent; padding: 12px 0; font-weight: 500; color: var(--text-muted); cursor: pointer; font-size: 1rem;">Admin Accounts & Assignments</button>
+            </div>
+
+            <!-- Tab Content: Roles & Permissions Matrix -->
+            <section id="tab-roles-matrix" class="tab-content active" style="display: flex; gap: 24px; min-height: 600px;">
+                
+                <!-- Left Panel: Access Roles -->
+                <aside class="roles-left-panel" style="width: 320px; background: white; border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column;">
+                    <div style="padding: 20px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="margin: 0; font-size: 1.1rem; color: var(--text-color);">Access Roles</h3>
+                    </div>
+                    <div class="roles-list" style="flex: 1; overflow-y: auto;">
+                        
+                        <!-- Role Item: Super Admin -->
+                        <div class="role-item active" style="padding: 16px 20px; border-bottom: 1px solid var(--border-color); border-left: 3px solid var(--primary-color); background: #f8fafc; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--text-color);">Super Admin</h4>
+                                <span class="status-badge" style="background: #dcfce7; color: #166534; font-size: 0.7rem; padding: 2px 6px; border-radius: 12px; font-weight: 600;">Active</span>
+                            </div>
+                            <p style="margin: 0 0 8px 0; font-size: 0.85rem; color: var(--text-muted);">Full system access</p>
+                            <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-users" style="margin-right: 4px;"></i> 2 users</div>
+                        </div>
+
+                        <!-- Role Item: Administrator -->
+                        <div class="role-item" style="padding: 16px 20px; border-bottom: 1px solid var(--border-color); border-left: 3px solid transparent; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--text-color);">Administrator</h4>
+                                <span class="status-badge" style="background: #dcfce7; color: #166534; font-size: 0.7rem; padding: 2px 6px; border-radius: 12px; font-weight: 600;">Active</span>
+                            </div>
+                            <p style="margin: 0 0 8px 0; font-size: 0.85rem; color: var(--text-muted);">General administrative access</p>
+                            <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-users" style="margin-right: 4px;"></i> 4 users</div>
+                        </div>
+
+                        <!-- Role Item: Content Manager -->
+                        <div class="role-item" style="padding: 16px 20px; border-bottom: 1px solid var(--border-color); border-left: 3px solid transparent; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--text-color);">Content Manager</h4>
+                                <span class="status-badge" style="background: #dcfce7; color: #166534; font-size: 0.7rem; padding: 2px 6px; border-radius: 12px; font-weight: 600;">Active</span>
+                            </div>
+                            <p style="margin: 0 0 8px 0; font-size: 0.85rem; color: var(--text-muted);">Articles, programs, achievements</p>
+                            <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-users" style="margin-right: 4px;"></i> 5 users</div>
+                        </div>
+
+                        <!-- Role Item: Academic Manager -->
+                        <div class="role-item" style="padding: 16px 20px; border-bottom: 1px solid var(--border-color); border-left: 3px solid transparent; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--text-color);">Academic Manager</h4>
+                                <span class="status-badge" style="background: #dcfce7; color: #166534; font-size: 0.7rem; padding: 2px 6px; border-radius: 12px; font-weight: 600;">Active</span>
+                            </div>
+                            <p style="margin: 0 0 8px 0; font-size: 0.85rem; color: var(--text-muted);">Curriculum, academics, programs</p>
+                            <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-users" style="margin-right: 4px;"></i> 3 users</div>
+                        </div>
+
+                        <!-- Role Item: Media Manager -->
+                        <div class="role-item" style="padding: 16px 20px; border-bottom: 1px solid var(--border-color); border-left: 3px solid transparent; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--text-color);">Media Manager</h4>
+                                <span class="status-badge" style="background: #dcfce7; color: #166534; font-size: 0.7rem; padding: 2px 6px; border-radius: 12px; font-weight: 600;">Active</span>
+                            </div>
+                            <p style="margin: 0 0 8px 0; font-size: 0.85rem; color: var(--text-muted);">Media library and assets</p>
+                            <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-users" style="margin-right: 4px;"></i> 2 users</div>
+                        </div>
+
+                        <!-- Role Item: Editor -->
+                        <div class="role-item" style="padding: 16px 20px; border-bottom: 1px solid var(--border-color); border-left: 3px solid transparent; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--text-color);">Editor</h4>
+                                <span class="status-badge" style="background: #dcfce7; color: #166534; font-size: 0.7rem; padding: 2px 6px; border-radius: 12px; font-weight: 600;">Active</span>
+                            </div>
+                            <p style="margin: 0 0 8px 0; font-size: 0.85rem; color: var(--text-muted);">Create/edit content</p>
+                            <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-users" style="margin-right: 4px;"></i> 8 users</div>
+                        </div>
+
+                        <!-- Role Item: Viewer -->
+                        <div class="role-item" style="padding: 16px 20px; border-bottom: 1px solid var(--border-color); border-left: 3px solid transparent; cursor: pointer;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px;">
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--text-color);">Viewer</h4>
+                                <span class="status-badge" style="background: #dcfce7; color: #166534; font-size: 0.7rem; padding: 2px 6px; border-radius: 12px; font-weight: 600;">Active</span>
+                            </div>
+                            <p style="margin: 0 0 8px 0; font-size: 0.85rem; color: var(--text-muted);">Read-only access</p>
+                            <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-users" style="margin-right: 4px;"></i> 12 users</div>
+                        </div>
+
+                    </div>
+                    <div style="padding: 16px; border-top: 1px solid var(--border-color); text-align: center;">
+                        <a href="create-role.html" class="btn btn-outline" style="width: 100%; display: block; text-align: center; text-decoration: none;"><i class="fa-solid fa-plus"></i> Create Role</a>
+                    </div>
+                </aside>
+
+                <!-- Right Panel: Permission Management -->
+                <div class="permissions-right-panel" style="flex: 1; background: white; border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column;">
+                    
+                    <!-- Role Header -->
+                    <div class="role-header" style="padding: 24px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: flex-start;">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                                <h2 style="margin: 0; font-size: 1.5rem; color: var(--text-color);">Super Admin</h2>
+                                <span style="background: #e0e7ff; color: #4338ca; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">System Role</span>
+                            </div>
+                            <p style="margin: 0; color: var(--text-muted);">Full system access with complete control over all modules and settings.</p>
+                        </div>
+                        <div style="display: flex; gap: 12px;">
+                            <button class="btn btn-outline"><i class="fa-regular fa-copy"></i> Duplicate</button>
+                            <button class="btn btn-outline"><i class="fa-solid fa-rotate-left"></i> Reset Defaults</button>
+                            <button class="btn btn-primary"><i class="fa-solid fa-check"></i> Save Changes</button>
+                        </div>
+                    </div>
+
+                    <!-- Permissions Search -->
+                    <div style="padding: 16px 24px; border-bottom: 1px solid var(--border-color); background: #f8fafc;">
+                        <div class="search-bar" style="max-width: 400px; margin: 0; background: white;">
+                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                            <input type="text" placeholder="Search specific modules or permissions...">
+                        </div>
+                    </div>
+
+                    <!-- Permissions Matrix Table -->
+                    <div class="permissions-matrix-container" style="padding: 0; overflow-x: auto;">
+                        <table class="permissions-table" style="width: 100%; border-collapse: collapse; text-align: center;">
+                            <thead>
+                                <tr style="background: #f8fafc; border-bottom: 2px solid var(--border-color);">
+                                    <th style="padding: 16px 24px; text-align: left; color: var(--text-muted); font-weight: 600;">Module Permission</th>
+                                    <th style="padding: 16px 12px; color: var(--text-muted); font-weight: 600;">View</th>
+                                    <th style="padding: 16px 12px; color: var(--text-muted); font-weight: 600;">Create</th>
+                                    <th style="padding: 16px 12px; color: var(--text-muted); font-weight: 600;">Edit</th>
+                                    <th style="padding: 16px 12px; color: var(--text-muted); font-weight: 600;">Delete</th>
+                                    <th style="padding: 16px 12px; color: var(--text-muted); font-weight: 600;">Approve</th>
+                                    <th style="padding: 16px 12px; color: var(--text-muted); font-weight: 600;">Export</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Dashboard -->
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 16px 24px; text-align: left; font-weight: 500;">
+                                        <div style="display: flex; align-items: center; gap: 8px;">
+                                            <i class="fa-solid fa-border-all text-muted"></i> Dashboard
+                                        </div>
+                                    </td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><span style="color: #cbd5e1;">—</span></td>
+                                    <td><span style="color: #cbd5e1;">—</span></td>
+                                    <td><span style="color: #cbd5e1;">—</span></td>
+                                    <td><span style="color: #cbd5e1;">—</span></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                </tr>
+
+                                <!-- Content / Articles -->
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 16px 24px; text-align: left; font-weight: 500;">
+                                        <div style="display: flex; align-items: center; gap: 8px;">
+                                            <i class="fa-regular fa-newspaper text-muted"></i> Content / Articles
+                                        </div>
+                                    </td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                </tr>
+
+                                <!-- Programs -->
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 16px 24px; text-align: left; font-weight: 500;">
+                                        <div style="display: flex; align-items: center; gap: 8px;">
+                                            <i class="fa-solid fa-book text-muted"></i> Programs
+                                        </div>
+                                    </td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><span style="color: #cbd5e1;">—</span></td>
+                                    <td><span style="color: #cbd5e1;">—</span></td>
+                                </tr>
+
+                                <!-- Students -->
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 16px 24px; text-align: left; font-weight: 500;">
+                                        <div style="display: flex; align-items: center; gap: 8px;">
+                                            <i class="fa-solid fa-user-group text-muted"></i> Students
+                                        </div>
+                                    </td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><span style="color: #cbd5e1;">—</span></td>
+                                    <td><span style="color: #cbd5e1;">—</span></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                </tr>
+
+                                <!-- Media Library -->
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 16px 24px; text-align: left; font-weight: 500;">
+                                        <div style="display: flex; align-items: center; gap: 8px;">
+                                            <i class="fa-regular fa-folder-open text-muted"></i> Media Library
+                                        </div>
+                                    </td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked disabled></td> <!-- Representing Upload -->
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><span style="color: #cbd5e1;">—</span></td>
+                                    <td><span style="color: #cbd5e1;">—</span></td>
+                                </tr>
+
+                                <!-- Testimonials -->
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 16px 24px; text-align: left; font-weight: 500;">
+                                        <div style="display: flex; align-items: center; gap: 8px;">
+                                            <i class="fa-regular fa-comment-dots text-muted"></i> Testimonials
+                                        </div>
+                                    </td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><span style="color: #cbd5e1;">—</span></td>
+                                </tr>
+
+                                <!-- Settings -->
+                                <tr>
+                                    <td style="padding: 16px 24px; text-align: left; font-weight: 500;">
+                                        <div style="display: flex; align-items: center; gap: 8px;">
+                                            <i class="fa-solid fa-gear text-muted"></i> Settings
+                                        </div>
+                                    </td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><span style="color: #cbd5e1;">—</span></td>
+                                    <td><input type="checkbox" checked disabled></td>
+                                    <td><span style="color: #cbd5e1;">—</span></td>
+                                    <td><span style="color: #cbd5e1;">—</span></td>
+                                    <td><span style="color: #cbd5e1;">—</span></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Tab Content: Admin Accounts & Assignments -->
+            <section id="tab-admin-assignments" class="tab-content" style="display: none; background: white; border-radius: 8px; border: 1px solid var(--border-color); padding: 24px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                    <div>
+                        <h2 style="margin: 0 0 4px 0; font-size: 1.25rem;">Admin Accounts & Assignments</h2>
+                        <p style="margin: 0; color: var(--text-muted);">Manage users and assign their respective roles.</p>
+                    </div>
+                    <div style="display: flex; gap: 16px; align-items: center;">
+                        <div class="search-bar" style="margin: 0; width: 300px;">
+                            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                            <input type="text" placeholder="Search admins...">
+                        </div>
+                        <a href="create-admin.html" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add Admin</a>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid var(--border-color);">
+                                <th style="padding: 16px 12px; color: var(--text-muted);">Name</th>
+                                <th style="padding: 16px 12px; color: var(--text-muted);">Email</th>
+                                <th style="padding: 16px 12px; color: var(--text-muted);">Role</th>
+                                <th style="padding: 16px 12px; color: var(--text-muted);">Status</th>
+                                <th style="padding: 16px 12px; text-align: right; color: var(--text-muted);">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 16px 12px;">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Avatar" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">
+                                        <span style="font-weight: 500;">Rohan Kumar</span>
+                                    </div>
+                                </td>
+                                <td style="padding: 16px 12px; color: var(--text-muted);">rohan@vyasa.edu.in</td>
+                                <td style="padding: 16px 12px;"><span style="background: #e0e7ff; color: #4338ca; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Super Admin</span></td>
+                                <td style="padding: 16px 12px;"><span class="status-badge" style="background: #dcfce7; color: #166534; font-size: 0.8rem; padding: 4px 8px; border-radius: 12px; font-weight: 600;">Active</span></td>
+                                <td style="padding: 16px 12px; text-align: right;">
+                                    <button class="btn btn-outline btn-sm">Assign Role</button>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 16px 12px;">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary-color); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">A</div>
+                                        <span style="font-weight: 500;">Admin User</span>
+                                    </div>
+                                </td>
+                                <td style="padding: 16px 12px; color: var(--text-muted);">admin@vyasa.edu.in</td>
+                                <td style="padding: 16px 12px;"><span style="background: #f1f5f9; color: #475569; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Administrator</span></td>
+                                <td style="padding: 16px 12px;"><span class="status-badge" style="background: #dcfce7; color: #166534; font-size: 0.8rem; padding: 4px 8px; border-radius: 12px; font-weight: 600;">Active</span></td>
+                                <td style="padding: 16px 12px; text-align: right;">
+                                    <button class="btn btn-outline btn-sm">Assign Role</button>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border-color);">
+                                <td style="padding: 16px 12px;">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div style="width: 32px; height: 32px; border-radius: 50%; background: #0ea5e9; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold;">E</div>
+                                        <span style="font-weight: 500;">Content Editor</span>
+                                    </div>
+                                </td>
+                                <td style="padding: 16px 12px; color: var(--text-muted);">editor@vyasa.edu.in</td>
+                                <td style="padding: 16px 12px;"><span style="background: #f1f5f9; color: #475569; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Editor</span></td>
+                                <td style="padding: 16px 12px;"><span class="status-badge" style="background: #dcfce7; color: #166534; font-size: 0.8rem; padding: 4px 8px; border-radius: 12px; font-weight: 600;">Active</span></td>
+                                <td style="padding: 16px 12px; text-align: right;">
+                                    <button class="btn btn-outline btn-sm">Assign Role</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // Simple tab switching logic for Roles page
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all tabs
+                document.querySelectorAll('.tab-btn').forEach(t => {
+                    t.classList.remove('active');
+                    t.style.borderBottomColor = 'transparent';
+                    t.style.color = 'var(--text-muted)';
+                    t.style.fontWeight = '500';
+                });
+                // Add active class to clicked tab
+                btn.classList.add('active');
+                btn.style.borderBottomColor = 'var(--primary-color)';
+                btn.style.color = 'var(--primary-color)';
+                btn.style.fontWeight = '600';
+
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+                
+                // Show targeted tab content
+                const targetId = btn.getAttribute('data-target');
+                const targetContent = document.getElementById(targetId);
+                
+                if (targetId === 'tab-roles-matrix') {
+                    targetContent.style.display = 'flex';
+                } else {
+                    targetContent.style.display = 'block';
+                }
+            });
+        });
+
+        // Simple role selection logic for UI demonstration
+        document.querySelectorAll('.role-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.role-item').forEach(r => {
+                    r.classList.remove('active');
+                    r.style.borderLeftColor = 'transparent';
+                    r.style.background = 'transparent';
+                });
+                item.classList.add('active');
+                item.style.borderLeftColor = 'var(--primary-color)';
+                item.style.background = '#f8fafc';
+                
+                // Update header dynamically for demo
+                const roleName = item.querySelector('h4').innerText;
+                document.querySelector('.role-header h2').innerText = roleName;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyasa - My Profile</title>
+    <!-- Google Fonts: Inter & Hanken Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <!-- Using a placeholder logo similar to the image -->
+                <div class="logo">
+                   <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li data-page="dashboard.html"><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+
+                
+                    <li class="menu-item-has-children" data-group="content">
+                        <a href="#"><i class="fa-solid fa-layer-group"></i> Content Management</a>
+                        <ul class="sub-menu">
+                            <li data-page="pages.html"><a href="pages.html"><i class="fa-regular fa-file-lines"></i> Pages</a></li>
+                            <li data-page="articles.html"><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                            <li data-page="announcements.html"><a href="announcements.html"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
+                            <li data-page="achievements.html"><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                            <li data-page="testimonials.html"><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                        </ul>
+                    </li>
+
+                  
+                    <li class="menu-item-has-children" data-group="academics">
+                        <a href="#"><i class="fa-solid fa-graduation-cap"></i> Academics</a>
+                        <ul class="sub-menu">
+                            <li data-page="programs.html"><a href="programs.html"><i class="fa-solid fa-book"></i> Programs</a></li>
+                            <li data-page="educators.html"><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                            <li data-page="students.html"><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item-has-children" data-group="comms">
+                        <a href="#"><i class="fa-solid fa-envelope-open-text"></i> Communications & HR</a>
+                        <ul class="sub-menu">
+                            <li data-page="inquiries.html"><a href="inquiries.html"><i class="fa-solid fa-circle-question"></i> Inquiries</a></li>
+                            <li data-page="careers.html"><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
+                        </ul>
+                    </li>
+
+                    <li data-page="media-library.html"><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li class="active" data-page="roles.html"><a href="roles.html"><i class="fa-solid fa-user-shield"></i> Role & Access Management</a></li>
+                    <li data-page="settings.html"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status-block">
+                    <div class="system-status-title"><span class="status-dot green"></span> System Online</div>
+                    <div class="system-status-desc">All systems operational</div>
+                </div>
+                <div class="version">Version 2.4.1 (Stable)</div>
+                <button class="collapse-menu-btn"><i class="fa-regular fa-circle-left"></i> Collapse Menu</button>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <div class="header-top-row">
+                    <div class="breadcrumbs">CMS Console / <span>Dashboard</span></div>
+                    
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" placeholder="Search content, users, articles...">
+
+                    </div>
+
+                    <div class="header-right">
+                        <div class="notification-dropdown-container" style="position: relative; display: flex; align-items: center;">
+                            <button class="notification-btn">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                            </button>
+                            
+                            <div class="notification-dropdown-menu">
+                                <div class="dropdown-header">
+                                    <h4>Notifications</h4>
+                                    <span class="badge">New</span>
+                                </div>
+                                <div class="dropdown-body">
+                                    <a href="#" class="notification-item unread">
+                                        <div class="notification-icon bg-blue-light text-blue"><i class="fa-solid fa-file-invoice"></i></div>
+                                        <div class="notification-content">
+                                            <p class="notification-text">New article submitted for review</p>
+                                            <p class="notification-time">10 minutes ago</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="dropdown-footer">
+                                    <a href="#">View All Notifications</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-profile profile-dropdown-container" style="position: relative; cursor: pointer;">
+                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
+                            <div class="user-info">
+                                <span class="user-name">Admin Director</span>
+                                <span class="user-role">Super Admin</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            
+                            <div class="profile-dropdown-menu">
+                                <a href="profile.html" class="dropdown-item">
+                                    <i class="fa-solid fa-user"></i> My Profile
+                                </a>
+                                <a href="settings.html" class="dropdown-item">
+                                    <i class="fa-solid fa-gear"></i> Settings
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item text-red">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </header>
+                      <!-- Profile Layout -->
+            <div class="editor-layout" id="profile-flow">
+                
+                <!-- Main Form Layout with Sidebar -->
+                <div class="editor-main" style="display: grid; grid-template-columns: 280px 1fr; gap: 24px;">
+                    
+                    <!-- Left Sidebar: Profile Overview -->
+                    <aside style="display: flex; flex-direction: column; gap: 24px; width: 100%;">
+                        <div class="editor-card" style="padding: 24px; text-align: center;">
+                            <div style="position: relative; width: 120px; height: 120px; margin: 0 auto 16px;">
+                                <img src="../Images/Dr. Arindam Ghosh.webp" alt="Avatar" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                                <button style="position: absolute; bottom: 0; right: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--brand-blue); color: white; border: 2px solid white; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                                    <i class="fa-solid fa-camera"></i>
+                                </button>
+                            </div>
+                            <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin: 0 0 4px 0;">Admin Director</h3>
+                            <p style="color: var(--trend-blue); font-size: 0.9rem; font-weight: 500; margin: 0 0 16px 0;">Super Admin</p>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                <button class="btn btn-outline" style="width: 100%;">Change Picture</button>
+                                <button class="btn btn-outline" style="width: 100%; color: #ef4444; border-color: #ef4444;">Remove Picture</button>
+                            </div>
+                        </div>
+
+                        <!-- Add a small stats or activity card here if desired -->
+                        <div class="editor-card" style="padding: 16px;">
+                            <h4 style="font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">Account Details</h4>
+                            <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.85rem;">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span style="color: var(--text-muted);">Joined</span>
+                                    <span style="font-weight: 500; color: var(--primary-dark);">Jan 12, 2026</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span style="color: var(--text-muted);">Last Login</span>
+                                    <span style="font-weight: 500; color: var(--primary-dark);">Today</span>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Right Main Area: Settings Forms -->
+                    <div style="display: flex; flex-direction: column; gap: 24px;">
+                        
+                        <!-- Personal Info Card -->
+                        <div class="editor-card">
+                            <div class="editor-card-header" style="padding: 20px; border-bottom: 1px solid var(--border-color);">
+                                <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin: 0;">Personal Information</h3>
+                            </div>
+                            <div class="editor-card-body" style="padding: 24px;">
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                                    <div class="form-group">
+                                        <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">First Name</label>
+                                        <input type="text" value="Admin" style="padding: 12px; font-size: 0.95rem; width: 100%; border: 1px solid var(--border-color); border-radius: 6px; outline: none;">
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Last Name</label>
+                                        <input type="text" value="Director" style="padding: 12px; font-size: 0.95rem; width: 100%; border: 1px solid var(--border-color); border-radius: 6px; outline: none;">
+                                    </div>
+                                </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                                    <div class="form-group">
+                                        <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Email Address</label>
+                                        <input type="email" value="admin@vyasa.edu.in" style="padding: 12px; font-size: 0.95rem; width: 100%; border: 1px solid var(--border-color); border-radius: 6px; outline: none;">
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Phone Number</label>
+                                        <input type="tel" placeholder="+91 98765 43210" style="padding: 12px; font-size: 0.95rem; width: 100%; border: 1px solid var(--border-color); border-radius: 6px; outline: none;">
+                                    </div>
+                                </div>
+                                <div style="display: flex; justify-content: flex-end; margin-top: 24px;">
+                                    <button class="btn btn-primary" onclick="showToast()">Save Changes</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Change Password Card -->
+                        <div class="editor-card">
+                            <div class="editor-card-header" style="padding: 20px; border-bottom: 1px solid var(--border-color);">
+                                <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin: 0;">Change Password</h3>
+                            </div>
+                            <div class="editor-card-body" style="padding: 24px;">
+                                <div class="form-group" style="margin-bottom: 16px;">
+                                    <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Current Password</label>
+                                    <input type="password" placeholder="••••••••" style="padding: 12px; font-size: 0.95rem; width: 100%; max-width: 400px; border: 1px solid var(--border-color); border-radius: 6px; outline: none;">
+                                </div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 816px;">
+                                    <div class="form-group">
+                                        <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">New Password</label>
+                                        <input type="password" style="padding: 12px; font-size: 0.95rem; width: 100%; border: 1px solid var(--border-color); border-radius: 6px; outline: none;">
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Confirm New Password</label>
+                                        <input type="password" style="padding: 12px; font-size: 0.95rem; width: 100%; border: 1px solid var(--border-color); border-radius: 6px; outline: none;">
+                                    </div>
+                                </div>
+                                <div style="display: flex; justify-content: flex-end; margin-top: 24px;">
+                                    <button class="btn btn-outline" onclick="showToast('Password updated')">Update Password</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Preferences Card -->
+                        <div class="editor-card">
+                            <div class="editor-card-header" style="padding: 20px; border-bottom: 1px solid var(--border-color);">
+                                <h3 style="font-size: 1.1rem; color: var(--primary-dark); margin: 0;">Preferences</h3>
+                            </div>
+                            <div class="editor-card-body" style="padding: 24px;">
+                                
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border-color);">
+                                    <div>
+                                        <h4 style="margin: 0 0 4px 0; color: var(--primary-dark); font-size: 1rem;">Email Notifications</h4>
+                                        <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem;">Receive alerts for system updates and important events.</p>
+                                    </div>
+                                    <label class="toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
+                                        <input type="checkbox" checked style="opacity: 0; width: 0; height: 0;">
+                                        <span class="toggle-slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #cbd5e1; transition: .4s; border-radius: 24px;"></span>
+                                    </label>
+                                </div>
+                                
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0;">
+                                    <div>
+                                        <h4 style="margin: 0 0 4px 0; color: var(--primary-dark); font-size: 1rem;">Two-Factor Authentication</h4>
+                                        <p style="margin: 0; color: var(--text-muted); font-size: 0.85rem;">Enhance account security by requiring a code upon login.</p>
+                                    </div>
+                                    <label class="toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
+                                        <input type="checkbox" style="opacity: 0; width: 0; height: 0;">
+                                        <span class="toggle-slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #cbd5e1; transition: .4s; border-radius: 24px;"></span>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification Overlay -->
+    <div id="toast" style="display: none; position: fixed; bottom: 24px; right: 24px; background: #16a34a; color: white; padding: 12px 24px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); font-weight: 500; z-index: 1000;">
+        <i class="fa-solid fa-check-circle" style="margin-right: 8px;"></i> <span id="toast-msg">Settings saved successfully</span>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+    <script>
+        // Quick toggle slider CSS injection for standard toggles since we don't have style.css readily modified for it here if missing
+        const style = document.createElement('style');
+        style.textContent = `
+            .toggle-switch input:checked + .toggle-slider { background-color: #16a34a; }
+            .toggle-slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+            .toggle-switch input:checked + .toggle-slider:before { transform: translateX(20px); }
+        `;
+        document.head.appendChild(style);
+
+        function showToast(msg = "Settings saved successfully") {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').textContent = msg;
+            toast.style.display = 'block';
+            toast.style.animation = 'fadeIn 0.3s ease';
+            
+            setTimeout(() => {
+                toast.style.animation = 'fadeOut 0.3s ease';
+                setTimeout(() => toast.style.display = 'none', 280);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

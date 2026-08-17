@@ -60,6 +60,7 @@
                     </li>
 
                     <li data-page="media-library.html"><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li data-page="roles.html"><a href="roles.html"><i class="fa-solid fa-user-shield"></i> Role & Access Management</a></li>
                     <li data-page="settings.html"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
                 </ul>
             </nav>
@@ -122,7 +123,7 @@
                             <i class="fa-solid fa-chevron-down chevron-small"></i>
                             
                             <div class="profile-dropdown-menu">
-                                <a href="settings.html" class="dropdown-item">
+                                <a href="profile.html" class="dropdown-item">
                                     <i class="fa-solid fa-user"></i> My Profile
                                 </a>
                                 <a href="settings.html" class="dropdown-item">
@@ -161,15 +162,11 @@
                 <aside class="settings-sidebar">
                     <ul class="settings-sidebar-nav">
                         <li class="active" data-target="settings-general"><a href="#"><i class="fa-solid fa-globe"></i> General Info</a></li>
-                        <li data-target="settings-branding"><a href="#"><i class="fa-solid fa-palette"></i> Branding</a></li>
                         <li data-target="settings-navigation"><a href="#"><i class="fa-solid fa-compass"></i> Navigation</a></li>
-                        <li data-target="settings-contact"><a href="#"><i class="fa-solid fa-address-book"></i> Contact Info</a></li>
-                        <li data-target="settings-social"><a href="#"><i class="fa-solid fa-hashtag"></i> Social Media</a></li>
+                        <!-- Contact Info and Social Media links removed as they are now under General Info -->
                         <li data-target="settings-seo"><a href="#"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO Settings</a></li>
-                        <li data-target="settings-roles"><a href="#"><i class="fa-solid fa-users-gear"></i> Roles & Permissions</a></li>
                         <li data-target="settings-notifications"><a href="#"><i class="fa-regular fa-bell"></i> Notifications</a></li>
                         <li data-target="settings-security"><a href="#"><i class="fa-solid fa-shield-halved"></i> Security</a></li>
-                        <li data-target="settings-media"><a href="#"><i class="fa-solid fa-photo-film"></i> Media Config</a></li>
                         <li data-target="settings-system"><a href="#"><i class="fa-solid fa-server"></i> System Prefs</a></li>
                         <li data-target="settings-audit"><a href="#"><i class="fa-solid fa-clipboard-list"></i> Audit Logs</a></li>
                     </ul>
@@ -211,30 +208,112 @@
                         </div>
                     </div>
 
-                    <!-- Localization Card -->
+                    <!-- Brand Assets Card -->
                     <div class="settings-card">
                         <div class="settings-card-header">
-                            <h3>Localization & Time</h3>
-                            <p>Configure defaults for dates, times, and regional settings.</p>
+                            <h3>Brand Assets</h3>
+                            <p>Upload logos and icons used across the public site.</p>
                         </div>
                         <div class="settings-card-body">
                             <div class="settings-form-row">
                                 <div class="settings-form-group">
-                                    <label>Default Timezone</label>
-                                    <select>
-                                        <option>Asia/Kolkata (IST)</option>
-                                        <option>America/New_York (EST)</option>
-                                        <option>Europe/London (GMT)</option>
-                                    </select>
+                                    <label>Primary Logo</label>
+                                    <div style="border: 2px dashed var(--border-color); padding: 20px; text-align: center; border-radius: 8px; background: #fafafa;">
+                                        <img src="../Images/vyasa logo.webp" style="max-height: 50px; margin-bottom: 10px;">
+                                        <div style="font-size: 0.85rem; color: var(--text-muted);">Recommended: 400x100px PNG</div>
+                                        <button type="button" class="btn btn-outline" style="margin-top: 10px;">Change Image</button>
+                                    </div>
                                 </div>
                                 <div class="settings-form-group">
-                                    <label>Date Format</label>
-                                    <select>
-                                        <option>DD/MM/YYYY (e.g. 15/08/2026)</option>
-                                        <option>MM/DD/YYYY</option>
-                                        <option>YYYY-MM-DD</option>
-                                    </select>
+                                    <label>White/Footer Logo</label>
+                                    <div style="border: 2px dashed var(--border-color); padding: 20px; text-align: center; border-radius: 8px; background: #334155;">
+                                        <img src="../Images/vyasa logo.webp" style="max-height: 50px; margin-bottom: 10px; filter: brightness(0) invert(1);">
+                                        <div style="font-size: 0.85rem; color: #cbd5e1;">Recommended: 400x100px PNG (Transparent)</div>
+                                        <button type="button" class="btn btn-outline" style="margin-top: 10px; border-color: #94a3b8; color: white;">Change Image</button>
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="settings-form-group" style="margin-top: 20px;">
+                                <label>Favicon</label>
+                                <div style="display: flex; gap: 16px; align-items: center;">
+                                    <img src="../Images/vyasa logo.webp" style="width: 32px; height: 32px; object-fit: cover; border-radius: 4px;">
+                                    <button type="button" class="btn btn-outline">Upload Favicon (512x512)</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info Card -->
+                    <div class="settings-card">
+                        <div class="settings-card-header">
+                            <h3>Official Contact Information</h3>
+                            <p>This information will appear in the footer and contact pages.</p>
+                        </div>
+                        <div class="settings-card-body">
+                            <div class="settings-form-row">
+                                <div class="settings-form-group">
+                                    <label>General Inquiry Email</label>
+                                    <input type="email" value="info@vyasa.edu.in">
+                                </div>
+                                <div class="settings-form-group">
+                                    <label>Admissions Email</label>
+                                    <input type="email" value="admissions@vyasa.edu.in">
+                                </div>
+                            </div>
+                            <div class="settings-form-row">
+                                <div class="settings-form-group">
+                                    <label>Primary Phone Number</label>
+                                    <input type="tel" value="+91 80 1234 5678">
+                                </div>
+                                <div class="settings-form-group">
+                                    <label>Secondary Phone Number</label>
+                                    <input type="tel" placeholder="Optional">
+                                </div>
+                            </div>
+                            <div class="settings-form-group">
+                                <label>Campus Physical Address</label>
+                                <textarea rows="3">VYASA International School
+123 Education Boulevard, Knowledge City
+Bengaluru, Karnataka 560001
+India</textarea>
+                            </div>
+                            <div class="settings-form-group">
+                                <label>Google Maps Embed URL</label>
+                                <input type="url" placeholder="https://www.google.com/maps/embed?...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Card -->
+                    <div class="settings-card">
+                        <div class="settings-card-header">
+                            <h3>Social Media Links</h3>
+                            <p>Provide URLs for your institution's official social media profiles.</p>
+                        </div>
+                        <div class="settings-card-body">
+                            <div class="settings-form-row">
+                                <div class="settings-form-group">
+                                    <label><i class="fa-brands fa-facebook" style="color: #1877F2;"></i> Facebook URL</label>
+                                    <input type="url" value="https://facebook.com/vyasa">
+                                </div>
+                                <div class="settings-form-group">
+                                    <label><i class="fa-brands fa-instagram" style="color: #E4405F;"></i> Instagram URL</label>
+                                    <input type="url" value="https://instagram.com/vyasa">
+                                </div>
+                            </div>
+                            <div class="settings-form-row">
+                                <div class="settings-form-group">
+                                    <label><i class="fa-brands fa-linkedin" style="color: #0A66C2;"></i> LinkedIn URL</label>
+                                    <input type="url" value="https://linkedin.com/school/vyasa">
+                                </div>
+                                <div class="settings-form-group">
+                                    <label><i class="fa-brands fa-x-twitter" style="color: #000000;"></i> X / Twitter URL</label>
+                                    <input type="url" placeholder="https://x.com/...">
+                                </div>
+                            </div>
+                            <div class="settings-form-group">
+                                <label><i class="fa-brands fa-youtube" style="color: #FF0000;"></i> YouTube Channel URL</label>
+                                <input type="url" placeholder="https://youtube.com/c/...">
                             </div>
                         </div>
                     </div>
@@ -273,68 +352,6 @@
                     </div>
                     </div> <!-- End General Info Section -->
 
-                    <!-- Branding Section -->
-                    <div id="settings-branding" class="settings-section" style="display: none;">
-                        <div class="settings-card">
-                            <div class="settings-card-header">
-                                <h3>Brand Assets</h3>
-                                <p>Upload logos and icons used across the public site.</p>
-                            </div>
-                            <div class="settings-card-body">
-                                <div class="settings-form-row">
-                                    <div class="settings-form-group">
-                                        <label>Primary Logo</label>
-                                        <div style="border: 2px dashed var(--border-color); padding: 20px; text-align: center; border-radius: 8px; background: #fafafa;">
-                                            <img src="../Images/vyasa logo.webp" style="max-height: 50px; margin-bottom: 10px;">
-                                            <div style="font-size: 0.85rem; color: var(--text-muted);">Recommended: 400x100px PNG</div>
-                                            <button type="button" class="btn btn-outline" style="margin-top: 10px;">Change Image</button>
-                                        </div>
-                                    </div>
-                                    <div class="settings-form-group">
-                                        <label>White/Footer Logo</label>
-                                        <div style="border: 2px dashed var(--border-color); padding: 20px; text-align: center; border-radius: 8px; background: #334155;">
-                                            <img src="../Images/vyasa logo.webp" style="max-height: 50px; margin-bottom: 10px; filter: brightness(0) invert(1);">
-                                            <div style="font-size: 0.85rem; color: #cbd5e1;">Recommended: 400x100px PNG (Transparent)</div>
-                                            <button type="button" class="btn btn-outline" style="margin-top: 10px; border-color: #94a3b8; color: white;">Change Image</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="settings-form-group" style="margin-top: 20px;">
-                                    <label>Favicon</label>
-                                    <div style="display: flex; gap: 16px; align-items: center;">
-                                        <img src="../Images/vyasa logo.webp" style="width: 32px; height: 32px; object-fit: cover; border-radius: 4px;">
-                                        <button type="button" class="btn btn-outline">Upload Favicon (512x512)</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="settings-card">
-                            <div class="settings-card-header">
-                                <h3>Theme Colors</h3>
-                                <p>Set the primary and secondary colors for the public interface.</p>
-                            </div>
-                            <div class="settings-card-body">
-                                <div class="settings-form-row">
-                                    <div class="settings-form-group">
-                                        <label>Primary Brand Color</label>
-                                        <div style="display: flex; gap: 8px; align-items: center;">
-                                            <input type="color" value="#0f172a" style="width: 50px; height: 40px; padding: 2px;">
-                                            <input type="text" value="#0f172a">
-                                        </div>
-                                    </div>
-                                    <div class="settings-form-group">
-                                        <label>Secondary Brand Color</label>
-                                        <div style="display: flex; gap: 8px; align-items: center;">
-                                            <input type="color" value="#fbbf24" style="width: 50px; height: 40px; padding: 2px;">
-                                            <input type="text" value="#fbbf24">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- End Branding Section -->
-
                     <!-- Navigation Section -->
                     <div id="settings-navigation" class="settings-section" style="display: none;">
                         <div class="settings-card">
@@ -343,112 +360,45 @@
                                 <p>Manage the primary links shown at the top of the website.</p>
                             </div>
                             <div class="settings-card-body">
-                                <div style="border: 1px solid var(--border-color); border-radius: 8px; background: #fafafa; padding: 16px;">
-                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: white; border: 1px solid #e2e8f0; margin-bottom: 8px; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                                <div id="nav-item-list" style="border: 1px solid var(--border-color); border-radius: 8px; background: #fafafa; padding: 16px;">
+                                    <div class="nav-item" draggable="true" style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: white; border: 1px solid #e2e8f0; margin-bottom: 8px; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); cursor: grab;">
                                         <div style="display: flex; gap: 12px; align-items: center;">
-                                            <i class="fa-solid fa-grip-vertical" style="color: #cbd5e1; cursor: grab;"></i>
+                                            <i class="fa-solid fa-grip-vertical drag-handle" style="color: #cbd5e1;"></i>
                                             <span style="font-weight: 500;">Home</span>
                                         </div>
-                                        <div><i class="fa-solid fa-pen" style="color: var(--text-muted); cursor: pointer; margin-right: 12px;"></i> <i class="fa-solid fa-trash" style="color: #ef4444; cursor: pointer;"></i></div>
-                                    </div>
-                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: white; border: 1px solid #e2e8f0; margin-bottom: 8px; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
-                                        <div style="display: flex; gap: 12px; align-items: center;">
-                                            <i class="fa-solid fa-grip-vertical" style="color: #cbd5e1; cursor: grab;"></i>
-                                            <span style="font-weight: 500;">About Us</span>
+                                        <div style="display: flex; gap: 16px; align-items: center;">
+                                            <button class="visibility-btn" style="border: none; background: none; cursor: pointer; color: #15803d; font-size: 0.9rem; font-weight: 500;" onclick="toggleVisibility(this)">● Visible</button>
+                                            <i class="fa-solid fa-pen edit-menu-btn" style="color: var(--text-muted); cursor: pointer;" onclick="openMenuModal('Home')"></i> 
+                                            <i class="fa-solid fa-trash delete-menu-btn" style="color: #ef4444; cursor: pointer;" onclick="openDeleteModal('Home')"></i>
                                         </div>
-                                        <div><i class="fa-solid fa-pen" style="color: var(--text-muted); cursor: pointer; margin-right: 12px;"></i> <i class="fa-solid fa-trash" style="color: #ef4444; cursor: pointer;"></i></div>
                                     </div>
-                                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: white; border: 1px solid #e2e8f0; margin-bottom: 8px; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                                    <div class="nav-item" draggable="true" style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: white; border: 1px solid #e2e8f0; margin-bottom: 8px; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); cursor: grab;">
                                         <div style="display: flex; gap: 12px; align-items: center;">
-                                            <i class="fa-solid fa-grip-vertical" style="color: #cbd5e1; cursor: grab;"></i>
+                                            <i class="fa-solid fa-grip-vertical drag-handle" style="color: #cbd5e1;"></i>
+                                            <span style="font-weight: 500;">About Us <span style="font-size:0.75rem; color:#64748b; background:#f1f5f9; padding:2px 6px; border-radius:4px; margin-left:8px;">Mega Menu</span></span>
+                                        </div>
+                                        <div style="display: flex; gap: 16px; align-items: center;">
+                                            <button class="visibility-btn" style="border: none; background: none; cursor: pointer; color: #15803d; font-size: 0.9rem; font-weight: 500;" onclick="toggleVisibility(this)">● Visible</button>
+                                            <i class="fa-solid fa-pen edit-menu-btn" style="color: var(--text-muted); cursor: pointer;" onclick="openMenuModal('About Us', true)"></i> 
+                                            <i class="fa-solid fa-trash delete-menu-btn" style="color: #ef4444; cursor: pointer;" onclick="openDeleteModal('About Us')"></i>
+                                        </div>
+                                    </div>
+                                    <div class="nav-item" draggable="true" style="display: flex; justify-content: space-between; align-items: center; padding: 12px; background: white; border: 1px solid #e2e8f0; margin-bottom: 8px; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); cursor: grab;">
+                                        <div style="display: flex; gap: 12px; align-items: center;">
+                                            <i class="fa-solid fa-grip-vertical drag-handle" style="color: #cbd5e1;"></i>
                                             <span style="font-weight: 500;">Admissions</span>
                                         </div>
-                                        <div><i class="fa-solid fa-pen" style="color: var(--text-muted); cursor: pointer; margin-right: 12px;"></i> <i class="fa-solid fa-trash" style="color: #ef4444; cursor: pointer;"></i></div>
+                                        <div style="display: flex; gap: 16px; align-items: center;">
+                                            <button class="visibility-btn" style="border: none; background: none; cursor: pointer; color: #64748b; font-size: 0.9rem; font-weight: 500;" onclick="toggleVisibility(this)">○ Hidden</button>
+                                            <i class="fa-solid fa-pen edit-menu-btn" style="color: var(--text-muted); cursor: pointer;" onclick="openMenuModal('Admissions')"></i> 
+                                            <i class="fa-solid fa-trash delete-menu-btn" style="color: #ef4444; cursor: pointer;" onclick="openDeleteModal('Admissions')"></i>
+                                        </div>
                                     </div>
-                                    <button class="btn btn-outline" style="width: 100%; border-style: dashed; margin-top: 8px;"><i class="fa-solid fa-plus"></i> Add Menu Item</button>
+                                    <button class="btn btn-outline" style="width: 100%; border-style: dashed; margin-top: 8px;" onclick="openMenuModal()"><i class="fa-solid fa-plus"></i> Add Menu Item</button>
                                 </div>
                             </div>
                         </div>
                     </div> <!-- End Navigation Section -->
-
-                    <!-- Contact Info Section -->
-                    <div id="settings-contact" class="settings-section" style="display: none;">
-                        <div class="settings-card">
-                            <div class="settings-card-header">
-                                <h3>Official Contact Information</h3>
-                                <p>This information will appear in the footer and contact pages.</p>
-                            </div>
-                            <div class="settings-card-body">
-                                <div class="settings-form-row">
-                                    <div class="settings-form-group">
-                                        <label>General Inquiry Email</label>
-                                        <input type="email" value="info@vyasa.edu.in">
-                                    </div>
-                                    <div class="settings-form-group">
-                                        <label>Admissions Email</label>
-                                        <input type="email" value="admissions@vyasa.edu.in">
-                                    </div>
-                                </div>
-                                <div class="settings-form-row">
-                                    <div class="settings-form-group">
-                                        <label>Primary Phone Number</label>
-                                        <input type="tel" value="+91 80 1234 5678">
-                                    </div>
-                                    <div class="settings-form-group">
-                                        <label>Secondary Phone Number</label>
-                                        <input type="tel" placeholder="Optional">
-                                    </div>
-                                </div>
-                                <div class="settings-form-group">
-                                    <label>Campus Physical Address</label>
-                                    <textarea rows="3">VYASA International School
-123 Education Boulevard, Knowledge City
-Bengaluru, Karnataka 560001
-India</textarea>
-                                </div>
-                                <div class="settings-form-group">
-                                    <label>Google Maps Embed URL</label>
-                                    <input type="url" placeholder="https://www.google.com/maps/embed?...">
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- End Contact Info Section -->
-
-                    <!-- Social Media Section -->
-                    <div id="settings-social" class="settings-section" style="display: none;">
-                        <div class="settings-card">
-                            <div class="settings-card-header">
-                                <h3>Social Media Links</h3>
-                                <p>Provide URLs for your institution's official social media profiles.</p>
-                            </div>
-                            <div class="settings-card-body">
-                                <div class="settings-form-row">
-                                    <div class="settings-form-group">
-                                        <label><i class="fa-brands fa-facebook" style="color: #1877F2;"></i> Facebook URL</label>
-                                        <input type="url" value="https://facebook.com/vyasa">
-                                    </div>
-                                    <div class="settings-form-group">
-                                        <label><i class="fa-brands fa-instagram" style="color: #E4405F;"></i> Instagram URL</label>
-                                        <input type="url" value="https://instagram.com/vyasa">
-                                    </div>
-                                </div>
-                                <div class="settings-form-row">
-                                    <div class="settings-form-group">
-                                        <label><i class="fa-brands fa-linkedin" style="color: #0A66C2;"></i> LinkedIn URL</label>
-                                        <input type="url" value="https://linkedin.com/school/vyasa">
-                                    </div>
-                                    <div class="settings-form-group">
-                                        <label><i class="fa-brands fa-x-twitter" style="color: #000000;"></i> X / Twitter URL</label>
-                                        <input type="url" placeholder="https://x.com/...">
-                                    </div>
-                                </div>
-                                <div class="settings-form-group">
-                                    <label><i class="fa-brands fa-youtube" style="color: #FF0000;"></i> YouTube Channel URL</label>
-                                    <input type="url" placeholder="https://youtube.com/c/...">
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- End Social Media Section -->
 
                     <!-- SEO Settings Section -->
                     <div id="settings-seo" class="settings-section" style="display: none;">
@@ -475,66 +425,7 @@ India</textarea>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="settings-card">
-                            <div class="settings-card-header">
-                                <h3>Tracking Codes</h3>
-                            </div>
-                            <div class="settings-card-body">
-                                <div class="settings-form-group">
-                                    <label>Google Analytics Measurement ID</label>
-                                    <input type="text" placeholder="G-XXXXXXXXXX" value="G-VYS1234567">
-                                </div>
-                                <div class="settings-form-group">
-                                    <label>Google Search Console Verification Code</label>
-                                    <input type="text" placeholder="<meta name='google-site-verification' ...">
-                                </div>
-                            </div>
-                        </div>
                     </div> <!-- End SEO Settings Section -->
-
-                    <!-- Roles & Permissions Section -->
-                    <div id="settings-roles" class="settings-section" style="display: none;">
-                        <div class="settings-card">
-                            <div class="settings-card-header">
-                                <h3>User Roles</h3>
-                                <p>Manage what different user groups can access in the CMS.</p>
-                            </div>
-                            <div class="settings-card-body">
-                                <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px;">
-                                    <thead>
-                                        <tr style="border-bottom: 2px solid var(--border-color); text-align: left;">
-                                            <th style="padding: 12px 8px; color: var(--text-muted);">Role Name</th>
-                                            <th style="padding: 12px 8px; color: var(--text-muted);">Users</th>
-                                            <th style="padding: 12px 8px; color: var(--text-muted);">Access Level</th>
-                                            <th style="padding: 12px 8px;"></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr style="border-bottom: 1px solid var(--border-color);">
-                                            <td style="padding: 16px 8px; font-weight: 500;">Super Admin</td>
-                                            <td style="padding: 16px 8px; color: var(--text-muted);">2</td>
-                                            <td style="padding: 16px 8px;"><span style="background: #e0e7ff; color: #4338ca; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Full Access</span></td>
-                                            <td style="padding: 16px 8px; text-align: right;"><button class="btn btn-outline" disabled>System Role</button></td>
-                                        </tr>
-                                        <tr style="border-bottom: 1px solid var(--border-color);">
-                                            <td style="padding: 16px 8px; font-weight: 500;">Content Editor</td>
-                                            <td style="padding: 16px 8px; color: var(--text-muted);">5</td>
-                                            <td style="padding: 16px 8px;"><span style="background: #dcfce7; color: #15803d; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Publishing</span></td>
-                                            <td style="padding: 16px 8px; text-align: right;"><button class="btn btn-outline">Edit Perms</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="padding: 16px 8px; font-weight: 500;">Contributor</td>
-                                            <td style="padding: 16px 8px; color: var(--text-muted);">12</td>
-                                            <td style="padding: 16px 8px;"><span style="background: #f3f4f6; color: #4b5563; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Draft Only</span></td>
-                                            <td style="padding: 16px 8px; text-align: right;"><button class="btn btn-outline">Edit Perms</button></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Create New Role</button>
-                            </div>
-                        </div>
-                    </div> <!-- End Roles Section -->
 
                     <!-- Notifications Section -->
                     <div id="settings-notifications" class="settings-section" style="display: none;">
@@ -635,48 +526,13 @@ India</textarea>
                         </div>
                     </div> <!-- End Security Section -->
 
-                    <!-- Media Config Section -->
-                    <div id="settings-media" class="settings-section" style="display: none;">
-                        <div class="settings-card">
-                            <div class="settings-card-header">
-                                <h3>Upload Restrictions</h3>
-                                <p>Control limits and formats for the Media Library.</p>
-                            </div>
-                            <div class="settings-card-body">
-                                <div class="settings-form-row">
-                                    <div class="settings-form-group">
-                                        <label>Maximum Upload Size (MB)</label>
-                                        <input type="number" value="10">
-                                    </div>
-                                    <div class="settings-form-group">
-                                        <label>Allowed Image Formats</label>
-                                        <input type="text" value=".jpg, .png, .webp, .svg">
-                                    </div>
-                                </div>
-                                <div class="settings-form-group">
-                                    <label>Allowed Document Formats</label>
-                                    <input type="text" value=".pdf, .doc, .docx, .xls, .xlsx">
-                                </div>
-                                <div class="toggle-switch-wrapper" style="margin-top: 24px;">
-                                    <div class="toggle-switch-info">
-                                        <h4>Auto-Compress Images</h4>
-                                        <p>Automatically convert uploaded JPEGs and PNGs to WebP for faster loading.</p>
-                                    </div>
-                                    <label class="toggle-switch">
-                                        <input type="checkbox" checked>
-                                        <span class="toggle-slider"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- End Media Config Section -->
-
                     <!-- System Prefs Section -->
                     <div id="settings-system" class="settings-section" style="display: none;">
                         <div class="settings-card">
                             <div class="settings-card-header">
                                 <h3>Cache & Performance</h3>
                             </div>
+
                             <div class="settings-card-body">
                                 <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px; background: #fafafa; border: 1px solid var(--border-color); border-radius: 8px;">
                                     <div>
@@ -772,8 +628,200 @@ India</textarea>
         </main>
     </div>
 
+    <!-- Modals -->
+    <div id="menu-modal" class="custom-modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,15,45,0.4); z-index:999; justify-content:center; align-items:center;">
+        <div class="custom-modal-content" style="background:white; border-radius:12px; width:500px; max-width:90%; padding:24px; box-shadow:0 10px 25px rgba(0,0,0,0.1);">
+            <h3 id="menu-modal-title" style="margin-bottom:20px; font-size:1.25rem;">Add Menu Item</h3>
+            
+            <div class="settings-form-group">
+                <label>Menu Label *</label>
+                <input type="text" id="menu-label-input" placeholder="Enter menu name">
+            </div>
+
+            <div class="settings-form-group">
+                <label>Menu Type *</label>
+                <select id="menu-type-select" onchange="toggleMenuTypeFields()">
+                    <option value="standard">Standard Link</option>
+                    <option value="mega">Mega Menu</option>
+                    <option value="external">External Link</option>
+                </select>
+            </div>
+
+            <div id="standard-link-fields" class="menu-type-fields">
+                <div class="settings-form-group">
+                    <label>Page</label>
+                    <select>
+                        <option>Home</option>
+                        <option>About Us</option>
+                        <option>Admissions</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="external-link-fields" class="menu-type-fields" style="display:none;">
+                <div class="settings-form-group">
+                    <label>URL</label>
+                    <input type="url" placeholder="https://example.com">
+                </div>
+            </div>
+
+            <div class="settings-form-row">
+                <div class="settings-form-group">
+                    <label>Open In</label>
+                    <select>
+                        <option>Same Window</option>
+                        <option>New Tab</option>
+                    </select>
+                </div>
+                <div class="settings-form-group">
+                    <label>Visibility</label>
+                    <select>
+                        <option>● Visible</option>
+                        <option>○ Hidden</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="mega-menu-fields" class="menu-type-fields" style="display:none; border-top:1px solid #e2e8f0; margin-top:16px; padding-top:16px;">
+                <h4 style="margin-bottom:12px;">Mega Menu Configuration</h4>
+                <div class="settings-form-group">
+                    <label>Menu URL</label>
+                    <input type="text" value="/about-us">
+                </div>
+                <label style="display:block; margin-bottom:8px; font-weight:500; font-size:0.9rem; color:var(--text-dark);">Mega Menu Items</label>
+                <div style="border: 1px solid var(--border-color); border-radius: 8px; background: #fafafa; padding: 12px;">
+                    <div style="display:flex; justify-content:space-between; padding:8px; background:white; border:1px solid #e2e8f0; margin-bottom:4px; border-radius:4px;">
+                        <div><i class="fa-solid fa-grip-vertical" style="color:#cbd5e1; margin-right:8px; cursor:grab;"></i> About School</div>
+                        <div><i class="fa-solid fa-pen" style="color:var(--text-muted); cursor:pointer; margin-right:8px;"></i><i class="fa-solid fa-trash" style="color:#ef4444; cursor:pointer;"></i></div>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; padding:8px; background:white; border:1px solid #e2e8f0; margin-bottom:4px; border-radius:4px;">
+                        <div><i class="fa-solid fa-grip-vertical" style="color:#cbd5e1; margin-right:8px; cursor:grab;"></i> Principal's Message</div>
+                        <div><i class="fa-solid fa-pen" style="color:var(--text-muted); cursor:pointer; margin-right:8px;"></i><i class="fa-solid fa-trash" style="color:#ef4444; cursor:pointer;"></i></div>
+                    </div>
+                    <button class="btn btn-outline" style="width:100%; border-style:dashed; margin-top:8px; padding:6px;"><i class="fa-solid fa-plus"></i> Add Sub Menu Item</button>
+                </div>
+            </div>
+
+            <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:24px;">
+                <button class="btn btn-outline" onclick="closeMenuModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="closeMenuModal()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="delete-modal" class="custom-modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,15,45,0.4); z-index:999; justify-content:center; align-items:center;">
+        <div class="custom-modal-content" style="background:white; border-radius:12px; width:400px; padding:24px; box-shadow:0 10px 25px rgba(0,0,0,0.1); text-align:center;">
+            <div style="width:48px; height:48px; border-radius:50%; background:#fee2e2; color:#ef4444; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin:0 auto 16px;">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h3 id="delete-modal-title" style="margin-bottom:8px;">Delete Menu Item?</h3>
+            <p style="color:var(--text-muted); margin-bottom:24px;">This menu item will be removed from the header navigation.</p>
+            <div style="display:flex; justify-content:center; gap:12px;">
+                <button class="btn btn-outline" onclick="closeDeleteModal()">Cancel</button>
+                <button class="btn btn-primary" style="background:#ef4444; border-color:#ef4444;" onclick="closeDeleteModal()">Delete</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Custom Script -->
     <script src="script.js"></script>
+    <script>
+        // Modal Logic
+        function openMenuModal(itemName = null, isMega = false) {
+            document.getElementById('menu-modal').style.display = 'flex';
+            const title = document.getElementById('menu-modal-title');
+            const input = document.getElementById('menu-label-input');
+            const select = document.getElementById('menu-type-select');
+            
+            if(itemName) {
+                title.textContent = 'Edit Menu Item';
+                input.value = itemName;
+                select.value = isMega ? 'mega' : 'standard';
+            } else {
+                title.textContent = 'Add Menu Item';
+                input.value = '';
+                select.value = 'standard';
+            }
+            toggleMenuTypeFields();
+        }
+
+        function closeMenuModal() {
+            document.getElementById('menu-modal').style.display = 'none';
+        }
+
+        function toggleMenuTypeFields() {
+            const val = document.getElementById('menu-type-select').value;
+            document.getElementById('standard-link-fields').style.display = val === 'standard' ? 'block' : 'none';
+            document.getElementById('external-link-fields').style.display = val === 'external' ? 'block' : 'none';
+            document.getElementById('mega-menu-fields').style.display = val === 'mega' ? 'block' : 'none';
+        }
+
+        function openDeleteModal(itemName) {
+            document.getElementById('delete-modal').style.display = 'flex';
+            document.getElementById('delete-modal-title').textContent = `Delete "${itemName}"?`;
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('delete-modal').style.display = 'none';
+        }
+
+        // Visibility Toggle Logic
+        function toggleVisibility(btn) {
+            if(btn.textContent.includes('Visible')) {
+                btn.innerHTML = '○ Hidden';
+                btn.style.color = '#64748b';
+            } else {
+                btn.innerHTML = '● Visible';
+                btn.style.color = '#15803d';
+            }
+        }
+
+        // Drag and Drop Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const list = document.getElementById('nav-item-list');
+            if(!list) return;
+
+            let draggedItem = null;
+
+            list.addEventListener('dragstart', (e) => {
+                if(!e.target.classList.contains('nav-item')) return;
+                draggedItem = e.target;
+                setTimeout(() => { e.target.style.opacity = '0.5'; }, 0);
+            });
+
+            list.addEventListener('dragend', (e) => {
+                if(!e.target.classList.contains('nav-item')) return;
+                setTimeout(() => { e.target.style.opacity = '1'; draggedItem = null; }, 0);
+            });
+
+            list.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                const afterElement = getDragAfterElement(list, e.clientY);
+                const draggable = document.querySelector('.nav-item[style*="opacity: 0.5"]');
+                if (draggable) {
+                    if (afterElement == null) {
+                        // Insert before the Add Button
+                        list.insertBefore(draggable, list.lastElementChild);
+                    } else {
+                        list.insertBefore(draggable, afterElement);
+                    }
+                }
+            });
+
+            function getDragAfterElement(container, y) {
+                const draggableElements = [...container.querySelectorAll('.nav-item:not([style*="opacity: 0.5"])')];
+                return draggableElements.reduce((closest, child) => {
+                    const box = child.getBoundingClientRect();
+                    const offset = y - box.top - box.height / 2;
+                    if (offset < 0 && offset > closest.offset) {
+                        return { offset: offset, element: child }
+                    } else {
+                        return closest;
+                    }
+                }, { offset: Number.NEGATIVE_INFINITY }).element;
+            }
+        });
+    </script>
 </body>
 </html>
 
