@@ -19,27 +19,48 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
+                <!-- Using a placeholder logo similar to the image -->
                 <div class="logo">
                    <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
                 </div>
             </div>
-            <div class="sidebar-portal-label">CMS PORTAL</div>
 
             <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
-                    <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
-                    <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
-                    <li><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
-                    <li><a href="announcements.html"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
-                    <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
-                    <li><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
-                    <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
-                    <li class="active"><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
-                    <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
-                    <li><a href="inquiries.html"><i class="fa-solid fa-envelope-open-text"></i> Inquiries</a></li>
-                    <li><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
-                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                    <li class="active" data-page="dashboard.html"><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+
+                
+                    <li class="menu-item-has-children" data-group="content">
+                        <a href="#"><i class="fa-solid fa-layer-group"></i> Content Management</a>
+                        <ul class="sub-menu">
+                            <li data-page="pages.html"><a href="pages.html"><i class="fa-regular fa-file-lines"></i> Pages</a></li>
+                            <li data-page="articles.html"><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                            <li data-page="announcements.html"><a href="announcements.html"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
+                            <li data-page="achievements.html"><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                            <li data-page="testimonials.html"><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                        </ul>
+                    </li>
+
+                  
+                    <li class="menu-item-has-children" data-group="academics">
+                        <a href="#"><i class="fa-solid fa-graduation-cap"></i> Academics</a>
+                        <ul class="sub-menu">
+                            <li data-page="programs.html"><a href="programs.html"><i class="fa-solid fa-book"></i> Programs</a></li>
+                            <li data-page="educators.html"><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                            <li data-page="students.html"><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item-has-children" data-group="comms">
+                        <a href="#"><i class="fa-solid fa-envelope-open-text"></i> Communications & HR</a>
+                        <ul class="sub-menu">
+                            <li data-page="inquiries.html"><a href="inquiries.html"><i class="fa-solid fa-circle-question"></i> Inquiries</a></li>
+                            <li data-page="careers.html"><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
+                        </ul>
+                    </li>
+
+                    <li data-page="media-library.html"><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li data-page="settings.html"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
                 </ul>
             </nav>
 
@@ -114,159 +135,264 @@
                     <div class="header-left">
                         <div class="title-with-icon">
                             <h1>Add Program</h1>
-                            <i class="fa-solid fa-pen-nib title-icon"></i>
+                            <i class="fa-solid fa-book-open title-icon"></i>
                         </div>
                         <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">Draft and publish new content for the Vyasa website.</p>
                     </div>
                     
                     <div style="display: flex; gap: 12px;">
-                        <a href="programs.html" class="btn btn-outline">Cancel</a>
+                        <a href="programs.html" class="btn btn-outline" style="background: white;"><i class="fa-solid fa-xmark"></i> Cancel</a>
+                        <button class="btn btn-outline" style="background: white; border-color: var(--border-color); color: var(--text-color);"><i class="fa-regular fa-floppy-disk"></i> Save Draft</button>
                         <button class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Publish Program</button>
                     </div>
                 </div>
             </header>
 
-            <!-- Editor Layout -->
-            <form class="editor-layout" action="view-article.html">
-                
+            <form class="editor-layout" action="programs.html" style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items: start;">
                 <!-- Main Editor Area -->
-                <div class="editor-main">
-                    <div class="editor-field">
-                        <input type="text" class="editor-title-input" placeholder="Add title..." autofocus>
-                    </div>
-                    <div class="editor-field slug-field">
-                        <span class="slug-prefix">https://www.vyasa.edu.in/articles/</span>
-                        <input type="text" class="slug-input" placeholder="program-slug">
+                <div class="editor-main" style="display: flex; flex-direction: column; gap: 24px;">
+                    
+                    <!-- Card 1: Program Information -->
+                    <div class="editor-card" style="background: white; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                        <div class="editor-card-header" style="padding: 16px 24px; border-bottom: 1px solid var(--border-color);">
+                            <h2 style="color: var(--primary-blue); font-size: 1.1rem; margin: 0;">1. Program Information</h2>
+                        </div>
+                        <div class="editor-card-body" style="padding: 24px; display: flex; flex-direction: column; gap: 20px;">
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div class="form-group">
+                                    <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Program Title <span style="color: var(--accent-red);">*</span></label>
+                                    <input type="text" value="Middle School" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; outline: none; background: white;">
+                                </div>
+                                <div class="form-group">
+                                    <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Short Description <span style="color: var(--accent-red);">*</span></label>
+                                    <textarea rows="2" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; outline: none; background: white; resize: vertical;">A transformative stage that builds curiosity, confidence, and skills through academic excellence and personal growth.</textarea>
+                                    <div style="display: flex; justify-content: flex-end; margin-top: 4px;">
+                                        <small style="color: var(--text-muted); font-size: 0.75rem;">94 / 160</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div class="form-group">
+                                    <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Program Type <span style="color: var(--accent-red);">*</span></label>
+                                    <div style="position: relative;">
+                                        <i class="fa-solid fa-graduation-cap" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                                        <select style="width: 100%; padding: 12px 12px 12px 36px; border: 1px solid var(--border-color); border-radius: 6px; outline: none; background: white; appearance: auto;">
+                                            <option selected>Academic Program</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Academic Level <span style="color: var(--accent-red);">*</span></label>
+                                    <div style="position: relative;">
+                                        <i class="fa-solid fa-school" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                                        <select style="width: 100%; padding: 12px 12px 12px 36px; border: 1px solid var(--border-color); border-radius: 6px; outline: none; background: white; appearance: auto;">
+                                            <option selected>Middle School</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Program Slug <span style="color: var(--accent-red);">*</span></label>
+                                <div style="display: flex; align-items: center; border: 1px solid var(--border-color); border-radius: 6px; background: #f8fafc; overflow: hidden;">
+                                    <span style="padding: 12px 16px; color: var(--text-muted); border-right: 1px solid var(--border-color); font-size: 0.9rem;">https://www.vyasa.edu.in/programs/</span>
+                                    <input type="text" value="middle-school" style="padding: 12px; font-size: 0.9rem; flex: 1; border: none; background: white; outline: none;">
+                                    <span style="padding: 12px 16px; color: #10B981; background: white; font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; gap: 4px;"><i class="fa-solid fa-check"></i> Available</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-top: 4px;">
+                                    <small style="color: var(--text-muted); font-size: 0.75rem;">This will be the URL of your program page.</small>
+                                    <small style="color: var(--text-muted); font-size: 0.75rem;">12 / 100</small>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Rich Text Editor Mockup -->
-                    <div class="rich-text-editor">
-                        <div class="editor-toolbar">
-                            <button type="button"><i class="fa-solid fa-bold"></i></button>
-                            <button type="button"><i class="fa-solid fa-italic"></i></button>
-                            <button type="button"><i class="fa-solid fa-underline"></i></button>
-                            <button type="button"><i class="fa-solid fa-strikethrough"></i></button>
-                            <div class="toolbar-divider"></div>
-                            <button type="button"><i class="fa-solid fa-heading"></i></button>
-                            <button type="button"><i class="fa-solid fa-paragraph"></i></button>
-                            <div class="toolbar-divider"></div>
-                            <button type="button"><i class="fa-solid fa-list-ul"></i></button>
-                            <button type="button"><i class="fa-solid fa-list-ol"></i></button>
-                            <button type="button"><i class="fa-solid fa-quote-left"></i></button>
-                            <div class="toolbar-divider"></div>
-                            <button type="button"><i class="fa-solid fa-link"></i></button>
-                            <button type="button"><i class="fa-regular fa-image"></i></button>
-                            <button type="button"><i class="fa-solid fa-code"></i></button>
+                    <!-- Card 2: Program Content -->
+                    <div class="editor-card" style="background: white; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                        <div class="editor-card-header" style="padding: 16px 24px; border-bottom: 1px solid var(--border-color);">
+                            <h2 style="color: var(--primary-blue); font-size: 1.1rem; margin: 0;">2. Program Content</h2>
                         </div>
-                        <textarea class="editor-textarea" placeholder="Write program details here..."></textarea>
+                        <div class="editor-card-body" style="padding: 24px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px;">
+                            
+                            <!-- Left Column of Content -->
+                            <div style="display: flex; flex-direction: column; gap: 24px;">
+                                <div class="form-group">
+                                    <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Overview / Description <span style="color: var(--accent-red);">*</span></label>
+                                    <div class="rich-text-editor" style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden;">
+                                        <div class="editor-toolbar" style="padding: 8px; background: white; border-bottom: 1px solid var(--border-color); display: flex; gap: 4px; align-items: center; flex-wrap: wrap;">
+                                            <select style="padding: 4px 8px; border: 1px solid var(--border-color); border-radius: 4px; background: white; outline: none; appearance: auto;"><option>Paragraph</option></select>
+                                            <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-bold"></i></button>
+                                            <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-italic"></i></button>
+                                            <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-underline"></i></button>
+                                            <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-list-ul"></i></button>
+                                            <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-list-ol"></i></button>
+                                            <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-list-check"></i></button>
+                                            <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-quote-left"></i></button>
+                                            <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-link"></i></button>
+                                            <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-regular fa-image"></i></button>
+                                            <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-brands fa-youtube"></i></button>
+                                            <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-table"></i></button>
+                                            <div style="flex: 1;"></div>
+                                            <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-ellipsis"></i></button>
+                                        </div>
+                                        <textarea style="width: 100%; border: none; padding: 16px; min-height: 180px; font-family: inherit; font-size: 0.9rem; resize: vertical; outline: none; line-height: 1.6;">Middle School at VYASA is where students explore new ideas, build critical thinking skills, and develop leadership qualities. Our holistic approach combines academic rigor with extracurricular opportunities to nurture well-rounded individuals ready for future challenges.
+
+We emphasize experiential learning, project-based activities, and personalized attention to help every student discover their strengths and passions.</textarea>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-top: 4px;">
+                                        <label style="font-weight: 600; color: var(--primary-dark); font-size: 0.9rem;">Key Highlights</label>
+                                        <small style="color: var(--text-muted); font-size: 0.75rem;">253 / 2000</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="highlights-builder" style="display: flex; flex-direction: column; gap: 8px;">
+                                    <div style="display: flex; align-items: center; gap: 12px; border: 1px solid var(--border-color); border-radius: 6px; padding: 8px 12px; background: white;">
+                                        <i class="fa-solid fa-grip-vertical" style="color: var(--text-muted); cursor: grab;"></i>
+                                        <i class="fa-regular fa-circle-check" style="color: #10B981;"></i>
+                                        <input type="text" value="Advanced Science & Mathematics" style="flex: 1; border: none; outline: none; font-size: 0.9rem;">
+                                        <i class="fa-solid fa-xmark" style="color: var(--text-muted); cursor: pointer;"></i>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px; border: 1px solid var(--border-color); border-radius: 6px; padding: 8px 12px; background: white;">
+                                        <i class="fa-solid fa-grip-vertical" style="color: var(--text-muted); cursor: grab;"></i>
+                                        <i class="fa-regular fa-circle-check" style="color: #10B981;"></i>
+                                        <input type="text" value="Research & Project-Based Learning" style="flex: 1; border: none; outline: none; font-size: 0.9rem;">
+                                        <i class="fa-solid fa-xmark" style="color: var(--text-muted); cursor: pointer;"></i>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px; border: 1px solid var(--border-color); border-radius: 6px; padding: 8px 12px; background: white;">
+                                        <i class="fa-solid fa-grip-vertical" style="color: var(--text-muted); cursor: grab;"></i>
+                                        <i class="fa-regular fa-circle-check" style="color: #10B981;"></i>
+                                        <input type="text" value="Leadership Development" style="flex: 1; border: none; outline: none; font-size: 0.9rem;">
+                                        <i class="fa-solid fa-xmark" style="color: var(--text-muted); cursor: pointer;"></i>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 12px; border: 1px solid var(--border-color); border-radius: 6px; padding: 8px 12px; background: white;">
+                                        <i class="fa-solid fa-grip-vertical" style="color: var(--text-muted); cursor: grab;"></i>
+                                        <i class="fa-regular fa-circle-check" style="color: #10B981;"></i>
+                                        <input type="text" value="Inter-School Competitions" style="flex: 1; border: none; outline: none; font-size: 0.9rem;">
+                                        <i class="fa-solid fa-xmark" style="color: var(--text-muted); cursor: pointer;"></i>
+                                    </div>
+                                    <button class="btn btn-outline" style="align-self: flex-start; padding: 6px 12px; font-size: 0.85rem; background: #f8fbff; border-color: var(--primary-blue); color: var(--primary-blue); margin-top: 4px;">
+                                        <i class="fa-solid fa-plus"></i> Add Highlight
+                                    </button>
+                                </div>
+                                
+                                <div class="form-group" style="margin-top: 8px;">
+                                    <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Call To Action <span style="color: var(--text-muted); font-weight: 400;">(Optional)</span></label>
+                                    <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 16px;">
+                                        <div>
+                                            <label style="font-size: 0.8rem; color: var(--primary-dark); margin-bottom: 6px; display: block;">Button Text</label>
+                                            <input type="text" value="Explore Program" style="width: 100%; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 6px; outline: none; background: white;">
+                                        </div>
+                                        <div>
+                                            <label style="font-size: 0.8rem; color: var(--primary-dark); margin-bottom: 6px; display: block;">Button URL</label>
+                                            <div style="position: relative;">
+                                                <input type="text" value="/programs/middle-school" style="width: 100%; padding: 10px 36px 10px 12px; border: 1px solid var(--border-color); border-radius: 6px; outline: none; background: white;">
+                                                <i class="fa-solid fa-link" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Column of Content (Image) -->
+                            <div style="display: flex; flex-direction: column; gap: 12px;">
+                                <label style="font-weight: 600; color: var(--primary-dark); display: block;">Program Image <span style="color: var(--accent-red);">*</span></label>
+                                <div style="border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color);">
+                                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=800&h=450" alt="Program Image" style="width: 100%; height: auto; display: block; object-fit: cover;">
+                                </div>
+                                <div class="image-upload-zone" style="border: 1px dashed var(--border-color); border-radius: 8px; padding: 24px 20px; text-align: center; background: #f8fafc; cursor: pointer;">
+                                    <i class="fa-solid fa-cloud-arrow-up" style="color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 8px;"></i>
+                                    <p style="font-size: 0.85rem; color: var(--primary-dark); margin-bottom: 6px;">Click or drag image here</p>
+                                    <span style="font-size: 0.7rem; color: var(--text-muted);">Recommended size: 1200 x 800px (JPG, PNG or WebP)</span>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
 
-                    <!-- Excerpt -->
-                    <div class="editor-card" style="margin-top: 24px;">
-                        <div class="editor-card-header">
-                            <h3>Excerpt</h3>
-                        </div>
-                        <div class="editor-card-body">
-                            <textarea class="excerpt-textarea" placeholder="Write a short summary (optional)..."></textarea>
-                            <p class="form-help">Excerpts are optional hand-crafted summaries of your content that can be used in your theme.</p>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Editor Sidebar -->
-                <aside class="editor-sidebar">
+                <aside class="editor-sidebar" style="display: flex; flex-direction: column; gap: 24px;">
                     
                     <!-- Publishing Card -->
-                    <div class="editor-card">
-                        <div class="editor-card-header">
-                            <h3>Publishing</h3>
+                    <div class="editor-card" style="background: white; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                        <div class="editor-card-header" style="padding: 16px 20px; border-bottom: 1px solid var(--border-color);">
+                            <h3 style="color: var(--primary-blue); font-size: 1rem; margin: 0;">3. Publishing</h3>
                         </div>
-                        <div class="editor-card-body">
-                            <div class="form-group-vertical">
-                                <label>Status</label>
-                                <select>
-                                    <option>Draft</option>
-                                    <option>Pending Review</option>
-                                    <option selected>Published</option>
+                        <div class="editor-card-body" style="padding: 20px;">
+                            <div class="form-group-vertical" style="margin-bottom: 16px;">
+                                <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; display: block; color: var(--primary-dark);">Status <span style="color: var(--accent-red);">*</span></label>
+                                <select style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: white; outline: none; appearance: auto;">
+                                    <option selected>🟢 Published</option>
+                                    <option>🟡 Draft</option>
                                 </select>
                             </div>
-                            <div class="form-group-vertical">
-                                <label>Publish Date</label>
-                                <input type="datetime-local" value="2026-08-13T14:30">
+                            <div class="form-group-vertical" style="margin-bottom: 16px;">
+                                <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; display: block; color: var(--primary-dark);">Publish Date <span style="color: var(--accent-red);">*</span></label>
+                                <div style="position: relative;">
+                                    <input type="text" value="13-08-2026 02:30 PM" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: white; outline: none;">
+                                    <i class="fa-regular fa-calendar" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                                </div>
+                            </div>
+                            <div class="form-group-vertical" style="margin-bottom: 16px;">
+                                <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; display: flex; align-items: center; gap: 4px; color: var(--primary-dark);">
+                                    Display Order <i class="fa-solid fa-circle-info" style="color: var(--text-muted); font-size: 0.8rem; cursor: pointer;"></i>
+                                </label>
+                                <input type="number" value="1" min="1" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: white; outline: none;">
                             </div>
                             <div class="form-group-vertical">
-                                <label>Author</label>
-                                <select>
-                                    <option selected>Admin Director</option>
-                                    <option>Dr. Amit Patel</option>
-                                    <option>Meera Sundaram</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Categories Card -->
-                    <div class="editor-card">
-                        <div class="editor-card-header">
-                            <h3>Categories</h3>
-                        </div>
-                        <div class="editor-card-body">
-                            <div class="checkbox-list">
-                                <label class="custom-checkbox">
-                                    <input type="checkbox" checked>
-                                    <span class="checkmark"></span>
-                                    Campus News
-                                </label>
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                    Events
-                                </label>
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                    Announcements
-                                </label>
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                    Student Life
-                                </label>
-                            </div>
-                                                </div>
-                    </div>
-
-                    <!-- Featured Image Card -->
-                    <div class="editor-card">
-                        <div class="editor-card-header">
-                            <h3>Featured Image</h3>
-                        </div>
-                        <div class="editor-card-body">
-                            <div class="image-upload-zone">
-                                <i class="fa-regular fa-image upload-icon"></i>
-                                <p>Click or drag image here</p>
-                                <span>Recommended size: 1200x630px</span>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                                    <label style="font-size: 0.85rem; font-weight: 600; margin: 0; color: var(--primary-dark);">Featured Program</label>
+                                    <label class="toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
+                                        <input type="checkbox" checked style="opacity: 0; width: 0; height: 0;">
+                                        <span class="toggle-slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--primary-blue); border-radius: 24px; transition: .4s;">
+                                            <span style="position: absolute; height: 18px; width: 18px; left: 22px; bottom: 3px; background-color: white; border-radius: 50%; transition: .4s;"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div style="font-size: 0.75rem; color: var(--text-muted);">Show this program on homepage or featured sections.</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- SEO Card -->
-                    <div class="editor-card">
-                        <div class="editor-card-header">
-                            <h3>SEO Settings</h3>
+                    <div class="editor-card" style="background: white; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                        <div class="editor-card-header" style="padding: 16px 20px; border-bottom: 1px solid var(--border-color);">
+                            <h3 style="color: var(--primary-blue); font-size: 1rem; margin: 0;">4. SEO Settings</h3>
                         </div>
-                        <div class="editor-card-body">
-                            <div class="form-group-vertical">
-                                <label>Meta Title</label>
-                                <input type="text" placeholder="SEO Title...">
+                        <div class="editor-card-body" style="padding: 20px;">
+                            <div class="form-group-vertical" style="margin-bottom: 16px;">
+                                <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; display: block; color: var(--primary-dark);">Meta Title</label>
+                                <input type="text" value="Middle School | Vyasa International School" class="bg-gray-input" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; outline: none; margin-bottom: 4px;">
+                                <div style="text-align: right;"><small style="color: var(--text-muted); font-size: 0.75rem;">41 / 60</small></div>
+                            </div>
+                            <div class="form-group-vertical" style="margin-bottom: 16px;">
+                                <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; display: block; color: var(--primary-dark);">Meta Description</label>
+                                <textarea rows="4" class="bg-gray-input" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; resize: vertical; outline: none; margin-bottom: 4px;">Discover the Middle School program at Vyasa International School - empowering students with knowledge, skills, and values for a brighter future.</textarea>
+                                <div style="text-align: right;"><small style="color: var(--text-muted); font-size: 0.75rem;">133 / 160</small></div>
                             </div>
                             <div class="form-group-vertical">
-                                <label>Meta Description</label>
-                                <textarea placeholder="A short description for search engines..." rows="3"></textarea>
+                                <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; display: block; color: var(--primary-dark);">Social / Featured Image</label>
+                                <button class="btn btn-outline" style="width: auto; padding: 6px 12px; font-size: 0.85rem; background: #f8fbff; border-color: var(--primary-blue); color: var(--primary-blue); margin-bottom: 8px;">Use Program Image</button>
+                                <div style="font-size: 0.7rem; color: var(--text-muted);">Recommended size: 1200 x 630px</div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Preview Card -->
+                    <div class="editor-card" style="background: #f8fbff; border: 1px solid var(--primary-blue); border-radius: 8px; overflow: hidden;">
+                        <div class="editor-card-body" style="padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; align-items: center; gap: 8px; color: var(--primary-blue); font-weight: 600;">
+                                <i class="fa-solid fa-circle-exclamation"></i> Preview
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0; line-height: 1.4;">
+                                This is how your program will appear on the website.
+                            </p>
+                            <button class="btn btn-outline" style="background: white; border-color: var(--primary-blue); color: var(--primary-blue); width: auto; justify-content: center; align-self: center; border-radius: 6px; padding: 8px 16px; cursor: pointer; font-weight: 600;"><i class="fa-regular fa-eye"></i> Preview Program</button>
+                        </div>
+                    </div>
                 </aside>
             </form>
 

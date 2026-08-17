@@ -24,23 +24,43 @@
                    <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
                 </div>
             </div>
-            <div class="sidebar-portal-label">CMS PORTAL</div>
 
             <nav class="sidebar-nav">
                 <ul>
-                    <li ><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
-                    <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
-                    <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
-                    <li class="active"><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
-                    <li><a href="announcements.html"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
-                    <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
-                    <li><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
-                    <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
-                    <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
-                    <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
-                    <li><a href="inquiries.html"><i class="fa-solid fa-envelope-open-text"></i> Inquiries</a></li>
-                    <li><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
-                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                    <li class="active" data-page="dashboard.html"><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+
+                
+                    <li class="menu-item-has-children" data-group="content">
+                        <a href="#"><i class="fa-solid fa-layer-group"></i> Content Management</a>
+                        <ul class="sub-menu">
+                            <li data-page="pages.html"><a href="pages.html"><i class="fa-regular fa-file-lines"></i> Pages</a></li>
+                            <li data-page="articles.html"><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                            <li data-page="announcements.html"><a href="announcements.html"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
+                            <li data-page="achievements.html"><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                            <li data-page="testimonials.html"><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                        </ul>
+                    </li>
+
+                  
+                    <li class="menu-item-has-children" data-group="academics">
+                        <a href="#"><i class="fa-solid fa-graduation-cap"></i> Academics</a>
+                        <ul class="sub-menu">
+                            <li data-page="programs.html"><a href="programs.html"><i class="fa-solid fa-book"></i> Programs</a></li>
+                            <li data-page="educators.html"><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                            <li data-page="students.html"><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item-has-children" data-group="comms">
+                        <a href="#"><i class="fa-solid fa-envelope-open-text"></i> Communications & HR</a>
+                        <ul class="sub-menu">
+                            <li data-page="inquiries.html"><a href="inquiries.html"><i class="fa-solid fa-circle-question"></i> Inquiries</a></li>
+                            <li data-page="careers.html"><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
+                        </ul>
+                    </li>
+
+                    <li data-page="media-library.html"><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li data-page="settings.html"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
                 </ul>
             </nav>
 

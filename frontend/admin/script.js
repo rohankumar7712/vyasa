@@ -233,4 +233,75 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Sidebar Submenu Logic
+    const sidebarSubmenus = document.querySelectorAll('.sidebar-nav li.menu-item-has-children > a');
+    
+    sidebarSubmenus.forEach(menu => {
+        menu.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parentLi = this.parentElement;
+            const subMenu = parentLi.querySelector('.sub-menu');
+            
+            // Toggle open class for chevron rotation
+            parentLi.classList.toggle('open');
+            
+            // Toggle visibility of submenu
+            if (subMenu) {
+                subMenu.classList.toggle('open');
+            }
+        });
+    });
+
+    // Active State and Auto-Expand based on URL
+    const currentPath = window.location.pathname;
+    const pageName = currentPath.split('/').pop() || 'dashboard.html';
+
+    // Remove active class from all static items first
+    document.querySelectorAll('.sidebar-nav li.active').forEach(li => li.classList.remove('active'));
+    document.querySelectorAll('.sidebar-nav li.menu-item-has-children.open').forEach(li => {
+        li.classList.remove('open');
+        const subMenu = li.querySelector('.sub-menu');
+        if (subMenu) subMenu.classList.remove('open');
+    });
+
+    // Map create/view pages to their parent list page
+    const pageMapping = {
+        'create-job.html': 'careers.html',
+        'jobs.html': 'careers.html',
+        'view-job.html': 'careers.html',
+        'create-article.html': 'articles.html',
+        'view-article.html': 'articles.html',
+        'create-announcement.html': 'announcements.html',
+        'create-achievement.html': 'achievements.html',
+        'view-achievement.html': 'achievements.html',
+        'create-media.html': 'media-library.html',
+        'view-media.html': 'media-library.html',
+        'create-program.html': 'programs.html',
+        'view-program.html': 'programs.html',
+        'create-student.html': 'students.html',
+        'view-student.html': 'students.html',
+        'create-testimonial.html': 'testimonials.html',
+        'view-testimonial.html': 'testimonials.html',
+        'educator-profile.html': 'educators.html',
+        'page-editor.html': 'pages.html',
+        'page-preview.html': 'pages.html'
+    };
+
+    const targetPage = pageMapping[pageName] || pageName;
+    const currentActiveLi = document.querySelector(`.sidebar-nav li[data-page="${targetPage}"]`);
+
+    if (currentActiveLi) {
+        currentActiveLi.classList.add('active');
+        
+        // Check if it's inside a submenu
+        const parentMenu = currentActiveLi.closest('.menu-item-has-children');
+        if (parentMenu) {
+            parentMenu.classList.add('open');
+            const subMenu = parentMenu.querySelector('.sub-menu');
+            if (subMenu) {
+                subMenu.classList.add('open');
+            }
+        }
+    }
+
 });

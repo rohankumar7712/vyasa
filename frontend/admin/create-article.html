@@ -16,30 +16,50 @@
 <body>
 
     <div class="dashboard-container">
-        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
+                <!-- Using a placeholder logo similar to the image -->
                 <div class="logo">
                    <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
                 </div>
             </div>
-            <div class="sidebar-portal-label">CMS PORTAL</div>
 
             <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
-                    <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
-                    <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
-                    <li class="active"><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
-                    <li><a href="announcements.html"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
-                    <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
-                    <li><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
-                    <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
-                    <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
-                    <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
-                    <li><a href="inquiries.html"><i class="fa-solid fa-envelope-open-text"></i> Inquiries</a></li>
-                    <li><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
-                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                    <li class="active" data-page="dashboard.html"><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+
+                
+                    <li class="menu-item-has-children" data-group="content">
+                        <a href="#"><i class="fa-solid fa-layer-group"></i> Content Management</a>
+                        <ul class="sub-menu">
+                            <li data-page="pages.html"><a href="pages.html"><i class="fa-regular fa-file-lines"></i> Pages</a></li>
+                            <li data-page="articles.html"><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                            <li data-page="announcements.html"><a href="announcements.html"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
+                            <li data-page="achievements.html"><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                            <li data-page="testimonials.html"><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                        </ul>
+                    </li>
+
+                  
+                    <li class="menu-item-has-children" data-group="academics">
+                        <a href="#"><i class="fa-solid fa-graduation-cap"></i> Academics</a>
+                        <ul class="sub-menu">
+                            <li data-page="programs.html"><a href="programs.html"><i class="fa-solid fa-book"></i> Programs</a></li>
+                            <li data-page="educators.html"><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                            <li data-page="students.html"><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item-has-children" data-group="comms">
+                        <a href="#"><i class="fa-solid fa-envelope-open-text"></i> Communications & HR</a>
+                        <ul class="sub-menu">
+                            <li data-page="inquiries.html"><a href="inquiries.html"><i class="fa-solid fa-circle-question"></i> Inquiries</a></li>
+                            <li data-page="careers.html"><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
+                        </ul>
+                    </li>
+
+                    <li data-page="media-library.html"><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li data-page="settings.html"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
                 </ul>
             </nav>
 
@@ -52,7 +72,6 @@
                 <button class="collapse-menu-btn"><i class="fa-regular fa-circle-left"></i> Collapse Menu</button>
             </div>
         </aside>
-
         <!-- Main Content -->
         <main class="main-content">
             <!-- Header -->
@@ -130,45 +149,64 @@
             <form class="editor-layout" action="view-article.html">
                 
                 <!-- Main Editor Area -->
-                <div class="editor-main">
-                    <div class="editor-field">
-                        <input type="text" class="editor-title-input" placeholder="Add title..." autofocus>
+                <div class="editor-main" style="display: flex; flex-direction: column; gap: 24px; background: white; padding: 24px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <div class="form-group">
+                        <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Title <span style="color: var(--accent-red);">*</span></label>
+                        <input type="text" id="article-title" class="bg-gray-input" placeholder="Add title..." style="padding: 12px; font-size: 1rem; width: 100%; border: 1px solid var(--border-color); border-radius: 6px;">
+                        <div style="display: flex; justify-content: space-between; margin-top: 4px;">
+                            <small style="color: var(--text-muted); font-size: 0.75rem;">This will be the Title of your article</small>
+                            <small id="title-count" style="color: var(--text-muted); font-size: 0.75rem;">0 / 150</small>
+                        </div>
                     </div>
-                    <div class="editor-field slug-field">
-                        <span class="slug-prefix">https://www.vyasa.edu.in/articles/</span>
-                        <input type="text" class="slug-input" placeholder="article-slug">
+                    
+                    <div class="form-group">
+                        <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">URL Slug <span style="color: var(--accent-red);">*</span></label>
+                        <div style="display: flex; align-items: center; border: 1px solid var(--border-color); border-radius: 6px; background: #f8fafc; overflow: hidden;">
+                            <span style="padding: 12px 16px; color: var(--text-muted); border-right: 1px solid var(--border-color); font-size: 0.9rem;">https://www.vyasa.edu.in/articles/</span>
+                            <input type="text" id="article-slug" placeholder="article-slug" style="padding: 12px; font-size: 0.9rem; flex: 1; border: none; background: white; outline: none;">
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 4px;">
+                            <small style="color: var(--text-muted); font-size: 0.75rem;">The URL-friendly version of the title. Use lowercase letters, numbers and hyphens.</small>
+                            <small id="slug-count" style="color: var(--text-muted); font-size: 0.75rem;">0 / 100</small>
+                        </div>
                     </div>
 
                     <!-- Rich Text Editor Mockup -->
-                    <div class="rich-text-editor">
-                        <div class="editor-toolbar">
-                            <button type="button"><i class="fa-solid fa-bold"></i></button>
-                            <button type="button"><i class="fa-solid fa-italic"></i></button>
-                            <button type="button"><i class="fa-solid fa-underline"></i></button>
-                            <button type="button"><i class="fa-solid fa-strikethrough"></i></button>
-                            <div class="toolbar-divider"></div>
-                            <button type="button"><i class="fa-solid fa-heading"></i></button>
-                            <button type="button"><i class="fa-solid fa-paragraph"></i></button>
-                            <div class="toolbar-divider"></div>
-                            <button type="button"><i class="fa-solid fa-list-ul"></i></button>
-                            <button type="button"><i class="fa-solid fa-list-ol"></i></button>
-                            <button type="button"><i class="fa-solid fa-quote-left"></i></button>
-                            <div class="toolbar-divider"></div>
-                            <button type="button"><i class="fa-solid fa-link"></i></button>
-                            <button type="button"><i class="fa-regular fa-image"></i></button>
-                            <button type="button"><i class="fa-solid fa-code"></i></button>
+                    <div class="form-group">
+                        <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Content <span style="color: var(--accent-red);">*</span></label>
+                        <div class="rich-text-editor" style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden;">
+                            <div class="editor-toolbar" style="padding: 8px; background: #f8fafc; border-bottom: 1px solid var(--border-color); display: flex; gap: 4px; align-items: center;">
+                                <select style="padding: 4px 8px; border: 1px solid var(--border-color); border-radius: 4px; background: white;"><option>Paragraph</option></select>
+                                <div class="toolbar-divider" style="width: 1px; height: 20px; background: var(--border-color); margin: 0 4px;"></div>
+                                <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-bold"></i></button>
+                                <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-italic"></i></button>
+                                <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-underline"></i></button>
+                                <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-strikethrough"></i></button>
+                                <div class="toolbar-divider" style="width: 1px; height: 20px; background: var(--border-color); margin: 0 4px;"></div>
+                                <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-link"></i></button>
+                                <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-regular fa-image"></i></button>
+                                <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-video"></i></button>
+                                <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-quote-left"></i></button>
+                                <div class="toolbar-divider" style="width: 1px; height: 20px; background: var(--border-color); margin: 0 4px;"></div>
+                                <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-list-ul"></i></button>
+                                <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-list-ol"></i></button>
+                            </div>
+                            <textarea class="editor-textarea" placeholder="Write your article content here..." style="width: 100%; min-height: 300px; padding: 16px; border: none; resize: vertical; outline: none;"></textarea>
+                            <div style="padding: 8px 16px; background: #f8fafc; border-top: 1px solid var(--border-color); font-size: 0.75rem; color: var(--text-muted); display: flex; gap: 16px;">
+                                <span>P</span>
+                                <span>0 WORDS</span>
+                                <span>POWERED BY TINY</span>
+                            </div>
                         </div>
-                        <textarea class="editor-textarea" placeholder="Write your article content here..."></textarea>
                     </div>
 
                     <!-- Excerpt -->
-                    <div class="editor-card" style="margin-top: 24px;">
-                        <div class="editor-card-header">
-                            <h3>Excerpt</h3>
-                        </div>
-                        <div class="editor-card-body">
-                            <textarea class="excerpt-textarea" placeholder="Write a short summary (optional)..."></textarea>
-                            <p class="form-help">Excerpts are optional hand-crafted summaries of your content that can be used in your theme.</p>
+                    <div class="form-group">
+                        <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Excerpt</label>
+                        <textarea id="article-excerpt" class="bg-gray-input" placeholder="Write a short summary (optional)..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; resize: vertical; min-height: 80px; font-family: inherit; outline: none;"></textarea>
+                        <div style="display: flex; justify-content: space-between; margin-top: 4px;">
+                            <small style="color: var(--text-muted); font-size: 0.75rem;">Excerpts are optional hand-crafted summaries of your content that can be used in your theme.</small>
+                            <small id="excerpt-count" style="color: var(--text-muted); font-size: 0.75rem;">0 / 300</small>
                         </div>
                     </div>
                 </div>
@@ -256,13 +294,43 @@
                             <h3>SEO Settings</h3>
                         </div>
                         <div class="editor-card-body">
-                            <div class="form-group-vertical">
+                            <div class="form-group-vertical" style="margin-bottom: 16px;">
                                 <label>Meta Title</label>
-                                <input type="text" placeholder="SEO Title...">
+                                <input type="text" id="article-seo-title" placeholder="SEO Title..." class="bg-gray-input" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px;">
+                                <div style="display: flex; justify-content: space-between; margin-top: 4px;">
+                                    <small style="color: var(--text-muted); font-size: 0.75rem;">This will be the Title of your article</small>
+                                    <small id="seo-title-count" style="color: var(--text-muted); font-size: 0.75rem;">0 / 60</small>
+                                </div>
                             </div>
                             <div class="form-group-vertical">
                                 <label>Meta Description</label>
-                                <textarea placeholder="A short description for search engines..." rows="3"></textarea>
+                                <textarea id="article-seo-desc" placeholder="A short description for search engines..." rows="3" class="bg-gray-input" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; resize: vertical;"></textarea>
+                                <div style="display: flex; justify-content: space-between; margin-top: 4px;">
+                                    <small style="color: var(--text-muted); font-size: 0.75rem;">This will be the description of Article</small>
+                                    <small id="seo-desc-count" style="color: var(--text-muted); font-size: 0.75rem;">0 / 160</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SEO Preview -->
+                    <div class="editor-card">
+                        <div class="editor-card-header">
+                            <h3>Page Preview (SEO)</h3>
+                        </div>
+                        <div class="editor-card-body">
+                            <div style="border: 1px solid var(--border-color); border-radius: 8px; padding: 16px; background: white;">
+                                <div style="font-size: 0.8rem; color: #202124; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+                                    <div style="width: 24px; height: 24px; background: #f1f3f4; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fa-solid fa-globe" style="color: var(--text-muted); font-size: 0.7rem;"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: 500;">Vyasa International School</div>
+                                        <div style="color: #4d5156; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;" id="seo-preview-url">https://www.vyasa.edu.in/articles/...</div>
+                                    </div>
+                                </div>
+                                <h4 id="seo-preview-title" style="color: #1a0dab; font-size: 1.1rem; font-weight: 400; margin: 4px 0; cursor: pointer;">Add title...</h4>
+                                <p id="seo-preview-desc" style="color: #4d5156; font-size: 0.85rem; line-height: 1.4; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">A short description for search engines...</p>
                             </div>
                         </div>
                     </div>
@@ -275,6 +343,101 @@
 
     <!-- Custom Script -->
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const titleInput = document.getElementById('article-title');
+            const slugInput = document.getElementById('article-slug');
+            const seoTitleInput = document.getElementById('article-seo-title');
+            const seoDescInput = document.getElementById('article-seo-desc');
+            const excerptInput = document.getElementById('article-excerpt');
+
+            const titleCount = document.getElementById('title-count');
+            const slugCount = document.getElementById('slug-count');
+            const seoTitleCount = document.getElementById('seo-title-count');
+            const seoDescCount = document.getElementById('seo-desc-count');
+            const excerptCount = document.getElementById('excerpt-count');
+
+            const seoPreviewTitle = document.getElementById('seo-preview-title');
+            const seoPreviewDesc = document.getElementById('seo-preview-desc');
+            const seoPreviewUrl = document.getElementById('seo-preview-url');
+
+            let isSlugEdited = false;
+            let isSeoTitleEdited = false;
+            let isSeoDescEdited = false;
+
+            function updateCounter(input, counter, max) {
+                if(!input || !counter) return;
+                const len = input.value.length;
+                counter.textContent = `${len} / ${max}`;
+                if (len > max) {
+                    counter.style.color = 'var(--accent-red)';
+                } else {
+                    counter.style.color = 'var(--text-muted)';
+                }
+            }
+
+            function generateSlug(text) {
+                return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+            }
+
+            if(titleInput) {
+                titleInput.addEventListener('input', (e) => {
+                    const val = e.target.value;
+                    updateCounter(titleInput, titleCount, 150);
+                    
+                    if (!isSlugEdited && slugInput) {
+                        slugInput.value = generateSlug(val);
+                        updateCounter(slugInput, slugCount, 100);
+                        if(seoPreviewUrl) {
+                            seoPreviewUrl.textContent = slugInput.value ? `https://www.vyasa.edu.in/articles/${slugInput.value}` : 'https://www.vyasa.edu.in/articles/...';
+                        }
+                    }
+                    if (!isSeoTitleEdited && seoTitleInput) {
+                        seoTitleInput.value = val ? `${val} | Vyasa International School` : '';
+                        updateCounter(seoTitleInput, seoTitleCount, 60);
+                        if(seoPreviewTitle) seoPreviewTitle.textContent = seoTitleInput.value || 'Add title...';
+                    }
+                });
+            }
+
+            if(slugInput) {
+                slugInput.addEventListener('input', () => {
+                    isSlugEdited = true;
+                    updateCounter(slugInput, slugCount, 100);
+                    if(seoPreviewUrl) {
+                        seoPreviewUrl.textContent = slugInput.value ? `https://www.vyasa.edu.in/articles/${slugInput.value}` : 'https://www.vyasa.edu.in/articles/...';
+                    }
+                });
+            }
+
+            if(seoTitleInput) {
+                seoTitleInput.addEventListener('input', () => {
+                    isSeoTitleEdited = true;
+                    updateCounter(seoTitleInput, seoTitleCount, 60);
+                    if(seoPreviewTitle) seoPreviewTitle.textContent = seoTitleInput.value || 'Add title...';
+                });
+            }
+
+            if(seoDescInput) {
+                seoDescInput.addEventListener('input', () => {
+                    isSeoDescEdited = true;
+                    updateCounter(seoDescInput, seoDescCount, 160);
+                    if(seoPreviewDesc) seoPreviewDesc.textContent = seoDescInput.value || 'A short description for search engines...';
+                });
+            }
+
+            if(excerptInput) {
+                excerptInput.addEventListener('input', (e) => {
+                    updateCounter(excerptInput, excerptCount, 300);
+                    if (!isSeoDescEdited && seoDescInput) {
+                        seoDescInput.value = e.target.value;
+                        updateCounter(seoDescInput, seoDescCount, 160);
+                        if(seoPreviewDesc) seoPreviewDesc.textContent = seoDescInput.value || 'A short description for search engines...';
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
 

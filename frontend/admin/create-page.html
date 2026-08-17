@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyasa - Create New Page</title>
+    <!-- Google Fonts: Inter & Hanken Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <!-- Using a placeholder logo similar to the image -->
+                <div class="logo">
+                   <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li data-page="dashboard.html"><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+
+                
+                    <li class="menu-item-has-children open" data-group="content">
+                        <a href="#"><i class="fa-solid fa-layer-group"></i> Content Management</a>
+                        <ul class="sub-menu">
+                            <li class="active" data-page="pages.html"><a href="pages.html"><i class="fa-regular fa-file-lines"></i> Pages</a></li>
+                            <li data-page="articles.html"><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                            <li data-page="announcements.html"><a href="announcements.html"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
+                            <li data-page="achievements.html"><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                            <li data-page="testimonials.html"><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                        </ul>
+                    </li>
+
+                  
+                    <li class="menu-item-has-children" data-group="academics">
+                        <a href="#"><i class="fa-solid fa-graduation-cap"></i> Academics</a>
+                        <ul class="sub-menu">
+                            <li data-page="programs.html"><a href="programs.html"><i class="fa-solid fa-book"></i> Programs</a></li>
+                            <li data-page="educators.html"><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                            <li data-page="students.html"><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item-has-children" data-group="comms">
+                        <a href="#"><i class="fa-solid fa-envelope-open-text"></i> Communications & HR</a>
+                        <ul class="sub-menu">
+                            <li data-page="inquiries.html"><a href="inquiries.html"><i class="fa-solid fa-circle-question"></i> Inquiries</a></li>
+                            <li data-page="careers.html"><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
+                        </ul>
+                    </li>
+
+                    <li data-page="media-library.html"><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li data-page="settings.html"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status-block">
+                    <div class="system-status-title"><span class="status-dot green"></span> System Online</div>
+                    <div class="system-status-desc">All systems operational</div>
+                </div>
+                <div class="version">Version 2.4.1 (Stable)</div>
+                <button class="collapse-menu-btn"><i class="fa-regular fa-circle-left"></i> Collapse Menu</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header" style="margin-bottom: 32px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color);">
+                <div class="header-top-row">
+                    <div class="breadcrumbs">CMS Console / <a href="pages.html" style="color: var(--text-muted); text-decoration: none;">Pages</a> / <span>Create New Page</span></div>
+                    
+                    <div class="header-right">
+                        <div class="notification-dropdown-container" style="position: relative; display: flex; align-items: center;">
+                            <button class="notification-btn">
+                            <i class="fa-regular fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                            </button>
+                        </div>
+                        <div class="user-profile profile-dropdown-container" style="position: relative; cursor: pointer;">
+                            <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="avatar">
+                            <div class="user-info">
+                                <span class="user-name">Admin Director</span>
+                                <span class="user-role">Super Admin</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down chevron-small"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="header-bottom-row" style="align-items: center; justify-content: space-between; margin-top: 24px; display: flex;">
+                    <div class="header-left">
+                        <div class="title-with-icon">
+                            <h1>Create New Page</h1>
+                            <i class="fa-solid fa-file-circle-plus title-icon"></i>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">Create and configure a new website page.</p>
+                    </div>
+                    
+                    <div style="display: flex; gap: 12px; align-items: center;">
+                        <a href="pages.html" class="btn btn-outline" style="border: 1px solid var(--border-color); background: white; text-decoration: none; padding: 10px 16px; border-radius: 8px;">Cancel</a>                        <button class="btn btn-outline" style="border: 1px solid var(--border-color); background: white; padding: 10px 16px; border-radius: 8px;"><i class="fa-regular fa-floppy-disk" style="margin-right: 6px;"></i> Save Draft</button>
+                        <button class="btn btn-primary" style="padding: 10px 20px; border-radius: 8px;"><i class="fa-solid fa-paper-plane" style="margin-right: 6px;"></i> Publish</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 2-Column Grid Layout -->
+            <div class="create-page-grid" style="display: grid; grid-template-columns: 350px 1fr; gap: 24px; align-items: start; padding-bottom: 80px;">
+                <!-- MAIN COLUMN: Content Builder -->
+                <div class="main-col" style="display: flex; flex-direction: column; gap: 24px; order: 2;">
+                    <div class="card" style="padding: 24px;">
+                        <h3 style="margin-bottom: 8px; color: var(--primary-dark); font-size: 1.1rem;">2. Page Content</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 24px;">Build your page using content blocks</p>
+                        
+                        <div id="content-blocks-container" style="display: flex; flex-direction: column; gap: 16px;">
+                            <!-- Mock blocks -->
+                            <div class="content-block expanded" style="border: 1px solid var(--border-color); border-radius: 8px; background: white;">
+                                <div class="block-header" style="padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: none;">
+                                    <div class="block-header-left" style="display: flex; align-items: center; gap: 12px;">
+                                        <i class="fa-solid fa-grip-vertical drag-handle" style="color: var(--text-muted); cursor: grab;"></i>
+                                        <div style="width: 32px; height: 32px; background: #e0f2fe; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--accent-blue);">
+                                            <i class="fa-regular fa-image"></i>
+                                        </div>
+                                        <div>
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <span class="block-title" style="font-weight: 600; font-size: 0.95rem;">Hero Section</span>
+                                                <span class="block-badge" style="background: #e0f2fe; color: var(--accent-blue); font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; font-weight: 600;">HERO BLOCK</span>
+                                            </div>
+                                            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Top banner content with call to action</div>
+                                        </div>
+                                    </div>
+                                    <div class="block-header-right" style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);">
+                                        <i class="fa-solid fa-pen" style="cursor: pointer;"></i>
+                                        <i class="fa-regular fa-copy" style="cursor: pointer;"></i>
+                                        <i class="fa-regular fa-trash-can" style="cursor: pointer;"></i>
+                                        <i class="fa-solid fa-chevron-down toggle-block" style="cursor: pointer; transition: transform 0.2s ease;"></i>
+                                    </div>
+                                </div>
+                                <div class="block-body" style="display: none; padding: 16px; border-top: 1px solid var(--border-color); background: #f8fafc; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+                                    <div class="form-group mb-16">
+                                        <label>Heading</label>
+                                        <input type="text" class="bg-gray-input" value="Academic Programs">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Background Image</label>
+                                        <button class="btn btn-outline" style="border: 1px dashed var(--border-color); background: white; padding: 8px 16px; border-radius: 4px; width: 100%; text-align: left; color: var(--text-muted);"><i class="fa-solid fa-upload"></i> Upload Image...</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="content-block expanded" style="border: 1px solid var(--border-color); border-radius: 8px; background: white;">
+                                <div class="block-header" style="padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: none;">
+                                    <div class="block-header-left" style="display: flex; align-items: center; gap: 12px;">
+                                        <i class="fa-solid fa-grip-vertical drag-handle" style="color: var(--text-muted); cursor: grab;"></i>
+                                        <div style="width: 32px; height: 32px; background: #dcfce7; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--accent-green);">
+                                            <i class="fa-regular fa-file-lines"></i>
+                                        </div>
+                                        <div>
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <span class="block-title" style="font-weight: 600; font-size: 0.95rem;">Rich Text Content</span>
+                                                <span class="block-badge" style="background: #dcfce7; color: var(--accent-green); font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; font-weight: 600;">TEXT BLOCK</span>
+                                            </div>
+                                            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Content section with text, headings, images</div>
+                                        </div>
+                                    </div>
+                                    <div class="block-header-right" style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);">
+                                        <i class="fa-solid fa-pen" style="cursor: pointer;"></i>
+                                        <i class="fa-regular fa-copy" style="cursor: pointer;"></i>
+                                        <i class="fa-regular fa-trash-can" style="cursor: pointer;"></i>
+                                        <i class="fa-solid fa-chevron-down toggle-block" style="cursor: pointer; transition: transform 0.2s ease;"></i>
+                                    </div>
+                                </div>
+                                <div class="block-body" style="display: none; padding: 16px; border-top: 1px solid var(--border-color); background: #f8fafc; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+                                    <div class="form-group">
+                                        <label>Content</label>
+                                        <textarea class="bg-gray-input" rows="4">Our academic programs are designed to inspire...</textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="content-block expanded" style="border: 1px solid var(--border-color); border-radius: 8px; background: white;">
+                                <div class="block-header" style="padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: none;">
+                                    <div class="block-header-left" style="display: flex; align-items: center; gap: 12px;">
+                                        <i class="fa-solid fa-grip-vertical drag-handle" style="color: var(--text-muted); cursor: grab;"></i>
+                                        <div style="width: 32px; height: 32px; background: #fef08a; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--accent-orange);">
+                                            <i class="fa-regular fa-images"></i>
+                                        </div>
+                                        <div>
+                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                <span class="block-title" style="font-weight: 600; font-size: 0.95rem;">Campus Facilities Gallery</span>
+                                                <span class="block-badge" style="background: #fef08a; color: var(--accent-orange); font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; font-weight: 600;">GALLERY BLOCK</span>
+                                            </div>
+                                            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">Image gallery showcasing campus facilities</div>
+                                        </div>
+                                    </div>
+                                    <div class="block-header-right" style="display: flex; align-items: center; gap: 12px; color: var(--text-muted);">
+                                        <i class="fa-solid fa-pen" style="cursor: pointer;"></i>
+                                        <i class="fa-regular fa-copy" style="cursor: pointer;"></i>
+                                        <i class="fa-regular fa-trash-can" style="cursor: pointer;"></i>
+                                        <i class="fa-solid fa-chevron-down toggle-block" style="cursor: pointer; transition: transform 0.2s ease;"></i>
+                                    </div>
+                                </div>
+                                <div class="block-body" style="display: none; padding: 16px; border-top: 1px solid var(--border-color); background: #f8fafc; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
+                                    <div class="form-group">
+                                        <label>Gallery Images</label>
+                                        <button class="btn btn-outline" style="border: 1px dashed var(--border-color); background: white; padding: 8px 16px; border-radius: 4px; width: 100%; text-align: left; color: var(--text-muted);"><i class="fa-solid fa-images"></i> Select multiple images...</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" id="add-block-btn" class="add-block-btn" style="width: 100%; margin-top: 16px; padding: 20px; background-color: white; border: 1px dashed var(--accent-blue); border-radius: 8px; color: var(--accent-blue); font-weight: 600; cursor: pointer; transition: all 0.2s ease; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                            <div style="font-size: 1.1rem;"><i class="fa-solid fa-plus" style="margin-right: 8px;"></i> Add New Content Block</div>
+                            <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 400;">Choose from our collection of pre-built blocks</span>
+                        </button>
+
+                        <!-- INLINE BLOCK GRID -->
+                        <div id="inline-block-grid" class="inline-block-grid" style="display: none; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border-color);">
+                            <h4 style="margin-bottom: 16px; color: var(--primary-dark); font-size: 0.9rem;">Available Blocks</h4>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
+                                <!-- Row 1 -->
+                                <div class="block-option-card inline" style="padding: 16px 8px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; background: white;">
+                                    <i class="fa-regular fa-image" style="color: var(--accent-blue); font-size: 1.5rem; margin-bottom: 8px;"></i>
+                                    <h4 style="font-size: 0.75rem; margin: 0;">Hero Section</h4>
+                                </div>
+                                <div class="block-option-card inline" style="padding: 16px 8px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; background: white;">
+                                    <i class="fa-solid fa-align-left" style="color: var(--accent-green); font-size: 1.5rem; margin-bottom: 8px;"></i>
+                                    <h4 style="font-size: 0.75rem; margin: 0;">Rich Text</h4>
+                                </div>
+                                <div class="block-option-card inline" style="padding: 16px 8px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; background: white;">
+                                    <i class="fa-solid fa-images" style="color: var(--accent-green); font-size: 1.5rem; margin-bottom: 8px;"></i>
+                                    <h4 style="font-size: 0.75rem; margin: 0;">Image + Text</h4>
+                                </div>
+                                <div class="block-option-card inline" style="padding: 16px 8px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; background: white;">
+                                    <i class="fa-solid fa-grip" style="color: var(--accent-purple); font-size: 1.5rem; margin-bottom: 8px;"></i>
+                                    <h4 style="font-size: 0.75rem; margin: 0;">Gallery</h4>
+                                </div>
+                                <div class="block-option-card inline" style="padding: 16px 8px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; background: white;">
+                                    <i class="fa-solid fa-address-card" style="color: var(--accent-orange); font-size: 1.5rem; margin-bottom: 8px;"></i>
+                                    <h4 style="font-size: 0.75rem; margin: 0;">Feature Cards</h4>
+                                </div>
+                                <!-- Row 2 -->
+                                <div class="block-option-card inline" style="padding: 16px 8px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; background: white;">
+                                    <i class="fa-solid fa-building-columns" style="color: #ec4899; font-size: 1.5rem; margin-bottom: 8px;"></i>
+                                    <h4 style="font-size: 0.75rem; margin: 0;">Academic Stage</h4>
+                                </div>
+                                <div class="block-option-card inline" style="padding: 16px 8px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; background: white;">
+                                    <i class="fa-solid fa-diagram-project" style="color: var(--accent-purple); font-size: 1.5rem; margin-bottom: 8px;"></i>
+                                    <h4 style="font-size: 0.75rem; margin: 0;">Timeline</h4>
+                                </div>
+                                <div class="block-option-card inline" style="padding: 16px 8px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; background: white;">
+                                    <i class="fa-solid fa-user-tie" style="color: var(--accent-orange); font-size: 1.5rem; margin-bottom: 8px;"></i>
+                                    <h4 style="font-size: 0.75rem; margin: 0;">Educator</h4>
+                                </div>
+                                <div class="block-option-card inline" style="padding: 16px 8px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; background: white;">
+                                    <i class="fa-regular fa-comment-dots" style="color: var(--accent-orange); font-size: 1.5rem; margin-bottom: 8px;"></i>
+                                    <h4 style="font-size: 0.75rem; margin: 0;">Testimonials</h4>
+                                </div>
+                                <div class="block-option-card inline" style="padding: 16px 8px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; background: white;">
+                                    <i class="fa-regular fa-file-alt" style="color: var(--accent-blue); font-size: 1.5rem; margin-bottom: 8px;"></i>
+                                    <h4 style="font-size: 0.75rem; margin: 0;">Articles</h4>
+                                </div>
+                                <!-- Row 3 -->
+                                <div class="block-option-card inline" style="padding: 16px 8px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; background: white;">
+                                    <i class="fa-solid fa-bullhorn" style="color: #8b5cf6; font-size: 1.5rem; margin-bottom: 8px;"></i>
+                                    <h4 style="font-size: 0.75rem; margin: 0;">CTA Banner</h4>
+                                </div>
+                                <div class="block-option-card inline" style="padding: 16px 8px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; background: white;">
+                                    <i class="fa-solid fa-list-ol" style="color: var(--accent-blue); font-size: 1.5rem; margin-bottom: 8px;"></i>
+                                    <h4 style="font-size: 0.75rem; margin: 0;">Admissions Steps</h4>
+                                </div>
+                                <div class="block-option-card inline" style="padding: 16px 8px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; background: white;">
+                                    <i class="fa-solid fa-award" style="color: var(--accent-green); font-size: 1.5rem; margin-bottom: 8px;"></i>
+                                    <h4 style="font-size: 0.75rem; margin: 0;">Achievements</h4>
+                                </div>
+                                <div class="block-option-card inline" style="padding: 16px 8px; text-align: center; border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; background: white;">
+                                    <i class="fa-solid fa-code" style="color: var(--text-muted); font-size: 1.5rem; margin-bottom: 8px;"></i>
+                                    <h4 style="font-size: 0.75rem; margin: 0;">Custom HTML</h4>
+                                </div>
+                            </div>
+                            
+                            <div style="background: #f8fafc; padding: 12px 16px; border-radius: 8px; display: flex; align-items: center; gap: 12px; margin-top: 24px; border: 1px solid #e2e8f0;">
+                                <i class="fa-regular fa-lightbulb" style="color: var(--accent-blue);"></i>
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">Tip: Drag and drop blocks to reorder them. Click on any block to edit its content and settings.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SIDEBAR COLUMN: Settings & Publishing -->
+                <div class="sidebar-col" style="display: flex; flex-direction: column; gap: 24px; order: 1;">
+                    <!-- 3. Publishing (Moved to top of sidebar) -->
+                    <!-- 3. PUBLISHING -->
+                    <div class="card" style="padding: 24px; order: 2;">
+                        <h3 style="margin-bottom: 20px; color: var(--primary-dark); border-bottom: 1px solid var(--bg-color); padding-bottom: 12px; font-size: 1rem;">3. Publishing</h3>
+                        
+                        <div class="form-group mb-16">
+                            <label>Publish Status</label>
+                            <div style="position: relative;">
+                                <select id="create-publish-status" class="bg-gray-input" style="padding-left: 32px; font-weight: 500;">
+                                    <option value="draft" selected>Draft</option>
+                                    <option value="published">Published</option>
+                                </select>
+                                <div style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; border-radius: 50%; background: var(--accent-orange);"></div>
+                            </div>
+                        </div>
+
+                        <div style="background: #eff6ff; border-radius: 8px; padding: 12px 16px; display: flex; gap: 12px; align-items: flex-start; margin-bottom: 20px;">
+                            <i class="fa-solid fa-circle-info" style="color: var(--accent-blue); margin-top: 2px;"></i>
+                            <div style="font-size: 0.8rem; color: var(--primary-dark); line-height: 1.4;">Page will be saved as draft.<br>You can publish it anytime.</div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+                            <label style="margin: 0; font-size: 0.9rem;">Schedule (Optional)</label>
+                            <label class="switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
+                                <input type="checkbox" id="schedule-toggle" style="opacity: 0; width: 0; height: 0;">
+                                <span class="slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px;"></span>
+                            </label>
+                        </div>
+
+                        <div id="schedule-fields" style="opacity: 0.5; pointer-events: none; transition: all 0.3s ease;">
+                            <div class="form-group mb-16">
+                                <label>Publish Date</label>
+                                <input type="date" class="bg-gray-input" placeholder="Select date">
+                            </div>
+                            <div class="form-group">
+                                <label>Publish Time</label>
+                                <input type="time" class="bg-gray-input" placeholder="Select time">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 1. Page Information -->
+                    <!-- 1. PAGE INFORMATION -->
+                    <div class="card" style="padding: 24px; order: 1;">
+                        <h3 style="margin-bottom: 20px; color: var(--primary-dark); border-bottom: 1px solid var(--bg-color); padding-bottom: 12px; font-size: 1rem;">1. Page Information</h3>
+                        
+                        <div class="form-group" style="margin-bottom: 12px;">
+                            <label>Page Title <span style="color: var(--accent-red);">*</span></label>
+                            <input type="text" id="create-page-title" class="bg-gray-input" placeholder="e.g. Academic Programs" style="padding: 10px 14px;">
+                            <div style="display: flex; justify-content: space-between; margin-top: 4px;">
+                                <small style="color: var(--text-muted); font-size: 0.75rem;">This will be the Title of your page</small>
+                                <small style="color: var(--text-muted); font-size: 0.75rem;">17 / 150</small>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 12px;">
+                            <label>URL Slug <span style="color: var(--accent-red);">*</span></label>
+                            <div style="position: relative;">
+                                <input type="text" id="create-url-slug" class="bg-gray-input" placeholder="e.g. academic-programs" style="padding-right: 80px;">
+                                <div id="slug-availability" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); display: none;">
+                                    <span style="color: var(--accent-green); font-size: 0.8rem; font-weight: 500;"><i class="fa-solid fa-check"></i> Available</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-top: 4px;">
+                                <small style="color: var(--text-muted); font-size: 0.75rem;">This will be the URL of your page</small>
+                                <small style="color: var(--text-muted); font-size: 0.75rem;">17 / 150</small>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 12px;">
+                            <label>Page Template</label>
+                            <select class="bg-gray-input">
+                                <option value="default" selected>Default Template</option>
+                                <option value="landing">Landing Page</option>
+                                <option value="full-width">Full Width</option>
+                                <option value="sidebar-left">Sidebar Left</option>
+                                <option value="sidebar-right">Sidebar Right</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Parent Page</label>
+                            <select class="bg-gray-input">
+                                <option value="none" selected>(No Parent)</option>
+                                <option value="academics">Academics</option>
+                                <option value="admissions">Admissions</option>
+                                <option value="campus-life">Campus Life</option>
+                                <option value="about">About Us</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- 4. SEO Settings -->
+                    <!-- 4. SEO SETTINGS --><div class="card" style="padding: 24px; order: 3;">
+                        <h3 style="margin-bottom: 20px; color: var(--primary-dark); border-bottom: 1px solid var(--bg-color); padding-bottom: 12px; font-size: 1rem;">4. SEO Settings</h3>
+                        
+                        <div class="form-group" style="margin-bottom: 12px;">
+                            <label>SEO Title</label>
+                            <input type="text" id="create-seo-title" class="bg-gray-input" placeholder="e.g. Academic Programs | Vyasa International School" style="padding: 10px 14px;">
+                            <div style="display: flex; justify-content: space-between; margin-top: 4px;">
+                                <small style="color: var(--text-muted); font-size: 0.75rem;">This will be the Title of your page</small>
+                                <small style="color: var(--text-muted); font-size: 0.75rem;">17 / 150</small>
+                            </div>        
+                             </div>               
+
+                        <div class="form-group" style="margin-bottom: 12px;">
+                            <label>Meta Description</label>
+                            <textarea id="create-seo-desc" rows="4" class="bg-gray-input" placeholder="Explore academic programs at Vyasa International School..."></textarea>
+                            <div style="display: flex; justify-content: space-between; margin-top: 4px;">
+                                <small style="color: var(--text-muted); font-size: 0.75rem;">This will be the description of Page</small>
+                                <small style="color: var(--text-muted); font-size: 0.75rem;">17 / 150</small>
+                            </div>   
+                             </div>             
+
+                        <div class="form-group" style="margin-bottom: 12px;">
+                            <label>Featured Image</label>
+                            <div style="border: 1px solid var(--border-color); border-radius: 8px; padding: 12px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;">
+                                <div style="display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0;">
+                                    <img src="../Images/Campus.webp" style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover; flex-shrink: 0;" alt="Featured Image">
+                                    <div style="flex: 1; min-width: 0;">
+                                        <div style="font-size: 0.85rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">banner_academic.jpg</div>
+                                        <div style="font-size: 0.75rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">1.2 MB • JPG • 1200 x 630 px</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 8px; flex-shrink: 0;">
+                                    <button style="border: 1px solid var(--border-color); background: white; border-radius: 4px; padding: 4px 8px; color: var(--accent-blue); font-size: 0.8rem; font-weight: 500; cursor: pointer;"><i class="fa-solid fa-arrow-up-from-bracket"></i> Change</button>
+                                    <button style="border: 1px solid var(--border-color); background: white; border-radius: 4px; padding: 4px 8px; color: var(--accent-red); cursor: pointer;"><i class="fa-regular fa-trash-can"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Social Share Image (Open Graph)</label>
+                            <div style="border: 1px dashed var(--border-color); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--bg-color);">
+                                <button style="border: 1px solid var(--border-color); background: white; border-radius: 4px; padding: 6px 12px; color: var(--accent-blue); font-size: 0.8rem; font-weight: 500; cursor: pointer; margin-bottom: 8px;"><i class="fa-solid fa-arrow-up-from-bracket"></i> Upload Image</button>
+                                <div style="font-size: 0.75rem; color: var(--text-muted);">Recommended size: 1200 x 630 px</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SEO Preview -->
+                    <!-- SEO Preview --><div class="card" style="padding: 24px; order: 4;">
+                        <h3 style="margin-bottom: 20px; color: var(--primary-dark); border-bottom: 1px solid var(--bg-color); padding-bottom: 12px; font-size: 1rem;">Page Preview (SEO)</h3>
+                        
+                        <div style="border: 1px solid var(--border-color); border-radius: 8px; padding: 16px; background: white; margin-bottom: 16px;">
+                            <div id="seo-preview-title" style="color: #1a0dab; font-size: 1.1rem; font-weight: 500; font-family: arial, sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; margin-bottom: 2px;">Academic Programs | Vyasa International School</div>
+                            <div id="seo-preview-url" style="color: #006621; font-size: 0.75rem; font-family: arial, sans-serif; margin-bottom: 6px;">https://www.vyasa.edu.in/<span id="seo-preview-slug">academic-programs</span></div>
+                            <div id="seo-preview-desc" style="color: #4d5156; font-size: 0.8rem; font-family: arial, sans-serif; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">Explore academic programs at Vyasa International School, designed to support academic excellence and holistic student development.</div>
+                        </div>
+
+                        <button style="border: 1px solid var(--border-color); background: white; border-radius: 8px; padding: 10px; width: 100%; color: var(--accent-blue); font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;"><i class="fa-solid fa-pen"></i> Edit SEO</button>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // CSS fix for toggle switch
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .switch input:checked + .slider { background-color: var(--accent-blue); }
+                .switch input:focus + .slider { box-shadow: 0 0 1px var(--accent-blue); }
+                .switch input:checked + .slider:before { transform: translateX(20px); }
+                .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+            `;
+            document.head.appendChild(style);
+
+            // Auto-generation Logic
+            const titleInput = document.getElementById('create-page-title');
+            const slugInput = document.getElementById('create-url-slug');
+            const seoTitleInput = document.getElementById('create-seo-title');
+            const seoDescInput = document.getElementById('create-seo-desc');
+            const slugAvail = document.getElementById('slug-availability');
+            
+            const seoTitleCount = document.getElementById('create-seo-title-count');
+            const seoDescCount = document.getElementById('create-seo-desc-count');
+            
+            const previewTitle = document.getElementById('seo-preview-title');
+            const previewSlug = document.getElementById('seo-preview-slug');
+            const previewDesc = document.getElementById('seo-preview-desc');
+            
+            let isSlugEdited = false;
+            let isSeoTitleEdited = false;
+            let isMetaDescEdited = false;
+
+            function generateSlug(text) {
+                return text.toString().toLowerCase()
+                    .replace(/\s+/g, '-')
+                    .replace(/[^\w\-]+/g, '')
+                    .replace(/\-\-+/g, '-')
+                    .replace(/^-+/, '')
+                    .replace(/-+$/, '');
+            }
+
+            function updateCounters() {
+                if (seoTitleInput && seoTitleCount) {
+                    seoTitleCount.textContent = `${seoTitleInput.value.length} / 60`;
+                    seoTitleCount.style.color = seoTitleInput.value.length > 60 ? 'var(--accent-red)' : 'var(--text-muted)';
+                }
+                if (seoDescInput && seoDescCount) {
+                    seoDescCount.textContent = `${seoDescInput.value.length} / 160`;
+                    seoDescCount.style.color = seoDescInput.value.length > 160 ? 'var(--accent-red)' : 'var(--text-muted)';
+                }
+            }
+            
+            function updatePreview() {
+                if (previewTitle && seoTitleInput) previewTitle.textContent = seoTitleInput.value || 'Page Title';
+                if (previewSlug && slugInput) previewSlug.textContent = slugInput.value || 'page-url';
+                if (previewDesc && seoDescInput) previewDesc.textContent = seoDescInput.value || 'Page description...';
+            }
+
+            if (slugInput) {
+                slugInput.addEventListener('input', () => {
+                    isSlugEdited = true;
+                    slugAvail.style.display = slugInput.value.trim() !== '' ? 'block' : 'none';
+                    updatePreview();
+                });
+            }
+
+            if (seoTitleInput) {
+                seoTitleInput.addEventListener('input', () => {
+                    isSeoTitleEdited = true;
+                    updateCounters();
+                    updatePreview();
+                });
+            }
+
+            if (seoDescInput) {
+                seoDescInput.addEventListener('input', () => {
+                    isMetaDescEdited = true;
+                    updateCounters();
+                    updatePreview();
+                });
+            }
+
+            if (titleInput) {
+                titleInput.addEventListener('input', (e) => {
+                    const title = e.target.value;
+                    
+                    if (!isSlugEdited && slugInput) {
+                        slugInput.value = generateSlug(title);
+                        slugAvail.style.display = slugInput.value ? 'block' : 'none';
+                    }
+                    if (!isSeoTitleEdited && seoTitleInput) {
+                        seoTitleInput.value = title ? `${title} | Vyasa International School` : '';
+                    }
+                    if (!isMetaDescEdited && seoDescInput) {
+                        seoDescInput.value = title ? `Explore academic programs at Vyasa International School, designed to support academic excellence and holistic student development.` : '';
+                    }
+                    
+                    updateCounters();
+                    updatePreview();
+                });
+            }
+
+            // Publish Status Schedule Logic
+            const scheduleToggle = document.getElementById('schedule-toggle');
+            const scheduleFields = document.getElementById('schedule-fields');
+            
+            if (scheduleToggle && scheduleFields) {
+                scheduleToggle.addEventListener('change', (e) => {
+                    if (e.target.checked) {
+                        scheduleFields.style.opacity = '1';
+                        scheduleFields.style.pointerEvents = 'auto';
+                    } else {
+                        scheduleFields.style.opacity = '0.5';
+                        scheduleFields.style.pointerEvents = 'none';
+                    }
+                });
+            }
+
+            // Toggle Block Grid Logic
+            const addBlockBtn = document.getElementById('add-block-btn');
+            const inlineBlockGrid = document.getElementById('inline-block-grid');
+            if (addBlockBtn && inlineBlockGrid) {
+                addBlockBtn.addEventListener('click', () => {
+                    if (inlineBlockGrid.style.display === 'none') {
+                        inlineBlockGrid.style.display = 'block';
+                        // Scroll to grid slightly
+                        setTimeout(() => inlineBlockGrid.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+                    } else {
+                        inlineBlockGrid.style.display = 'none';
+                    }
+                });
+            }
+
+            // Expand/Collapse Block Logic
+            document.querySelectorAll('.toggle-block').forEach(icon => {
+                icon.addEventListener('click', (e) => {
+                    const blockHeader = e.target.closest('.block-header');
+                    const blockBody = blockHeader.nextElementSibling;
+                    
+                    if (blockBody.style.display === 'none') {
+                        blockBody.style.display = 'block';
+                        e.target.style.transform = 'rotate(180deg)';
+                    } else {
+                        blockBody.style.display = 'none';
+                        e.target.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
+            updateCounters();
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const blocksContainer = document.getElementById('content-blocks-container');
+            if (blocksContainer) {
+                new Sortable(blocksContainer, {
+                    animation: 150,
+                    handle: '.drag-handle',
+                    ghostClass: 'sortable-ghost'
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -24,23 +24,43 @@
                    <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
                 </div>
             </div>
-            <div class="sidebar-portal-label">CMS PORTAL</div>
 
             <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
-                    <li class="active"><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
-                    <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
-                    <li><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
-                    <li><a href="announcements.html"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
-                    <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
-                    <li><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
-                    <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
-                    <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
-                    <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
-                    <li><a href="inquiries.html"><i class="fa-solid fa-envelope-open-text"></i> Inquiries</a></li>
-                    <li><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
-                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                    <li class="active" data-page="dashboard.html"><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+
+                
+                    <li class="menu-item-has-children" data-group="content">
+                        <a href="#"><i class="fa-solid fa-layer-group"></i> Content Management</a>
+                        <ul class="sub-menu">
+                            <li data-page="pages.html"><a href="pages.html"><i class="fa-regular fa-file-lines"></i> Pages</a></li>
+                            <li data-page="articles.html"><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                            <li data-page="announcements.html"><a href="announcements.html"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
+                            <li data-page="achievements.html"><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                            <li data-page="testimonials.html"><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                        </ul>
+                    </li>
+
+                  
+                    <li class="menu-item-has-children" data-group="academics">
+                        <a href="#"><i class="fa-solid fa-graduation-cap"></i> Academics</a>
+                        <ul class="sub-menu">
+                            <li data-page="programs.html"><a href="programs.html"><i class="fa-solid fa-book"></i> Programs</a></li>
+                            <li data-page="educators.html"><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                            <li data-page="students.html"><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item-has-children" data-group="comms">
+                        <a href="#"><i class="fa-solid fa-envelope-open-text"></i> Communications & HR</a>
+                        <ul class="sub-menu">
+                            <li data-page="inquiries.html"><a href="inquiries.html"><i class="fa-solid fa-circle-question"></i> Inquiries</a></li>
+                            <li data-page="careers.html"><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
+                        </ul>
+                    </li>
+
+                    <li data-page="media-library.html"><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li data-page="settings.html"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
                 </ul>
             </nav>
 
@@ -256,7 +276,7 @@
 
                 <!-- Settings Sidebar Column -->
                 <div class="editor-sidebar-col">
-                    <div class="settings-card card">
+                    <div class="settings-card card mb-20">
                         <div class="settings-header">
                             <h3>Page Settings</h3>
                             <p>Configure publishing parameters</p>
@@ -265,7 +285,8 @@
                         <div class="settings-body">
                             <div class="form-group mb-20">
                                 <label>URL Slug</label>
-                                <input type="text" value="/academics/core-programs" class="bg-gray-input">
+                                <input type="text" id="url-slug-input" value="academic-programs" class="bg-gray-input">
+                                <small style="display: block; margin-top: 4px; color: var(--text-muted); font-size: 0.75rem;">Automatically generated from the page title. You can edit it manually.</small>
                             </div>
 
                             <div class="form-group mb-20">
@@ -291,13 +312,41 @@
                             </div>
 
                             <div class="form-group mb-20">
-                                <label>Meta Title</label>
-                                <input type="text" value="Academic Programs | VYASA Gro..." class="bg-gray-input">
+                                <label>Publish Status</label>
+                                <div class="status-dropdown-wrapper">
+                                    <span class="status-indicator yellow"></span>
+                                    <select class="bg-gray-input status-select">
+                                        <option value="draft">Draft</option>
+                                        <option value="published">Published</option>
+                                        <option value="scheduled">Scheduled</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-card card">
+                        <div class="settings-header">
+                            <h3>SEO Settings</h3>
+                            <p>Optimize how this page appears in search engines.</p>
+                        </div>
+                        
+                        <div class="settings-body">
+                            <div class="form-group mb-20">
+                                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                                    <label>SEO Title</label>
+                                    <small id="seo-title-count" style="color: var(--text-muted); font-size: 0.75rem;">0 / 60 characters</small>
+                                </div>
+                                <input type="text" id="seo-title-input" value="Academic Programs | Vyasa International School" class="bg-gray-input">
+                                <small style="display: block; margin-top: 4px; color: var(--text-muted); font-size: 0.75rem;">Auto-generated from page title.</small>
                             </div>
 
                             <div class="form-group mb-20">
-                                <label>Meta Description</label>
-                                <textarea rows="4" class="bg-gray-input">Explore VYASA's highly structured primary, secondary, and pre-university programs focused on h...</textarea>
+                                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                                    <label>Meta Description</label>
+                                    <small id="seo-desc-count" style="color: var(--text-muted); font-size: 0.75rem;">0 / 160 characters</small>
+                                </div>
+                                <textarea id="seo-desc-input" rows="4" class="bg-gray-input">Explore academic programs at Vyasa International School, designed to support academic excellence and holistic student development.</textarea>
                             </div>
 
                             <div class="form-group mb-20">
@@ -310,16 +359,17 @@
                                     </div>
                                     <button class="delete-img-btn"><i class="fa-regular fa-trash-can"></i></button>
                                 </div>
+                                <div style="margin-top: 8px; display: flex; gap: 8px;">
+                                    <button class="btn btn-outline" style="padding: 4px 12px; font-size: 0.8rem; background: white;">Change Image</button>
+                                </div>
                             </div>
 
-                            <div class="form-group mb-20">
-                                <label>Publish Status</label>
-                                <div class="status-dropdown-wrapper">
-                                    <span class="status-indicator yellow"></span>
-                                    <select class="bg-gray-input status-select">
-                                        <option value="draft">Draft</option>
-                                        <option value="published">Published</option>
-                                    </select>
+                            <div class="form-group mb-10">
+                                <label>Search Engine Preview</label>
+                                <div style="border: 1px solid var(--border-color); border-radius: 8px; padding: 12px; background: white; margin-top: 8px;">
+                                    <div id="seo-preview-title" style="color: #1a0dab; font-size: 1.1rem; font-weight: 500; font-family: arial, sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer;">Academic Programs | Vyasa International School</div>
+                                    <div id="seo-preview-url" style="color: #006621; font-size: 0.85rem; font-family: arial, sans-serif; margin-bottom: 4px;">www.vyasa.com/<span id="seo-preview-slug">academic-programs</span></div>
+                                    <div id="seo-preview-desc" style="color: #4d5156; font-size: 0.85rem; font-family: arial, sans-serif; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Explore academic programs at Vyasa International School, designed to support academic excellence and holistic student development.</div>
                                 </div>
                             </div>
                         </div>
@@ -472,6 +522,100 @@
                     });
                 });
             }
+
+            // --- Auto-generation and SEO Preview Logic ---
+            const pageTitleInput = document.querySelector('.editable-page-title');
+            
+            const slugInput = document.getElementById('url-slug-input');
+            const seoTitleInput = document.getElementById('seo-title-input');
+            const seoDescInput = document.getElementById('seo-desc-input');
+            
+            const seoTitleCount = document.getElementById('seo-title-count');
+            const seoDescCount = document.getElementById('seo-desc-count');
+            
+            const previewTitle = document.getElementById('seo-preview-title');
+            const previewSlug = document.getElementById('seo-preview-slug');
+            const previewDesc = document.getElementById('seo-preview-desc');
+            
+            let isSlugEdited = false;
+            let isSeoTitleEdited = false;
+            let isMetaDescEdited = false;
+
+            // Generate slug from text
+            function generateSlug(text) {
+                return text.toString().toLowerCase()
+                    .replace(/\s+/g, '-')           // Replace spaces with -
+                    .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+                    .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+                    .replace(/^-+/, '')             // Trim - from start of text
+                    .replace(/-+$/, '');            // Trim - from end of text
+            }
+
+            // Update UI Counters
+            function updateCounters() {
+                if (seoTitleInput && seoTitleCount) {
+                    seoTitleCount.textContent = `${seoTitleInput.value.length} / 60 characters`;
+                    seoTitleCount.style.color = seoTitleInput.value.length > 60 ? 'var(--accent-red)' : 'var(--text-muted)';
+                }
+                if (seoDescInput && seoDescCount) {
+                    seoDescCount.textContent = `${seoDescInput.value.length} / 160 characters`;
+                    seoDescCount.style.color = seoDescInput.value.length > 160 ? 'var(--accent-red)' : 'var(--text-muted)';
+                }
+            }
+
+            // Update Preview
+            function updatePreview() {
+                if (previewTitle && seoTitleInput) previewTitle.textContent = seoTitleInput.value || 'Page Title';
+                if (previewSlug && slugInput) previewSlug.textContent = slugInput.value || 'page-url';
+                if (previewDesc && seoDescInput) previewDesc.textContent = seoDescInput.value || 'Page description...';
+            }
+
+            // Listeners for Manual Edits
+            if (slugInput) {
+                slugInput.addEventListener('input', () => {
+                    isSlugEdited = true;
+                    updatePreview();
+                });
+            }
+            if (seoTitleInput) {
+                seoTitleInput.addEventListener('input', () => {
+                    isSeoTitleEdited = true;
+                    updateCounters();
+                    updatePreview();
+                });
+            }
+            if (seoDescInput) {
+                seoDescInput.addEventListener('input', () => {
+                    isMetaDescEdited = true;
+                    updateCounters();
+                    updatePreview();
+                });
+            }
+
+            // Listener for Page Title Auto-generation
+            if (pageTitleInput) {
+                pageTitleInput.addEventListener('input', (e) => {
+                    const title = e.target.value;
+                    
+                    if (!isSlugEdited && slugInput) {
+                        slugInput.value = generateSlug(title);
+                    }
+                    if (!isSeoTitleEdited && seoTitleInput) {
+                        seoTitleInput.value = title ? `${title} | Vyasa International School` : '';
+                    }
+                    if (!isMetaDescEdited && seoDescInput) {
+                        seoDescInput.value = title ? `Explore ${title.toLowerCase()} at Vyasa International School, designed to support academic excellence and holistic student development.` : '';
+                    }
+                    
+                    updateCounters();
+                    updatePreview();
+                });
+            }
+
+            // Initial setup
+            updateCounters();
+            updatePreview();
+
         });
     </script>
 </body>

@@ -16,30 +16,50 @@
 <body>
 
     <div class="dashboard-container">
-        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
+                <!-- Using a placeholder logo similar to the image -->
                 <div class="logo">
                    <img src="../Images/vyasa logo.webp" alt="Vyasa Logo">
                 </div>
             </div>
-            <div class="sidebar-portal-label">CMS PORTAL</div>
 
             <nav class="sidebar-nav">
                 <ul>
-                   <li><a href="#"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
-                    <li><a href="pages.html"><i class="fa-solid fa-layer-group"></i> Pages</a></li>
-                    <li><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
-                    <li><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
-                    <li><a href="announcements.html"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
-                    <li><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
-                    <li class="active"><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
-                    <li><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
-                    <li><a href="programs.html"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
-                    <li><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
-                    <li><a href="inquiries.html"><i class="fa-solid fa-envelope-open-text"></i> Inquiries</a></li>
-                    <li><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
-                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                    <li class="active" data-page="dashboard.html"><a href="dashboard.html"><i class="fa-solid fa-border-all"></i> Dashboard</a></li>
+
+                
+                    <li class="menu-item-has-children" data-group="content">
+                        <a href="#"><i class="fa-solid fa-layer-group"></i> Content Management</a>
+                        <ul class="sub-menu">
+                            <li data-page="pages.html"><a href="pages.html"><i class="fa-regular fa-file-lines"></i> Pages</a></li>
+                            <li data-page="articles.html"><a href="articles.html"><i class="fa-regular fa-newspaper"></i> Articles / Blog</a></li>
+                            <li data-page="announcements.html"><a href="announcements.html"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
+                            <li data-page="achievements.html"><a href="achievements.html"><i class="fa-solid fa-award"></i> Achievements</a></li>
+                            <li data-page="testimonials.html"><a href="testimonials.html"><i class="fa-regular fa-comment-dots"></i> Testimonials</a></li>
+                        </ul>
+                    </li>
+
+                  
+                    <li class="menu-item-has-children" data-group="academics">
+                        <a href="#"><i class="fa-solid fa-graduation-cap"></i> Academics</a>
+                        <ul class="sub-menu">
+                            <li data-page="programs.html"><a href="programs.html"><i class="fa-solid fa-book"></i> Programs</a></li>
+                            <li data-page="educators.html"><a href="educators.html"><i class="fa-solid fa-users"></i> Educators</a></li>
+                            <li data-page="students.html"><a href="students.html"><i class="fa-solid fa-user-group"></i> Students</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menu-item-has-children" data-group="comms">
+                        <a href="#"><i class="fa-solid fa-envelope-open-text"></i> Communications & HR</a>
+                        <ul class="sub-menu">
+                            <li data-page="inquiries.html"><a href="inquiries.html"><i class="fa-solid fa-circle-question"></i> Inquiries</a></li>
+                            <li data-page="careers.html"><a href="careers.html"><i class="fa-solid fa-briefcase"></i> Careers</a></li>
+                        </ul>
+                    </li>
+
+                    <li data-page="media-library.html"><a href="media-library.html"><i class="fa-regular fa-folder-open"></i> Media Library</a></li>
+                    <li data-page="settings.html"><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
                 </ul>
             </nav>
 
@@ -114,159 +134,199 @@
                     <div class="header-left">
                         <div class="title-with-icon">
                             <h1>Add Testimonial</h1>
-                            <i class="fa-solid fa-pen-nib title-icon"></i>
+                            <i class="fa-solid fa-message title-icon"></i>
                         </div>
                         <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">Draft and publish new content for the Vyasa website.</p>
                     </div>
                     
                     <div style="display: flex; gap: 12px;">
-                        <a href="testimonials.html" class="btn btn-outline">Cancel</a>
+                        <a href="testimonials.html" class="btn btn-outline" style="background: white;"><i class="fa-solid fa-xmark"></i> Cancel</a>
+                        <button class="btn btn-outline" style="background: white; border-color: var(--border-color); color: var(--text-color);"><i class="fa-regular fa-floppy-disk"></i> Save Draft</button>
                         <button class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Publish Testimonial</button>
                     </div>
                 </div>
             </header>
 
             <!-- Editor Layout -->
-            <form class="editor-layout" action="view-article.html">
-                
+            <form class="editor-layout" action="testimonials.html" style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items: start;">
                 <!-- Main Editor Area -->
-                <div class="editor-main">
-                    <div class="editor-field">
-                        <input type="text" class="editor-title-input" placeholder="Add title..." autofocus>
-                    </div>
-                    <div class="editor-field slug-field">
-                        <span class="slug-prefix">https://www.vyasa.edu.in/articles/</span>
-                        <input type="text" class="slug-input" placeholder="testimonial-slug">
+                <div class="editor-main" style="display: flex; flex-direction: column; gap: 24px;">
+                    
+                    <!-- Card 1: Testimonial Content -->
+                    <div class="editor-card" style="background: white; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                        <div class="editor-card-header" style="padding: 16px 24px; border-bottom: 1px solid var(--border-color);">
+                            <h2 style="color: var(--primary-blue); font-size: 1.1rem; margin: 0;">1. Testimonial Content</h2>
+                        </div>
+                        <div class="editor-card-body" style="padding: 24px; display: flex; flex-direction: column; gap: 20px;">
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div class="form-group">
+                                    <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Person's Name <span style="color: var(--accent-red);">*</span></label>
+                                    <input type="text" placeholder="Enter person's name..." style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; outline: none; background: white;">
+                                </div>
+                                <div class="form-group">
+                                    <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Relationship / Role <span style="color: var(--accent-red);">*</span></label>
+                                    <select style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; outline: none; background: white; appearance: auto;">
+                                        <option selected disabled>Select relationship</option>
+                                        <option>Alumni</option>
+                                        <option>Parent</option>
+                                        <option>Student</option>
+                                        <option>Educator</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Testimonial <span style="color: var(--accent-red);">*</span></label>
+                                <div class="rich-text-editor" style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden;">
+                                    <div class="editor-toolbar" style="padding: 8px; background: white; border-bottom: 1px solid var(--border-color); display: flex; gap: 4px; align-items: center; flex-wrap: wrap;">
+                                        <select style="padding: 4px 8px; border: 1px solid var(--border-color); border-radius: 4px; background: white; outline: none; appearance: auto;"><option>Paragraph</option></select>
+                                        <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-bold"></i></button>
+                                        <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-italic"></i></button>
+                                        <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-underline"></i></button>
+                                        <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-list-ul"></i></button>
+                                        <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-list-ol"></i></button>
+                                        <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-list-check"></i></button>
+                                        <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-quote-left"></i></button>
+                                        <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-link"></i></button>
+                                        <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-regular fa-image"></i></button>
+                                        <div style="flex: 1;"></div>
+                                        <button type="button" style="padding: 4px 8px; background: transparent; border: none; cursor: pointer;"><i class="fa-solid fa-expand"></i></button>
+                                    </div>
+                                    <textarea style="width: 100%; border: none; padding: 16px; min-height: 150px; font-family: inherit; font-size: 0.95rem; resize: vertical; outline: none;" placeholder="Write testimonial content here..."></textarea>
+                                </div>
+                                <div style="display: flex; justify-content: flex-end; margin-top: 4px;">
+                                    <small style="color: var(--text-muted); font-size: 0.75rem;">0 / 500</small>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Rating</label>
+                                <div style="display: flex; align-items: center; gap: 12px;">
+                                    <div style="display: flex; gap: 4px;">
+                                        <i class="fa-regular fa-star" style="color: #FACC15; font-size: 1.2rem; cursor: pointer;"></i>
+                                        <i class="fa-regular fa-star" style="color: #FACC15; font-size: 1.2rem; cursor: pointer;"></i>
+                                        <i class="fa-regular fa-star" style="color: #FACC15; font-size: 1.2rem; cursor: pointer;"></i>
+                                        <i class="fa-regular fa-star" style="color: #FACC15; font-size: 1.2rem; cursor: pointer;"></i>
+                                        <i class="fa-regular fa-star" style="color: #FACC15; font-size: 1.2rem; cursor: pointer;"></i>
+                                    </div>
+                                    <span style="font-size: 0.85rem; color: var(--text-muted);">0 / 5</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Rich Text Editor Mockup -->
-                    <div class="rich-text-editor">
-                        <div class="editor-toolbar">
-                            <button type="button"><i class="fa-solid fa-bold"></i></button>
-                            <button type="button"><i class="fa-solid fa-italic"></i></button>
-                            <button type="button"><i class="fa-solid fa-underline"></i></button>
-                            <button type="button"><i class="fa-solid fa-strikethrough"></i></button>
-                            <div class="toolbar-divider"></div>
-                            <button type="button"><i class="fa-solid fa-heading"></i></button>
-                            <button type="button"><i class="fa-solid fa-paragraph"></i></button>
-                            <div class="toolbar-divider"></div>
-                            <button type="button"><i class="fa-solid fa-list-ul"></i></button>
-                            <button type="button"><i class="fa-solid fa-list-ol"></i></button>
-                            <button type="button"><i class="fa-solid fa-quote-left"></i></button>
-                            <div class="toolbar-divider"></div>
-                            <button type="button"><i class="fa-solid fa-link"></i></button>
-                            <button type="button"><i class="fa-regular fa-image"></i></button>
-                            <button type="button"><i class="fa-solid fa-code"></i></button>
+                    <!-- Card 2: Person Details -->
+                    <div class="editor-card" style="background: white; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                        <div class="editor-card-header" style="padding: 16px 24px; border-bottom: 1px solid var(--border-color);">
+                            <h2 style="color: var(--primary-blue); font-size: 1.1rem; margin: 0;">2. Person Details</h2>
                         </div>
-                        <textarea class="editor-textarea" placeholder="Write testimonial content here..."></textarea>
+                        <div class="editor-card-body" style="padding: 24px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 24px;">
+                            
+                            <div>
+                                <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Profile Image</label>
+                                <div class="image-upload-zone" style="border: 1px dashed var(--border-color); border-radius: 8px; padding: 40px 20px; text-align: center; background: #f8fafc; cursor: pointer; height: calc(100% - 28px); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                                    <i class="fa-solid fa-cloud-arrow-up" style="color: var(--primary-blue); font-size: 2rem; margin-bottom: 12px;"></i>
+                                    <p style="font-size: 0.9rem; color: var(--primary-dark); margin-bottom: 8px;">Click or drag image here</p>
+                                    <span style="font-size: 0.75rem; color: var(--text-muted);">Recommended size: 400x400px<br>JPG, PNG or WebP (Max 2MB)</span>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; flex-direction: column; gap: 16px;">
+                                <div class="form-group">
+                                    <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Designation / Title</label>
+                                    <input type="text" placeholder="e.g. Parent, Alumni, Student, Educator" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; outline: none; background: white;">
+                                </div>
+                                <div class="form-group">
+                                    <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Student / Class <span style="color: var(--text-muted); font-weight: 400;">(Optional)</span></label>
+                                    <input type="text" placeholder="e.g. Grade 8, Batch 2024" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; outline: none; background: white;">
+                                </div>
+                                <div class="form-group">
+                                    <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Location <span style="color: var(--text-muted); font-weight: 400;">(Optional)</span></label>
+                                    <input type="text" placeholder="e.g. Vadodara, Gujarat" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; outline: none; background: white;">
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
 
-                    <!-- Excerpt -->
-                    <div class="editor-card" style="margin-top: 24px;">
-                        <div class="editor-card-header">
-                            <h3>Excerpt</h3>
-                        </div>
-                        <div class="editor-card-body">
-                            <textarea class="excerpt-textarea" placeholder="Write a short summary (optional)..."></textarea>
-                            <p class="form-help">Excerpts are optional hand-crafted summaries of your content that can be used in your theme.</p>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Editor Sidebar -->
-                <aside class="editor-sidebar">
+                <aside class="editor-sidebar" style="display: flex; flex-direction: column; gap: 24px;">
                     
                     <!-- Publishing Card -->
-                    <div class="editor-card">
-                        <div class="editor-card-header">
-                            <h3>Publishing</h3>
+                    <div class="editor-card" style="background: white; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                        <div class="editor-card-header" style="padding: 16px 20px; border-bottom: 1px solid var(--border-color);">
+                            <h3 style="color: var(--primary-blue); font-size: 1rem; margin: 0;">3. Publishing</h3>
                         </div>
-                        <div class="editor-card-body">
-                            <div class="form-group-vertical">
-                                <label>Status</label>
-                                <select>
-                                    <option>Draft</option>
-                                    <option>Pending Review</option>
-                                    <option selected>Published</option>
+                        <div class="editor-card-body" style="padding: 20px;">
+                            <div class="form-group-vertical" style="margin-bottom: 16px;">
+                                <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; display: block; color: var(--primary-dark);">Status <span style="color: var(--accent-red);">*</span></label>
+                                <select style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: white; outline: none; appearance: auto;">
+                                    <option selected>🟢 Published</option>
+                                    <option>🟡 Draft</option>
                                 </select>
                             </div>
-                            <div class="form-group-vertical">
-                                <label>Publish Date</label>
-                                <input type="datetime-local" value="2026-08-13T14:30">
+                            <div class="form-group-vertical" style="margin-bottom: 16px;">
+                                <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; display: block; color: var(--primary-dark);">Publish Date <span style="color: var(--accent-red);">*</span></label>
+                                <div style="position: relative;">
+                                    <input type="text" value="13-08-2026 02:30 PM" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: white; outline: none;">
+                                    <i class="fa-regular fa-calendar" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+                                </div>
+                            </div>
+                            <div class="form-group-vertical" style="margin-bottom: 16px;">
+                                <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; display: flex; align-items: center; gap: 4px; color: var(--primary-dark);">
+                                    Display Order <span style="color: var(--accent-red);">*</span>
+                                    <i class="fa-solid fa-circle-info" style="color: var(--text-muted); font-size: 0.8rem; cursor: pointer;"></i>
+                                </label>
+                                <input type="number" value="1" min="1" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; background: white; outline: none;">
                             </div>
                             <div class="form-group-vertical">
-                                <label>Author</label>
-                                <select>
-                                    <option selected>Admin Director</option>
-                                    <option>Dr. Amit Patel</option>
-                                    <option>Meera Sundaram</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Categories Card -->
-                    <div class="editor-card">
-                        <div class="editor-card-header">
-                            <h3>Categories</h3>
-                        </div>
-                        <div class="editor-card-body">
-                            <div class="checkbox-list">
-                                <label class="custom-checkbox">
-                                    <input type="checkbox" checked>
-                                    <span class="checkmark"></span>
-                                    Campus News
-                                </label>
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                    Events
-                                </label>
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                    Announcements
-                                </label>
-                                <label class="custom-checkbox">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                    Student Life
-                                </label>
-                            </div>
-                                                </div>
-                    </div>
-
-                    <!-- Featured Image Card -->
-                    <div class="editor-card">
-                        <div class="editor-card-header">
-                            <h3>Featured Image</h3>
-                        </div>
-                        <div class="editor-card-body">
-                            <div class="image-upload-zone">
-                                <i class="fa-regular fa-image upload-icon"></i>
-                                <p>Click or drag image here</p>
-                                <span>Recommended size: 1200x630px</span>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                                    <label style="font-size: 0.85rem; font-weight: 600; margin: 0; color: var(--primary-dark);">Featured Testimonial</label>
+                                    <label class="toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
+                                        <input type="checkbox" checked style="opacity: 0; width: 0; height: 0;">
+                                        <span class="toggle-slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--primary-blue); border-radius: 24px; transition: .4s;">
+                                            <span style="position: absolute; height: 18px; width: 18px; left: 22px; bottom: 3px; background-color: white; border-radius: 50%; transition: .4s;"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div style="font-size: 0.75rem; color: var(--text-muted);">Show as featured testimonial<br>Featured testimonials will be shown on homepage.</div>
                             </div>
                         </div>
                     </div>
 
                     <!-- SEO Card -->
-                    <div class="editor-card">
-                        <div class="editor-card-header">
-                            <h3>SEO Settings</h3>
+                    <div class="editor-card" style="background: white; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                        <div class="editor-card-header" style="padding: 16px 20px; border-bottom: 1px solid var(--border-color);">
+                            <h3 style="color: var(--primary-blue); font-size: 1rem; margin: 0;">4. SEO Settings</h3>
                         </div>
-                        <div class="editor-card-body">
-                            <div class="form-group-vertical">
-                                <label>Meta Title</label>
-                                <input type="text" placeholder="SEO Title...">
+                        <div class="editor-card-body" style="padding: 20px;">
+                            <div class="form-group-vertical" style="margin-bottom: 16px;">
+                                <input type="text" id="testimonial-seo-title" placeholder="SEO Title..." class="bg-gray-input" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; outline: none; margin-bottom: 4px;">
+                                <div style="text-align: right;"><small id="seo-title-count" style="color: var(--text-muted); font-size: 0.75rem;">0 / 60</small></div>
                             </div>
                             <div class="form-group-vertical">
-                                <label>Meta Description</label>
-                                <textarea placeholder="A short description for search engines..." rows="3"></textarea>
+                                <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; display: block; color: var(--primary-dark);">Meta Description</label>
+                                <textarea id="testimonial-seo-desc" placeholder="A short description for search engines..." rows="3" class="bg-gray-input" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 6px; resize: vertical; outline: none; margin-bottom: 4px;"></textarea>
+                                <div style="text-align: right;"><small id="seo-desc-count" style="color: var(--text-muted); font-size: 0.75rem;">0 / 160</small></div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Preview Card -->
+                    <div class="editor-card" style="background: #f8fbff; border: 1px solid var(--primary-blue); border-radius: 8px; overflow: hidden;">
+                        <div class="editor-card-body" style="padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+                            <div style="display: flex; align-items: center; gap: 8px; color: var(--primary-blue); font-weight: 600;">
+                                <i class="fa-regular fa-eye"></i> Preview
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0; line-height: 1.4;">
+                                This testimonial will appear on the website as part of the testimonial section.
+                            </p>
+                            <button class="btn btn-outline" style="background: white; border-color: var(--primary-blue); color: var(--primary-blue); width: 100%; justify-content: center; border: 1px solid var(--primary-blue); border-radius: 6px; padding: 10px; cursor: pointer; font-weight: 600;">View Preview</button>
+                        </div>
+                    </div>
                 </aside>
             </form>
 

@@ -23,7 +23,7 @@
     --border-radius-md: 8px;
     --border-radius-sm: 6px;
     
-    --sidebar-width: 260px;
+    --sidebar-width: 280px;
 }
 
 * {
@@ -147,6 +147,7 @@ ul {
     color:  #002B7F;
     font-weight: 500;
     font-size: 0.95rem;
+    white-space: nowrap;
     transition: all 0.2s ease;
 }
 
@@ -156,17 +157,17 @@ ul {
     text-align: center;
 }
 
-.sidebar-nav li.active a,
-.sidebar-nav li a:hover {
+.sidebar-nav li.active > a,
+.sidebar-nav > ul > li > a:hover {
     background-color: var(--primary-light);
     color: var(--text-light);
 }
 
-.sidebar-nav li.active a {
+.sidebar-nav li.active > a {
     position: relative;
 }
 
-.sidebar-nav li.active a::before {
+.sidebar-nav li.active > a::before {
     content: '';
     position: absolute;
     left: 0;
@@ -3974,3 +3975,64 @@ input:checked + .toggle-slider:before {
     color: var(--primary-light);
 }
 
+/* Sidebar Submenu Styles */
+.sidebar-nav li.menu-item-has-children {
+    position: relative;
+    flex-direction: column;
+}
+
+
+.sidebar-nav li.menu-item-has-children > a::after {
+    content: '\f107';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+    margin-left: auto;
+}
+
+.sidebar-nav li.menu-item-has-children.open > a::after {
+    transform: rotate(180deg);
+}
+
+.sidebar-nav .sub-menu {
+    display: none;
+    padding-left: 28px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    gap: 2px;
+}
+
+.sidebar-nav .sub-menu.open {
+    display: flex;
+}
+
+.sidebar-nav .sub-menu li a {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-radius: 6px;
+}
+
+.sidebar-nav .sub-menu li a i {
+    font-size: 0.9rem;
+    width: 16px;
+}
+
+.sidebar-nav .sub-menu li:not(.active) a:hover {
+    color: var(--brand-blue);
+    background-color: rgba(0, 43, 127, 0.05);
+}
+
+.sidebar-nav .sub-menu li.active > a {
+    color: var(--text-light);
+}
+
+/* Adjust collapsed state for submenus */
+body.sidebar-collapsed .sidebar-nav li.menu-item-has-children > a::after {
+    display: none;
+}
+
+body.sidebar-collapsed .sidebar-nav .sub-menu {
+    display: none !important;
+}
