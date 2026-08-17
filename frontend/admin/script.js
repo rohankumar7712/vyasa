@@ -1,3 +1,14 @@
+// Secure Routing Check
+(function() {
+    // Check if the current page is NOT the login page
+    if (!window.location.pathname.endsWith('login.html')) {
+        // If the user is not logged in, redirect to login page
+        if (localStorage.getItem('admin_logged_in') !== 'true') {
+            window.location.href = 'login.html';
+        }
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
     // Chart.js Setup
     const chartCanvas = document.getElementById('enrollmentChart');
@@ -347,5 +358,17 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = '';
         });
     }
+
+    // --- Logout Logic ---
+    const logoutBtns = document.querySelectorAll('.dropdown-item.text-red');
+    logoutBtns.forEach(btn => {
+        if (btn.textContent.includes('Logout')) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                localStorage.removeItem('admin_logged_in');
+                window.location.href = 'login.html';
+            });
+        }
+    });
 
 });
