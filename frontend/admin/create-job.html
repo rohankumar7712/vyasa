@@ -151,7 +151,7 @@
             <form class="editor-layout" action="careers.html" style="display: flex; flex-direction: column; gap: 40px; padding: 24px; background: white; border-radius: 8px; border: 1px solid var(--border-color);">
                 
                 <!-- Row 1: Basic Info -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <div class="form-grid form-grid-2">
                     <div class="form-group">
                         <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Job Title <span style="color: var(--accent-red);">*</span></label>
                         <input type="text" value="Assistant Professor — Computer Science" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; outline: none; background: white; font-size: 1rem;">
@@ -168,7 +168,7 @@
                 </div>
 
                 <!-- Row 2: Descriptions -->
-                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px;">
+                <div class="form-grid" style="grid-template-columns: 1fr 2fr;">
                     <div class="form-group">
                         <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; display: block;">Short Description <span style="color: var(--accent-red);">*</span></label>
                         <textarea style="width: 100%; padding: 16px; border: 1px solid var(--border-color); border-radius: 6px; outline: none; background: white; resize: vertical; min-height: 200px; font-size: 0.95rem; line-height: 1.5;">We are seeking a passionate and qualified Assistant Professor in Computer Science to join our dynamic academic team and contribute to excellence in teaching, research, and student development.</textarea>
@@ -208,7 +208,7 @@
                 </div>
 
                 <!-- Row 3: Lists -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px;">
+                <div class="form-grid form-grid-3">
                     <div>
                         <label style="font-weight: 600; color: var(--primary-dark); margin-bottom: 16px; display: block; font-size: 1rem;">Key Responsibilities <span style="color: var(--accent-red);">*</span></label>
                         <div style="display: flex; flex-direction: column; gap: 12px;">
@@ -283,7 +283,7 @@
                 </div>
 
                 <!-- Row 4: Details -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px;">
+                <div class="form-grid form-grid-3">
                     
                     <!-- Employment Details -->
                     <div>
@@ -367,7 +367,7 @@
                                     <option selected>Main Campus</option>
                                 </select>
                             </div>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                            <div class="form-grid form-grid-2" style="gap: 16px;">
                                 <div>
                                     <label style="font-weight: 600; font-size: 0.95rem; color: var(--primary-dark); margin-bottom: 12px; display: block;">City <span style="color: var(--accent-red);">*</span></label>
                                     <input type="text" value="Bengaluru" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px; outline: none; background: white; font-size: 0.95rem;">
@@ -393,7 +393,7 @@
                                 </label>
                             </div>
 
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                            <div class="form-grid form-grid-2" style="gap: 16px;">
                                 <div>
                                     <label style="font-weight: 600; font-size: 0.95rem; color: var(--primary-dark); margin-bottom: 12px; display: block;">Min Salary <span style="color: var(--accent-red);">*</span></label>
                                     <div style="position: relative;">
@@ -410,7 +410,7 @@
                                 </div>
                             </div>
 
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                            <div class="form-grid form-grid-2" style="gap: 16px;">
                                 <div>
                                     <label style="font-weight: 600; font-size: 0.95rem; color: var(--primary-dark); margin-bottom: 12px; display: block;">Pay Period <span style="color: var(--accent-red);">*</span></label>
                                     <select style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px; background: white; outline: none; appearance: auto; font-size: 0.95rem;">
@@ -433,14 +433,14 @@
                 </div>
 
                 <!-- Row 5: Settings and SEO in 2 columns -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 24px;">
+                <div class="form-grid form-grid-2" style="margin-top: 24px;">
                     
                     <!-- Application Settings -->
                     <div>
                         <h3 style="color: var(--primary-dark); font-size: 1.1rem; margin-bottom: 24px;">Application Settings & Publishing</h3>
                         <div style="display: flex; flex-direction: column; gap: 24px;">
                             
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                            <div class="form-grid form-grid-2" style="gap: 16px;">
                                 <div>
                                     <label style="font-weight: 600; font-size: 0.95rem; color: var(--primary-dark); margin-bottom: 12px; display: block;">Application Method <span style="color: var(--accent-red);">*</span></label>
                                     <select style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px; background: white; outline: none; appearance: auto; font-size: 0.95rem;">
@@ -456,7 +456,7 @@
                                 </div>
                             </div>
                             
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                            <div class="form-grid form-grid-2" style="gap: 16px;">
                                 <div>
                                     <label style="font-weight: 600; font-size: 0.95rem; color: var(--primary-dark); margin-bottom: 12px; display: block;">Application Deadline</label>
                                     <input type="date" value="2026-09-30" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px; outline: none; background: white; font-size: 0.95rem;">

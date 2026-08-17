@@ -304,4 +304,48 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // --- Mobile Sidebar Toggle Logic ---
+    // Inject Mobile Menu Button and Overlay dynamically to apply to all pages
+    const headerLeft = document.querySelector('.header-left');
+    let mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    let sidebarOverlay = document.querySelector('.sidebar-overlay');
+
+    if (headerLeft && !mobileMenuBtn) {
+        mobileMenuBtn = document.createElement('button');
+        mobileMenuBtn.className = 'mobile-menu-btn';
+        mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        
+        // Insert before title
+        headerLeft.insertBefore(mobileMenuBtn, headerLeft.firstChild);
+        
+        // Align items
+        headerLeft.style.display = 'flex';
+        headerLeft.style.alignItems = 'center';
+        headerLeft.style.gap = '8px';
+    }
+
+    if (!sidebarOverlay) {
+        sidebarOverlay = document.createElement('div');
+        sidebarOverlay.className = 'sidebar-overlay';
+        document.body.appendChild(sidebarOverlay);
+    }
+
+    const mainSidebar = document.querySelector('.sidebar');
+    
+    if (mobileMenuBtn && mainSidebar) {
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            mainSidebar.classList.add('mobile-open');
+            sidebarOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        });
+        
+        sidebarOverlay.addEventListener('click', function() {
+            mainSidebar.classList.remove('mobile-open');
+            sidebarOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
 });
