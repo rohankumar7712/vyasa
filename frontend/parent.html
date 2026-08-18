@@ -596,22 +596,26 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="John Doe">
+                            <input type="text" id="name" name="FullName" class="form-control" placeholder="John Doe" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Contact Number</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="+91 98765 43210">
+                            <input type="tel" id="phone" name="PhoneNumber" class="form-control" placeholder="+91 98765 43210" required>
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="EmailAddress" class="form-control" placeholder="parent@example.com" required>
+                    </div>
+                    <div class="form-group">
                         <label for="child">Child's Name & Grade</label>
-                        <input type="text" id="child" class="form-control" placeholder="Ananya Doe - Grade 5">
+                        <input type="text" id="child" name="Subject" class="form-control" placeholder="Ananya Doe - Grade 5" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" class="form-control" placeholder="Enter your message here..."></textarea>
+                        <textarea id="message" name="Message" class="form-control" placeholder="Enter your message here..." required></textarea>
                     </div>
-                    <button type="button" class="submit-btn">Submit Message</button>
+                    <button type="submit" class="submit-btn">Submit Message</button>
                 </form>
             </div>
         </div>

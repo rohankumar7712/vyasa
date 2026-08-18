@@ -221,23 +221,23 @@ function initEnquiryPopup() {
             <form class="enquiry-form">
                 <div class="enquiry-form-group">
                     <label class="enquiry-label">FULL NAME</label>
-                    <input type="text" class="enquiry-input" placeholder="Enter your full name" required>
+                    <input type="text" name="FullName" class="enquiry-input" placeholder="Enter your full name" required>
                 </div>
                 
                 <div class="enquiry-form-row">
                     <div class="enquiry-form-group">
                         <label class="enquiry-label">EMAIL ADDRESS</label>
-                        <input type="email" class="enquiry-input" placeholder="name@example.com" required>
+                        <input type="email" name="EmailAddress" class="enquiry-input" placeholder="name@example.com" required>
                     </div>
                     <div class="enquiry-form-group">
                         <label class="enquiry-label">PHONE NUMBER</label>
-                        <input type="tel" class="enquiry-input" placeholder="+1 (555) 000-0000" required>
+                        <input type="tel" name="PhoneNumber" class="enquiry-input" placeholder="+1 (555) 000-0000" required>
                     </div>
                 </div>
                 
                 <div class="enquiry-form-group">
                     <label class="enquiry-label">SUBJECT OF ENQUIRY</label>
-                    <select class="enquiry-select" required>
+                    <select name="Subject" class="enquiry-select" required>
                         <option value="Admissions (Academic Year 2025-26)">Admissions (Academic Year 2025-26)</option>
                         <option value="General Enquiry">General Enquiry</option>
                         <option value="Campus Tour">Campus Tour</option>
@@ -247,7 +247,7 @@ function initEnquiryPopup() {
                 
                 <div class="enquiry-form-group">
                     <label class="enquiry-label">YOUR MESSAGE</label>
-                    <textarea class="enquiry-textarea" placeholder="Tell us about your child's academic goals or any specific concerns..." required></textarea>
+                    <textarea name="Message" class="enquiry-textarea" placeholder="Tell us about your child's academic goals or any specific concerns..." required></textarea>
                 </div>
                 
                 <button type="submit" class="enquiry-submit-btn">
@@ -357,11 +357,11 @@ function initCampusVisitPopup() {
                     <div class="enquiry-form-row">
                         <div class="enquiry-form-group">
                             <label class="enquiry-label">EMAIL ADDRESS *</label>
-                            <input type="email" class="enquiry-input" placeholder="name@example.com" required>
+                            <input type="email" name="EmailAddress" class="enquiry-input" placeholder="name@example.com" required>
                         </div>
                         <div class="enquiry-form-group">
                             <label class="enquiry-label">PHONE NUMBER *</label>
-                            <input type="tel" class="enquiry-input" placeholder="+1 (555) 000-0000" required>
+                            <input type="tel" name="PhoneNumber" class="enquiry-input" placeholder="+91" required>
                         </div>
                     </div>
 
