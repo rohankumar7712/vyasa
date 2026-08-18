@@ -305,7 +305,7 @@ function initEnquiryPopup() {
                 const originalText = btn.innerHTML;
                 btn.innerHTML = 'Sending...';
                 
-                emailjs.sendForm('service_8abb7g4', 'YOUR_TEMPLATE_ID', form)
+                emailjs.sendForm('service_8abb7g4', 'template_cwyd22j', form)
                     .then(() => {
                         btn.innerHTML = originalText;
                         alert('Enquiry Submitted Successfully!'); // Simple fallback since this modal lacks a built-in success view
@@ -476,7 +476,7 @@ function initCampusVisitPopup() {
             const originalText = btn.innerHTML;
             btn.innerHTML = 'Booking...';
             
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form)
+            emailjs.sendForm('service_8abb7g4', 'template_cwyd22i', form)
                 .then(() => {
                     btn.innerHTML = originalText;
                     formContainer.style.display = 'none';
