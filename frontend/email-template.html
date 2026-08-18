@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiry Confirmation - VYASA International School</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f4f5fb;
+            color: #333333;
+        }
+        .email-wrapper {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        .header {
+            background-color: #1a2b4c;
+            padding: 30px 40px;
+            text-align: center;
+        }
+        .header h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .header p {
+            color: #fca311;
+            margin: 5px 0 0;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .content {
+            padding: 40px;
+        }
+        .greeting {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a2b4c;
+            margin-bottom: 20px;
+        }
+        .message {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #555555;
+            margin-bottom: 30px;
+        }
+        .details-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid #d32f2f;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+        .details-box h3 {
+            margin-top: 0;
+            font-size: 16px;
+            color: #1a2b4c;
+            margin-bottom: 15px;
+        }
+        .detail-row {
+            display: flex;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .detail-label {
+            font-weight: 600;
+            color: #777777;
+            width: 140px;
+        }
+        .detail-value {
+            color: #333333;
+            font-weight: 500;
+        }
+        .cta-container {
+            text-align: center;
+            margin: 40px 0 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: #d32f2f;
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 30px 40px;
+            text-align: center;
+            border-top: 1px solid #eeeeee;
+        }
+        .footer-text {
+            font-size: 13px;
+            color: #888888;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+        .social-links {
+            margin-top: 15px;
+        }
+        .social-links a {
+            color: #1a2b4c;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+        <!-- Header -->
+        <div class="header">
+            <h1>VYASA</h1>
+            <p>International School</p>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <div class="greeting">Hello {{FullName}},</div>
+            
+            <div class="message">
+                Thank you for reaching out to VYASA International School. We have successfully received your inquiry and our admissions team is currently reviewing your details. 
+                <br><br>
+                We appreciate your interest in our institution. A member of our admissions concierge will contact you shortly to provide the information you need and guide you through the next steps.
+            </div>
+
+            <!-- Submission Details -->
+            <div class="details-box">
+                <h3>Your Inquiry Details</h3>
+                
+                <div class="detail-row">
+                    <div class="detail-label">Name:</div>
+                    <div class="detail-value">{{FullName}}</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Email:</div>
+                    <div class="detail-value">{{EmailAddress}}</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Phone:</div>
+                    <div class="detail-value">{{PhoneNumber}}</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Subject:</div>
+                    <div class="detail-value">{{Subject}}</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Message:</div>
+                    <div class="detail-value">{{Message}}</div>
+                </div>
+            </div>
+
+            <div class="message">
+                In the meantime, feel free to explore our curriculum, campus facilities, and admission guidelines on our website.
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-container">
+                <a href="https://vyasa.edu.in/campus-visit" class="btn">Explore Our Campus</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-text">
+                <strong>VYASA International School</strong><br>
+                123 Education Boulevard, Knowledge City, State, 12345<br>
+                Admissions: +91 80 4321 0001 | admissions@vyasa.edu.in
+            </div>
+            <div class="social-links">
+                <a href="#">Website</a> &middot; 
+                <a href="#">Facebook</a> &middot; 
+                <a href="#">Instagram</a>
+            </div>
+            <div class="footer-text" style="margin-top: 20px; font-size: 11px; color: #aaaaaa;">
+                This is an automated email. Please do not reply directly to this message.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
