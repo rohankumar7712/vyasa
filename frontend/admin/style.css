@@ -4429,3 +4429,104 @@ body.sidebar-collapsed .sidebar-nav .sub-menu {
         gap: 16px;
     }
 }
+/* Custom Dropdown & Filters */
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.segment-control {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2px;
+}
+
+.segment-btn {
+    background: transparent;
+    border: none;
+    padding: 6px 16px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.segment-btn:hover {
+    color: var(--primary-dark);
+}
+
+.segment-btn.active {
+    background-color: var(--primary-dark);
+    color: white;
+}
+
+/* Custom Dropdown container */
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    cursor: pointer;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.custom-dropdown-btn:hover, .custom-dropdown-btn.active {
+    border-color: var(--accent-blue);
+}
+
+.custom-dropdown-btn i:first-child {
+    color: var(--text-muted);
+}
+
+.custom-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    min-width: 100%;
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    padding: 4px 0;
+}
+
+.custom-dropdown-menu.active {
+    display: flex;
+}
+
+.custom-dropdown-item {
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+.custom-dropdown-item:hover {
+    background-color: #f1f5f9;
+    color: var(--primary-dark);
+}

@@ -171,22 +171,38 @@
                     </div>
                     
                     <div class="toolbar-dropdowns">
-                        <div class="toolbar-select">
-                            <select>
-                                <option>All Categories</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterRolesTestimonials">
+                                <span class="selected-text">All Roles</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterRolesTestimonials">
+                                <div class="custom-dropdown-item">All Roles</div>
+                                <div class="custom-dropdown-item">Alumni</div>
+                                <div class="custom-dropdown-item">Student</div>
+                                <div class="custom-dropdown-item">Parent</div>
+                            </div>
                         </div>
-                        <div class="toolbar-select">
-                            <select>
-                                <option>All Status</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterStatTestimonials">
+                                <span class="selected-text">All Status</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterStatTestimonials">
+                                <div class="custom-dropdown-item">All Status</div>
+                                <div class="custom-dropdown-item">Published</div>
+                                <div class="custom-dropdown-item">Pending</div>
+                                <div class="custom-dropdown-item">Draft</div>
+                            </div>
                         </div>
-                        <div class="toolbar-select">
-                            <select>
-                                <option>Last Modified</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterModTestimonials">
+                                <span class="selected-text">Last Modified</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterModTestimonials">
+                                <div class="custom-dropdown-item">Last Modified</div>
+                                <div class="custom-dropdown-item">Today</div>
+                                <div class="custom-dropdown-item">Yesterday</div>
+                            </div>
                         </div>
-                        <button class="btn-more-filters"><i class="fa-solid fa-filter"></i> More Filters</button>
                     </div>
 
                     <button class="btn-clear-filters"><i class="fa-solid fa-rotate-right"></i> Clear Filters</button>

@@ -173,23 +173,28 @@
                     </div>
                     
                     <div class="toolbar-dropdowns">
-                        <div class="toolbar-select">
-                            <select>
-                                <option>All Departments</option>
-                                <option>Teaching Staff</option>
-                                <option>Administrative</option>
-                                <option>Support Staff</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterDeptJobs">
+                                <span class="selected-text">All Departments</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterDeptJobs">
+                                <div class="custom-dropdown-item">All Departments</div>
+                                <div class="custom-dropdown-item">Teaching Staff</div>
+                                <div class="custom-dropdown-item">Administrative</div>
+                                <div class="custom-dropdown-item">Support Staff</div>
+                            </div>
                         </div>
-                        <div class="toolbar-select">
-                            <select>
-                                <option>All Status</option>
-                                <option>Active</option>
-                                <option>Draft</option>
-                                <option>Closed</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterStatJobs">
+                                <span class="selected-text">All Status</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterStatJobs">
+                                <div class="custom-dropdown-item">All Status</div>
+                                <div class="custom-dropdown-item">Active</div>
+                                <div class="custom-dropdown-item">Draft</div>
+                                <div class="custom-dropdown-item">Closed</div>
+                            </div>
                         </div>
-                        <button class="btn-more-filters"><i class="fa-solid fa-filter"></i> More Filters</button>
                     </div>
 
                     <button class="btn-clear-filters"><i class="fa-solid fa-rotate-right"></i> Clear Filters</button>

@@ -147,20 +147,26 @@
                     </div>
                     
                     <div class="toolbar-dropdowns">
-                        <div class="toolbar-select">
-                            <select>
-                                <option>All Types</option>
-                                <option>Images</option>
-                                <option>Documents</option>
-                                <option>Videos</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterTypesMedia">
+                                <span class="selected-text">All Types</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterTypesMedia">
+                                <div class="custom-dropdown-item">All Types</div>
+                                <div class="custom-dropdown-item">Images</div>
+                                <div class="custom-dropdown-item">Documents</div>
+                                <div class="custom-dropdown-item">Videos</div>
+                            </div>
                         </div>
-                        <div class="toolbar-select">
-                            <select>
-                                <option>Date Added</option>
-                                <option>File Size</option>
-                                <option>Name A-Z</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterSortMedia">
+                                <span class="selected-text">Date Added</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterSortMedia">
+                                <div class="custom-dropdown-item">Date Added</div>
+                                <div class="custom-dropdown-item">File Size</div>
+                                <div class="custom-dropdown-item">Name A-Z</div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -171,22 +171,37 @@
                     </div>
                     
                     <div class="toolbar-dropdowns">
-                        <div class="toolbar-select">
-                            <select>
-                                <option>All Categories</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterCategoriesArticles">
+                                <span class="selected-text">All Categories</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterCategoriesArticles">
+                                <div class="custom-dropdown-item">All Categories</div>
+                                <div class="custom-dropdown-item">Campus News</div>
+                                <div class="custom-dropdown-item">Events</div>
+                                <div class="custom-dropdown-item">Alumni</div>
+                            </div>
                         </div>
-                        <div class="toolbar-select">
-                            <select>
-                                <option>All Status</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterStatusArticles">
+                                <span class="selected-text">All Status</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterStatusArticles">
+                                <div class="custom-dropdown-item">All Status</div>
+                                <div class="custom-dropdown-item">Published</div>
+                                <div class="custom-dropdown-item">Draft</div>
+                            </div>
                         </div>
-                        <div class="toolbar-select">
-                            <select>
-                                <option>Last Modified</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterModifiedArticles">
+                                <span class="selected-text">Last Modified</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterModifiedArticles">
+                                <div class="custom-dropdown-item">Last Modified</div>
+                                <div class="custom-dropdown-item">Today</div>
+                                <div class="custom-dropdown-item">Yesterday</div>
+                            </div>
                         </div>
-                        <button class="btn-more-filters"><i class="fa-solid fa-filter"></i> More Filters</button>
                     </div>
 
                     <button class="btn-clear-filters"><i class="fa-solid fa-rotate-right"></i> Clear Filters</button>
@@ -205,7 +220,8 @@
                                 <th>AUTHOR</th>
                                 <th class="text-center">ACTIONS</th>
                             </tr>
-                        </                        <tbody>
+                        </thead>
+                        <tbody>
                             <!-- Row 1 -->
                             <tr>
                                 <td class="checkbox-col"><input type="checkbox"></td>

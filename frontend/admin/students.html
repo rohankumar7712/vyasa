@@ -169,30 +169,38 @@
                     </div>
                     
                     <div class="toolbar-dropdowns">
-                        <div class="toolbar-select">
-                            <select>
-                                <option>All Programs</option>
-                                <option>PU Science Stream</option>
-                                <option>PU Commerce Stream</option>
-                                <option>CBSE High School</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterProgramsStudents">
+                                <span class="selected-text">All Programs</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterProgramsStudents">
+                                <div class="custom-dropdown-item">All Programs</div>
+                                <div class="custom-dropdown-item">PU Science Stream</div>
+                                <div class="custom-dropdown-item">PU Commerce Stream</div>
+                                <div class="custom-dropdown-item">CBSE High School</div>
+                            </div>
                         </div>
-                        <div class="toolbar-select">
-                            <select>
-                                <option>Academic Year</option>
-                                <option>2026-2027</option>
-                                <option>2025-2026</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterYearStudents">
+                                <span class="selected-text">Academic Year</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterYearStudents">
+                                <div class="custom-dropdown-item">Academic Year</div>
+                                <div class="custom-dropdown-item">2026-2027</div>
+                                <div class="custom-dropdown-item">2025-2026</div>
+                            </div>
                         </div>
-                        <div class="toolbar-select">
-                            <select>
-                                <option>All Statuses</option>
-                                <option>Active</option>
-                                <option>Graduated</option>
-                                <option>Inactive</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterStatusStudents">
+                                <span class="selected-text">All Statuses</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterStatusStudents">
+                                <div class="custom-dropdown-item">All Statuses</div>
+                                <div class="custom-dropdown-item">Active</div>
+                                <div class="custom-dropdown-item">Graduated</div>
+                                <div class="custom-dropdown-item">Inactive</div>
+                            </div>
                         </div>
-                        <button class="btn-more-filters"><i class="fa-solid fa-filter"></i> More Filters</button>
                     </div>
 
                     <button class="btn-clear-filters"><i class="fa-solid fa-file-export"></i> Export List</button>

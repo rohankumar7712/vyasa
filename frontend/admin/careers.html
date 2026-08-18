@@ -173,30 +173,39 @@
                     </div>
                     
                     <div class="toolbar-dropdowns">
-                        <div class="toolbar-select">
-                            <select>
-                                <option>All Roles</option>
-                                <option>Teaching Staff</option>
-                                <option>Administrative</option>
-                                <option>Support Staff</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterRoleCareers">
+                                <span class="selected-text">All Roles</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterRoleCareers">
+                                <div class="custom-dropdown-item">All Roles</div>
+                                <div class="custom-dropdown-item">Teaching Staff</div>
+                                <div class="custom-dropdown-item">Administrative</div>
+                                <div class="custom-dropdown-item">Support Staff</div>
+                            </div>
                         </div>
-                        <div class="toolbar-select">
-                            <select>
-                                <option>All Status</option>
-                                <option>New Applicant</option>
-                                <option>Under Review</option>
-                                <option>Interview Scheduled</option>
-                                <option>Rejected</option>
-                                <option>Hired</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterStatCareers">
+                                <span class="selected-text">All Status</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterStatCareers">
+                                <div class="custom-dropdown-item">All Status</div>
+                                <div class="custom-dropdown-item">New Applicant</div>
+                                <div class="custom-dropdown-item">Under Review</div>
+                                <div class="custom-dropdown-item">Interview Scheduled</div>
+                                <div class="custom-dropdown-item">Rejected</div>
+                                <div class="custom-dropdown-item">Hired</div>
+                            </div>
                         </div>
-                        <div class="toolbar-select">
-                            <select>
-                                <option>Newest First</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterSortCareers">
+                                <span class="selected-text">Newest First</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterSortCareers">
+                                <div class="custom-dropdown-item">Newest First</div>
+                                <div class="custom-dropdown-item">Oldest First</div>
+                            </div>
                         </div>
-                        <button class="btn-more-filters"><i class="fa-solid fa-filter"></i> More Filters</button>
                     </div>
 
                     <button class="btn-clear-filters"><i class="fa-solid fa-rotate-right"></i> Clear Filters</button>

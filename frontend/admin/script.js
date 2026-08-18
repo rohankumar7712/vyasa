@@ -371,4 +371,204 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // --- Custom Dropdown and Filters Logic ---
+    const customDropdownBtns = document.querySelectorAll('.custom-dropdown-btn');
+    
+    if (customDropdownBtns.length > 0) {
+        customDropdownBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const dropdownId = this.getAttribute('data-dropdown');
+                const menu = document.getElementById(dropdownId);
+                
+                // Close all other dropdowns
+                document.querySelectorAll('.custom-dropdown-menu').forEach(m => {
+                    if (m !== menu) m.classList.remove('active');
+                });
+                document.querySelectorAll('.custom-dropdown-btn').forEach(b => {
+                    if (b !== this) b.classList.remove('active');
+                });
+                
+                // Toggle current
+                if (menu) {
+                    menu.classList.toggle('active');
+                    this.classList.toggle('active');
+                }
+            });
+        });
+        
+        // Handle item selection
+        const dropdownItems = document.querySelectorAll('.custom-dropdown-item');
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const menu = this.closest('.custom-dropdown-menu');
+                const btn = menu.previousElementSibling;
+                const textSpan = btn.querySelector('.selected-text');
+                
+                if (textSpan) {
+                    textSpan.textContent = this.textContent;
+                }
+                
+                menu.classList.remove('active');
+                btn.classList.remove('active');
+
+                // If inside a toolbar, trigger table filtering
+                const toolbar = this.closest('.table-toolbar');
+                if (toolbar) {
+                    // Quick dispatch event to trigger the clearFilterBtns logic or we can just 
+                    // dispatch a custom event on the toolbar. 
+                    // Better yet, just call a generic function if we can.
+                    const event = new Event('filterChange');
+                    toolbar.dispatchEvent(event);
+                }
+            });
+        });
+        
+        // Close when clicking outside
+        document.addEventListener('click', function() {
+            document.querySelectorAll('.custom-dropdown-menu').forEach(m => m.classList.remove('active'));
+            document.querySelectorAll('.custom-dropdown-btn').forEach(b => b.classList.remove('active'));
+        });
+    }
+
+    // Segment Control Logic
+    const segmentBtns = document.querySelectorAll('.segment-btn');
+    if (segmentBtns.length > 0) {
+        segmentBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const container = this.closest('.segment-control');
+                container.querySelectorAll('.segment-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    }
+
+    // --- Year Filter Button Logic ---
+    const yearFilterBtns = document.querySelectorAll('.year-filter-btn');
+    if (yearFilterBtns.length > 0) {
+        yearFilterBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.classList.toggle('active');
+                // If there's a dropdown next to it, toggle that too
+                const nextEl = this.nextElementSibling;
+                if (nextEl && nextEl.classList.contains('year-dropdown')) {
+                    nextEl.classList.toggle('active');
+                }
+            });
+        });
+    }
+
+    // --- Toggle Group Logic (e.g. School / PU College / All) ---
+    const toggleBtns = document.querySelectorAll('.toggle-btn');
+    if (toggleBtns.length > 0) {
+        toggleBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const group = this.closest('.toggle-group');
+                if (group) {
+                    group.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+    }
+
+    // --- Generic Table Filtering Logic ---
+    const searchInputs = document.querySelectorAll('.toolbar-search input');
+    const selectFilters = document.querySelectorAll('.toolbar-select select');
+    const clearFilterBtns = document.querySelectorAll('.btn-clear-filters');
+    const toolbars = document.querySelectorAll('.table-toolbar');
+
+    function filterTable(toolbar) {
+        // Find the adjacent or closest data-table container
+        let tableContainer = toolbar.nextElementSibling;
+        let dataTable = null;
+        
+        if (tableContainer && tableContainer.querySelector('.data-table')) {
+            dataTable = tableContainer.querySelector('.data-table');
+        } else {
+            const section = toolbar.closest('section') || toolbar.parentElement;
+            if (section) dataTable = section.querySelector('.data-table');
+        }
+
+        if (!dataTable) return;
+
+        const searchInput = toolbar.querySelector('.toolbar-search input');
+        const searchText = searchInput ? searchInput.value.toLowerCase() : '';
+        
+        const selects = toolbar.querySelectorAll('.toolbar-select select');
+        let filterValues = Array.from(selects).map(s => s.value.toLowerCase());
+
+        const customDropdowns = toolbar.querySelectorAll('.custom-dropdown-btn .selected-text');
+        filterValues = filterValues.concat(Array.from(customDropdowns).map(span => span.textContent.toLowerCase().trim()));
+
+        const rows = dataTable.querySelectorAll('tbody tr');
+        rows.forEach(row => {
+            let textMatch = true;
+            let selectMatch = true;
+
+            if (searchText) {
+                textMatch = row.textContent.toLowerCase().includes(searchText);
+            }
+
+            filterValues.forEach(val => {
+                // Ignore placeholder and non-filtering options
+                if (val && !val.startsWith('all ') && val !== 'last modified' && !val.startsWith('department: all') && !val.startsWith('status: all') && !val.startsWith('sort: ') && val !== 'academic year' && val !== 'newest first' && val !== 'oldest first') {
+                    if (!row.textContent.toLowerCase().includes(val)) {
+                        selectMatch = false;
+                    }
+                }
+            });
+
+            if (textMatch && selectMatch) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    toolbars.forEach(toolbar => {
+        toolbar.addEventListener('filterChange', () => filterTable(toolbar));
+    });
+
+    searchInputs.forEach(input => {
+        input.addEventListener('input', function() {
+            const toolbar = this.closest('.table-toolbar');
+            if (toolbar) filterTable(toolbar);
+        });
+    });
+
+    selectFilters.forEach(select => {
+        select.addEventListener('change', function() {
+            const toolbar = this.closest('.table-toolbar');
+            if (toolbar) filterTable(toolbar);
+        });
+    });
+
+    clearFilterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const toolbar = this.closest('.table-toolbar');
+            if (toolbar) {
+                const searchInput = toolbar.querySelector('.toolbar-search input');
+                if (searchInput) searchInput.value = '';
+                
+                const selects = toolbar.querySelectorAll('.toolbar-select select');
+                selects.forEach(s => s.selectedIndex = 0);
+                
+                const customDropdowns = toolbar.querySelectorAll('.custom-dropdown');
+                customDropdowns.forEach(dropdown => {
+                    const firstItem = dropdown.querySelector('.custom-dropdown-item');
+                    const selectedText = dropdown.querySelector('.selected-text');
+                    if (firstItem && selectedText) {
+                        selectedText.textContent = firstItem.textContent;
+                    }
+                });
+                
+                filterTable(toolbar);
+            }
+        });
+    });
+
 });

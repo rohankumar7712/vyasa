@@ -217,22 +217,37 @@
                     </div>
                     
                     <div class="toolbar-dropdowns">
-                        <div class="toolbar-select">
-                            <select>
-                                <option>Department: All</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterSectionsEducators">
+                                <span class="selected-text">All Sections</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterSectionsEducators">
+                                <div class="custom-dropdown-item">All Sections</div>
+                                <div class="custom-dropdown-item">Computer Science</div>
+                                <div class="custom-dropdown-item">Mathematics</div>
+                                <div class="custom-dropdown-item">Physics</div>
+                                <div class="custom-dropdown-item">English</div>
+                            </div>
                         </div>
-                        <div class="toolbar-select">
-                            <select>
-                                <option>Status: All</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterStatEducators">
+                                <span class="selected-text">All Status</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterStatEducators">
+                                <div class="custom-dropdown-item">All Status</div>
+                                <div class="custom-dropdown-item">Active</div>
+                                <div class="custom-dropdown-item">Inactive</div>
+                            </div>
                         </div>
-                        <div class="toolbar-select">
-                            <select>
-                                <option>Sort: Most Recent</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterSortEducators">
+                                <span class="selected-text">Sort: Most Recent</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterSortEducators">
+                                <div class="custom-dropdown-item">Sort: Most Recent</div>
+                                <div class="custom-dropdown-item">Sort: Oldest</div>
+                            </div>
                         </div>
-                        <button class="btn-more-filters"><i class="fa-solid fa-filter"></i> More Filters</button>
                     </div>
                     
                     <div class="view-toggles" style="display: flex; gap: 8px; margin-left: auto;">
@@ -485,8 +500,6 @@
         </div>
     </div>
 
-    <!-- Script for Interactions -->
-    <script src="script.js"></script>
     <!-- Custom Script -->
     <script src="script.js"></script>
 </body>

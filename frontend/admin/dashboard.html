@@ -144,9 +144,16 @@
                         <p class="header-subtitle">Welcome back, Admin Director! Here's what's happening with your institution today.</p>
                     </div>
                     
-                    <button class="year-filter-btn">
-                        <i class="fa-regular fa-calendar"></i> This Year <i class="fa-solid fa-chevron-down chevron-small"></i>
-                    </button>
+                    <div class="custom-dropdown">
+                                <button class="year-filter-btn custom-dropdown-btn" data-dropdown="chartYearDropdown">
+                                    <span class="selected-text">This Year</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                                </button>
+                                <div class="custom-dropdown-menu" id="chartYearDropdown">
+                                    <div class="custom-dropdown-item">This Year</div>
+                                    <div class="custom-dropdown-item">Last Year</div>
+                                    <div class="custom-dropdown-item">All Time</div>
+                                </div>
+                            </div>
                 </div>
             </header>
 
@@ -207,7 +214,16 @@
                             <p>Consolidated data for VYASA School & PU College</p>
                         </div>
                         <div class="chart-filters">
-                            <button class="year-filter-btn">This Year <i class="fa-solid fa-chevron-down chevron-small"></i></button>
+                            <div class="custom-dropdown">
+                                <button class="year-filter-btn custom-dropdown-btn" data-dropdown="chartYearDropdown">
+                                    <span class="selected-text">This Year</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                                </button>
+                                <div class="custom-dropdown-menu" id="chartYearDropdown">
+                                    <div class="custom-dropdown-item">This Year</div>
+                                    <div class="custom-dropdown-item">Last Year</div>
+                                    <div class="custom-dropdown-item">All Time</div>
+                                </div>
+                            </div>
                             <div class="toggle-group">
                                 <button class="toggle-btn">School</button>
                                 <button class="toggle-btn">PU College</button>

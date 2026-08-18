@@ -170,27 +170,36 @@
                     </div>
                     
                     <div class="toolbar-dropdowns">
-                        <div class="toolbar-select">
-                            <select>
-                                <option>All Types (Admissions/Contact)</option>
-                                <option>Admissions</option>
-                                <option>General Contact</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterTypeInquiries">
+                                <span class="selected-text">All Types (Admissions/Contact)</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterTypeInquiries">
+                                <div class="custom-dropdown-item">All Types (Admissions/Contact)</div>
+                                <div class="custom-dropdown-item">Admissions</div>
+                                <div class="custom-dropdown-item">General Contact</div>
+                            </div>
                         </div>
-                        <div class="toolbar-select">
-                            <select>
-                                <option>All Status</option>
-                                <option>New</option>
-                                <option>Contacted</option>
-                                <option>Resolved</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterStatInquiries">
+                                <span class="selected-text">All Status</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterStatInquiries">
+                                <div class="custom-dropdown-item">All Status</div>
+                                <div class="custom-dropdown-item">New</div>
+                                <div class="custom-dropdown-item">Contacted</div>
+                                <div class="custom-dropdown-item">Resolved</div>
+                            </div>
                         </div>
-                        <div class="toolbar-select">
-                            <select>
-                                <option>Newest First</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterSortInquiries">
+                                <span class="selected-text">Newest First</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterSortInquiries">
+                                <div class="custom-dropdown-item">Newest First</div>
+                                <div class="custom-dropdown-item">Oldest First</div>
+                            </div>
                         </div>
-                        <button class="btn-more-filters"><i class="fa-solid fa-filter"></i> More Filters</button>
                     </div>
 
                     <button class="btn-clear-filters"><i class="fa-solid fa-rotate-right"></i> Clear Filters</button>

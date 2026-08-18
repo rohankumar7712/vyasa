@@ -167,26 +167,41 @@
                 <div class="table-toolbar">
                     <div class="toolbar-search">
                         <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                        <input type="text" placeholder="Search pages by name or route...">
+                        <input type="text" placeholder="Search announcements by title...">
                     </div>
                     
                     <div class="toolbar-dropdowns">
-                        <div class="toolbar-select">
-                            <select>
-                                <option>All Sections</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterDisplaysAnnouncements">
+                                <span class="selected-text">All Displays</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterDisplaysAnnouncements">
+                                <div class="custom-dropdown-item">All Displays</div>
+                                <div class="custom-dropdown-item">Top Banner</div>
+                                <div class="custom-dropdown-item">Floating Card</div>
+                            </div>
                         </div>
-                        <div class="toolbar-select">
-                            <select>
-                                <option>All Status</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterStatAnnouncements">
+                                <span class="selected-text">All Status</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterStatAnnouncements">
+                                <div class="custom-dropdown-item">All Status</div>
+                                <div class="custom-dropdown-item">Published</div>
+                                <div class="custom-dropdown-item">Scheduled</div>
+                                <div class="custom-dropdown-item">Draft</div>
+                            </div>
                         </div>
-                        <div class="toolbar-select">
-                            <select>
-                                <option>Last Modified</option>
-                            </select>
+                        <div class="custom-dropdown toolbar-select" style="border:none; padding:0; background:transparent;">
+                            <button class="custom-dropdown-btn" data-dropdown="filterModAnnouncements">
+                                <span class="selected-text">Last Modified</span> <i class="fa-solid fa-chevron-down chevron-small"></i>
+                            </button>
+                            <div class="custom-dropdown-menu" id="filterModAnnouncements">
+                                <div class="custom-dropdown-item">Last Modified</div>
+                                <div class="custom-dropdown-item">Today</div>
+                                <div class="custom-dropdown-item">Yesterday</div>
+                            </div>
                         </div>
-                        <button class="btn-more-filters"><i class="fa-solid fa-filter"></i> More Filters</button>
                     </div>
 
                     <button class="btn-clear-filters"><i class="fa-solid fa-rotate-right"></i> Clear Filters</button>
@@ -195,14 +210,15 @@
                 <!-- Table Area -->
                 <div class="table-responsive">
                     <table class="data-table">
-                        <thead>
+                                                <thead>
                             <tr>
                                 <th class="checkbox-col"><input type="checkbox"></th>
-                                <th>TITLE</th>
+                                <th>ANNOUNCEMENT</th>
+                                <th>DISPLAY</th>
                                 <th>SCHEDULE</th>
+                                <th>PRIORITY</th>
                                 <th>STATUS</th>
                                 <th>LAST MODIFIED</th>
-                                <th>MODIFIED BY</th>
                                 <th class="text-center">ACTIONS</th>
                             </tr>
                         </thead>
@@ -212,21 +228,16 @@
                                 <td class="checkbox-col"><input type="checkbox"></td>
                                 <td>
                                     <div class="page-title-cell">
-                                        <span class="page-name">Home</span>
-                                        <span class="page-route">/</span>
+                                        <span class="page-name">Summer Camp Registration Open</span>
                                     </div>
                                 </td>
-                                <td>Main Portal</td>
+                                <td>Floating Card &middot; Bottom Right</td>
+                                <td>Aug 20 &ndash; Sep 10</td>
+                                <td>1</td>
                                 <td><span class="badge status-published"><span class="status-dot"></span> Published</span></td>
                                 <td class="date-cell">Today, 2:15 PM</td>
-                                <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="table-avatar">
-                                        <span class="table-user-name">Admin Director</span>
-                                    </div>
-                                </td>
                                 <td class="actions-cell">
-                                    <a href="page-preview.html" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <a href="#" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
                                     <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
                                     <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                 </td>
@@ -237,46 +248,36 @@
                                 <td class="checkbox-col"><input type="checkbox"></td>
                                 <td>
                                     <div class="page-title-cell">
-                                        <span class="page-name">About Us</span>
-                                        <span class="page-route">/about</span>
+                                        <span class="page-name">Admissions Open for 2026&ndash;27</span>
                                     </div>
                                 </td>
-                                <td>Institutional</td>
+                                <td>Top Banner</td>
+                                <td>Aug 18 &ndash; Sep 30</td>
+                                <td>2</td>
                                 <td><span class="badge status-published"><span class="status-dot"></span> Published</span></td>
                                 <td class="date-cell">Yesterday, 11:30 AM</td>
-                                <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Dr. Meera Sundaram" class="table-avatar">
-                                        <span class="table-user-name">Dr. Meera Sundaram</span>
-                                    </div>
-                                </td>
                                 <td class="actions-cell">
-                                    <a href="page-preview.html" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <a href="#" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
                                     <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
                                     <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                 </td>
                             </tr>
-
+                            
                             <!-- Row 3 -->
                             <tr>
                                 <td class="checkbox-col"><input type="checkbox"></td>
                                 <td>
                                     <div class="page-title-cell">
-                                        <span class="page-name">Academic Programs</span>
-                                        <span class="page-route">/academics</span>
+                                        <span class="page-name">Winter Camp Registrations</span>
                                     </div>
                                 </td>
-                                <td>Curriculum</td>
-                                <td><span class="badge status-under-review"><span class="status-dot"></span> Under Review</span></td>
-                                <td class="date-cell">Today, 9:45 AM</td>
-                                <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Ms. Revathi Raju" class="table-avatar">
-                                        <span class="table-user-name">Ms. Revathi Raju</span>
-                                    </div>
-                                </td>
+                                <td>Floating Card &middot; Bottom Left</td>
+                                <td>Dec 01 &ndash; Dec 20</td>
+                                <td>3</td>
+                                <td><span class="badge status-under-review"><span class="status-dot"></span> Scheduled</span></td>
+                                <td class="date-cell">Aug 16, 4:30 PM</td>
                                 <td class="actions-cell">
-                                    <a href="page-preview.html" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <a href="#" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
                                     <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
                                     <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                 </td>
@@ -287,101 +288,22 @@
                                 <td class="checkbox-col"><input type="checkbox"></td>
                                 <td>
                                     <div class="page-title-cell">
-                                        <span class="page-name">Admissions</span>
-                                        <span class="page-route">/admissions</span>
+                                        <span class="page-name">Campus Visit Announcement</span>
                                     </div>
                                 </td>
-                                <td>Registrar</td>
+                                <td>Floating Card &middot; Bottom Right</td>
+                                <td>&mdash;</td>
+                                <td>4</td>
                                 <td><span class="badge status-draft"><span class="status-dot"></span> Draft</span></td>
-                                <td class="date-cell">Today, 10:20 AM</td>
-                                <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Sri. Vishwanath Hegde" class="table-avatar">
-                                        <span class="table-user-name">Sri. Vishwanath Hegde</span>
-                                    </div>
-                                </td>
+                                <td class="date-cell">Aug 15, 10:20 AM</td>
                                 <td class="actions-cell">
-                                    <a href="page-preview.html" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
-                                    <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                                </td>
-                            </tr>
-                            
-                            <!-- Row 5 -->
-                            <tr>
-                                <td class="checkbox-col"><input type="checkbox"></td>
-                                <td>
-                                    <div class="page-title-cell">
-                                        <span class="page-name">Campus Life</span>
-                                        <span class="page-route">/campus-life</span>
-                                    </div>
-                                </td>
-                                <td>Student Life</td>
-                                <td><span class="badge status-published"><span class="status-dot"></span> Published</span></td>
-                                <td class="date-cell">Aug 10, 2026, 4:30 PM</td>
-                                <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Admin Director" class="table-avatar">
-                                        <span class="table-user-name">Admin Director</span>
-                                    </div>
-                                </td>
-                                <td class="actions-cell">
-                                    <a href="page-preview.html" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
-                                    <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                                </td>
-                            </tr>
-
-                            <!-- Row 6 -->
-                            <tr>
-                                <td class="checkbox-col"><input type="checkbox"></td>
-                                <td>
-                                    <div class="page-title-cell">
-                                        <span class="page-name">Contact Us</span>
-                                        <span class="page-route">/contact</span>
-                                    </div>
-                                </td>
-                                <td>General</td>
-                                <td><span class="badge status-draft"><span class="status-dot"></span> Draft</span></td>
-                                <td class="date-cell">Aug 10, 2026, 3:20 PM</td>
-                                <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Priya Sharma" class="table-avatar">
-                                        <span class="table-user-name">Priya Sharma</span>
-                                    </div>
-                                </td>
-                                <td class="actions-cell">
-                                    <a href="page-preview.html" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
-                                    <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
-                                    <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-                                </td>
-                            </tr>
-                            
-                            <!-- Row 7 -->
-                            <tr>
-                                <td class="checkbox-col"><input type="checkbox"></td>
-                                <td>
-                                    <div class="page-title-cell">
-                                        <span class="page-name">News & Events</span>
-                                        <span class="page-route">/news-events</span>
-                                    </div>
-                                </td>
-                                <td>News</td>
-                                <td><span class="badge status-published"><span class="status-dot"></span> Published</span></td>
-                                <td class="date-cell">Aug 9, 2026, 6:15 PM</td>
-                                <td>
-                                    <div class="user-cell">
-                                        <img src="../Images/Dr. Arindam Ghosh.webp" alt="Dr. Meera Sundaram" class="table-avatar">
-                                        <span class="table-user-name">Dr. Meera Sundaram</span>
-                                    </div>
-                                </td>
-                                <td class="actions-cell">
-                                    <a href="page-preview.html" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
+                                    <a href="#" class="icon-btn" title="View"><i class="fa-regular fa-eye"></i></a>
                                     <button class="icon-btn" title="Edit"><i class="fa-solid fa-pen"></i></button>
                                     <button class="icon-btn" title="More"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                                 </td>
                             </tr>
                         </tbody>
+
                     </table>
                 </div>
 
@@ -419,6 +341,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
