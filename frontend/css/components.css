@@ -352,7 +352,7 @@
     max-width: 500px;
     border-radius: 20px;
     position: relative;
-    padding: 25px 30px;
+    padding: 20px 25px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
     transform: scale(0.95) translateY(20px);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -360,6 +360,12 @@
     max-height: 95vh;
     color: #ffffff;
     box-sizing: border-box;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.enquiry-modal::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
 }
 
 .enquiry-modal-overlay.active .enquiry-modal {
@@ -424,7 +430,12 @@
     font-family: 'Gupter', serif;
     font-size: 32px;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    
+}
+
+.enquiry-modal .enquiry-title {
+    color: #ffffff !important;
 }
 
 .enquiry-desc {
@@ -432,13 +443,13 @@
     font-size: 14px;
     color: #aeb2c6;
     line-height: 1.6;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .enquiry-form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 }
 
 .enquiry-form-group {
@@ -460,7 +471,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 11px;
     font-weight: 600;
-    color: #aeb2c6;
+    color: #f4f5fb;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -470,7 +481,7 @@
     background-color: #282f44;
     border: 1px solid #363e54;
     border-radius: 8px;
-    padding: 10px 15px;
+    padding: 8px 12px;
     font-family: 'Geist', sans-serif;
     font-size: 14px;
     color: #ffffff;
@@ -494,7 +505,7 @@
 
 .enquiry-textarea {
     resize: vertical;
-    min-height: 60px;
+    min-height: 55px;
 }
 
 .enquiry-submit-btn {
@@ -733,4 +744,48 @@
     .floating-announcement-card.pos-bottom-right {
         bottom: 90px;
     }
+}
+
+/* ==========================================
+   DOWNLOAD TOAST
+========================================== */
+.download-toast {
+    position: fixed;
+    bottom: 30px;
+    right: -400px;
+    background: #ffffff;
+    border-left: 4px solid #22c55e;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 20px 25px;
+    border-radius: 8px;
+    z-index: 100000;
+    transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    max-width: 350px;
+    pointer-events: none;
+}
+
+.download-toast.show {
+    right: 30px;
+}
+
+.download-toast-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a2b4c;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.download-toast-title svg {
+    color: #22c55e;
+}
+
+.download-toast-desc {
+    font-family: 'Geist', sans-serif;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
 }

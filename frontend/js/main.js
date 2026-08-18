@@ -175,6 +175,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialize Enquiry Popup
     initEnquiryPopup();
+    
+    // Initialize Campus Visit Popup
+    initCampusVisitPopup();
+    
+    // Initialize Download Toast
+    initDownloadToast();
+    
+    // Initialize Global Form Success Modal
+    initGlobalFormSuccess();
 });
 
 function initEnquiryPopup() {
@@ -268,5 +277,246 @@ function initEnquiryPopup() {
         if (e.target === modal) {
             closeModal();
         }
+    });
+}
+
+function initCampusVisitPopup() {
+    // 1. Create popup HTML dynamically
+    const popupHTML = `
+    <div class="enquiry-modal-overlay" id="visitModal">
+        <div class="enquiry-modal" id="visitModalContent">
+            <button class="enquiry-close-btn" id="visitCloseBtn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            
+            <div id="visitFormContainer">
+                <div class="enquiry-status">
+                    <span class="enquiry-status-dot"></span>
+                    <span class="enquiry-status-text">ADMISSIONS</span>
+                </div>
+                
+                <h2 class="enquiry-title">Book a Campus Visit</h2>
+                <p class="enquiry-desc">Experience our campus firsthand. Fill out the details below to schedule your visit.</p>
+                
+                <form class="enquiry-form" id="visitForm">
+                    <div class="enquiry-form-row">
+                        <div class="enquiry-form-group">
+                            <label class="enquiry-label">FIRST NAME *</label>
+                            <input type="text" class="enquiry-input" placeholder="First Name" required>
+                        </div>
+                        <div class="enquiry-form-group">
+                            <label class="enquiry-label">LAST NAME *</label>
+                            <input type="text" class="enquiry-input" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="enquiry-form-row">
+                        <div class="enquiry-form-group">
+                            <label class="enquiry-label">EMAIL ADDRESS *</label>
+                            <input type="email" class="enquiry-input" placeholder="name@example.com" required>
+                        </div>
+                        <div class="enquiry-form-group">
+                            <label class="enquiry-label">PHONE NUMBER *</label>
+                            <input type="tel" class="enquiry-input" placeholder="+1 (555) 000-0000" required>
+                        </div>
+                    </div>
+
+                    <div class="enquiry-form-row">
+                        <div class="enquiry-form-group">
+                            <label class="enquiry-label">STUDENT NAME *</label>
+                            <input type="text" class="enquiry-input" placeholder="Student's Full Name" required>
+                        </div>
+                        <div class="enquiry-form-group">
+                            <label class="enquiry-label">GRADE / CLASS</label>
+                            <select class="enquiry-select" required>
+                                <option value="" disabled selected>Select Grade ▼</option>
+                                <option value="Kindergarten">Kindergarten</option>
+                                <option value="Grade 1-5">Primary (Grade 1-5)</option>
+                                <option value="Grade 6-8">Middle (Grade 6-8)</option>
+                                <option value="Grade 9-12">High (Grade 9-12)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="enquiry-form-row">
+                        <div class="enquiry-form-group">
+                            <label class="enquiry-label">PREFERRED VISIT DATE *</label>
+                            <input type="date" class="enquiry-input" required>
+                        </div>
+                        <div class="enquiry-form-group">
+                            <label class="enquiry-label">PREFERRED TIME</label>
+                            <select class="enquiry-select" required>
+                                <option value="" disabled selected>Select Time ▼</option>
+                                <option value="Morning">Morning</option>
+                                <option value="Afternoon">Afternoon</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="enquiry-form-group">
+                        <label class="enquiry-label">NUMBER OF VISITORS</label>
+                        <input type="number" class="enquiry-input" placeholder="2" min="1" max="10" required>
+                    </div>
+
+                    <div class="enquiry-form-group">
+                        <label class="enquiry-label">MESSAGE / SPECIAL REQUIREMENTS</label>
+                        <textarea class="enquiry-textarea" placeholder="Optional notes for our team..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="enquiry-submit-btn">
+                        Book Campus Visit 
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+                </form>
+            </div>
+            
+            <div id="visitSuccessContainer" style="display: none; text-align: center; padding: 40px 20px;">
+                <div style="width: 60px; height: 60px; background: rgba(252, 163, 17, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fca311" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <h2 class="enquiry-title" style="margin-bottom: 15px;">Thank You for Your Visit Request!</h2>
+                <p class="enquiry-desc" style="margin-bottom: 30px;">Your campus visit request has been submitted successfully. Our admissions team will contact you shortly to confirm the date and time of your visit.</p>
+                <button class="btn-outline-white close-success-btn" style="padding: 10px 24px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: white; cursor: pointer; font-family: 'Poppins', sans-serif;">Done</button>
+            </div>
+        </div>
+    </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', popupHTML);
+
+    const modal = document.getElementById('visitModal');
+    const closeBtn = document.getElementById('visitCloseBtn');
+    const formContainer = document.getElementById('visitFormContainer');
+    const successContainer = document.getElementById('visitSuccessContainer');
+    const form = document.getElementById('visitForm');
+    const closeSuccessBtn = document.querySelector('.close-success-btn');
+    
+    // Find all visit buttons based on their text
+    const visitButtons = Array.from(document.querySelectorAll('a, button')).filter(btn => {
+        const txt = btn.textContent.trim().toLowerCase().replace('→', '').trim();
+        return txt === 'book a campus visit' || txt === 'schedule a campus visit';
+    });
+
+    visitButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            formContainer.style.display = 'block';
+            successContainer.style.display = 'none';
+            form.reset();
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+        });
+    });
+
+    // Close logic
+    const closeModal = () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+    closeSuccessBtn.addEventListener('click', closeModal);
+    
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Form submission
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        formContainer.style.display = 'none';
+        successContainer.style.display = 'block';
+    });
+}
+
+function initDownloadToast() {
+    // 1. Create toast HTML
+    const toastHTML = `
+    <div class="download-toast" id="downloadToast">
+        <div class="download-toast-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            Download started
+        </div>
+        <div class="download-toast-desc">
+            Thank you for your interest in VYASA International School.
+        </div>
+    </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', toastHTML);
+    const toast = document.getElementById('downloadToast');
+    
+    // 2. Find all download links (text contains "download" or has specific classes)
+    const downloadElements = Array.from(document.querySelectorAll('a, button')).filter(el => {
+        const text = el.textContent.trim().toLowerCase();
+        const hasDownloadClass = el.classList.contains('download-icon') || 
+                                 el.classList.contains('btn-download') ||
+                                 el.querySelector('.fa-download');
+        return text.includes('download') || hasDownloadClass;
+    });
+
+    // 3. Attach click listener
+    let toastTimeout;
+    downloadElements.forEach(el => {
+        el.addEventListener('click', (e) => {
+            // Prevent actual download if it's a dummy # link
+            if(el.getAttribute('href') === '#') {
+                e.preventDefault();
+            }
+            
+            // Show toast
+            toast.classList.add('show');
+            
+            // Auto hide after 4 seconds
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+        });
+    });
+}
+
+function initGlobalFormSuccess() {
+    // 1. Create global success modal HTML dynamically
+    const modalHTML = `
+    <div class="enquiry-modal-overlay" id="globalFormSuccessModal">
+        <div class="enquiry-modal" style="text-align: center; background-color: #f4f5fb; color: #1a2b4c; padding: 50px 30px;">
+            <div style="width: 60px; height: 60px; background: rgba(34, 197, 94, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <h3 class="form-title" style="margin-bottom: 15px; color: #1a2b4c !important;">Submission Successful!</h3>
+            <p style="color: #555; font-size: 14px; line-height: 1.6; font-family: 'Geist', sans-serif;">Thank you for contacting VYASA International School. Our team will contact you shortly. A confirmation email has also been sent to your email address.</p>
+        </div>
+    </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    const successModal = document.getElementById('globalFormSuccessModal');
+
+    // 2. Find all forms on the page EXCEPT those that have their own custom inline success handlers
+    // (like forms inside .enquiry-modal, or .footer-subscribe-form if we don't want it to cover the screen)
+    const forms = document.querySelectorAll('form:not(.footer-subscribe-form)');
+
+    // 3. Attach submit listener
+    forms.forEach(form => {
+        // Skip forms that are inside a modal (they have their own logic)
+        if (form.closest('.enquiry-modal')) return;
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show modal
+            successModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            form.reset();
+            
+            // Auto hide after 5 seconds
+            setTimeout(() => {
+                successModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }, 5000);
+        });
     });
 }
