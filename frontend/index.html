@@ -1864,21 +1864,21 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="studentName">Student Name</label>
-                        <input type="text" id="studentName" placeholder="Enter student's full name">
+                        <input type="text" id="studentName" name="FullName" placeholder="Enter student's full name" required>
                     </div>
                     <div class="form-group">
                         <label for="parentContact">Parent Contact Number</label>
-                        <input type="tel" id="parentContact" placeholder="+91 Mobile number">
+                        <input type="tel" id="parentContact" name="PhoneNumber" placeholder="+91 Mobile number" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="emailAddress">Email Address</label>
-                        <input type="email" id="emailAddress" placeholder="example@domain.com">
+                        <input type="email" id="emailAddress" name="EmailAddress" placeholder="example@domain.com" required>
                     </div>
                     <div class="form-group">
                         <label for="programInterest">Program Interested In</label>
-                        <select id="programInterest">
+                        <select id="programInterest" name="Subject" required>
                             <option value="" disabled selected>Select educational stream</option>
                             <option value="kindergarten">Kindergarten</option>
                             <option value="primary">Primary School</option>

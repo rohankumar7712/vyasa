@@ -184,7 +184,22 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Initialize Global Form Success Modal
     initGlobalFormSuccess();
+    
+    // Initialize EmailJS
+    initEmailJS();
 });
+
+function initEmailJS() {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+    script.type = 'text/javascript';
+    script.onload = function() {
+        emailjs.init({
+            publicKey: "YOUR_PUBLIC_KEY", // REPLACE WITH YOUR PUBLIC KEY
+        });
+    };
+    document.head.appendChild(script);
+}
 
 function initEnquiryPopup() {
     // 1. Create popup HTML dynamically
@@ -278,6 +293,35 @@ function initEnquiryPopup() {
             closeModal();
         }
     });
+
+    // Form submission
+    const form = modal.querySelector('.enquiry-form');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            if (typeof emailjs !== 'undefined') {
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = 'Sending...';
+                
+                emailjs.sendForm('service_8abb7g4', 'YOUR_TEMPLATE_ID', form)
+                    .then(() => {
+                        btn.innerHTML = originalText;
+                        alert('Enquiry Submitted Successfully!'); // Simple fallback since this modal lacks a built-in success view
+                        closeModal();
+                        form.reset();
+                    }, (error) => {
+                        btn.innerHTML = originalText;
+                        alert('FAILED... ' + JSON.stringify(error));
+                    });
+            } else {
+                alert('Enquiry Submitted Successfully!');
+                closeModal();
+                form.reset();
+            }
+        });
+    }
 }
 
 function initCampusVisitPopup() {
@@ -426,8 +470,25 @@ function initCampusVisitPopup() {
     // Form submission
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        formContainer.style.display = 'none';
-        successContainer.style.display = 'block';
+        
+        if (typeof emailjs !== 'undefined') {
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Booking...';
+            
+            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form)
+                .then(() => {
+                    btn.innerHTML = originalText;
+                    formContainer.style.display = 'none';
+                    successContainer.style.display = 'block';
+                }, (error) => {
+                    btn.innerHTML = originalText;
+                    alert('FAILED... ' + JSON.stringify(error));
+                });
+        } else {
+            formContainer.style.display = 'none';
+            successContainer.style.display = 'block';
+        }
     });
 }
 
@@ -507,16 +568,41 @@ function initGlobalFormSuccess() {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // Show modal
-            successModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            form.reset();
-            
-            // Auto hide after 5 seconds
-            setTimeout(() => {
-                successModal.classList.remove('active');
-                document.body.style.overflow = '';
-            }, 5000);
+            if (typeof emailjs !== 'undefined') {
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn ? btn.innerHTML : 'Submit';
+                if (btn) btn.innerHTML = 'Sending...';
+                
+                emailjs.sendForm('service_8abb7g4', 'template cwyd22i', form)
+                    .then(() => {
+                        if (btn) btn.innerHTML = originalText;
+                        
+                        // Show modal
+                        successModal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                        form.reset();
+                        
+                        // Auto hide after 5 seconds
+                        setTimeout(() => {
+                            successModal.classList.remove('active');
+                            document.body.style.overflow = '';
+                        }, 5000);
+                    }, (error) => {
+                        if (btn) btn.innerHTML = originalText;
+                        alert('FAILED... ' + JSON.stringify(error));
+                    });
+            } else {
+                // Show modal
+                successModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                form.reset();
+                
+                // Auto hide after 5 seconds
+                setTimeout(() => {
+                    successModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }, 5000);
+            }
         });
     });
 }
