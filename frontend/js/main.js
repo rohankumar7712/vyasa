@@ -573,7 +573,7 @@ function initGlobalFormSuccess() {
                 const originalText = btn ? btn.innerHTML : 'Submit';
                 if (btn) btn.innerHTML = 'Sending...';
                 
-                emailjs.sendForm('service_8abb7g4', 'template cwyd22i', form)
+                emailjs.sendForm('service_8abb7g4', 'template_cwyd22i', form)
                     .then(() => {
                         if (btn) btn.innerHTML = originalText;
                         
