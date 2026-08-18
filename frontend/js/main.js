@@ -195,7 +195,7 @@ function initEmailJS() {
     script.type = 'text/javascript';
     script.onload = function() {
         emailjs.init({
-            publicKey: "YOUR_PUBLIC_KEY", // REPLACE WITH YOUR PUBLIC KEY
+            publicKey: "knUMKXBtOMdBph3Za", // REPLACE WITH YOUR PUBLIC KEY
         });
     };
     document.head.appendChild(script);
