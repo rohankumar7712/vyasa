@@ -476,7 +476,7 @@ function initCampusVisitPopup() {
             const originalText = btn.innerHTML;
             btn.innerHTML = 'Booking...';
             
-            emailjs.sendForm('service_8abb7g4', 'template_cwyd22i', form)
+            emailjs.sendForm('service_8abb7g4', 'template_cwyd22j', form)
                 .then(() => {
                     btn.innerHTML = originalText;
                     formContainer.style.display = 'none';
@@ -573,7 +573,7 @@ function initGlobalFormSuccess() {
                 const originalText = btn ? btn.innerHTML : 'Submit';
                 if (btn) btn.innerHTML = 'Sending...';
                 
-                emailjs.sendForm('service_8abb7g4', 'template_cwyd22i', form)
+                emailjs.sendForm('service_8abb7g4', 'template_cwyd22j', form)
                     .then(() => {
                         if (btn) btn.innerHTML = originalText;
                         
